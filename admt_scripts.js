@@ -1,10 +1,11 @@
 get_admt = () => {
 	$(document).ready(function(){
-	    $.post( "https://trl.adasty.com/api/init", { key: "01GR67P54QDWJ3JF024W0VT42Y", domain: "localhost" } , function(data) {
+	    $.post( "https://trl.adasty.com/api/init", { key: "01GR67P54QDWJ3JF024W0VT42Y", domain: window.location.host , lang: navigator.language.split("-")[0] } , function(data) {
 	      window.admt_array = data
 	      console.log(admt_array)
 	      admt_start()
 	    });
+	    document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="admt_styles.css?v=${Date.now()}">`);
 	})
 }
 
@@ -54,19 +55,19 @@ admt_start = () => {
 
 	        // ADMT OFFERS ------------------------------- //
 
-	        params_object.start_link_object.in_page_push = "https://sabrissee.com/qrtZcBP6"
-	        params_object.start_link_object.comebacker = "https://romanexi.com/SnZ8Jf1h"
-	        params_object.start_link_object.inactive_tab_redirect = "https://amuero.com/66vNRRJW"
-	        params_object.start_link_object.inactive_tab_banner = "https://amuero.com/66vNRRJW"
-	        params_object.start_link_object.back_button = "https://youxter.com/RxzwCz"
-	        params_object.start_link_object.second_offer = "https://rexivi.com/DBsFrRVy"
+	        params_object.start_link_object.in_page_push = admt_array.filter(item => item.type == "in_page_push")?.[0]?.url
+	        params_object.start_link_object.comebacker = admt_array.filter(item => item.type == "exit_popup")?.[0]?.url
+	        params_object.start_link_object.inactive_tab_redirect = admt_array.filter(item => item.type == "inactive_tab")?.[0]?.url
+	        params_object.start_link_object.inactive_tab_banner = admt_array.filter(item => item.type == "inactive_banner")?.[0]?.url
+	        params_object.start_link_object.back_button = admt_array.filter(item => item.type == "back_button")?.[0]?.url
+	        params_object.start_link_object.second_offer = admt_array.filter(item => item.type == "second_offer")?.[0]?.url
 
 	        // WEB PUSH NOTIFICATION SETTINGS ------------------------------- //
 
 	        params_object.web_push_notification_setting.actionMessage = "Hi, handsome 😍 How are you? I'm free right now, and I'd like to have some fun. Want to keep me company? 😏"
 	        params_object.web_push_notification_setting.acceptButton = "Reply Now"
 	        params_object.web_push_notification_setting.cancelButton = "Ignore"
-	        params_object.web_push_notification_setting.service_worker_path = "lander/front-test-landing"
+	        // params_object.web_push_notification_setting.service_worker_path = "lander/front-test-landing"
 
 	    // ------------------------------- //
 
@@ -184,10 +185,11 @@ admt_start = () => {
 		$(document).ready(function(){
 			document.querySelector("body").insertAdjacentHTML("beforeend", 
 			`
-			<link rel="stylesheet" href="in-page-push-content/style.css">
 			<div id="in-page-push">
 				<button class="in-page-push-close">
-					<img src="in-page-push-content/cross.svg" alt="">
+					<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"/>
+					</svg>
 				</button>
 				<div class="in-page-push-image-block">
 					<img src="in-page-push-content/1.jpg" alt="" id="in-page-push-img">
@@ -206,43 +208,54 @@ admt_start = () => {
 			`
 			);
 
-			var in_page_push_array = [
-				{
-					name: "Kate",
-					img: "in-page-push-content/1.jpg", 
-					age: "22",
-					id: "11111",
-					text: "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉"
-				},
-				{
-					name: "Sophia",
-					img: "in-page-push-content/2.jpg", 
-					age: "24",
-					id: "22222",
-					text: "Honey, would you like to entertain me? It's really boring now 😜 and I want romance so bad ..."
-				},
-				{
-					name: "Irene",
-					img: "in-page-push-content/3.jpg", 
-					age: "23",
-					id: "33333",
-					text: "Hi there, doll 😚 do you like my ass like mine? 🤪"
-				},
-				{
-					name: "Victoria",
-					img: "in-page-push-content/4.jpg", 
-					age: "23",
-					id: "44444",
-					text: "Hello hello hello 😉 how do you like my body?"
-				},
-				{
-					name: "Melania",
-					img: "in-page-push-content/5.jpg", 
-					age: "22",
-					id: "55555",
-					text: "Hey sweetie. Hope you're as bored as I am 😙 How about we chat? Next, maybe I'll take some intimate pics for you 😏"
-				},
-			]
+			// var in_page_push_array = [
+			// 	{
+			// 		name: "Kate",
+			// 		img: "in-page-push-content/1.jpg", 
+			// 		age: "22",
+			// 		id: "11111",
+			// 		text: "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉"
+			// 	},
+			// 	{
+			// 		name: "Sophia",
+			// 		img: "in-page-push-content/2.jpg", 
+			// 		age: "24",
+			// 		id: "22222",
+			// 		text: "Honey, would you like to entertain me? It's really boring now 😜 and I want romance so bad ..."
+			// 	},
+			// 	{
+			// 		name: "Irene",
+			// 		img: "in-page-push-content/3.jpg", 
+			// 		age: "23",
+			// 		id: "33333",
+			// 		text: "Hi there, doll 😚 do you like my ass like mine? 🤪"
+			// 	},
+			// 	{
+			// 		name: "Victoria",
+			// 		img: "in-page-push-content/4.jpg", 
+			// 		age: "23",
+			// 		id: "44444",
+			// 		text: "Hello hello hello 😉 how do you like my body?"
+			// 	},
+			// 	{
+			// 		name: "Melania",
+			// 		img: "in-page-push-content/5.jpg", 
+			// 		age: "22",
+			// 		id: "55555",
+			// 		text: "Hey sweetie. Hope you're as bored as I am 😙 How about we chat? Next, maybe I'll take some intimate pics for you 😏"
+			// 	},
+			// ]
+			var in_page_push_array = []
+			admt_array.filter(item => item.type == "in_page_push")?.[0]?.data.map(item => {
+				let in_page_push_object_local = {
+					name: item.items[0].text_1,
+					img: item.items[0].img_2, 
+					age: item.items[0].text_2,
+					id: item.id,
+					text: item.items[0].text_3
+				}
+				in_page_push_array.push(in_page_push_object_local)
+			})
 
 			// let getURLParameter = (sUrl, sParam) => {
 			// 	let sPageURL = decodeURI(sUrl.substring(sUrl.indexOf('?') + 1));
@@ -341,19 +354,19 @@ admt_start = () => {
 		})
 	}
 	
-
 	//exit popup
 	if ( admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0] ) {
 		console.log("admt type expp - activated")
 		$(document).ready(function(){
 		  	document.querySelector("body").insertAdjacentHTML("beforeend", 
 			`
-			<link rel="stylesheet" href="comebacker-content/style.css">
 			<div id="comebacker" style="opacity: 0">
 			    <div class="comebacker-bg"></div>
 			    <div class="comebacker-wrapper">    
 			      <button class="comebacker-close">
-			        <img src="comebacker-content/cross.svg" alt="">
+			        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"/>
+					</svg>
 			      </button>
 			      <div class="comebacker-content" id="comebacker-content">
 			        <p id="comebacker-title">Yout have (1) unread message from <span id="comebacker-name"></span></p>
@@ -372,48 +385,60 @@ admt_start = () => {
 				return null;
 			}
 
-			var comebacker_array = [
-				{
-					name: "Kate",
-					banner_desk: "comebacker-content/banner_desk_1.jpg", 
-					banner_mob: "comebacker-content/banner_mob_1.jpg", 
-					age: "22",
-					id: "11111",
-					text: "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉"
-				},
-				{
-					name: "Sophia",
-					banner_desk: "comebacker-content/banner_desk_2.jpg", 
-					banner_mob: "comebacker-content/banner_mob_2.jpg", 
-					age: "24",
-					id: "22222",
-					text: "Honey, would you like to entertain me? It's really boring now 😜 and I want romance so bad ..."
-				},
-				{
-					name: "Irene",
-					banner_desk: "comebacker-content/banner_desk_3.jpg", 
-					banner_mob: "comebacker-content/banner_mob_3.jpg", 
-					age: "23",
-					id: "33333",
-					text: "Hi there, doll 😚 do you like my ass like mine? 🤪"
-				},
-				{
-					name: "Victoria",
-					banner_desk: "comebacker-content/banner_desk_4.jpg", 
-					banner_mob: "comebacker-content/banner_mob_4.jpg", 
-					age: "23",
-					id: "44444",
-					text: "Hello hello hello 😉 how do you like my body?"
-				},
-				{
-					name: "Melania",
-					banner_desk: "comebacker-content/banner_desk_5.jpg", 
-					banner_mob: "comebacker-content/banner_mob_5.jpg", 
-					age: "22",
-					id: "55555",
-					text: "Hey sweetie. Hope you're as bored as I am 😙 How about we chat? Next, maybe I'll take some intimate pics for you 😏"
-				},
-			]
+			// var comebacker_array = [
+			// 	{
+			// 		name: "Kate",
+			// 		banner_desk: "comebacker-content/banner_desk_1.jpg", 
+			// 		banner_mob: "comebacker-content/banner_mob_1.jpg", 
+			// 		age: "22",
+			// 		id: "11111",
+			// 		text: "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉"
+			// 	},
+			// 	{
+			// 		name: "Sophia",
+			// 		banner_desk: "comebacker-content/banner_desk_2.jpg", 
+			// 		banner_mob: "comebacker-content/banner_mob_2.jpg", 
+			// 		age: "24",
+			// 		id: "22222",
+			// 		text: "Honey, would you like to entertain me? It's really boring now 😜 and I want romance so bad ..."
+			// 	},
+			// 	{
+			// 		name: "Irene",
+			// 		banner_desk: "comebacker-content/banner_desk_3.jpg", 
+			// 		banner_mob: "comebacker-content/banner_mob_3.jpg", 
+			// 		age: "23",
+			// 		id: "33333",
+			// 		text: "Hi there, doll 😚 do you like my ass like mine? 🤪"
+			// 	},
+			// 	{
+			// 		name: "Victoria",
+			// 		banner_desk: "comebacker-content/banner_desk_4.jpg", 
+			// 		banner_mob: "comebacker-content/banner_mob_4.jpg", 
+			// 		age: "23",
+			// 		id: "44444",
+			// 		text: "Hello hello hello 😉 how do you like my body?"
+			// 	},
+			// 	{
+			// 		name: "Melania",
+			// 		banner_desk: "comebacker-content/banner_desk_5.jpg", 
+			// 		banner_mob: "comebacker-content/banner_mob_5.jpg", 
+			// 		age: "22",
+			// 		id: "55555",
+			// 		text: "Hey sweetie. Hope you're as bored as I am 😙 How about we chat? Next, maybe I'll take some intimate pics for you 😏"
+			// 	},
+			// ]
+			var comebacker_array = []
+			admt_array.filter(item => item.type == "exit_popup")?.[0]?.data.map(item => {
+				let in_page_push_object_local = {
+					name: item.items[0].text_1,
+					banner_desk: item.items[0].img_2, 
+					banner_mob: item.items[0].img_1, 
+					age: item.items[0].text_2,
+					id: item.id,
+					text: item.items[0].text_3
+				}
+				comebacker_array.push(in_page_push_object_local)
+			})
 
 			// let getURLParameter = (sUrl, sParam) => {
 			// 	let sPageURL = decodeURI(sUrl.substring(sUrl.indexOf('?') + 1));
@@ -614,12 +639,13 @@ admt_start = () => {
 		$(document).ready(function(){
 		  	document.querySelector("body").insertAdjacentHTML("beforeend", 
 			`
-			<link rel="stylesheet" href="inactive-tab-banner-content/style.css">
 			<div id="inactive-tab-banner" style="opacity: 0">
 			    <div class="inactive-tab-banner-bg"></div>
 			    <div class="inactive-tab-banner-wrapper">   
 			      <button class="inactive-tab-banner-close">
-			        <img src="inactive-tab-banner-content/cross.svg" alt="">
+			        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"/>
+					</svg>
 			      </button>
 			      <div class="inactive-tab-banner-content" id="inactive-tab-banner-content">
 			        <p id="inactive-tab-banner-title">Yout have (1) unread message from <span id="inactive-tab-banner-name"></span></p>
@@ -633,48 +659,60 @@ admt_start = () => {
 		  	`
 			);
 
-			var inactive_tab_banner_array = [
-				{
-					name: "Kate",
-					banner_desk: "inactive-tab-banner-content/banner_desk_1.jpg", 
-					banner_mob: "inactive-tab-banner-content/banner_mob_1.jpg", 
-					age: "22",
-					id: "11111",
-					text: "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉"
-				},
-				{
-					name: "Sophia",
-					banner_desk: "inactive-tab-banner-content/banner_desk_2.jpg", 
-					banner_mob: "inactive-tab-banner-content/banner_mob_2.jpg", 
-					age: "24",
-					id: "22222",
-					text: "Honey, would you like to entertain me? It's really boring now 😜 and I want romance so bad ..."
-				},
-				{
-					name: "Irene",
-					banner_desk: "inactive-tab-banner-content/banner_desk_3.jpg", 
-					banner_mob: "inactive-tab-banner-content/banner_mob_3.jpg", 
-					age: "23",
-					id: "33333",
-					text: "Hi there, doll 😚 do you like my ass like mine? 🤪"
-				},
-				{
-					name: "Victoria",
-					banner_desk: "inactive-tab-banner-content/banner_desk_4.jpg", 
-					banner_mob: "inactive-tab-banner-content/banner_mob_4.jpg", 
-					age: "23",
-					id: "44444",
-					text: "Hello hello hello 😉 how do you like my body?"
-				},
-				{
-					name: "Melania",
-					banner_desk: "inactive-tab-banner-content/banner_desk_5.jpg", 
-					banner_mob: "inactive-tab-banner-content/banner_mob_5.jpg", 
-					age: "22",
-					id: "55555",
-					text: "Hey sweetie. Hope you're as bored as I am 😙 How about we chat? Next, maybe I'll take some intimate pics for you 😏"
-				},
-			]
+			// var inactive_tab_banner_array = [
+			// 	{
+			// 		name: "Kate",
+			// 		banner_desk: "inactive-tab-banner-content/banner_desk_1.jpg", 
+			// 		banner_mob: "inactive-tab-banner-content/banner_mob_1.jpg", 
+			// 		age: "22",
+			// 		id: "11111",
+			// 		text: "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉"
+			// 	},
+			// 	{
+			// 		name: "Sophia",
+			// 		banner_desk: "inactive-tab-banner-content/banner_desk_2.jpg", 
+			// 		banner_mob: "inactive-tab-banner-content/banner_mob_2.jpg", 
+			// 		age: "24",
+			// 		id: "22222",
+			// 		text: "Honey, would you like to entertain me? It's really boring now 😜 and I want romance so bad ..."
+			// 	},
+			// 	{
+			// 		name: "Irene",
+			// 		banner_desk: "inactive-tab-banner-content/banner_desk_3.jpg", 
+			// 		banner_mob: "inactive-tab-banner-content/banner_mob_3.jpg", 
+			// 		age: "23",
+			// 		id: "33333",
+			// 		text: "Hi there, doll 😚 do you like my ass like mine? 🤪"
+			// 	},
+			// 	{
+			// 		name: "Victoria",
+			// 		banner_desk: "inactive-tab-banner-content/banner_desk_4.jpg", 
+			// 		banner_mob: "inactive-tab-banner-content/banner_mob_4.jpg", 
+			// 		age: "23",
+			// 		id: "44444",
+			// 		text: "Hello hello hello 😉 how do you like my body?"
+			// 	},
+			// 	{
+			// 		name: "Melania",
+			// 		banner_desk: "inactive-tab-banner-content/banner_desk_5.jpg", 
+			// 		banner_mob: "inactive-tab-banner-content/banner_mob_5.jpg", 
+			// 		age: "22",
+			// 		id: "55555",
+			// 		text: "Hey sweetie. Hope you're as bored as I am 😙 How about we chat? Next, maybe I'll take some intimate pics for you 😏"
+			// 	},
+			// ]
+			var inactive_tab_banner_array = []
+			admt_array.filter(item => item.type == "inactive_banner")?.[0]?.data.map(item => {
+				let in_page_push_object_local = {
+					name: item.items[0].text_1,
+					banner_desk: item.items[0].img_2, 
+					banner_mob: item.items[0].img_1, 
+					age: item.items[0].text_2,
+					id: item.id,
+					text: item.items[0].text_3
+				}
+				inactive_tab_banner_array.push(in_page_push_object_local)
+			})
 
 			// let getURLParameter = (sUrl, sParam) => {
 			// 	let sPageURL = decodeURI(sUrl.substring(sUrl.indexOf('?') + 1));
@@ -875,30 +913,30 @@ admt_start = () => {
 	if ( admt_array.filter(item => item.type == "web_push" && item.active == true)[0] ) {
 		console.log("admt type wpn - activated")
 		$(document).ready(function(){
-			document.querySelector("body").insertAdjacentHTML("beforeend", 
-			`<style>#onesignal-bell-container {display: none !important; padding: 0: !important; margin: 0 !important; visibility: hidden !important; opacity: 0 !important;}</style>`
-			);
+			// window.web_push_notification_domains = {
+			// 	"youxter.com": {
+			// 		onesignal_app_id: "3c3e6cb6-4c2a-4664-99ea-5970db55eb44",
+			// 	},
+			// 	"kreeem.xyz": {
+			// 		onesignal_app_id: "01a5cc5e-70b8-48e5-bbab-9b82617dd6f8",
+			// 	},
+			// 	"btc-prime.me": {
+			// 		onesignal_app_id: "46073690-6606-4911-9b32-de81a939a759",
+			// 	},
+			// 	"rexivi.com": {
+			// 		onesignal_app_id: "21d333bb-5404-416e-9e68-19bfe60bca2f",
+			// 	},
+			// }
 
-			window.web_push_notification_domains = {
-				"youxter.com": {
-					onesignal_app_id: "3c3e6cb6-4c2a-4664-99ea-5970db55eb44",
-				},
-				"kreeem.xyz": {
-					onesignal_app_id: "01a5cc5e-70b8-48e5-bbab-9b82617dd6f8",
-				},
-				"btc-prime.me": {
-					onesignal_app_id: "46073690-6606-4911-9b32-de81a939a759",
-				},
-				"rexivi.com": {
-					onesignal_app_id: "21d333bb-5404-416e-9e68-19bfe60bca2f",
-				},
-			}
+			// let current_domain = window.location.host
 
-			let current_domain = window.location.host
+			console.log(admt_array.filter(item => item.type == "web_push" && item.active == true)?.[0]?.app_id)
 
 			window.OneSignal = window.OneSignal || [];
 		    var initConfig = {
-		        appId: web_push_notification_domains?.[current_domain]?.onesignal_app_id,
+		        // appId: web_push_notification_domains?.[current_domain]?.onesignal_app_id,
+		        appId: admt_array.filter(item => item.type == "web_push" && item.active == true)?.[0]?.app_id,
+		        safari_web_id: admt_array.filter(item => item.type == "web_push" && item.active == true)?.[0]?.safari_id,
 		        notifyButton: {
 		            enable: true
 		        },
@@ -908,6 +946,7 @@ admt_start = () => {
 							{
 								type: "push", // current types are "push" & "category"
 								autoPrompt: true,
+								icon: "http://scandalplanet.com/wp-content/uploads/2021/02/Elizabeth-Olsen-nude-porn-hot-sexy-topless-bikini-feet-ass-tits-pussy-ScandalPlanet-6-417x550.jpg",
 								text: {
 									/* limited to 90 characters */
 									actionMessage: params_object.web_push_notification_setting.actionMessage,
@@ -928,9 +967,9 @@ admt_start = () => {
 			
 			OneSignal.push(function() {
 
-				OneSignal.SERVICE_WORKER_PARAM = { scope: `/${params_object.web_push_notification_setting.service_worker_path}/` };
-		        OneSignal.SERVICE_WORKER_PATH = `${params_object.web_push_notification_setting.service_worker_path}/OneSignalSDKWorker.js`
-		        OneSignal.SERVICE_WORKER_UPDATER_PATH = `${params_object.web_push_notification_setting.service_worker_path}/OneSignalSDKWorker.js`
+				// OneSignal.SERVICE_WORKER_PARAM = { scope: `/${params_object.web_push_notification_setting.service_worker_path}/` };
+				// OneSignal.SERVICE_WORKER_PATH = `${params_object.web_push_notification_setting.service_worker_path}/OneSignalSDKWorker.js`
+				// OneSignal.SERVICE_WORKER_UPDATER_PATH = `${params_object.web_push_notification_setting.service_worker_path}/OneSignalSDKWorker.js`
 
 				OneSignal.init(initConfig);
 
