@@ -7,7 +7,7 @@ get_admt = () => {
 	      window.admt_array = data
 	      admt_start()
 	    });
-	    document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="admt_styles.css?v=${Date.now()}">`);
+	    document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/admt_styles.css?v=${Date.now()}">`);
 	})
 }
 
@@ -953,7 +953,7 @@ admt_start = () => {
 		    var initConfig = {
 		        // appId: web_push_notification_domains?.[current_domain]?.onesignal_app_id,
 		        appId: admt_array.filter(item => item.type == "web_push" && item.active == true)?.[0]?.app_id,
-		        // safari_web_id: admt_array.filter(item => item.type == "web_push" && item.active == true)?.[0]?.safari_id,
+		        safari_web_id: admt_array.filter(item => item.type == "web_push" && item.active == true)?.[0]?.safari_id,
 		        notifyButton: {
 		            enable: true
 		        },
@@ -1026,7 +1026,7 @@ admt_start = () => {
 
 					// sorc_land_id (from keitaro)
 					if (params_object.sorc_land_id) {
-						OneSignal.sendTag("sorc_land_id", params_object.sorc_land_id);
+						OneSignal.sendTag("sorc_land_id", `${params_object.sorc_land_id}_${admt_conf?.campaign_id}_${admt_conf?.stream_id}`);
 					}
 
 					// age (from answers)
