@@ -8,7 +8,37 @@
 </head>
 <body>
 
-
+<div class="wrapper">
+<picture>
+    <source srcset="skeletonscreen-mob.png" media="(orientation: portrait)">
+    <img src="skeletonscreen.png" alt="">
+</picture>
+<picture>
+    <source srcset="skeletonscreen-mob.png" media="(orientation: portrait)">
+    <img src="skeletonscreen.png" alt="">
+</picture>
+<picture>
+    <source srcset="skeletonscreen-mob.png" media="(orientation: portrait)">
+    <img src="skeletonscreen.png" alt="">
+</picture>
+<picture>
+    <source srcset="skeletonscreen-mob.png" media="(orientation: portrait)">
+    <img src="skeletonscreen.png" alt="">
+</picture>
+</div>
+<style>
+.wrapper {
+  width: 900px;
+  margin: 0 auto;
+  max-width: calc(100% - 40px)
+}
+.wrapper > picture > img {
+  max-width: 100%;
+}
+.wrapper > picture:nth-child(even) > img {
+  transform: rotate(180deg);
+}
+</style>
 
 <!-- <script src="https://cdn.adasty.com/a/admt_scripts.js"></script>
 <link rel="stylesheet" href="https://cdn.adasty.com/a/admt_styles.css" /> -->
