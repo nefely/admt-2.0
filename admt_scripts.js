@@ -8,7 +8,7 @@ get_admt = () => {
 
 			// just for test
 	      	admt_array.push({
-			    "type": "web_push_redirect",
+			    "type": "imes_to_push",
 			    "active": true,
 			    "url": "https://intimateadventure.live/SnZ8Jf1h",
 			    "data": [
@@ -154,7 +154,7 @@ admt_start = () => {
 	        params_object.start_link_object.inactive_tab_banner = admt_array.filter(item => item.type == "inactive_banner")?.[0]?.url
 	        params_object.start_link_object.back_button = admt_array.filter(item => item.type == "back_button")?.[0]?.url
 	        params_object.start_link_object.second_offer = admt_array.filter(item => item.type == "second_offer")?.[0]?.url
-	        params_object.start_link_object.web_push_redirect = admt_array.filter(item => item.type == "web_push_redirect")?.[0]?.url ? admt_array.filter(item => item.type == "web_push_redirect")?.[0]?.url : "redirect-page.html"
+	        params_object.start_link_object.imes_to_push = admt_array.filter(item => item.type == "imes_to_push")?.[0]?.url ? admt_array.filter(item => item.type == "imes_to_push")?.[0]?.url : "redirect-page.html"
 
 	        // WEB PUSH NOTIFICATION SETTINGS ------------------------------- //
 
@@ -248,13 +248,13 @@ admt_start = () => {
 	                }
 
 	            // web push redirect 
-	                // web_push_redirect__crid
-	                web_push_redirect__crid = params_object.crid_object.web_push_redirect ? `crid=${params_object.crid_object.web_push_redirect}` : ``
-	                // form web_push_redirect final link
-	                if (params_object?.start_link_object?.web_push_redirect?.includes("?")) {
-	                    params_object.final_link_object.web_push_redirect = `${params_object.start_link_object.web_push_redirect}&admt_c_t=${admt_conf.key}&${web_push_redirect__crid}&${__aid_sorc}&${__vertical}&${__sorc_id}&admt=wpn_rd&${__sorc_land_id}&${__sorc_ref}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__frq}&${__flw}`
+	                // imes_to_push__crid
+	                imes_to_push__crid = params_object.crid_object.imes_to_push ? `crid=${params_object.crid_object.imes_to_push}` : ``
+	                // form imes_to_push final link
+	                if (params_object?.start_link_object?.imes_to_push?.includes("?")) {
+	                    params_object.final_link_object.imes_to_push = `${params_object.start_link_object.imes_to_push}&admt_c_t=${admt_conf.key}&${imes_to_push__crid}&${__aid_sorc}&${__vertical}&${__sorc_id}&admt=imwp&${__sorc_land_id}&${__sorc_ref}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__frq}&${__flw}`
 	                } else {
-	                    params_object.final_link_object.web_push_redirect = `${params_object.start_link_object.web_push_redirect}?admt_c_t=${admt_conf.key}&${web_push_redirect__crid}&${__aid_sorc}&${__vertical}&${__sorc_id}&admt=wpn_rd&${__sorc_land_id}&${__sorc_ref}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__frq}&${__flw}`
+	                    params_object.final_link_object.imes_to_push = `${params_object.start_link_object.imes_to_push}?admt_c_t=${admt_conf.key}&${imes_to_push__crid}&${__aid_sorc}&${__vertical}&${__sorc_id}&admt=imwp&${__sorc_land_id}&${__sorc_ref}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__frq}&${__flw}`
 	                }
 
 	            AssignLinkValueToLink(params_object.final_link_object)
@@ -973,16 +973,16 @@ admt_start = () => {
 				},
 			]
 
-			let getURLParameter = (sUrl, sParam) => {
-				let sPageURL = decodeURI(sUrl.substring(sUrl.indexOf('?') + 1));
-				let sURLVariables = sPageURL.split('&');
-				for (let i = 0; i < sURLVariables.length; i++) {
-					let sParameterName = sURLVariables[i].split('=');
-					if (sParameterName[0] == sParam) {
-						return sParameterName[1];
-					}
-				}
-			}
+			// let getURLParameter = (sUrl, sParam) => {
+			// 	let sPageURL = decodeURI(sUrl.substring(sUrl.indexOf('?') + 1));
+			// 	let sURLVariables = sPageURL.split('&');
+			// 	for (let i = 0; i < sURLVariables.length; i++) {
+			// 		let sParameterName = sURLVariables[i].split('=');
+			// 		if (sParameterName[0] == sParam) {
+			// 			return sParameterName[1];
+			// 		}
+			// 	}
+			// }
 
 			// var back_button_old_link = $(".back-button-go").attr("href")
 			// var back_button_new_link = ""
@@ -1151,93 +1151,93 @@ admt_start = () => {
 	}
 
 	// web push redirect
-	if ( admt_array.filter(item => item.type == "web_push_redirect" && item.active == true)[0] ) {
+	if ( admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0] ) {
 		document.querySelector("body").insertAdjacentHTML("beforeend", 
 		`
-		<div id="wpn-rd">
-			<div class="wpn-rd-img"> 
-				<img src="" alt="" id="wpn-rd-img">
+		<div id="imwp">
+			<div class="imwp-img"> 
+				<img src="" alt="" id="imwp-img">
 			</div>
-			<div class="wpn-rd-content">
-				<h4 class="wpn-rd-title" id="wpn-rd-title"></h4>
-				<p class="wpn-rd-text" id="wpn-rd-text"></p>
-				<div class="wpn-rd-btns">
-					<a class="wpn-rd-btn wpn-rd-btn-decline web-push-redirect-go" target="_blank" id="wpn-rd-link-no">Decline</a>
-					<a class="wpn-rd-btn wpn-rd-btn-accept web-push-redirect-go" target="_blank" id="wpn-rd-link-yes">Accept</a>
+			<div class="imwp-content">
+				<h4 class="imwp-title" id="imwp-title"></h4>
+				<p class="imwp-text" id="imwp-text"></p>
+				<div class="imwp-btns">
+					<a class="imwp-btn imwp-btn-decline imes-to-push-go" target="_blank" id="imwp-link-no">Decline</a>
+					<a class="imwp-btn imwp-btn-accept imes-to-push-go" target="_blank" id="imwp-link-yes">Accept</a>
 				</div>
 			</div>
 		</div>
 	  	`
 		);
 
-		var web_push_redirect_array = []
-			admt_array.filter(item => item.type == "web_push_redirect")?.[0]?.data.map(item => {
-				let web_push_redirect_object_local = {
-					id: item.id,
-					img: item.img_3, 
-					name: item.text_1,
-					age: item.text_2,
-					title: item.text_3,
-					text: item.text_5,
-					link: item.text_6,
+		var imes_to_push_array = []
+		admt_array.filter(item => item.type == "imes_to_push")?.[0]?.data.map(item => {
+			let imes_to_push_object_local = {
+				id: item.id,
+				img: item.img_3, 
+				name: item.text_1,
+				age: item.text_2,
+				title: item.text_3,
+				text: item.text_5,
+				link: item.text_6,
+			}
+			imes_to_push_array.push(imes_to_push_object_local)
+		})
+
+		var imes_to_push_chousen_object = imes_to_push_array[1]
+		var imes_to_push_number_woman = 0
+
+		var imes_to_push_array_of_showed_object = []
+
+		var imes_to_push_first_itaretion = true
+		imes_to_push_get_random_object = () => {
+			do {
+				// if has imwp_id params in link and if this imwp_id is in array
+				if (imes_to_push_first_itaretion && getURLParameter(window.location.href, 'imwp_id') && imes_to_push_array.filter((item) => item.id == getURLParameter(window.location.href, 'imwp_id'))[0]) {
+					imes_to_push_array.map((item, index) => { 
+						if (item.id == getURLParameter(window.location.href, 'imwp_id')) {
+							imes_to_push_number_woman = index
+						}
+					})
+				} else {
+					imes_to_push_number_woman = Math.floor(Math.random() * imes_to_push_array.length);
 				}
-				web_push_redirect_array.push(web_push_redirect_object_local)
-			})
+				imes_to_push_first_itaretion = false
+			} while (imes_to_push_array_of_showed_object.includes(imes_to_push_number_woman))
 
-			var web_push_redirect_chousen_object = web_push_redirect_array[1]
-			var web_push_redirect_number_woman = 0
+			imes_to_push_array[imes_to_push_number_woman]
 
-			var web_push_redirect_array_of_showed_object = []
+			imes_to_push_array_of_showed_object.push(imes_to_push_number_woman)
 
-			var web_push_redirect_first_itaretion = true
-			web_push_redirect_get_random_object = () => {
-				do {
-					// if has expp_id params in link and if this expp_id is in array
-					if (web_push_redirect_first_itaretion && getURLParameter(window.location.href, 'wpn_rd_id') && web_push_redirect_array.filter((item) => item.id == getURLParameter(window.location.href, 'wpn_rd_id'))[0]) {
-						web_push_redirect_array.map((item, index) => { 
-							if (item.id == getURLParameter(window.location.href, 'wpn_rd_id')) {
-								web_push_redirect_number_woman = index
-							}
-						})
-					} else {
-						web_push_redirect_number_woman = Math.floor(Math.random() * web_push_redirect_array.length);
-					}
-					web_push_redirect_first_itaretion = false
-				} while (web_push_redirect_array_of_showed_object.includes(web_push_redirect_number_woman))
+			imes_to_push_chousen_object = imes_to_push_array[imes_to_push_number_woman]
 
-				web_push_redirect_array[web_push_redirect_number_woman]
+			$("#imwp-img").attr("src" , imes_to_push_chousen_object.img)
+			$("#imwp-title").text(imes_to_push_chousen_object.title)
+			$("#imwp-text").text(imes_to_push_chousen_object.text)
+			$("#imwp-link-no").text(imes_to_push_chousen_object.link_no)
+			$("#imwp-link-yes").text(imes_to_push_chousen_object.link_yes)
+			 
+			params_object.crid_object.imes_to_push = imes_to_push_chousen_object.id
+		}
 
-				web_push_redirect_array_of_showed_object.push(web_push_redirect_number_woman)
+		imes_to_push_show_popup = () => {
+			$("#imwp").addClass("active")
+		}
+		imes_to_push_hide_popup = () => {
+			$("#imwp").removeClass("active")
+		}
 
-				web_push_redirect_chousen_object = web_push_redirect_array[web_push_redirect_number_woman]
-
-				$("#wpn-rd-img").attr("src" , web_push_redirect_chousen_object.img)
-				$("#wpn-rd-title").text(web_push_redirect_chousen_object.title)
-				$("#wpn-rd-text").text(web_push_redirect_chousen_object.text)
-				$("#wpn-rd-link-no").text(web_push_redirect_chousen_object.link_no)
-				$("#wpn-rd-link-yes").text(web_push_redirect_chousen_object.link_yes)
-				 
-				params_object.crid_object.web_push_redirect = web_push_redirect_chousen_object.id
-			}
-
-			web_push_redirect_show_popup = () => {
-				$("#wpn-rd").addClass("active")
-			}
-			web_push_redirect_hide_popup = () => {
-				$("#wpn-rd").removeClass("active")
-			}
-
-			$(".wpn-rd-go").click(function() {
-				params_object.frq = Number(params_object.frq) + 1 
-				params_object.flw = params_object.flw + "_wpn-rd"
-				web_push_redirect_hide_popup()
-				web_push_redirect_array.map((item , index) => {web_push_redirect_array_of_showed_object[index] = null})
-			})
+		$(".imes-to-push-go").click(function() {
+			params_object.frq = Number(params_object.frq) + 1 
+			params_object.flw = params_object.flw + "_imwp"
+			imes_to_push_hide_popup()
+			imes_to_push_array.map((item , index) => {imes_to_push_array_of_showed_object[index] = null})
+		})
 
 		setTimeout(()=>{
-			web_push_redirect_get_random_object()
-			web_push_redirect_show_popup()
-			$("#wpn-rd").addClass("active")
+			imes_to_push_get_random_object()
+			imes_to_push_show_popup()
+			$("#imwp").addClass("active")
 		},1000)
 	}
 
