@@ -10,21 +10,21 @@ get_admt = () => {
 	      	admt_array.push({
 			    "type": "imes_to_push",
 			    "active": true,
-			    "url": "https://intimateadventure.live/SnZ8Jf1h",
+			    "url": "imwp-offer.html?monetization=imes-to-push",
 			    "data": [
 			        {
 			            "id": 7,
 			            "vertical": "ad",
 			            "img_1": "https://cdn.adasty.com/c/01GRAEYF7GJMN453GXD3VQME6M.jpg",
-			            "img_2": "https://cdn.adasty.com/c/01GRAEYFB0D93MY0YC8E616Z0Q.jpg",
-			            "img_3": "https://cdn.adasty.com/c/01GRAH4YCN51AF495KFBDE21Q4.jpg",
+			            "img_2": null,
+			            "img_3": null,
 			            "img_4": null,
-			            "text_1": "Irene",
-			            "text_2": "23",
-			            "text_3": "You have (1) unread message from ",
-			            "text_4": "New message (1)",
-			            "text_5": "Hi there, doll 😚 do you like my ass like mine? 🤪",
-			            "text_6": "Reply Now",
+			            "text_1": "New message (1)",
+			            "text_2": "Hi there, doll 😚 do you like my ass like mine? 🤪",
+			            "text_3": "Decline",
+			            "text_4": "Reply",
+			            "text_5": null,
+			            "text_6": null,
 			            "text_7": null,
 			            "text_8": null
 			        },
@@ -32,66 +32,18 @@ get_admt = () => {
 			            "id": 5,
 			            "vertical": "ad",
 			            "img_1": "https://cdn.adasty.com/c/01GRAES1CRGVWBZVHFA75NN4J1.jpg",
-			            "img_2": "https://cdn.adasty.com/c/01GRAES1HFP7H1661EK813SRVW.jpg",
-			            "img_3": "https://cdn.adasty.com/c/01GRAH4097NR9HHFHFF48JX7CF.jpg",
+			            "img_2": null,
+			            "img_3": null,
 			            "img_4": null,
-			            "text_1": "Kate",
-			            "text_2": "22",
-			            "text_3": "You have (1) unread message from ",
-			            "text_4": "New message (1)",
-			            "text_5": "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉",
-			            "text_6": "Reply",
+			            "text_1": "New message (1)",
+			            "text_2": "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉",
+			            "text_3": "Decline",
+			            "text_4": "Reply",
+			            "text_5": null,
+			            "text_6": null,
 			            "text_7": null,
 			            "text_8": null
 			        },
-			        {
-			            "id": 9,
-			            "vertical": "ad",
-			            "img_1": "https://cdn.adasty.com/c/01GRAF0TNAMMNQH3QT36S7CZK0.jpg",
-			            "img_2": "https://cdn.adasty.com/c/01GRAF0TTXJYMBGTSEZ5H9SEG2.jpg",
-			            "img_3": "https://cdn.adasty.com/c/01GRAH5VV7NMMN0WBTW4WKA2RH.jpg",
-			            "img_4": null,
-			            "text_1": "Melania",
-			            "text_2": "22",
-			            "text_3": "You have (1) unread message from ",
-			            "text_4": "New message (1)",
-			            "text_5": "Hey sweetie. Hope you're as bored as I am 😙 How about we chat? Next, maybe I'll take some intimate pics for you 😏",
-			            "text_6": "Reply Now",
-			            "text_7": null,
-			            "text_8": null
-			        },
-			        {
-			            "id": 6,
-			            "vertical": "ad",
-			            "img_1": "https://cdn.adasty.com/c/01GRAEX7WVQR2ZR4S0BSTMJTKK.jpg",
-			            "img_2": "https://cdn.adasty.com/c/01GRAEX829686H50YZ9726BMW2.jpg",
-			            "img_3": "https://cdn.adasty.com/c/01GRAH4DW8A012211WPNP2A45R.jpg",
-			            "img_4": null,
-			            "text_1": "Sophia",
-			            "text_2": "24",
-			            "text_3": "You have (1) unread message from ",
-			            "text_4": "New message (1)",
-			            "text_5": "Honey, would you like to entertain me? It's really boring now 😜 and I want romance so bad ...",
-			            "text_6": "Reply Now",
-			            "text_7": null,
-			            "text_8": null
-			        },
-			        {
-			            "id": 8,
-			            "vertical": "ad",
-			            "img_1": "https://cdn.adasty.com/c/01GRAEZS2DED2EWPVNQ60M8SK3.jpg",
-			            "img_2": "https://cdn.adasty.com/c/01GRAEZS7ZGTXYRB5WETN956HH.jpg",
-			            "img_3": "https://cdn.adasty.com/c/01GRAH5DE6616E6830S57B7SPS.jpg",
-			            "img_4": null,
-			            "text_1": "Victoria",
-			            "text_2": "23",
-			            "text_3": "You have (1) unread message from ",
-			            "text_4": "New message (1)",
-			            "text_5": "Hello hello hello 😉 how do you like my body?",
-			            "text_6": "Reply Now",
-			            "text_7": null,
-			            "text_8": null
-			        }
 			    ]
 			})
 
@@ -154,7 +106,7 @@ admt_start = () => {
 	        params_object.start_link_object.inactive_tab_banner = admt_array.filter(item => item.type == "inactive_banner")?.[0]?.url
 	        params_object.start_link_object.back_button = admt_array.filter(item => item.type == "back_button")?.[0]?.url
 	        params_object.start_link_object.second_offer = admt_array.filter(item => item.type == "second_offer")?.[0]?.url
-	        params_object.start_link_object.imes_to_push = admt_array.filter(item => item.type == "imes_to_push")?.[0]?.url ? admt_array.filter(item => item.type == "imes_to_push")?.[0]?.url : "redirect-page.html"
+	        params_object.start_link_object.imes_to_push = admt_array.filter(item => item.type == "imes_to_push")?.[0]?.url
 
 	        // WEB PUSH NOTIFICATION SETTINGS ------------------------------- //
 
@@ -280,6 +232,127 @@ admt_start = () => {
 	    });
 	});
 
+	// web push redirect
+	if ( admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0] ) {
+		if ($("body").attr("id") !== "imwp-page-body") {
+			document.querySelector("body").insertAdjacentHTML("beforeend", 
+			`
+			<div id="imwp">
+				<div class="imwp-img"> 
+					<img src="" alt="" id="imwp-img">
+				</div>
+				<div class="imwp-content">
+					<h4 class="imwp-title" id="imwp-title"></h4>
+					<p class="imwp-text" id="imwp-text"></p>
+					<div class="imwp-btns">
+						<a class="imwp-btn imwp-btn-decline imes-to-push-go" id="imwp-link-no">Decline</a>
+						<a class="imwp-btn imwp-btn-accept imes-to-push-go" id="imwp-link-yes">Accept</a>
+					</div>
+				</div>
+			</div>
+		  	`
+			);
+
+			var imes_to_push_array = []
+			admt_array.filter(item => item.type == "imes_to_push")?.[0]?.data.map(item => {
+				let imes_to_push_object_local = {
+					id: item.id,
+					img: item.img_1, 
+					title: item.text_1,
+					text: item.text_2,
+					link_no: item.text_3,
+					link_yes: item.text_4,
+				}
+				imes_to_push_array.push(imes_to_push_object_local)
+			})
+
+			var imes_to_push_chousen_object = imes_to_push_array[1]
+			var imes_to_push_number_woman = 0
+
+			var imes_to_push_array_of_showed_object = []
+
+			var imes_to_push_first_itaretion = true
+			imes_to_push_get_random_object = () => {
+				do {
+					// if has imwp_id params in link and if this imwp_id is in array
+					if (imes_to_push_first_itaretion && getURLParameter(window.location.href, 'imwp_id') && imes_to_push_array.filter((item) => item.id == getURLParameter(window.location.href, 'imwp_id'))[0]) {
+						imes_to_push_array.map((item, index) => { 
+							if (item.id == getURLParameter(window.location.href, 'imwp_id')) {
+								imes_to_push_number_woman = index
+							}
+						})
+					} else {
+						imes_to_push_number_woman = Math.floor(Math.random() * imes_to_push_array.length);
+					}
+					imes_to_push_first_itaretion = false
+				} while (imes_to_push_array_of_showed_object.includes(imes_to_push_number_woman))
+
+				imes_to_push_array[imes_to_push_number_woman]
+
+				imes_to_push_array_of_showed_object.push(imes_to_push_number_woman)
+
+				imes_to_push_chousen_object = imes_to_push_array[imes_to_push_number_woman]
+
+				$("#imwp-img").attr("src" , imes_to_push_chousen_object.img)
+				$("#imwp-title").text(imes_to_push_chousen_object.title)
+				$("#imwp-text").text(imes_to_push_chousen_object.text)
+				$("#imwp-link-no").text(imes_to_push_chousen_object.link_no)
+				$("#imwp-link-yes").text(imes_to_push_chousen_object.link_yes)
+				 
+				params_object.crid_object.imes_to_push = imes_to_push_chousen_object.id
+			}
+
+			imes_to_push_show_popup = () => {
+				$("#imwp").addClass("active")
+			}
+			imes_to_push_hide_popup = () => {
+				$("#imwp").removeClass("active")
+			}
+
+			$(".imes-to-push-go").click(function(e) {
+				e.preventDefault()
+
+				params_object.frq = Number(params_object.frq) + 1 
+				params_object.flw = params_object.flw + "_imwp"
+
+				setTimeout(()=>{
+					window.open($(this).attr("href"), '_blank');
+				},100)
+
+				imes_to_push_hide_popup()
+				imes_to_push_array.map((item , index) => {imes_to_push_array_of_showed_object[index] = null})
+			})
+
+			setTimeout(()=>{
+				imes_to_push_get_random_object()
+				imes_to_push_show_popup()
+				$("#imwp").addClass("active")
+			},1000)
+		} else {
+			admt_array.map(item => item.type == "imes_to_push" ? item.active = true : item.active = false )?.[0]
+
+			document.querySelector("body").insertAdjacentHTML("beforeend", 
+			`
+			<div id="imwp-page">
+				<div class="imwp-page-img"> 
+					<img src="https://cdn.adasty.com/c/01GRAES1CRGVWBZVHFA75NN4J1.jpg" alt="" id="imwp-page-img">
+				</div>
+				<div class="mwp-page-content">
+					<h4 class="mwp-page-title" id="mwp-page-title">New message (1)</h4>
+					<p class="mwp-page-text" id="mwp-page-text">I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉</p>
+				</div>
+			</div>
+			<a class="imes-to-push-page-go" style="display: none !important; padding: 0: !important; margin: 0 !important; visibility: hidden !important; opacity: 0 !important;"></a>
+		  	`
+			);
+
+			setTimeout(()=>{
+				params_object.final_link_object.imes_to_push_page = admt_conf.offer
+			},100) 
+
+		}
+	}
+
 	// in page push
 	if ( admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0] ) {
 		$(document).ready(function(){
@@ -301,50 +374,12 @@ admt_start = () => {
 					<h4 id="in-page-push-title"></h4>
 					<p id="in-page-push-text"></p>
 					<div class="in-page-push-button">
-						<a class="in-page-push-go" id="in-page-push-link" target="_blank"></a>
+						<a class="in-page-push-go" id="in-page-push-link"></a>
 					</div>
 				</div>
 			</div>
 			`
 			);
-
-			// var in_page_push_array = [
-			// 	{
-			// 		name: "Kate",
-			// 		img: "in-page-push-content/1.jpg", 
-			// 		age: "22",
-			// 		id: "11111",
-			// 		text: "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉"
-			// 	},
-			// 	{
-			// 		name: "Sophia",
-			// 		img: "in-page-push-content/2.jpg", 
-			// 		age: "24",
-			// 		id: "22222",
-			// 		text: "Honey, would you like to entertain me? It's really boring now 😜 and I want romance so bad ..."
-			// 	},
-			// 	{
-			// 		name: "Irene",
-			// 		img: "in-page-push-content/3.jpg", 
-			// 		age: "23",
-			// 		id: "33333",
-			// 		text: "Hi there, doll 😚 do you like my ass like mine? 🤪"
-			// 	},
-			// 	{
-			// 		name: "Victoria",
-			// 		img: "in-page-push-content/4.jpg", 
-			// 		age: "23",
-			// 		id: "44444",
-			// 		text: "Hello hello hello 😉 how do you like my body?"
-			// 	},
-			// 	{
-			// 		name: "Melania",
-			// 		img: "in-page-push-content/5.jpg", 
-			// 		age: "22",
-			// 		id: "55555",
-			// 		text: "Hey sweetie. Hope you're as bored as I am 😙 How about we chat? Next, maybe I'll take some intimate pics for you 😏"
-			// 	},
-			// ]
 
 			var in_page_push_array = []
 			admt_array.filter(item => item.type == "in_page_push")?.[0]?.data.map(item => {
@@ -360,24 +395,8 @@ admt_start = () => {
 				in_page_push_array.push(in_page_push_object_local)
 			})
 
-			// let getURLParameter = (sUrl, sParam) => {
-			// 	let sPageURL = decodeURI(sUrl.substring(sUrl.indexOf('?') + 1));
-			// 	let sURLVariables = sPageURL.split('&');
-			// 	for (let i = 0; i < sURLVariables.length; i++) {
-			// 		let sParameterName = sURLVariables[i].split('=');
-			// 		if (sParameterName[0] == sParam) {
-			// 			return sParameterName[1];
-			// 		}
-			// 	}
-			// }
-
 			var in_page_push_chousen_object = in_page_push_array[1]
 			var in_page_push_number_woman = 0
-
-			// var in_page_push_old_link = $(".in-page-push-go").attr("href")
-			// var in_page_push_new_link = ""
-			// var in_page_push_banner_param = ""
-
 			var in_page_push_array_of_showed_object = []
 
 			var in_page_push_first_itaretion = true
@@ -414,16 +433,8 @@ admt_start = () => {
 				$("#in-page-push-link").text(in_page_push_chousen_object.link)
 
 				 
-				// in_page_push_banner_param = `crid=${in_page_push_chousen_object.id}`
 				params_object.crid_object.in_page_push = in_page_push_chousen_object.id
-				// formFinalLinkObject()
 
-				// if (in_page_push_old_link.includes("?")) {
-			 //        in_page_push_new_link = in_page_push_old_link + "&" + in_page_push_banner_param
-			 //    } else {
-			 //        in_page_push_new_link = in_page_push_old_link + "?" + in_page_push_banner_param
-			 //    }
-			 //    $(".in-page-push-go").attr("href" , in_page_push_new_link)
 			}
 			in_page_push_show_popup = () => {
 				setTimeout(()=>{
@@ -447,13 +458,18 @@ admt_start = () => {
 				}
 			});
 
-			$(".in-page-push-go").click(function(){
+			$(".in-page-push-go").click(function(e){
+				e.preventDefault()
+
 				params_object.frq = Number(params_object.frq) + 1 
 				params_object.flw = params_object.flw + "_inpp"
+
+				setTimeout(()=>{
+					window.open($(this).attr("href"), '_blank');
+				},100)
 				
 				in_page_push_hide_popup()
 				in_page_push_array.map((item , index) => {in_page_push_array_of_showed_object[index] = null})
-				// updateParams(`extra_param_1=${in_page_push_banner_param}`)
 			})
 
 			$("#in-page-push").css("opacity" , 1)
@@ -480,7 +496,7 @@ admt_start = () => {
 			        </p>
 			        <h4 id="comebacker-text"></h4>
 			        <div class="comebacker-button">
-			          <a class="comebacker-go" id="comebacker-link" target="_blank"></a>
+			          <a class="comebacker-go" id="comebacker-link"></a>
 			        </div>
 			      </div>
 			    </div>
@@ -493,48 +509,6 @@ admt_start = () => {
 				return null;
 			}
 
-			// var comebacker_array = [
-			// 	{
-			// 		name: "Kate",
-			// 		banner_desk: "comebacker-content/banner_desk_1.jpg", 
-			// 		banner_mob: "comebacker-content/banner_mob_1.jpg", 
-			// 		age: "22",
-			// 		id: "11111",
-			// 		text: "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉"
-			// 	},
-			// 	{
-			// 		name: "Sophia",
-			// 		banner_desk: "comebacker-content/banner_desk_2.jpg", 
-			// 		banner_mob: "comebacker-content/banner_mob_2.jpg", 
-			// 		age: "24",
-			// 		id: "22222",
-			// 		text: "Honey, would you like to entertain me? It's really boring now 😜 and I want romance so bad ..."
-			// 	},
-			// 	{
-			// 		name: "Irene",
-			// 		banner_desk: "comebacker-content/banner_desk_3.jpg", 
-			// 		banner_mob: "comebacker-content/banner_mob_3.jpg", 
-			// 		age: "23",
-			// 		id: "33333",
-			// 		text: "Hi there, doll 😚 do you like my ass like mine? 🤪"
-			// 	},
-			// 	{
-			// 		name: "Victoria",
-			// 		banner_desk: "comebacker-content/banner_desk_4.jpg", 
-			// 		banner_mob: "comebacker-content/banner_mob_4.jpg", 
-			// 		age: "23",
-			// 		id: "44444",
-			// 		text: "Hello hello hello 😉 how do you like my body?"
-			// 	},
-			// 	{
-			// 		name: "Melania",
-			// 		banner_desk: "comebacker-content/banner_desk_5.jpg", 
-			// 		banner_mob: "comebacker-content/banner_mob_5.jpg", 
-			// 		age: "22",
-			// 		id: "55555",
-			// 		text: "Hey sweetie. Hope you're as bored as I am 😙 How about we chat? Next, maybe I'll take some intimate pics for you 😏"
-			// 	},
-			// ]
 			var comebacker_array = []
 			admt_array.filter(item => item.type == "exit_popup")?.[0]?.data.map(item => {
 				let comebacker_object_local = {
@@ -550,24 +524,8 @@ admt_start = () => {
 				comebacker_array.push(comebacker_object_local)
 			})
 
-			// let getURLParameter = (sUrl, sParam) => {
-			// 	let sPageURL = decodeURI(sUrl.substring(sUrl.indexOf('?') + 1));
-			// 	let sURLVariables = sPageURL.split('&');
-			// 	for (let i = 0; i < sURLVariables.length; i++) {
-			// 		let sParameterName = sURLVariables[i].split('=');
-			// 		if (sParameterName[0] == sParam) {
-			// 			return sParameterName[1];
-			// 		}
-			// 	}
-			// }
-
 			var comebacker_chousen_object = comebacker_array[1]
 			var comebacker_number_woman = 0
-
-			// var comebacker_old_link = $(".comebacker-go").attr("href")
-			// var comebacker_new_link = ""
-			// var comebacker_banner_param = ""
-
 			var comebacker_array_of_showed_object = []
 
 
@@ -607,13 +565,6 @@ admt_start = () => {
 				// comebacker_banner_param = `crid=${comebacker_chousen_object.id}`
 				params_object.crid_object.comebacker = comebacker_chousen_object.id
 				// formFinalLinkObject()
-
-				// if (comebacker_old_link.includes("?")) {
-			 //        comebacker_new_link = comebacker_old_link + "&" + comebacker_banner_param
-			 //    } else {
-			 //        comebacker_new_link = comebacker_old_link + "?" + comebacker_banner_param
-			 //    }
-			 //    $(".comebacker-go").attr("href" , comebacker_new_link)
 			}
 			comebacker_show_popup = () => {
 				$("#comebacker").addClass("active")
@@ -626,13 +577,18 @@ admt_start = () => {
 				comebacker_hide_popup()
 			});
 
-			$(".comebacker-go").click(function() {
+			$(".comebacker-go").click(function(e) {
+				e.preventDefault()
+
 				params_object.frq = Number(params_object.frq) + 1 
 				params_object.flw = params_object.flw + "_expp"
+
+				setTimeout(()=>{
+					window.open($(this).attr("href"), '_blank');
+				},100)
 				
 				comebacker_hide_popup()
 				comebacker_array.map((item , index) => {comebacker_array_of_showed_object[index] = null})
-				// updateParams(`extra_param_2=${comebacker_banner_param}`)
 			})
 
 			$("html").mouseout(function(){
@@ -691,21 +647,6 @@ admt_start = () => {
 				},
 			]
 
-			// let getURLParameter = (sUrl, sParam) => {
-			// 	let sPageURL = decodeURI(sUrl.substring(sUrl.indexOf('?') + 1));
-			// 	let sURLVariables = sPageURL.split('&');
-			// 	for (let i = 0; i < sURLVariables.length; i++) {
-			// 		let sParameterName = sURLVariables[i].split('=');
-			// 		if (sParameterName[0] == sParam) {
-			// 			return sParameterName[1];
-			// 		}
-			// 	}
-			// }
-
-			// var inactive_tab_redirect_old_link = $(".inactive-tab-redirect-go").attr("href")
-			// var inactive_tab_redirect_new_link = ""
-			// var inactive_tab_redirect_param = ""
-
 			if ( getURLParameter(window.location.href, 'inact_rd_id') && inactive_tab_redirect_array.filter((item) => item.id == getURLParameter(window.location.href, 'inact_rd_id'))?.[0]?.id ){
 				inactive_tab_redirect_param = getURLParameter(window.location.href, 'inact_rd_id')
 			} else {
@@ -713,16 +654,7 @@ admt_start = () => {
 				inactive_tab_redirect_param = inactive_tab_redirect_array[inactive_tab_redirect_number].id
 			}
 
-			// if (inactive_tab_redirect_old_link.includes("?")) {
-			// 	inactive_tab_redirect_new_link = inactive_tab_redirect_old_link + "&" + inactive_tab_redirect_param
-			// } else {
-			// 	inactive_tab_redirect_new_link = inactive_tab_redirect_old_link + "?" + inactive_tab_redirect_param
-			// }
-
 			params_object.crid_object.inactive_tab_redirect = inactive_tab_redirect_param
-			// formFinalLinkObject()
-
-			// $(".inactive-tab-redirect-go").attr("href" , inactive_tab_redirect_new_link)
 
 			var visibilitychangeCount = 0
 			document.addEventListener("visibilitychange", () => {
@@ -733,8 +665,6 @@ admt_start = () => {
 						params_object.flw = params_object.flw + "_inact_rd"
 						
 						setTimeout(()=> {
-							// updateParams(`extra_param_3=${inactive_tab_redirect_param}`)
-							// window.location.href = inactive_tab_redirect_new_link
 							window.location.href = $(".inactive-tab-redirect-go").attr("href")
 						},1500) 
 					}
@@ -763,7 +693,7 @@ admt_start = () => {
 		        	</p>
 			        <h4 id="inactive-tab-banner-text"></h4>
 			        <div class="inactive-tab-banner-button">
-			          <a class="inactive-tab-banner-go" id="inactive-tab-banner-link" target="_blank"></a>
+			          <a class="inactive-tab-banner-go" id="inactive-tab-banner-link"></a>
 			        </div>
 			      </div>
 			    </div>
@@ -771,48 +701,6 @@ admt_start = () => {
 		  	`
 			);
 
-			// var inactive_tab_banner_array = [
-			// 	{
-			// 		name: "Kate",
-			// 		banner_desk: "inactive-tab-banner-content/banner_desk_1.jpg", 
-			// 		banner_mob: "inactive-tab-banner-content/banner_mob_1.jpg", 
-			// 		age: "22",
-			// 		id: "11111",
-			// 		text: "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉"
-			// 	},
-			// 	{
-			// 		name: "Sophia",
-			// 		banner_desk: "inactive-tab-banner-content/banner_desk_2.jpg", 
-			// 		banner_mob: "inactive-tab-banner-content/banner_mob_2.jpg", 
-			// 		age: "24",
-			// 		id: "22222",
-			// 		text: "Honey, would you like to entertain me? It's really boring now 😜 and I want romance so bad ..."
-			// 	},
-			// 	{
-			// 		name: "Irene",
-			// 		banner_desk: "inactive-tab-banner-content/banner_desk_3.jpg", 
-			// 		banner_mob: "inactive-tab-banner-content/banner_mob_3.jpg", 
-			// 		age: "23",
-			// 		id: "33333",
-			// 		text: "Hi there, doll 😚 do you like my ass like mine? 🤪"
-			// 	},
-			// 	{
-			// 		name: "Victoria",
-			// 		banner_desk: "inactive-tab-banner-content/banner_desk_4.jpg", 
-			// 		banner_mob: "inactive-tab-banner-content/banner_mob_4.jpg", 
-			// 		age: "23",
-			// 		id: "44444",
-			// 		text: "Hello hello hello 😉 how do you like my body?"
-			// 	},
-			// 	{
-			// 		name: "Melania",
-			// 		banner_desk: "inactive-tab-banner-content/banner_desk_5.jpg", 
-			// 		banner_mob: "inactive-tab-banner-content/banner_mob_5.jpg", 
-			// 		age: "22",
-			// 		id: "55555",
-			// 		text: "Hey sweetie. Hope you're as bored as I am 😙 How about we chat? Next, maybe I'll take some intimate pics for you 😏"
-			// 	},
-			// ]
 			var inactive_tab_banner_array = []
 			admt_array.filter(item => item.type == "inactive_banner")?.[0]?.data.map(item => {
 				let inactive_tab_banner_object_local = {
@@ -828,26 +716,9 @@ admt_start = () => {
 				inactive_tab_banner_array.push(inactive_tab_banner_object_local)
 			})
 
-			// let getURLParameter = (sUrl, sParam) => {
-			// 	let sPageURL = decodeURI(sUrl.substring(sUrl.indexOf('?') + 1));
-			// 	let sURLVariables = sPageURL.split('&');
-			// 	for (let i = 0; i < sURLVariables.length; i++) {
-			// 		let sParameterName = sURLVariables[i].split('=');
-			// 		if (sParameterName[0] == sParam) {
-			// 			return sParameterName[1];
-			// 		}
-			// 	}
-			// }
-
 			var inactive_tab_banner_chousen_object = inactive_tab_banner_array[1]
 			var inactive_tab_banner_number_woman = 0
-
-			// var inactive_tab_banner_old_link = $(".inactive-tab-banner-go").attr("href")
-			// var inactive_tab_banner_new_link = ""
-			// var inactive_tab_banner_banner_param = ""
-
 			var inactive_tab_banner_array_of_showed_object = []
-
 
 			var inactive_tab_banner_first_itaretion = true
 			inactive_tab_banner_get_random_object = () => {
@@ -882,16 +753,8 @@ admt_start = () => {
 					$("#inactive-tab-banner-content").css("background-image" , `url(${inactive_tab_banner_chousen_object.banner_mob})`)
 			    }
 				 
-				// inactive_tab_banner_banner_param = `crid=${inactive_tab_banner_chousen_object.id}`
 				params_object.crid_object.inactive_tab_banner = inactive_tab_banner_chousen_object.id
-				// formFinalLinkObject()
 
-				// if (inactive_tab_banner_old_link.includes("?")) {
-			 //        inactive_tab_banner_new_link = inactive_tab_banner_old_link + "&" + inactive_tab_banner_banner_param
-			 //    } else {
-			 //        inactive_tab_banner_new_link = inactive_tab_banner_old_link + "?" + inactive_tab_banner_banner_param
-			 //    }
-			 //    $(".inactive-tab-banner-go").attr("href" , inactive_tab_banner_new_link)
 			}
 			inactive_tab_banner_show_popup = () => {
 				$("#inactive-tab-banner").addClass("active")
@@ -904,13 +767,18 @@ admt_start = () => {
 				inactive_tab_banner_hide_popup()
 			});
 
-			$(".inactive-tab-banner-go").click(function() {
+			$(".inactive-tab-banner-go").click(function(e) {
+				e.preventDefault()
+
 				params_object.frq = Number(params_object.frq) + 1 
 				params_object.flw = params_object.flw + "_inact_b"
+
+				setTimeout(()=>{
+					window.open($(this).attr("href"), '_blank');
+				},100)
 					
 				inactive_tab_banner_hide_popup()
 				inactive_tab_banner_array.map((item , index) => {inactive_tab_banner_array_of_showed_object[index] = null})
-				// updateParams(`extra_param_3=${inactive_tab_banner_banner_param}`)
 			})
 
 			document.addEventListener("visibilitychange", () => {
@@ -973,21 +841,6 @@ admt_start = () => {
 				},
 			]
 
-			// let getURLParameter = (sUrl, sParam) => {
-			// 	let sPageURL = decodeURI(sUrl.substring(sUrl.indexOf('?') + 1));
-			// 	let sURLVariables = sPageURL.split('&');
-			// 	for (let i = 0; i < sURLVariables.length; i++) {
-			// 		let sParameterName = sURLVariables[i].split('=');
-			// 		if (sParameterName[0] == sParam) {
-			// 			return sParameterName[1];
-			// 		}
-			// 	}
-			// }
-
-			// var back_button_old_link = $(".back-button-go").attr("href")
-			// var back_button_new_link = ""
-			// var back_button_param = ""
-
 			if ( getURLParameter(window.location.href, 'bb_id') && back_button_array.filter((item) => item.id == getURLParameter(window.location.href, 'bb_id'))?.[0]?.id ){
 				back_button_param = getURLParameter(window.location.href, 'bb_id')
 			} else {
@@ -995,22 +848,11 @@ admt_start = () => {
 				back_button_param = back_button_array[back_button_number].id
 			}
 
-			// if (back_button_old_link.includes("?")) {
-			// 	back_button_new_link = back_button_old_link + "&" + back_button_param
-			// } else {
-			// 	back_button_new_link = back_button_old_link + "?" + back_button_param
-			// }
-
 			params_object.crid_object.back_button = back_button_param
-
-			// $(".back-button-go").attr("href" , back_button_new_link)
 
 			if (window.history && window.history.pushState) {
 				window.history.pushState('forward','',window.location.href);
-				// window.history.pushState('forward', "", "");
 				$(window).on('popstate', function() {
-					// updateParams(`extra_param_4=${back_button_param}`)
-					// formFinalLinkObject()
 					params_object.frq = Number(params_object.frq) + 1 
 					params_object.flw = params_object.flw + "_bb"
 						
@@ -1025,22 +867,6 @@ admt_start = () => {
 	// web push
 	if ( admt_array.filter(item => item.type == "web_push" && item.active == true)[0] ) {
 		$(document).ready(function(){
-			// window.web_push_notification_domains = {
-			// 	"youxter.com": {
-			// 		onesignal_app_id: "3c3e6cb6-4c2a-4664-99ea-5970db55eb44",
-			// 	},
-			// 	"kreeem.xyz": {
-			// 		onesignal_app_id: "01a5cc5e-70b8-48e5-bbab-9b82617dd6f8",
-			// 	},
-			// 	"btc-prime.me": {
-			// 		onesignal_app_id: "46073690-6606-4911-9b32-de81a939a759",
-			// 	},
-			// 	"rexivi.com": {
-			// 		onesignal_app_id: "21d333bb-5404-416e-9e68-19bfe60bca2f",
-			// 	},
-			// }
-
-			// let current_domain = window.location.host
 			let wpn_object_local = {}
 			admt_array.filter(item => item.type == "web_push")?.[0]?.data.map(item => {
 				wpn_object_local = {
@@ -1053,7 +879,6 @@ admt_start = () => {
 
 			window.OneSignal = window.OneSignal || [];
 		    var initConfig = {
-		        // appId: web_push_notification_domains?.[current_domain]?.onesignal_app_id,
 		        appId: admt_array.filter(item => item.type == "web_push" && item.active == true)?.[0]?.app_id,
 		        safari_web_id: admt_array.filter(item => item.type == "web_push" && item.active == true)?.[0]?.safari_id,
 		        notifyButton: {
@@ -1149,98 +974,6 @@ admt_start = () => {
 			});
 		});
 	}
-
-	// web push redirect
-	if ( admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0] ) {
-		document.querySelector("body").insertAdjacentHTML("beforeend", 
-		`
-		<div id="imwp">
-			<div class="imwp-img"> 
-				<img src="" alt="" id="imwp-img">
-			</div>
-			<div class="imwp-content">
-				<h4 class="imwp-title" id="imwp-title"></h4>
-				<p class="imwp-text" id="imwp-text"></p>
-				<div class="imwp-btns">
-					<a class="imwp-btn imwp-btn-decline imes-to-push-go" target="_blank" id="imwp-link-no">Decline</a>
-					<a class="imwp-btn imwp-btn-accept imes-to-push-go" target="_blank" id="imwp-link-yes">Accept</a>
-				</div>
-			</div>
-		</div>
-	  	`
-		);
-
-		var imes_to_push_array = []
-		admt_array.filter(item => item.type == "imes_to_push")?.[0]?.data.map(item => {
-			let imes_to_push_object_local = {
-				id: item.id,
-				img: item.img_3, 
-				name: item.text_1,
-				age: item.text_2,
-				title: item.text_3,
-				text: item.text_5,
-				link: item.text_6,
-			}
-			imes_to_push_array.push(imes_to_push_object_local)
-		})
-
-		var imes_to_push_chousen_object = imes_to_push_array[1]
-		var imes_to_push_number_woman = 0
-
-		var imes_to_push_array_of_showed_object = []
-
-		var imes_to_push_first_itaretion = true
-		imes_to_push_get_random_object = () => {
-			do {
-				// if has imwp_id params in link and if this imwp_id is in array
-				if (imes_to_push_first_itaretion && getURLParameter(window.location.href, 'imwp_id') && imes_to_push_array.filter((item) => item.id == getURLParameter(window.location.href, 'imwp_id'))[0]) {
-					imes_to_push_array.map((item, index) => { 
-						if (item.id == getURLParameter(window.location.href, 'imwp_id')) {
-							imes_to_push_number_woman = index
-						}
-					})
-				} else {
-					imes_to_push_number_woman = Math.floor(Math.random() * imes_to_push_array.length);
-				}
-				imes_to_push_first_itaretion = false
-			} while (imes_to_push_array_of_showed_object.includes(imes_to_push_number_woman))
-
-			imes_to_push_array[imes_to_push_number_woman]
-
-			imes_to_push_array_of_showed_object.push(imes_to_push_number_woman)
-
-			imes_to_push_chousen_object = imes_to_push_array[imes_to_push_number_woman]
-
-			$("#imwp-img").attr("src" , imes_to_push_chousen_object.img)
-			$("#imwp-title").text(imes_to_push_chousen_object.title)
-			$("#imwp-text").text(imes_to_push_chousen_object.text)
-			$("#imwp-link-no").text(imes_to_push_chousen_object.link_no)
-			$("#imwp-link-yes").text(imes_to_push_chousen_object.link_yes)
-			 
-			params_object.crid_object.imes_to_push = imes_to_push_chousen_object.id
-		}
-
-		imes_to_push_show_popup = () => {
-			$("#imwp").addClass("active")
-		}
-		imes_to_push_hide_popup = () => {
-			$("#imwp").removeClass("active")
-		}
-
-		$(".imes-to-push-go").click(function() {
-			params_object.frq = Number(params_object.frq) + 1 
-			params_object.flw = params_object.flw + "_imwp"
-			imes_to_push_hide_popup()
-			imes_to_push_array.map((item , index) => {imes_to_push_array_of_showed_object[index] = null})
-		})
-
-		setTimeout(()=>{
-			imes_to_push_get_random_object()
-			imes_to_push_show_popup()
-			$("#imwp").addClass("active")
-		},1000)
-	}
-
 }
 
 (check_jquery = () => {

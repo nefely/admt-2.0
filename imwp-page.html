@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ADMT IMWP PAGE</title>
+</head>
+<body id="imwp-page-body">
+
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script type="text/javascript">
+window.getURLParameter = (sUrl, sParam) => {
+    let sPageURL = decodeURI(sUrl.substring(sUrl.indexOf('?') + 1));
+    let sURLVariables = sPageURL.split('&');
+    for (let i = 0; i < sURLVariables.length; i++) {
+        let sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) {
+            return sParameterName[1];
+        }
+    }
+}
+
+window.admt_conf = {
+	key: getURLParameter(window.location.href , "admt_c_t"),
+	offer: `{offer}`
+}
+</script>
+<!-- <script src="https://cdn.adasty.com/a/admt_scripts.js"></script> -->
+<script src="admt_scripts.js?v=33333"></script>
+
+</body>
+</html>
