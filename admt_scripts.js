@@ -10,7 +10,7 @@ get_admt = () => {
 	      	admt_array.push({
 			    "type": "imes_to_push",
 			    "active": true,
-			    "url": "imwp-offer.html?monetization=imes-to-push",
+			    "url": "imwp-page.html?monetization=imes-to-push",
 			    "data": [
 			        {
 			            "id": 7,
@@ -107,6 +107,7 @@ admt_start = () => {
 	        params_object.start_link_object.back_button = admt_array.filter(item => item.type == "back_button")?.[0]?.url
 	        params_object.start_link_object.second_offer = admt_array.filter(item => item.type == "second_offer")?.[0]?.url
 	        params_object.start_link_object.imes_to_push = admt_array.filter(item => item.type == "imes_to_push")?.[0]?.url
+	        params_object.start_link_object.imes_to_push_page = admt_conf?.offer
 
 	        // WEB PUSH NOTIFICATION SETTINGS ------------------------------- //
 
@@ -208,6 +209,14 @@ admt_start = () => {
 	                } else {
 	                    params_object.final_link_object.imes_to_push = `${params_object.start_link_object.imes_to_push}?admt_c_t=${admt_conf.key}&${imes_to_push__crid}&${__aid_sorc}&${__vertical}&${__sorc_id}&admt=imwp&${__sorc_land_id}&${__sorc_ref}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__frq}&${__flw}`
 	                }
+	                // imes_to_push__crid
+	                imes_to_push_page__crid = getURLParameter(window.location.href, 'crid') ? `crid=${getURLParameter(window.location.href, 'crid')}` : ``
+	                // form imes_to_push_page final link
+	                if (params_object?.start_link_object?.imes_to_push_page?.includes("?")) {
+	                    params_object.final_link_object.imes_to_push_page = `${params_object.start_link_object.imes_to_push_page}&admt_c_t=${admt_conf.key}&${imes_to_push_page__crid}&${__aid_sorc}&${__vertical}&${__sorc_id}&admt=imwp&${__sorc_land_id}&${__sorc_ref}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__frq}&${__flw}`
+	                } else {
+	                    params_object.final_link_object.imes_to_push_page = `${params_object.start_link_object.imes_to_push_page}?admt_c_t=${admt_conf.key}&${imes_to_push_page__crid}&${__aid_sorc}&${__vertical}&${__sorc_id}&admt=imwp&${__sorc_land_id}&${__sorc_ref}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__frq}&${__flw}`
+	                }
 
 	            AssignLinkValueToLink(params_object.final_link_object)
 	        },0)
@@ -234,7 +243,10 @@ admt_start = () => {
 
 	// web push redirect
 	if ( admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0] ) {
+		console.log(1)
 		if ($("body").attr("id") !== "imwp-page-body") {
+			console.log(2)
+
 			document.querySelector("body").insertAdjacentHTML("beforeend", 
 			`
 			<div id="imwp">
@@ -329,27 +341,109 @@ admt_start = () => {
 				$("#imwp").addClass("active")
 			},1000)
 		} else {
+			console.log(3)
 			admt_array.map(item => item.type == "imes_to_push" ? item.active = true : item.active = false )?.[0]
 
 			document.querySelector("body").insertAdjacentHTML("beforeend", 
 			`
 			<div id="imwp-page">
 				<div class="imwp-page-img"> 
-					<img src="https://cdn.adasty.com/c/01GRAES1CRGVWBZVHFA75NN4J1.jpg" alt="" id="imwp-page-img">
+					<img src="" alt="" id="imwp-page-img">
 				</div>
 				<div class="mwp-page-content">
-					<h4 class="mwp-page-title" id="mwp-page-title">New message (1)</h4>
-					<p class="mwp-page-text" id="mwp-page-text">I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉</p>
+					<h4 class="mwp-page-title" id="mwp-page-title"></h4>
+					<p class="mwp-page-text" id="mwp-page-text"></p>
 				</div>
 			</div>
 			<a class="imes-to-push-page-go" style="display: none !important; padding: 0: !important; margin: 0 !important; visibility: hidden !important; opacity: 0 !important;"></a>
 		  	`
 			);
 
-			setTimeout(()=>{
-				params_object.final_link_object.imes_to_push_page = admt_conf.offer
-			},100) 
+			$("#imwp-page-img").attr("src" , admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0].data.filter(item => item.id == getURLParameter(window.location.href, 'crid'))[0].img_1)
+			$("#mwp-page-title").text(admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0].data.filter(item => item.id == getURLParameter(window.location.href, 'crid'))[0].text_1)
+			$("#mwp-page-text").text(admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0].data.filter(item => item.id == getURLParameter(window.location.href, 'crid'))[0].text_2)
 
+			window.OneSignal = window.OneSignal || [];
+		    var initConfig = {
+		        appId: admt_array.filter(item => item.type == "web_push")?.[0]?.app_id,
+		        safari_web_id: admt_array.filter(item => item.type == "web_push")?.[0]?.safari_id,
+		    };
+			
+			OneSignal.push(function() {
+
+
+				// OneSignal.SERVICE_WORKER_PARAM = { scope: `/${params_object.web_push_notification_setting.service_worker_path}/` };
+				// OneSignal.SERVICE_WORKER_PATH = `${params_object.web_push_notification_setting.service_worker_path}/OneSignalSDKWorker.js`
+				// OneSignal.SERVICE_WORKER_UPDATER_PATH = `${params_object.web_push_notification_setting.service_worker_path}/OneSignalSDKWorker.js`
+
+				OneSignal.init(initConfig);
+				OneSignal.showNativePrompt();
+
+				OneSignal.getUserId().then(() => {
+					// aid_sorc (aid param from link)
+					if (params_object.aid) {
+						OneSignal.sendTag("aid_sorc", params_object.aid);
+					}
+
+					// ExternalUserId && ckid_sorc (from document.cookie)
+					OneSignal.getExternalUserId().then(function(externalUserId){
+						if (!externalUserId && params_object.subid) {
+							OneSignal.setExternalUserId(params_object.subid);
+							OneSignal.sendTag("ckid_sorc", params_object.subid);
+						}
+					});
+
+					// vertical (written)
+					if (params_object.vertical) {
+						OneSignal.sendTag("vertical", params_object.vertical);
+					}
+
+					// source (written)
+					if (params_object.source) {
+						OneSignal.sendTag("sorc_id", params_object.source);
+					}
+
+					// site_name (site_name param from link)
+					if (params_object.site_name) {
+						OneSignal.sendTag("sorc_ref", params_object.site_name);
+					}
+
+					// wpn_id banner id
+					if (params_object.wpn_id) {
+						OneSignal.sendTag("crid", params_object.wpn_id);
+					}
+
+					// sorc_land_id (from keitaro)
+					if (params_object.sorc_land_id) {
+						OneSignal.sendTag("sorc_land_id", `${params_object.sorc_land_id}_${admt_conf?.campaign_id}_${admt_conf?.stream_id}`);
+					}
+
+					// age (from answers)
+					if (params_object.age) {
+						OneSignal.sendTag("a", params_object.age);
+					}
+
+					// sex (from answers)
+					if (params_object.sex) {
+						OneSignal.sendTag("sx", params_object.sex);
+					}
+
+					// interests (from answers)
+					if (params_object.interests) {
+						OneSignal.sendTag("intst", params_object.interests);
+					}
+				});
+			});
+
+
+			// setTimeout(()=>{
+			// 	params_object.frq = Number(params_object.frq) + 1 
+			// 	params_object.flw = params_object.flw + "_imwp_page"
+
+			// 	setTimeout(()=>{
+			// 		window.open($(".imes-to-push-page-go").attr("href"));
+			// 	},100)
+			// }, 7000)
 		}
 	}
 
@@ -431,7 +525,6 @@ admt_start = () => {
 				$("#in-page-push-title").text(in_page_push_chousen_object.title)
 				$("#in-page-push-text").text(in_page_push_chousen_object.text)
 				$("#in-page-push-link").text(in_page_push_chousen_object.link)
-
 				 
 				params_object.crid_object.in_page_push = in_page_push_chousen_object.id
 
@@ -865,8 +958,10 @@ admt_start = () => {
 	}
 
 	// web push
-	if ( admt_array.filter(item => item.type == "web_push" && item.active == true)[0] ) {
+	if ( admt_array.filter(item => item.type == "web_push" && item.active == true)[0] && $("body").attr("id") !== "imwp-page-body") {
+		console.log(4)
 		$(document).ready(function(){
+			console.log(5)
 			let wpn_object_local = {}
 			admt_array.filter(item => item.type == "web_push")?.[0]?.data.map(item => {
 				wpn_object_local = {
