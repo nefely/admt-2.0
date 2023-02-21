@@ -10,7 +10,13 @@ get_admt = () => {
 	      	admt_array.push({
 			    "type": "imes_to_push",
 			    "active": true,
-			    "url": "imwp-page.html?monetization=imes-to-push&vertical=test-vertical-7&sorc_id=test-sorc-id-7",
+			    "url": "12345?monetization=imes-to-push&vertical=test-vertical-7&sorc_id=test-sorc-id-7",
+			    "domain": [
+			    	"https://justkissmyass.com/",
+			    	"https://chetotam.xyz/",
+			    	"https://marketgo.store/",
+			    	"https://appforyou.store/",
+			    ],
 			    "data": [
 			        {
 			            "id": 7,
@@ -106,8 +112,14 @@ admt_start = () => {
 	        params_object.start_link_object.inactive_tab_banner = admt_array.filter(item => item.type == "inactive_banner")?.[0]?.url
 	        params_object.start_link_object.back_button = admt_array.filter(item => item.type == "back_button")?.[0]?.url
 	        params_object.start_link_object.second_offer = admt_array.filter(item => item.type == "second_offer")?.[0]?.url
-	        params_object.start_link_object.imes_to_push = admt_array.filter(item => item.type == "imes_to_push")?.[0]?.url
-	        params_object.start_link_object.imes_to_push_page = admt_conf?.offer
+
+		        // imes link
+			        let imes_to_push_page_array_url = admt_array.filter(item => item.type == "imes_to_push")[0].domain.filter(item => !item.includes(window.location.host))
+			        let imes_to_push_page_url = imes_to_push_page_array_url[Math.floor(Math.random() * imes_to_push_page_array_url.length)]
+			        console.log(imes_to_push_page_url)
+
+		        params_object.start_link_object.imes_to_push = imes_to_push_page_url + admt_array.filter(item => item.type == "imes_to_push")?.[0]?.url
+		        params_object.start_link_object.imes_to_push_page = admt_conf?.offer
 
 	        // WEB PUSH NOTIFICATION SETTINGS ------------------------------- //
 
@@ -402,12 +414,12 @@ admt_start = () => {
 
 			// setTimeout(()=>{
 			// 	params_object.frq = Number(params_object.frq) + 1 
-			// 	params_object.flw = params_object.flw + "_imwp_page"
+			// 	params_object.flw = params_object.flw + "_imwp-page"
 
 			// 	setTimeout(()=>{
-			// 		window.open($(".imes-to-push-page-go").attr("href"));
+			// 		window.location.href = $(".imes-to-push-page-go").attr("href");
 			// 	},100)
-			// }, 7000)
+			// }, 10000)
 		}
 	}
 

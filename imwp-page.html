@@ -21,12 +21,21 @@ window.getURLParameter = (sUrl, sParam) => {
 }
 
 window.admt_conf = {
-	key: getURLParameter(window.location.href , "admt_c_t"),
-	offer: `{offer}`
+    key: getURLParameter(window.location.href , "admt_c_t"),
+
+    subid: `{subid}`,
+    landing_id: `{landing_id}`,
+    campaign_id: `{campaign_id}`,
+    stream_id: `{stream_id}`,
+
+    vertical: "adult",
+    sorc_id: "trxr",
+
+    offer: `{offer}`
 }
 </script>
 <!-- <script src="https://cdn.adasty.com/a/admt_scripts.js"></script> -->
-<script src="admt_scripts.js?v=604"></script>
+<script src="admt_scripts.js?v=608"></script>
 
 </body>
 </html>
