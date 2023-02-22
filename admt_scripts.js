@@ -419,7 +419,7 @@ admt_start = () => {
 			// 	setTimeout(()=>{
 			// 		window.location.href = $(".imes-to-push-page-go").attr("href");
 			// 	},100)
-			// }, 10000)
+			// }, 7000)
 		}
 	}
 
