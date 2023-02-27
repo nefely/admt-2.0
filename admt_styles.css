@@ -482,7 +482,9 @@
 	position: relative !important;
 	overflow: hidden !important;
 }
-
+#onesignal-slidedown-container #onesignal-slidedown-dialog button {
+	height: auto !important;
+}
 
 
 

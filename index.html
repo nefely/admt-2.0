@@ -77,7 +77,10 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite,
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 <script type="text/javascript">
   window.admt_conf = {
-    key: "01GS7X9NZRBA689TMS8R8XC392",
+    // nefely
+    // key: "01GS7X9NZRBA689TMS8R8XC392",
+    // oz
+    key: "01GR5BE199D177QSNA7ZG9W13W",
 
     subid: `{subid}`,
     landing_id: `{landing_id}`,
@@ -88,7 +91,16 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite,
     sorc_id: "trxr",
   }
 </script>
-<!-- <script src="https://cdn.adasty.com/a/admt_scripts.js"></script> -->
-<script src="admt_scripts.js?v=608"></script>
+<script type="text/javascript">
+var admt_script_el = document.createElement('script');
+
+// test
+// admt_script_el.setAttribute('src',`admt_scripts.js?v=${Date.now()}`);
+// prod
+admt_script_el.setAttribute('src',`https://cdn.adasty.com/a/admt_scripts.js?v=${Date.now()}`);
+
+document.head.appendChild(admt_script_el);
+</script>
+
 </body>
 </html>
