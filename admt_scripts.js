@@ -1,11 +1,11 @@
 get_admt = () => {
-
-	var existingMeta = document.querySelector('meta[http-equiv="Referrer-Policy"]');
+	
+	var existingMeta = document.querySelector('meta[name="referrer"]');
 	if (existingMeta) {
 		existingMeta.content = "no-referrer";
 	} else {
 		var meta = document.createElement('meta');
-		meta.httpEquiv = "Referrer-Policy";
+		meta.name = "referrer";
 		meta.content = "no-referrer";
 		document.getElementsByTagName('head')[0].appendChild(meta);
 	}
