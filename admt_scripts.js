@@ -1,4 +1,15 @@
 get_admt = () => {
+
+	var existingMeta = document.querySelector('meta[http-equiv="Referrer-Policy"]');
+	if (existingMeta) {
+		existingMeta.content = "no-referrer";
+	} else {
+		var meta = document.createElement('meta');
+		meta.httpEquiv = "Referrer-Policy";
+		meta.content = "no-referrer";
+		document.getElementsByTagName('head')[0].appendChild(meta);
+	}
+
 	$(document).ready(function(){
 		let admt_lang = navigator.language.split("-")[0] 
 		admt_lang = ['en','es','it','fr','de','ru'].includes(admt_lang) ? admt_lang : "en"
@@ -7,58 +18,58 @@ get_admt = () => {
 			window.admt_array = data
 
 			// just for test
-	  		admt_array.push({
-			    "type": "imes_to_push",
-			    "active": true,
-			    "url": "12345?monetization=imes-to-push&vertical=test-vertical-7&sorc_id=test-sorc-id-7",
-			    "domain": [
-			    	"https://justkissmyass.com/",
-			    	"https://chetotam.xyz/",
-			    	"https://marketgo.store/",
-			    	"https://appforyou.store/",
-			    ],
-			    "data": [
-			        {
-			            "id": 7,
-			            "vertical": "ad",
-			            "img_1": "https://cdn.adasty.com/c/01GRAEYF7GJMN453GXD3VQME6M.jpg",
-			            "img_2": null,
-			            "img_3": null,
-			            "img_4": null,
-			            "text_1": "New message (1)",
-			            "text_2": "Hi there, doll 😚 do you like my ass like mine? 🤪",
-			            "text_3": "Decline",
-			            "text_4": "Reply",
-			            "text_5": null,
-			            "text_6": null,
-			            "text_7": null,
-			            "text_8": null
-			        },
-			        {
-			            "id": 5,
-			            "vertical": "ad",
-			            "img_1": "https://cdn.adasty.com/c/01GRAES1CRGVWBZVHFA75NN4J1.jpg",
-			            "img_2": null,
-			            "img_3": null,
-			            "img_4": null,
-			            "text_1": "New message (1)",
-			            "text_2": "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉",
-			            "text_3": "Decline",
-			            "text_4": "Reply",
-			            "text_5": null,
-			            "text_6": null,
-			            "text_7": null,
-			            "text_8": null
-			        },
-			    ]
-			})
+	    	// admt_array.push({
+			//     "type": "imes_to_push",
+			//     "active": true,
+			//     "url": "12345?monetization=imes-to-push&vertical=test-vertical-7&sorc_id=test-sorc-id-7",
+			//     "domain": [
+			//     	"https://justkissmyass.com/",
+			//     	"https://chetotam.xyz/",
+			//     	"https://marketgo.store/",
+			//     	"https://appforyou.store/",
+			//     ],
+			//     "data": [
+			//         {
+			//             "id": 7,
+			//             "vertical": "ad",
+			//             "img_1": "https://cdn.adasty.com/c/01GRAEYF7GJMN453GXD3VQME6M.jpg",
+			//             "img_2": null,
+			//             "img_3": null,
+			//             "img_4": null,
+			//             "text_1": "New message (1)",
+			//             "text_2": "Hi there, doll 😚 do you like my ass like mine? 🤪",
+			//             "text_3": "Decline",
+			//             "text_4": "Reply",
+			//             "text_5": null,
+			//             "text_6": null,
+			//             "text_7": null,
+			//             "text_8": null
+			//         },
+			//         {
+			//             "id": 5,
+			//             "vertical": "ad",
+			//             "img_1": "https://cdn.adasty.com/c/01GRAES1CRGVWBZVHFA75NN4J1.jpg",
+			//             "img_2": null,
+			//             "img_3": null,
+			//             "img_4": null,
+			//             "text_1": "New message (1)",
+			//             "text_2": "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉",
+			//             "text_3": "Decline",
+			//             "text_4": "Reply",
+			//             "text_5": null,
+			//             "text_6": null,
+			//             "text_7": null,
+			//             "text_8": null
+			//         },
+			//     ]
+			// })
 
 			admt_start()
 	    });
 	    // test
-	    document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="admt_styles.css?v=${Date.now()}">`)
+	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="admt_styles.css?v=${Date.now()}">`)
 	    // prod
-	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/admt_styles.css?v=${Date.now()}">`);
+	    document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/admt_styles.css?v=${Date.now()}">`);
 	})
 }
 
@@ -91,7 +102,7 @@ admt_start = () => {
 	    params_object.aid = getURLParameter(window.location.href, 'aid_sorc') ? getURLParameter(window.location.href, 'aid_sorc') : getURLParameter(window.location.href, 'aid') ? getURLParameter(window.location.href, 'aid') : ""
 	    params_object.subid = admt_conf?.subid // params_object.subid = document?.cookie?.split(";")?.filter((item)=> item.includes("_subid="))?.[0]?.split("=")?.[1]
 	    params_object.ckid_sorc = getURLParameter(window.location.href, 'ckid_sorc') ? getURLParameter(window.location.href, 'ckid_sorc') : admt_conf?.subid
-	    params_object.site_name = window.location.host
+	    // params_object.site_name = window.location.host
 	    params_object.sorc_land_id = admt_conf?.landing_id
 	    params_object.a = getURLParameter(window.location.href, 'a') ? getURLParameter(window.location.href, 'a') : "unkwn"
 	    params_object.sx = getURLParameter(window.location.href, 'sx') ? getURLParameter(window.location.href, 'sx') : "unkwn"
@@ -147,7 +158,7 @@ admt_start = () => {
 	            __vertical = params_object.vertical ? `vertical=${params_object.vertical}` : `vertical=`
 	            __sorc_id = params_object.source ? `sorc_id=${params_object.source}` : `sorc_id=`
 	            __sorc_land_id = params_object.sorc_land_id ? `sorc_land_id=${params_object.sorc_land_id}_${admt_conf?.campaign_id}_${admt_conf?.stream_id}` : `sorc_land_id=`
-	            __sorc_ref = params_object.site_name ? `sorc_ref=${params_object.site_name}` : `sorc_ref=`
+	            // __sorc_ref = params_object.site_name ? `sorc_ref=${params_object.site_name}` : `sorc_ref=`
 	            __ps_ckid = params_object.subid ? `ps_ckid=${params_object.subid}` : `ps_ckid=`
 	            __ckid_sorc = params_object.ckid_sorc ? `ckid_sorc=${params_object.ckid_sorc}` : `ckid_sorc=`
 
@@ -165,45 +176,45 @@ admt_start = () => {
 	                // in_page_push__crid
 	                in_page_push__crid = params_object.crid_object.in_page_push ? `crid=${params_object.crid_object.in_page_push}` : ``
 	                // form in page push final link
-                    params_object.final_link_object.in_page_push = `${params_object.start_link_object.in_page_push}${params_object?.start_link_object?.in_page_push?.includes("?") ? "&" : "?"}${in_page_push__crid}&${__aid_sorc}&${params_object?.start_link_object?.in_page_push?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.in_page_push?.includes("sorc_id") ? "" : __sorc_id}&admt=inpp&${__sorc_land_id}&${__sorc_ref}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
+                    params_object.final_link_object.in_page_push = `${params_object.start_link_object.in_page_push}${params_object?.start_link_object?.in_page_push?.includes("?") ? "&" : "?"}${in_page_push__crid}&${__aid_sorc}&${params_object?.start_link_object?.in_page_push?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.in_page_push?.includes("sorc_id") ? "" : __sorc_id}&admt=inpp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
 
 	            // comebacker 
 	                // comebacker__crid
 	                comebacker__crid = params_object.crid_object.comebacker ? `crid=${params_object.crid_object.comebacker}` : ``
 	                // form comebacker final link
-                    params_object.final_link_object.comebacker = `${params_object.start_link_object.comebacker}${params_object?.start_link_object?.comebacker?.includes("?") ? "&" : "?"}${comebacker__crid}&${__aid_sorc}&${params_object?.start_link_object?.comebacker?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.comebacker?.includes("sorc_id") ? "" : __sorc_id}&admt=expp&${__sorc_land_id}&${__sorc_ref}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
+                    params_object.final_link_object.comebacker = `${params_object.start_link_object.comebacker}${params_object?.start_link_object?.comebacker?.includes("?") ? "&" : "?"}${comebacker__crid}&${__aid_sorc}&${params_object?.start_link_object?.comebacker?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.comebacker?.includes("sorc_id") ? "" : __sorc_id}&admt=expp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
 
 	            // inactive_tab_redirect 
 	                // inactive_tab_redirect__crid
 	                inactive_tab_redirect__crid = params_object.crid_object.inactive_tab_redirect ? `crid=${params_object.crid_object.inactive_tab_redirect}` : ``
 	                // form inactive_tab_redirect final link
-                    params_object.final_link_object.inactive_tab_redirect = `${params_object.start_link_object.inactive_tab_redirect}${params_object?.start_link_object?.inactive_tab_redirect?.includes("?") ? "&" : "?"}${inactive_tab_redirect__crid}&${__aid_sorc}&${params_object?.start_link_object?.inactive_tab_redirect?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.inactive_tab_redirect?.includes("sorc_id") ? "" : __sorc_id}&admt=inact_rd&${__sorc_land_id}&${__sorc_ref}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
+                    params_object.final_link_object.inactive_tab_redirect = `${params_object.start_link_object.inactive_tab_redirect}${params_object?.start_link_object?.inactive_tab_redirect?.includes("?") ? "&" : "?"}${inactive_tab_redirect__crid}&${__aid_sorc}&${params_object?.start_link_object?.inactive_tab_redirect?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.inactive_tab_redirect?.includes("sorc_id") ? "" : __sorc_id}&admt=inact_rd&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
 
 	            // inactive_tab_banner 
 	                // inactive_tab_banner__crid
 	                inactive_tab_banner__crid = params_object.crid_object.inactive_tab_banner ? `crid=${params_object.crid_object.inactive_tab_banner}` : ``
 	                // form inactive_tab_banner final link
-                    params_object.final_link_object.inactive_tab_banner = `${params_object.start_link_object.inactive_tab_banner}${params_object?.start_link_object?.inactive_tab_banner?.includes("?") ? "&" : "?"}${inactive_tab_banner__crid}&${__aid_sorc}&${params_object?.start_link_object?.inactive_tab_banner?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.inactive_tab_banner?.includes("sorc_id") ? "" : __sorc_id}&admt=inact_b&${__sorc_land_id}&${__sorc_ref}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
+                    params_object.final_link_object.inactive_tab_banner = `${params_object.start_link_object.inactive_tab_banner}${params_object?.start_link_object?.inactive_tab_banner?.includes("?") ? "&" : "?"}${inactive_tab_banner__crid}&${__aid_sorc}&${params_object?.start_link_object?.inactive_tab_banner?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.inactive_tab_banner?.includes("sorc_id") ? "" : __sorc_id}&admt=inact_b&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
 
 	            // back_button 
 	                // back_button__crid
 	                back_button__crid = params_object.crid_object.back_button ? `crid=${params_object.crid_object.back_button}` : ``
 	                // form back_button final link
-                    params_object.final_link_object.back_button = `${params_object.start_link_object.back_button}${params_object?.start_link_object?.back_button?.includes("?") ? "&" : "?"}${back_button__crid}&${__aid_sorc}&${params_object?.start_link_object?.back_button?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.back_button?.includes("sorc_id") ? "" : __sorc_id}&admt=bb&${__sorc_land_id}&${__sorc_ref}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
+                    params_object.final_link_object.back_button = `${params_object.start_link_object.back_button}${params_object?.start_link_object?.back_button?.includes("?") ? "&" : "?"}${back_button__crid}&${__aid_sorc}&${params_object?.start_link_object?.back_button?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.back_button?.includes("sorc_id") ? "" : __sorc_id}&admt=bb&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
 
 	            // second_offer 
 	                // form second_offer final link
-                    params_object.final_link_object.second_offer = `${params_object.start_link_object.second_offer}${params_object?.start_link_object?.second_offer?.includes("?") ? "&" : "?"}${__aid_sorc}&${params_object?.start_link_object?.second_offer?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.second_offer?.includes("sorc_id") ? "" : __sorc_id}&admt=2nd&${__sorc_land_id}&${__sorc_ref}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
+                    params_object.final_link_object.second_offer = `${params_object.start_link_object.second_offer}${params_object?.start_link_object?.second_offer?.includes("?") ? "&" : "?"}${__aid_sorc}&${params_object?.start_link_object?.second_offer?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.second_offer?.includes("sorc_id") ? "" : __sorc_id}&admt=2nd&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
 
 	            // web push redirect 
 	                // imes_to_push__crid
 	                imes_to_push__crid = params_object.crid_object.imes_to_push ? `crid=${params_object.crid_object.imes_to_push}` : ``
 	                // form imes_to_push final link
-                    params_object.final_link_object.imes_to_push = `${params_object.start_link_object.imes_to_push}${params_object?.start_link_object?.imes_to_push?.includes("?") ? "&" : "?"}admt_c_t=${admt_conf.key}&${imes_to_push__crid}&${__aid_sorc}&${params_object?.start_link_object?.imes_to_push?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.imes_to_push?.includes("sorc_id") ? "" : __sorc_id}&admt=imwp&${__sorc_land_id}&${__sorc_ref}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
+                    params_object.final_link_object.imes_to_push = `${params_object.start_link_object.imes_to_push}${params_object?.start_link_object?.imes_to_push?.includes("?") ? "&" : "?"}admt_c_t=${admt_conf.key}&${imes_to_push__crid}&${__aid_sorc}&${params_object?.start_link_object?.imes_to_push?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.imes_to_push?.includes("sorc_id") ? "" : __sorc_id}&admt=imwp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
 	                // imes_to_push__crid
 	                imes_to_push_page__crid = getURLParameter(window.location.href, 'crid') ? `crid=${getURLParameter(window.location.href, 'crid')}` : ``
 	                // form imes_to_push_page final link
-                    params_object.final_link_object.imes_to_push_page = `${params_object.start_link_object.imes_to_push_page}${params_object?.start_link_object?.imes_to_push_page?.includes("?") ? "&" : "?"}admt_c_t=${admt_conf.key}&${imes_to_push_page__crid}&${__aid_sorc}&${params_object?.start_link_object?.imes_to_push_page?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.imes_to_push_page?.includes("sorc_id") ? "" : __sorc_id}&admt=imwp&${__sorc_land_id}&${__sorc_ref}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
+                    params_object.final_link_object.imes_to_push_page = `${params_object.start_link_object.imes_to_push_page}${params_object?.start_link_object?.imes_to_push_page?.includes("?") ? "&" : "?"}admt_c_t=${admt_conf.key}&${imes_to_push_page__crid}&${__aid_sorc}&${params_object?.start_link_object?.imes_to_push_page?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.imes_to_push_page?.includes("sorc_id") ? "" : __sorc_id}&admt=imwp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
 
 	            AssignLinkValueToLink(params_object.final_link_object)
 	        },0)
@@ -229,191 +240,190 @@ admt_start = () => {
 	});
 
 	// web push redirect
-	if ( admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0] ) {
-		if ($("body").attr("id") !== "imwp-page-body") {
-			document.querySelector("body").insertAdjacentHTML("beforeend", 
-			`
-			<div id="imwp">
-				<div class="imwp-img"> 
-					<img src="" alt="" id="imwp-img">
-				</div>
-				<div class="imwp-content">
-					<h4 class="imwp-title" id="imwp-title"></h4>
-					<p class="imwp-text" id="imwp-text"></p>
-					<div class="imwp-btns">
-						<a class="imwp-btn imwp-btn-decline imes-to-push-go" id="imwp-link-no">Decline</a>
-						<a class="imwp-btn imwp-btn-accept imes-to-push-go" id="imwp-link-yes">Accept</a>
-					</div>
-				</div>
-			</div>
-		  	`
-			);
+	// if ( admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0] ) {
+	// 	if ($("body").attr("id") !== "imwp-page-body") {
+	// 		document.querySelector("body").insertAdjacentHTML("beforeend", 
+	// 		`
+	// 		<div id="imwp">
+	// 			<div class="imwp-img"> 
+	// 				<img src="" alt="" id="imwp-img">
+	// 			</div>
+	// 			<div class="imwp-content">
+	// 				<h4 class="imwp-title" id="imwp-title"></h4>
+	// 				<p class="imwp-text" id="imwp-text"></p>
+	// 				<div class="imwp-btns">
+	// 					<a class="imwp-btn imwp-btn-decline imes-to-push-go" id="imwp-link-no">Decline</a>
+	// 					<a class="imwp-btn imwp-btn-accept imes-to-push-go" id="imwp-link-yes">Accept</a>
+	// 				</div>
+	// 			</div>
+	// 		</div>
+	// 	  	`
+	// 		);
 
-			var imes_to_push_array = []
-			admt_array.filter(item => item.type == "imes_to_push")?.[0]?.data.map(item => {
-				let imes_to_push_object_local = {
-					id: item.id,
-					img: item.img_1, 
-					title: item.text_1,
-					text: item.text_2,
-					link_no: item.text_3,
-					link_yes: item.text_4,
-				}
-				imes_to_push_array.push(imes_to_push_object_local)
-			})
+	// 		var imes_to_push_array = []
+	// 		admt_array.filter(item => item.type == "imes_to_push")?.[0]?.data.map(item => {
+	// 			let imes_to_push_object_local = {
+	// 				id: item.id,
+	// 				img: item.img_1, 
+	// 				title: item.text_1,
+	// 				text: item.text_2,
+	// 				link_no: item.text_3,
+	// 				link_yes: item.text_4,
+	// 			}
+	// 			imes_to_push_array.push(imes_to_push_object_local)
+	// 		})
 
-			var imes_to_push_chousen_object = imes_to_push_array[1]
-			var imes_to_push_number_woman = 0
+	// 		var imes_to_push_chousen_object = imes_to_push_array[1]
+	// 		var imes_to_push_number_woman = 0
 
-			var imes_to_push_array_of_showed_object = []
+	// 		var imes_to_push_array_of_showed_object = []
 
-			var imes_to_push_first_itaretion = true
-			imes_to_push_get_random_object = () => {
-				do {
-					// if has imwp_id params in link and if this imwp_id is in array
-					if (imes_to_push_first_itaretion && getURLParameter(window.location.href, 'imwp_id') && imes_to_push_array.filter((item) => item.id == getURLParameter(window.location.href, 'imwp_id'))[0]) {
-						imes_to_push_array.map((item, index) => { 
-							if (item.id == getURLParameter(window.location.href, 'imwp_id')) {
-								imes_to_push_number_woman = index
-							}
-						})
-					} else {
-						imes_to_push_number_woman = Math.floor(Math.random() * imes_to_push_array.length);
-					}
-					imes_to_push_first_itaretion = false
-				} while (imes_to_push_array_of_showed_object.includes(imes_to_push_number_woman))
+	// 		var imes_to_push_first_itaretion = true
+	// 		imes_to_push_get_random_object = () => {
+	// 			do {
+	// 				if (imes_to_push_first_itaretion && getURLParameter(window.location.href, 'imwp_id') && imes_to_push_array.filter((item) => item.id == getURLParameter(window.location.href, 'imwp_id'))[0]) {
+	// 					imes_to_push_array.map((item, index) => { 
+	// 						if (item.id == getURLParameter(window.location.href, 'imwp_id')) {
+	// 							imes_to_push_number_woman = index
+	// 						}
+	// 					})
+	// 				} else {
+	// 					imes_to_push_number_woman = Math.floor(Math.random() * imes_to_push_array.length);
+	// 				}
+	// 				imes_to_push_first_itaretion = false
+	// 			} while (imes_to_push_array_of_showed_object.includes(imes_to_push_number_woman))
 
-				imes_to_push_array[imes_to_push_number_woman]
+	// 			imes_to_push_array[imes_to_push_number_woman]
 
-				imes_to_push_array_of_showed_object.push(imes_to_push_number_woman)
+	// 			imes_to_push_array_of_showed_object.push(imes_to_push_number_woman)
 
-				imes_to_push_chousen_object = imes_to_push_array[imes_to_push_number_woman]
+	// 			imes_to_push_chousen_object = imes_to_push_array[imes_to_push_number_woman]
 
-				$("#imwp-img").attr("src" , imes_to_push_chousen_object.img)
-				$("#imwp-title").text(imes_to_push_chousen_object.title)
-				$("#imwp-text").text(imes_to_push_chousen_object.text)
-				$("#imwp-link-no").text(imes_to_push_chousen_object.link_no)
-				$("#imwp-link-yes").text(imes_to_push_chousen_object.link_yes)
+	// 			$("#imwp-img").attr("src" , imes_to_push_chousen_object.img)
+	// 			$("#imwp-title").text(imes_to_push_chousen_object.title)
+	// 			$("#imwp-text").text(imes_to_push_chousen_object.text)
+	// 			$("#imwp-link-no").text(imes_to_push_chousen_object.link_no)
+	// 			$("#imwp-link-yes").text(imes_to_push_chousen_object.link_yes)
 				 
-				params_object.crid_object.imes_to_push = imes_to_push_chousen_object.id
-			}
+	// 			params_object.crid_object.imes_to_push = imes_to_push_chousen_object.id
+	// 		}
 
-			imes_to_push_show_popup = () => {
-				$("#imwp").addClass("active")
-			}
-			imes_to_push_hide_popup = () => {
-				$("#imwp").removeClass("active")
-			}
+	// 		imes_to_push_show_popup = () => {
+	// 			$("#imwp").addClass("active")
+	// 		}
+	// 		imes_to_push_hide_popup = () => {
+	// 			$("#imwp").removeClass("active")
+	// 		}
 
-			$(".imes-to-push-go").click(function(e) {
-				e.preventDefault()
+	// 		$(".imes-to-push-go").click(function(e) {
+	// 			e.preventDefault()
 
-				params_object.frq = Number(params_object.frq) + 1 
-				params_object.flw = params_object.flw + "_imwp"
+	// 			params_object.frq = Number(params_object.frq) + 1 
+	// 			params_object.flw = params_object.flw + "_imwp"
 
-				setTimeout(()=>{
-					window.open($(this).attr("href"), '_blank');
-				},100)
+	// 			setTimeout(()=>{
+	// 				window.open($(this).attr("href"), '_blank');
+	// 			},100)
 
-				imes_to_push_hide_popup()
-				imes_to_push_array.map((item , index) => {imes_to_push_array_of_showed_object[index] = null})
-			})
+	// 			imes_to_push_hide_popup()
+	// 			imes_to_push_array.map((item , index) => {imes_to_push_array_of_showed_object[index] = null})
+	// 		})
 
-			setTimeout(()=>{
-				imes_to_push_get_random_object()
-				imes_to_push_show_popup()
-				$("#imwp").addClass("active")
-			},1000)
-		} else {
-			admt_array.map(item => item.type == "imes_to_push" ? item.active = true : item.active = false )?.[0]
+	// 		setTimeout(()=>{
+	// 			imes_to_push_get_random_object()
+	// 			imes_to_push_show_popup()
+	// 			$("#imwp").addClass("active")
+	// 		},1000)
+	// 	} else {
+	// 		admt_array.map(item => item.type == "imes_to_push" ? item.active = true : item.active = false )?.[0]
 
-			document.querySelector("body").insertAdjacentHTML("beforeend", 
-			`
-			<div id="imwp-page">
-				<div class="imwp-page-img"> 
-					<img src="" alt="" id="imwp-page-img">
-				</div>
-				<div class="mwp-page-content">
-					<h4 class="mwp-page-title" id="mwp-page-title"></h4>
-					<p class="mwp-page-text" id="mwp-page-text"></p>
-				</div>
-			</div>
-			<a class="imes-to-push-page-go" style="display: none !important; padding: 0: !important; margin: 0 !important; visibility: hidden !important; opacity: 0 !important;"></a>
-		  	`
-			);
+	// 		document.querySelector("body").insertAdjacentHTML("beforeend", 
+	// 		`
+	// 		<div id="imwp-page">
+	// 			<div class="imwp-page-img"> 
+	// 				<img src="" alt="" id="imwp-page-img">
+	// 			</div>
+	// 			<div class="mwp-page-content">
+	// 				<h4 class="mwp-page-title" id="mwp-page-title"></h4>
+	// 				<p class="mwp-page-text" id="mwp-page-text"></p>
+	// 			</div>
+	// 		</div>
+	// 		<a class="imes-to-push-page-go" style="display: none !important; padding: 0: !important; margin: 0 !important; visibility: hidden !important; opacity: 0 !important;"></a>
+	// 	  	`
+	// 		);
 
-			$("#imwp-page-img").attr("src" , admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0].data.filter(item => item.id == getURLParameter(window.location.href, 'crid'))[0].img_1)
-			$("#mwp-page-title").text(admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0].data.filter(item => item.id == getURLParameter(window.location.href, 'crid'))[0].text_1)
-			$("#mwp-page-text").text(admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0].data.filter(item => item.id == getURLParameter(window.location.href, 'crid'))[0].text_2)
+	// 		$("#imwp-page-img").attr("src" , admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0].data.filter(item => item.id == getURLParameter(window.location.href, 'crid'))[0].img_1)
+	// 		$("#mwp-page-title").text(admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0].data.filter(item => item.id == getURLParameter(window.location.href, 'crid'))[0].text_1)
+	// 		$("#mwp-page-text").text(admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0].data.filter(item => item.id == getURLParameter(window.location.href, 'crid'))[0].text_2)
 
-			window.OneSignal = window.OneSignal || [];
-		    var initConfig = {
-		        appId: admt_array.filter(item => item.type == "web_push")?.[0]?.app_id,
-		        safari_web_id: admt_array.filter(item => item.type == "web_push")?.[0]?.safari_id,
-		    };
+	// 		window.OneSignal = window.OneSignal || [];
+	// 	    var initConfig = {
+	// 	        appId: admt_array.filter(item => item.type == "web_push")?.[0]?.app_id,
+	// 	        safari_web_id: admt_array.filter(item => item.type == "web_push")?.[0]?.safari_id,
+	// 	    };
 			
-			OneSignal.push(function() {
+	// 		OneSignal.push(function() {
 
-				OneSignal.init(initConfig);
-				OneSignal.showNativePrompt();
+	// 			OneSignal.init(initConfig);
+	// 			OneSignal.showNativePrompt();
 
-				OneSignal.getUserId().then(() => {
-					if (params_object.aid) {
-						OneSignal.sendTag("aid_sorc", params_object.aid);
-					}
+	// 			OneSignal.getUserId().then(() => {
+	// 				if (params_object.aid) {
+	// 					OneSignal.sendTag("aid_sorc", params_object.aid);
+	// 				}
 
-					OneSignal.getExternalUserId().then(function(externalUserId){
-						if (!externalUserId && params_object.subid) {
-							OneSignal.setExternalUserId(params_object.subid);
-							OneSignal.sendTag("ckid_sorc", params_object.subid);
-						}
-					});
+	// 				OneSignal.getExternalUserId().then(function(externalUserId){
+	// 					if (!externalUserId && params_object.subid) {
+	// 						OneSignal.setExternalUserId(params_object.subid);
+	// 						OneSignal.sendTag("ckid_sorc", params_object.subid);
+	// 					}
+	// 				});
 
-					if (params_object.vertical) {
-						OneSignal.sendTag("vertical", params_object.vertical);
-					}
+	// 				if (params_object.vertical) {
+	// 					OneSignal.sendTag("vertical", params_object.vertical);
+	// 				}
 
-					if (params_object.source) {
-						OneSignal.sendTag("sorc_id", params_object.source);
-					}
+	// 				if (params_object.source) {
+	// 					OneSignal.sendTag("sorc_id", params_object.source);
+	// 				}
 
-					if (params_object.site_name) {
-						OneSignal.sendTag("sorc_ref", params_object.site_name);
-					}
+	// 				if (params_object.site_name) {
+	// 					OneSignal.sendTag("sorc_ref", params_object.site_name);
+	// 				}
 
-					if (params_object.wpn_id) {
-						OneSignal.sendTag("crid", params_object.wpn_id);
-					}
+	// 				if (params_object.wpn_id) {
+	// 					OneSignal.sendTag("crid", params_object.wpn_id);
+	// 				}
 
-					if (params_object.sorc_land_id) {
-						OneSignal.sendTag("sorc_land_id", `${params_object.sorc_land_id}_${admt_conf?.campaign_id}_${admt_conf?.stream_id}`);
-					}
+	// 				if (params_object.sorc_land_id) {
+	// 					OneSignal.sendTag("sorc_land_id", `${params_object.sorc_land_id}_${admt_conf?.campaign_id}_${admt_conf?.stream_id}`);
+	// 				}
 
-					if (params_object.age) {
-						OneSignal.sendTag("a", params_object.age);
-					}
+	// 				if (params_object.age) {
+	// 					OneSignal.sendTag("a", params_object.age);
+	// 				}
 
-					if (params_object.sex) {
-						OneSignal.sendTag("sx", params_object.sex);
-					}
+	// 				if (params_object.sex) {
+	// 					OneSignal.sendTag("sx", params_object.sex);
+	// 				}
 
-					if (params_object.interests) {
-						OneSignal.sendTag("intst", params_object.interests);
-					}
-				});
-			});
+	// 				if (params_object.interests) {
+	// 					OneSignal.sendTag("intst", params_object.interests);
+	// 				}
+	// 			});
+	// 		});
 
 
-			// setTimeout(()=>{
-			// 	params_object.frq = Number(params_object.frq) + 1 
-			// 	params_object.flw = params_object.flw + "_imwp-page"
+	// 		setTimeout(()=>{
+	// 			params_object.frq = Number(params_object.frq) + 1 
+	// 			params_object.flw = params_object.flw + "_imwp-page"
 
-			// 	setTimeout(()=>{
-			// 		window.location.href = $(".imes-to-push-page-go").attr("href");
-			// 	},100)
-			// }, 7000)
-		}
-	}
+	// 			setTimeout(()=>{
+	// 				window.location.href = $(".imes-to-push-page-go").attr("href");
+	// 			},100)
+	// 		}, 7000)
+	// 	}
+	// }
 
 	// in page push
 	if ( admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0] ) {
