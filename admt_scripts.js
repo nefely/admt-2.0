@@ -67,9 +67,9 @@ get_admt = () => {
 			admt_start()
 	    });
 	    // test
-	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="admt_styles.css?v=${Date.now()}">`)
+	    document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="admt_styles.css?v=${Date.now()}">`)
 	    // prod
-	    document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/admt_styles.css?v=${Date.now()}">`);
+	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/admt_styles.css?v=${Date.now()}">`);
 	})
 }
 
@@ -428,44 +428,89 @@ admt_start = () => {
 	// in page push
 	if ( admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0] ) {
 		$(document).ready(function(){
-			document.querySelector("body").insertAdjacentHTML("beforeend", 
-			`
-			<div id="in-page-push">
-				<button class="in-page-push-close">
-					<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"/>
-					</svg>
-				</button>
-				<div class="in-page-push-image-block">
-					<img src="in-page-push-content/1.jpg" alt="" id="in-page-push-img">
-					<h4>
-						<span id="in-page-push-name"></span> , <span id="in-page-push-age"></span>
-					</h4>
-				</div>
-				<div class="in-page-push-text">
-					<h4 id="in-page-push-title"></h4>
-					<p id="in-page-push-text"></p>
-					<div class="in-page-push-button">
-						<a class="in-page-push-go" id="in-page-push-link"></a>
-					</div>
-				</div>
-			</div>
-			`
-			);
+
+			admt_array.filter(item => item.type == "in_page_push")[0].type_inpp = 1
 
 			var in_page_push_array = []
-			admt_array.filter(item => item.type == "in_page_push")?.[0]?.data.map(item => {
-				let in_page_push_object_local = {
-					id: item.id,
-					img: item.img_3, 
-					name: item.text_1,
-					age: item.text_2,
-					title: item.text_4,
-					text: item.text_5,
-					link: item.text_6,
-				}
-				in_page_push_array.push(in_page_push_object_local)
-			})
+
+			if (admt_array.filter(item => item.type == "in_page_push")[0].type_inpp == undefined) {
+				document.querySelector("body").insertAdjacentHTML("beforeend", 
+				`
+				<div id="in-page-push">
+					<button class="in-page-push-close">
+						<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"/>
+						</svg>
+					</button>
+					<div class="in-page-push-image-block">
+						<img src="in-page-push-content/1.jpg" alt="" id="in-page-push-img">
+						<h4>
+							<span id="in-page-push-name"></span> , <span id="in-page-push-age"></span>
+						</h4>
+					</div>
+					<div class="in-page-push-text">
+						<h4 id="in-page-push-title"></h4>
+						<p id="in-page-push-text"></p>
+						<div class="in-page-push-button">
+							<a class="in-page-push-go" id="in-page-push-link"></a>
+						</div>
+					</div>
+				</div>
+				`
+				);
+
+				admt_array.filter(item => item.type == "in_page_push")?.[0]?.data.map(item => {
+					let in_page_push_object_local = {
+						id: item.id,
+						img: item.img_3, 
+						name: item.text_1,
+						age: item.text_2,
+						title: item.text_4,
+						text: item.text_5,
+						link: item.text_6,
+					}
+					in_page_push_array.push(in_page_push_object_local)
+				})
+			}
+			if (admt_array.filter(item => item.type == "in_page_push")[0].type_inpp == 1) {
+				document.querySelector("body").insertAdjacentHTML("beforeend", 
+				`
+				<div id="in-page-push" data-theme="1">
+					<button class="in-page-push-close">
+						<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"></path>
+						</svg>
+					</button>
+					<div class="in-page-push-image-block">
+						<img src="" alt="" id="in-page-push-img">
+						<h4>
+							<span id="in-page-push-name"></span> , <span id="in-page-push-age"></span>
+						</h4>
+					</div>
+					<div class="in-page-push-text">
+						<h4 id="in-page-push-title"></h4>
+						<p id="in-page-push-text"></p>
+						<div class="in-page-push-button">
+							<a class="in-page-push-go" id="in-page-push-link" href=""></a>
+						</div>
+					</div>
+				</div>
+				`
+				);
+
+				admt_array.filter(item => item.type == "in_page_push")?.[0]?.data.map(item => {
+					let in_page_push_object_local = {
+						id: item.id,
+						img: item.img_3, 
+						name: item.text_1,
+						age: item.text_2,
+						title: item.text_4,
+						text: item.text_5,
+						link: item.text_6,
+					}
+					in_page_push_array.push(in_page_push_object_local)
+				})
+			}
 
 			var in_page_push_chousen_object = in_page_push_array[1]
 			var in_page_push_number_woman = 0
@@ -497,12 +542,22 @@ admt_start = () => {
 
 				in_page_push_chousen_object = in_page_push_array[in_page_push_number_woman]
 
-				$("#in-page-push-img").attr("src" , in_page_push_chousen_object.img)
-				$("#in-page-push-name").text(in_page_push_chousen_object.name)
-				$("#in-page-push-age").text(in_page_push_chousen_object.age)
-				$("#in-page-push-title").text(in_page_push_chousen_object.title)
-				$("#in-page-push-text").text(in_page_push_chousen_object.text)
-				$("#in-page-push-link").text(in_page_push_chousen_object.link)
+				if (admt_array.filter(item => item.type == "in_page_push")[0].type_inpp == undefined) {
+					$("#in-page-push-img").attr("src" , in_page_push_chousen_object.img)
+					$("#in-page-push-name").text(in_page_push_chousen_object.name)
+					$("#in-page-push-age").text(in_page_push_chousen_object.age)
+					$("#in-page-push-title").text(in_page_push_chousen_object.title)
+					$("#in-page-push-text").text(in_page_push_chousen_object.text)
+					$("#in-page-push-link").text(in_page_push_chousen_object.link)
+				}
+				if (admt_array.filter(item => item.type == "in_page_push")[0].type_inpp == 1) {
+					$("#in-page-push-img").attr("src" , in_page_push_chousen_object.img)
+					$("#in-page-push-name").text(in_page_push_chousen_object.name)
+					$("#in-page-push-age").text(in_page_push_chousen_object.age)
+					$("#in-page-push-title").text(in_page_push_chousen_object.title)
+					$("#in-page-push-text").text(in_page_push_chousen_object.text)
+					$("#in-page-push-link").text(in_page_push_chousen_object.link)
+				}
 				 
 				params_object.crid_object.in_page_push = in_page_push_chousen_object.id
 
