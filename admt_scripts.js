@@ -18,51 +18,51 @@ get_admt = () => {
 			window.admt_array = data
 
 			// just for test
-	    	// admt_array.push({
-			//     "type": "imes_to_push",
-			//     "active": true,
-			//     "url": "12345?monetization=imes-to-push&vertical=test-vertical-7&sorc_id=test-sorc-id-7",
-			//     "domain": [
-			//     	"https://justkissmyass.com/",
-			//     	"https://chetotam.xyz/",
-			//     	"https://marketgo.store/",
-			//     	"https://appforyou.store/",
-			//     ],
-			//     "data": [
-			//         {
-			//             "id": 7,
-			//             "vertical": "ad",
-			//             "img_1": "https://cdn.adasty.com/c/01GRAEYF7GJMN453GXD3VQME6M.jpg",
-			//             "img_2": null,
-			//             "img_3": null,
-			//             "img_4": null,
-			//             "text_1": "New message (1)",
-			//             "text_2": "Hi there, doll 😚 do you like my ass like mine? 🤪",
-			//             "text_3": "Decline",
-			//             "text_4": "Reply",
-			//             "text_5": null,
-			//             "text_6": null,
-			//             "text_7": null,
-			//             "text_8": null
-			//         },
-			//         {
-			//             "id": 5,
-			//             "vertical": "ad",
-			//             "img_1": "https://cdn.adasty.com/c/01GRAES1CRGVWBZVHFA75NN4J1.jpg",
-			//             "img_2": null,
-			//             "img_3": null,
-			//             "img_4": null,
-			//             "text_1": "New message (1)",
-			//             "text_2": "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉",
-			//             "text_3": "Decline",
-			//             "text_4": "Reply",
-			//             "text_5": null,
-			//             "text_6": null,
-			//             "text_7": null,
-			//             "text_8": null
-			//         },
-			//     ]
-			// })
+	    	admt_array.push({
+			    "type": "imes_to_push",
+			    "active": true,
+			    "url": "12345?monetization=imes-to-push&vertical=test-vertical-7&sorc_id=test-sorc-id-7",
+			    "domain": [
+			    	"https://justkissmyass.com/",
+			    	"https://chetotam.xyz/",
+			    	"https://marketgo.store/",
+			    	"https://appforyou.store/",
+			    ],
+			    "data": [
+			        {
+			            "id": 7,
+			            "vertical": "ad",
+			            "img_1": "https://cdn.adasty.com/c/01GRAEYF7GJMN453GXD3VQME6M.jpg",
+			            "img_2": null,
+			            "img_3": null,
+			            "img_4": null,
+			            "text_1": "New message (1)",
+			            "text_2": "Hi there, doll 😚 do you like my ass like mine? 🤪",
+			            "text_3": "Decline",
+			            "text_4": "Reply",
+			            "text_5": null,
+			            "text_6": null,
+			            "text_7": null,
+			            "text_8": null
+			        },
+			        {
+			            "id": 5,
+			            "vertical": "ad",
+			            "img_1": "https://cdn.adasty.com/c/01GRAES1CRGVWBZVHFA75NN4J1.jpg",
+			            "img_2": null,
+			            "img_3": null,
+			            "img_4": null,
+			            "text_1": "New message (1)",
+			            "text_2": "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉",
+			            "text_3": "Decline",
+			            "text_4": "Reply",
+			            "text_5": null,
+			            "text_6": null,
+			            "text_7": null,
+			            "text_8": null
+			        },
+			    ]
+			})
 
 			admt_start()
 	    });
@@ -130,11 +130,11 @@ admt_start = () => {
 	        params_object.start_link_object.second_offer = admt_array.filter(item => item.type == "second_offer")?.[0]?.url
 
 		        // imes link
-			       //  let imes_to_push_page_array_url = admt_array.filter(item => item.type == "imes_to_push")[0].domain.filter(item => !item.includes(window.location.host))
-			       //  let imes_to_push_page_url = imes_to_push_page_array_url[Math.floor(Math.random() * imes_to_push_page_array_url.length)]
+			        let imes_to_push_page_array_url = admt_array.filter(item => item.type == "imes_to_push")[0].domain.filter(item => !item.includes(window.location.host))
+			        let imes_to_push_page_url = imes_to_push_page_array_url[Math.floor(Math.random() * imes_to_push_page_array_url.length)]
 
-		        // params_object.start_link_object.imes_to_push = imes_to_push_page_url + admt_array.filter(item => item.type == "imes_to_push")?.[0]?.url
-		        // params_object.start_link_object.imes_to_push_page = admt_conf?.offer
+		        params_object.start_link_object.imes_to_push = imes_to_push_page_url + admt_array.filter(item => item.type == "imes_to_push")?.[0]?.url
+		        params_object.start_link_object.imes_to_push_page = admt_conf?.offer
 
 	        // WEB PUSH NOTIFICATION SETTINGS ------------------------------- //
 
@@ -240,190 +240,190 @@ admt_start = () => {
 	});
 
 	// web push redirect
-	// if ( admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0] ) {
-	// 	if ($("body").attr("id") !== "imwp-page-body") {
-	// 		document.querySelector("body").insertAdjacentHTML("beforeend", 
-	// 		`
-	// 		<div id="imwp">
-	// 			<div class="imwp-img"> 
-	// 				<img src="" alt="" id="imwp-img">
-	// 			</div>
-	// 			<div class="imwp-content">
-	// 				<h4 class="imwp-title" id="imwp-title"></h4>
-	// 				<p class="imwp-text" id="imwp-text"></p>
-	// 				<div class="imwp-btns">
-	// 					<a class="imwp-btn imwp-btn-decline imes-to-push-go" id="imwp-link-no">Decline</a>
-	// 					<a class="imwp-btn imwp-btn-accept imes-to-push-go" id="imwp-link-yes">Accept</a>
-	// 				</div>
-	// 			</div>
-	// 		</div>
-	// 	  	`
-	// 		);
+	if ( admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0] ) {
+		if ($("body").attr("id") !== "imwp-page-body") {
+			document.querySelector("body").insertAdjacentHTML("beforeend", 
+			`
+			<div id="imwp">
+				<div class="imwp-img"> 
+					<img src="" alt="" id="imwp-img">
+				</div>
+				<div class="imwp-content">
+					<h4 class="imwp-title" id="imwp-title"></h4>
+					<p class="imwp-text" id="imwp-text"></p>
+					<div class="imwp-btns">
+						<a class="imwp-btn imwp-btn-decline imes-to-push-go" id="imwp-link-no">Decline</a>
+						<a class="imwp-btn imwp-btn-accept imes-to-push-go" id="imwp-link-yes">Accept</a>
+					</div>
+				</div>
+			</div>
+		  	`
+			);
 
-	// 		var imes_to_push_array = []
-	// 		admt_array.filter(item => item.type == "imes_to_push")?.[0]?.data.map(item => {
-	// 			let imes_to_push_object_local = {
-	// 				id: item.id,
-	// 				img: item.img_1, 
-	// 				title: item.text_1,
-	// 				text: item.text_2,
-	// 				link_no: item.text_3,
-	// 				link_yes: item.text_4,
-	// 			}
-	// 			imes_to_push_array.push(imes_to_push_object_local)
-	// 		})
+			var imes_to_push_array = []
+			admt_array.filter(item => item.type == "imes_to_push")?.[0]?.data.map(item => {
+				let imes_to_push_object_local = {
+					id: item.id,
+					img: item.img_1, 
+					title: item.text_1,
+					text: item.text_2,
+					link_no: item.text_3,
+					link_yes: item.text_4,
+				}
+				imes_to_push_array.push(imes_to_push_object_local)
+			})
 
-	// 		var imes_to_push_chousen_object = imes_to_push_array[1]
-	// 		var imes_to_push_number_woman = 0
+			var imes_to_push_chousen_object = imes_to_push_array[1]
+			var imes_to_push_number_woman = 0
 
-	// 		var imes_to_push_array_of_showed_object = []
+			var imes_to_push_array_of_showed_object = []
 
-	// 		var imes_to_push_first_itaretion = true
-	// 		imes_to_push_get_random_object = () => {
-	// 			do {
-	// 				if (imes_to_push_first_itaretion && getURLParameter(window.location.href, 'imwp_id') && imes_to_push_array.filter((item) => item.id == getURLParameter(window.location.href, 'imwp_id'))[0]) {
-	// 					imes_to_push_array.map((item, index) => { 
-	// 						if (item.id == getURLParameter(window.location.href, 'imwp_id')) {
-	// 							imes_to_push_number_woman = index
-	// 						}
-	// 					})
-	// 				} else {
-	// 					imes_to_push_number_woman = Math.floor(Math.random() * imes_to_push_array.length);
-	// 				}
-	// 				imes_to_push_first_itaretion = false
-	// 			} while (imes_to_push_array_of_showed_object.includes(imes_to_push_number_woman))
+			var imes_to_push_first_itaretion = true
+			imes_to_push_get_random_object = () => {
+				do {
+					if (imes_to_push_first_itaretion && getURLParameter(window.location.href, 'imwp_id') && imes_to_push_array.filter((item) => item.id == getURLParameter(window.location.href, 'imwp_id'))[0]) {
+						imes_to_push_array.map((item, index) => { 
+							if (item.id == getURLParameter(window.location.href, 'imwp_id')) {
+								imes_to_push_number_woman = index
+							}
+						})
+					} else {
+						imes_to_push_number_woman = Math.floor(Math.random() * imes_to_push_array.length);
+					}
+					imes_to_push_first_itaretion = false
+				} while (imes_to_push_array_of_showed_object.includes(imes_to_push_number_woman))
 
-	// 			imes_to_push_array[imes_to_push_number_woman]
+				imes_to_push_array[imes_to_push_number_woman]
 
-	// 			imes_to_push_array_of_showed_object.push(imes_to_push_number_woman)
+				imes_to_push_array_of_showed_object.push(imes_to_push_number_woman)
 
-	// 			imes_to_push_chousen_object = imes_to_push_array[imes_to_push_number_woman]
+				imes_to_push_chousen_object = imes_to_push_array[imes_to_push_number_woman]
 
-	// 			$("#imwp-img").attr("src" , imes_to_push_chousen_object.img)
-	// 			$("#imwp-title").text(imes_to_push_chousen_object.title)
-	// 			$("#imwp-text").text(imes_to_push_chousen_object.text)
-	// 			$("#imwp-link-no").text(imes_to_push_chousen_object.link_no)
-	// 			$("#imwp-link-yes").text(imes_to_push_chousen_object.link_yes)
+				$("#imwp-img").attr("src" , imes_to_push_chousen_object.img)
+				$("#imwp-title").text(imes_to_push_chousen_object.title)
+				$("#imwp-text").text(imes_to_push_chousen_object.text)
+				$("#imwp-link-no").text(imes_to_push_chousen_object.link_no)
+				$("#imwp-link-yes").text(imes_to_push_chousen_object.link_yes)
 				 
-	// 			params_object.crid_object.imes_to_push = imes_to_push_chousen_object.id
-	// 		}
+				params_object.crid_object.imes_to_push = imes_to_push_chousen_object.id
+			}
 
-	// 		imes_to_push_show_popup = () => {
-	// 			$("#imwp").addClass("active")
-	// 		}
-	// 		imes_to_push_hide_popup = () => {
-	// 			$("#imwp").removeClass("active")
-	// 		}
+			imes_to_push_show_popup = () => {
+				$("#imwp").addClass("active")
+			}
+			imes_to_push_hide_popup = () => {
+				$("#imwp").removeClass("active")
+			}
 
-	// 		$(".imes-to-push-go").click(function(e) {
-	// 			e.preventDefault()
+			$(".imes-to-push-go").click(function(e) {
+				e.preventDefault()
 
-	// 			params_object.frq = Number(params_object.frq) + 1 
-	// 			params_object.flw = params_object.flw + "_imwp"
+				params_object.frq = Number(params_object.frq) + 1 
+				params_object.flw = params_object.flw + "_imwp"
 
-	// 			setTimeout(()=>{
-	// 				window.open($(this).attr("href"), '_blank');
-	// 			},100)
+				setTimeout(()=>{
+					window.open($(this).attr("href"), '_blank');
+				},100)
 
-	// 			imes_to_push_hide_popup()
-	// 			imes_to_push_array.map((item , index) => {imes_to_push_array_of_showed_object[index] = null})
-	// 		})
+				imes_to_push_hide_popup()
+				imes_to_push_array.map((item , index) => {imes_to_push_array_of_showed_object[index] = null})
+			})
 
-	// 		setTimeout(()=>{
-	// 			imes_to_push_get_random_object()
-	// 			imes_to_push_show_popup()
-	// 			$("#imwp").addClass("active")
-	// 		},1000)
-	// 	} else {
-	// 		admt_array.map(item => item.type == "imes_to_push" ? item.active = true : item.active = false )?.[0]
+			setTimeout(()=>{
+				imes_to_push_get_random_object()
+				imes_to_push_show_popup()
+				$("#imwp").addClass("active")
+			},1000)
+		} else {
+			admt_array.map(item => item.type == "imes_to_push" ? item.active = true : item.active = false )?.[0]
 
-	// 		document.querySelector("body").insertAdjacentHTML("beforeend", 
-	// 		`
-	// 		<div id="imwp-page">
-	// 			<div class="imwp-page-img"> 
-	// 				<img src="" alt="" id="imwp-page-img">
-	// 			</div>
-	// 			<div class="mwp-page-content">
-	// 				<h4 class="mwp-page-title" id="mwp-page-title"></h4>
-	// 				<p class="mwp-page-text" id="mwp-page-text"></p>
-	// 			</div>
-	// 		</div>
-	// 		<a class="imes-to-push-page-go" style="display: none !important; padding: 0: !important; margin: 0 !important; visibility: hidden !important; opacity: 0 !important;"></a>
-	// 	  	`
-	// 		);
+			document.querySelector("body").insertAdjacentHTML("beforeend", 
+			`
+			<div id="imwp-page">
+				<div class="imwp-page-img"> 
+					<img src="" alt="" id="imwp-page-img">
+				</div>
+				<div class="mwp-page-content">
+					<h4 class="mwp-page-title" id="mwp-page-title"></h4>
+					<p class="mwp-page-text" id="mwp-page-text"></p>
+				</div>
+			</div>
+			<a class="imes-to-push-page-go" style="display: none !important; padding: 0: !important; margin: 0 !important; visibility: hidden !important; opacity: 0 !important;"></a>
+		  	`
+			);
 
-	// 		$("#imwp-page-img").attr("src" , admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0].data.filter(item => item.id == getURLParameter(window.location.href, 'crid'))[0].img_1)
-	// 		$("#mwp-page-title").text(admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0].data.filter(item => item.id == getURLParameter(window.location.href, 'crid'))[0].text_1)
-	// 		$("#mwp-page-text").text(admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0].data.filter(item => item.id == getURLParameter(window.location.href, 'crid'))[0].text_2)
+			$("#imwp-page-img").attr("src" , admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0].data.filter(item => item.id == getURLParameter(window.location.href, 'crid'))[0].img_1)
+			$("#mwp-page-title").text(admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0].data.filter(item => item.id == getURLParameter(window.location.href, 'crid'))[0].text_1)
+			$("#mwp-page-text").text(admt_array.filter(item => item.type == "imes_to_push" && item.active == true)[0].data.filter(item => item.id == getURLParameter(window.location.href, 'crid'))[0].text_2)
 
-	// 		window.OneSignal = window.OneSignal || [];
-	// 	    var initConfig = {
-	// 	        appId: admt_array.filter(item => item.type == "web_push")?.[0]?.app_id,
-	// 	        safari_web_id: admt_array.filter(item => item.type == "web_push")?.[0]?.safari_id,
-	// 	    };
+			window.OneSignal = window.OneSignal || [];
+		    var initConfig = {
+		        appId: admt_array.filter(item => item.type == "web_push")?.[0]?.app_id,
+		        safari_web_id: admt_array.filter(item => item.type == "web_push")?.[0]?.safari_id,
+		    };
 			
-	// 		OneSignal.push(function() {
+			OneSignal.push(function() {
 
-	// 			OneSignal.init(initConfig);
-	// 			OneSignal.showNativePrompt();
+				OneSignal.init(initConfig);
+				OneSignal.showNativePrompt();
 
-	// 			OneSignal.getUserId().then(() => {
-	// 				if (params_object.aid) {
-	// 					OneSignal.sendTag("aid_sorc", params_object.aid);
-	// 				}
+				OneSignal.getUserId().then(() => {
+					if (params_object.aid) {
+						OneSignal.sendTag("aid_sorc", params_object.aid);
+					}
 
-	// 				OneSignal.getExternalUserId().then(function(externalUserId){
-	// 					if (!externalUserId && params_object.subid) {
-	// 						OneSignal.setExternalUserId(params_object.subid);
-	// 						OneSignal.sendTag("ckid_sorc", params_object.subid);
-	// 					}
-	// 				});
+					OneSignal.getExternalUserId().then(function(externalUserId){
+						if (!externalUserId && params_object.subid) {
+							OneSignal.setExternalUserId(params_object.subid);
+							OneSignal.sendTag("ckid_sorc", params_object.subid);
+						}
+					});
 
-	// 				if (params_object.vertical) {
-	// 					OneSignal.sendTag("vertical", params_object.vertical);
-	// 				}
+					if (params_object.vertical) {
+						OneSignal.sendTag("vertical", params_object.vertical);
+					}
 
-	// 				if (params_object.source) {
-	// 					OneSignal.sendTag("sorc_id", params_object.source);
-	// 				}
+					if (params_object.source) {
+						OneSignal.sendTag("sorc_id", params_object.source);
+					}
 
-	// 				if (params_object.site_name) {
-	// 					OneSignal.sendTag("sorc_ref", params_object.site_name);
-	// 				}
+					if (params_object.site_name) {
+						OneSignal.sendTag("sorc_ref", params_object.site_name);
+					}
 
-	// 				if (params_object.wpn_id) {
-	// 					OneSignal.sendTag("crid", params_object.wpn_id);
-	// 				}
+					if (params_object.wpn_id) {
+						OneSignal.sendTag("crid", params_object.wpn_id);
+					}
 
-	// 				if (params_object.sorc_land_id) {
-	// 					OneSignal.sendTag("sorc_land_id", `${params_object.sorc_land_id}_${admt_conf?.campaign_id}_${admt_conf?.stream_id}`);
-	// 				}
+					if (params_object.sorc_land_id) {
+						OneSignal.sendTag("sorc_land_id", `${params_object.sorc_land_id}_${admt_conf?.campaign_id}_${admt_conf?.stream_id}`);
+					}
 
-	// 				if (params_object.age) {
-	// 					OneSignal.sendTag("a", params_object.age);
-	// 				}
+					if (params_object.age) {
+						OneSignal.sendTag("a", params_object.age);
+					}
 
-	// 				if (params_object.sex) {
-	// 					OneSignal.sendTag("sx", params_object.sex);
-	// 				}
+					if (params_object.sex) {
+						OneSignal.sendTag("sx", params_object.sex);
+					}
 
-	// 				if (params_object.interests) {
-	// 					OneSignal.sendTag("intst", params_object.interests);
-	// 				}
-	// 			});
-	// 		});
+					if (params_object.interests) {
+						OneSignal.sendTag("intst", params_object.interests);
+					}
+				});
+			});
 
 
-	// 		setTimeout(()=>{
-	// 			params_object.frq = Number(params_object.frq) + 1 
-	// 			params_object.flw = params_object.flw + "_imwp-page"
+			// setTimeout(()=>{
+			// 	params_object.frq = Number(params_object.frq) + 1 
+			// 	params_object.flw = params_object.flw + "_imwp-page"
 
-	// 			setTimeout(()=>{
-	// 				window.location.href = $(".imes-to-push-page-go").attr("href");
-	// 			},100)
-	// 		}, 7000)
-	// 	}
-	// }
+			// 	setTimeout(()=>{
+			// 		window.location.href = $(".imes-to-push-page-go").attr("href");
+			// 	},100)
+			// }, 7000)
+		}
+	}
 
 	// in page push
 	if ( admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0] ) {
@@ -489,10 +489,24 @@ admt_start = () => {
 						</h4>
 					</div>
 					<div class="in-page-push-text">
-						<h4 id="in-page-push-title"></h4>
+						<div class="in-page-push-text-title">
+							<svg xmlns="http://www.w3.org/2000/svg" width="23" height="18" viewBox="0 0 23 18" fill="none">
+							<path d="M17.2326 3.4375H1.95486C1.42751 3.4375 1 3.86501 1 4.39236V15.8507C1 16.378 1.42751 16.8056 1.95486 16.8056H17.2326C17.76 16.8056 18.1875 16.378 18.1875 15.8507V4.39236C18.1875 3.86501 17.76 3.4375 17.2326 3.4375Z" stroke="#202020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M17.2326 3.91492L9.59372 11.0764L1.95483 3.91492" stroke="#202020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<circle cx="18.875" cy="4.125" r="3.125" fill="#00E232" stroke="white" stroke-width="2"/>
+							</svg>
+							<h4 id="in-page-push-title"></h4>
+						</div>
 						<p id="in-page-push-text"></p>
 						<div class="in-page-push-button">
-							<a class="in-page-push-go" id="in-page-push-link" href=""></a>
+							<a class="in-page-push-go" id="in-page-push-link" href="">
+								<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+								<path d="M3.89868 3.7868H11.0895" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M3.89868 6.66315H6.77502" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M1.02222 2.34857V13.705C1.02222 14.0253 1.40949 14.1857 1.63599 13.9592L4.40703 11.1882C4.54188 11.0534 4.72479 10.9776 4.91549 10.9776H12.5276C13.3219 10.9776 13.9657 10.3337 13.9657 9.53942V2.34857C13.9657 1.55429 13.3219 0.9104 12.5276 0.9104H2.46039C1.66611 0.9104 1.02222 1.55429 1.02222 2.34857Z" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<span class="in-page-push-link-text"></span>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -502,12 +516,12 @@ admt_start = () => {
 				admt_array.filter(item => item.type == "in_page_push")?.[0]?.data.map(item => {
 					let in_page_push_object_local = {
 						id: item.id,
-						img: item.img_3, 
+						img: item.img_1, 
 						name: item.text_1,
 						age: item.text_2,
-						title: item.text_4,
-						text: item.text_5,
-						link: item.text_6,
+						title: item.text_3,
+						text: item.text_4,
+						link: item.text_5,
 					}
 					in_page_push_array.push(in_page_push_object_local)
 				})
@@ -557,7 +571,7 @@ admt_start = () => {
 					$("#in-page-push-age").text(in_page_push_chousen_object.age)
 					$("#in-page-push-title").text(in_page_push_chousen_object.title)
 					$("#in-page-push-text").text(in_page_push_chousen_object.text)
-					$("#in-page-push-link").text(in_page_push_chousen_object.link)
+					$(".in-page-push-link-text").text(in_page_push_chousen_object.link)
 				}
 				 
 				params_object.crid_object.in_page_push = in_page_push_chousen_object.id
@@ -695,10 +709,10 @@ admt_start = () => {
 						img: item.img_1, 
 						name: item.text_1,
 						age: item.text_2,
-						title: item.text_3,
-						text_1: item.text_5,
-						text_2: item.text_7,
-						link: item.text_6,
+						title: item.text_6,
+						text_1: item.text_7,
+						text_2: item.text_8,
+						link: item.text_5,
 					}
 					comebacker_array.push(comebacker_object_local)
 				})

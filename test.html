@@ -6,11 +6,49 @@
 	<title>Document</title>
 </head>
 <body>
-<link rel="stylesheet" href="admt_styles.css">
 
+<link rel="stylesheet" href="admt_styles.css">
 <style>
-	
+#onesignal-slidedown-container.slide-down #onesignal-slidedown-dialog, #onesignal-slidedown-container.slide-down #onesignal-popover-dialog, #onesignal-popover-container.slide-down #onesignal-slidedown-dialog, #onesignal-popover-container.slide-down #onesignal-popover-dialog {
+	display: flex !important;
+}
+#onesignal-slidedown-container #onesignal-slidedown-dialog .slidedown-body-icon, #onesignal-slidedown-container #onesignal-slidedown-dialog .popover-body-icon, #onesignal-slidedown-container #onesignal-popover-dialog .slidedown-body-icon, #onesignal-slidedown-container #onesignal-popover-dialog .popover-body-icon, #onesignal-popover-container #onesignal-slidedown-dialog .slidedown-body-icon, #onesignal-popover-container #onesignal-slidedown-dialog .popover-body-icon, #onesignal-popover-container #onesignal-popover-dialog .slidedown-body-icon, #onesignal-popover-container #onesignal-popover-dialog .popover-body-icon,
+#onesignal-slidedown-container #onesignal-slidedown-dialog .slidedown-body-icon img {
+	width: 140px !important;
+	height: 140px !important;
+}
+
+#onesignal-slidedown-container #onesignal-slidedown-dialog .slidedown-body-message, #onesignal-slidedown-container #onesignal-slidedown-dialog .popover-body-message, #onesignal-slidedown-container #onesignal-popover-dialog .slidedown-body-message, #onesignal-slidedown-container #onesignal-popover-dialog .popover-body-message, #onesignal-popover-container #onesignal-slidedown-dialog .slidedown-body-message, #onesignal-popover-container #onesignal-slidedown-dialog .popover-body-message, #onesignal-popover-container #onesignal-popover-dialog .slidedown-body-message, #onesignal-popover-container #onesignal-popover-dialog .popover-body-message {
+	width: calc(100% - 140px) !important;
+}
+
+#onesignal-slidedown-container #onesignal-slidedown-dialog .slidedown-footer, #onesignal-slidedown-container #onesignal-slidedown-dialog .popover-footer, #onesignal-slidedown-container #onesignal-popover-dialog .slidedown-footer, #onesignal-slidedown-container #onesignal-popover-dialog .popover-footer, #onesignal-popover-container #onesignal-slidedown-dialog .slidedown-footer, #onesignal-popover-container #onesignal-slidedown-dialog .popover-footer, #onesignal-popover-container #onesignal-popover-dialog .slidedown-footer, #onesignal-popover-container #onesignal-popover-dialog .popover-footer {
+	width: calc(100% - 140px) !important;
+	margin-right: 0 !important;
+	margin-left: auto !important;
+	padding-left: 1em !important;
+	box-sizing: border-box !important;
+	display: flex !important;
+}
+
+#onesignal-slidedown-container #onesignal-slidedown-dialog .clearfix, #onesignal-slidedown-container #onesignal-popover-dialog .clearfix, #onesignal-popover-container #onesignal-slidedown-dialog .clearfix, #onesignal-popover-container #onesignal-popover-dialog .clearfix {
+	display: none !important;
+}
+
+#onesignal-slidedown-container #onesignal-slidedown-dialog .slidedown-button, #onesignal-slidedown-container #onesignal-slidedown-dialog .popover-button, #onesignal-slidedown-container #onesignal-popover-dialog .slidedown-button, #onesignal-slidedown-container #onesignal-popover-dialog .popover-button, #onesignal-popover-container #onesignal-slidedown-dialog .slidedown-button, #onesignal-popover-container #onesignal-slidedown-dialog .popover-button, #onesignal-popover-container #onesignal-popover-dialog .slidedown-button, #onesignal-popover-container #onesignal-popover-dialog .popover-button {
+	padding: 8px 12px !important;
+}
+#onesignal-slidedown-container #onesignal-slidedown-dialog .primary.slidedown-button + .secondary.slidedown-button, #onesignal-slidedown-container #onesignal-slidedown-dialog .primary.popover-button + .secondary.popover-button, #onesignal-slidedown-container #onesignal-popover-dialog .primary.slidedown-button + .secondary.slidedown-button, #onesignal-slidedown-container #onesignal-popover-dialog .primary.popover-button + .secondary.popover-button, #onesignal-popover-container #onesignal-slidedown-dialog .primary.slidedown-button + .secondary.slidedown-button, #onesignal-popover-container #onesignal-slidedown-dialog .primary.popover-button + .secondary.popover-button, #onesignal-popover-container #onesignal-popover-dialog .primary.slidedown-button + .secondary.slidedown-button, #onesignal-popover-container #onesignal-popover-dialog .primary.popover-button + .secondary.popover-button {
+	margin-right: 0 !important;
+	margin-left: 8px !important;
+}
 </style>
+<link rel="stylesheet" href="wpn.css">
+
+
+<div id="onesignal-slidedown-container" class="onesignal-slidedown-container onesignal-reset slide-down"><div id="onesignal-slidedown-dialog" class="onesignal-slidedown-dialog"><div id="normal-slidedown"><div class="slidedown-body" id="slidedown-body"><div class="slidedown-body-icon"><img alt="notification icon" src="https://cdn.adasty.com/c/01GS8B5NEJZ365TEMM3C1NW7J9.png"></div><div class="slidedown-body-message">You'll Get Amazing Free Photos🔥. Click On The “Allow” Button</div><div class="clearfix"></div><div id="onesignal-loading-container"></div></div><div class="slidedown-footer" id="slidedown-footer"><button class="align-right primary slidedown-button" id="onesignal-slidedown-allow-button">Allow</button><button class="align-right secondary slidedown-button" id="onesignal-slidedown-cancel-button">Deny</button><div class="clearfix"></div></div></div></div></div>
+
+
 
 </body>
 </html>
