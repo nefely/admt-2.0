@@ -67,9 +67,9 @@ get_admt = () => {
 			admt_start()
 	    });
 	    // test
-	    document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="admt_styles.css?v=${Date.now()}">`)
+	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="admt_styles.css?v=${Date.now()}">`)
 	    // prod
-	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/admt_styles.css?v=${Date.now()}">`);
+	    document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/admt_styles.css?v=${Date.now()}">`);
 	})
 }
 
@@ -108,7 +108,9 @@ admt_start = () => {
 	    params_object.sx = getURLParameter(window.location.href, 'sx') ? getURLParameter(window.location.href, 'sx') : "unkwn"
 	    params_object.intst = getURLParameter(window.location.href, 'intst') ? getURLParameter(window.location.href, 'intst') : "unkwn"
 	    params_object.em = getURLParameter(window.location.href, 'em') ? getURLParameter(window.location.href, 'em') : "unkwn"
+	    params_object.ph = getURLParameter(window.location.href, 'ph') ? getURLParameter(window.location.href, 'ph') : "unkwn"
 	    params_object.n = getURLParameter(window.location.href, 'n') ? getURLParameter(window.location.href, 'n') : "unkwn"
+	    params_object.fn = getURLParameter(window.location.href, 'fn') ? getURLParameter(window.location.href, 'fn') : "unkwn"
 	    params_object.ps = getURLParameter(window.location.href, 'ps') ? getURLParameter(window.location.href, 'ps') : "unkwn"
 	    params_object.frq = getURLParameter(window.location.href, 'frq') ? getURLParameter(window.location.href, 'frq') : 0
 	    params_object.flw = getURLParameter(window.location.href, 'flw') ? getURLParameter(window.location.href, 'flw') : ""
@@ -166,7 +168,9 @@ admt_start = () => {
 	            __sx = params_object.sx ? `sx=${params_object.sx}` : `sx=`
 	            __intst = params_object.intst ? `intst=${params_object.intst}` : `intst=`
 	            __em = params_object.em ? `em=${params_object.em}` : `em=`
+	            __ph = params_object.ph ? `ph=${params_object.ph}` : `ph=`
 	            __n = params_object.n ? `n=${params_object.n}` : `n=`
+	            __fn = params_object.fn ? `fn=${params_object.fn}` : `fn=`
 	            __ps = params_object.ps ? `ps=${params_object.ps}` : `ps=`
 
 	            __frq = params_object.frq ? `frq=${params_object.frq}` : `frq=`
@@ -176,45 +180,45 @@ admt_start = () => {
 	                // in_page_push__crid
 	                in_page_push__crid = params_object.crid_object.in_page_push ? `crid=${params_object.crid_object.in_page_push}` : ``
 	                // form in page push final link
-                    params_object.final_link_object.in_page_push = `${params_object.start_link_object.in_page_push}${params_object?.start_link_object?.in_page_push?.includes("?") ? "&" : "?"}${in_page_push__crid}&${__aid_sorc}&${params_object?.start_link_object?.in_page_push?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.in_page_push?.includes("sorc_id") ? "" : __sorc_id}&admt=inpp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
+                    params_object.final_link_object.in_page_push = `${params_object.start_link_object.in_page_push}${params_object?.start_link_object?.in_page_push?.includes("?") ? "&" : "?"}${in_page_push__crid}&${__aid_sorc}&${params_object?.start_link_object?.in_page_push?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.in_page_push?.includes("sorc_id") ? "" : __sorc_id}&admt=inpp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}`
 
 	            // comebacker 
 	                // comebacker__crid
 	                comebacker__crid = params_object.crid_object.comebacker ? `crid=${params_object.crid_object.comebacker}` : ``
 	                // form comebacker final link
-                    params_object.final_link_object.comebacker = `${params_object.start_link_object.comebacker}${params_object?.start_link_object?.comebacker?.includes("?") ? "&" : "?"}${comebacker__crid}&${__aid_sorc}&${params_object?.start_link_object?.comebacker?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.comebacker?.includes("sorc_id") ? "" : __sorc_id}&admt=expp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
+                    params_object.final_link_object.comebacker = `${params_object.start_link_object.comebacker}${params_object?.start_link_object?.comebacker?.includes("?") ? "&" : "?"}${comebacker__crid}&${__aid_sorc}&${params_object?.start_link_object?.comebacker?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.comebacker?.includes("sorc_id") ? "" : __sorc_id}&admt=expp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}`
 
 	            // inactive_tab_redirect 
 	                // inactive_tab_redirect__crid
 	                inactive_tab_redirect__crid = params_object.crid_object.inactive_tab_redirect ? `crid=${params_object.crid_object.inactive_tab_redirect}` : ``
 	                // form inactive_tab_redirect final link
-                    params_object.final_link_object.inactive_tab_redirect = `${params_object.start_link_object.inactive_tab_redirect}${params_object?.start_link_object?.inactive_tab_redirect?.includes("?") ? "&" : "?"}${inactive_tab_redirect__crid}&${__aid_sorc}&${params_object?.start_link_object?.inactive_tab_redirect?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.inactive_tab_redirect?.includes("sorc_id") ? "" : __sorc_id}&admt=inact_rd&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
+                    params_object.final_link_object.inactive_tab_redirect = `${params_object.start_link_object.inactive_tab_redirect}${params_object?.start_link_object?.inactive_tab_redirect?.includes("?") ? "&" : "?"}${inactive_tab_redirect__crid}&${__aid_sorc}&${params_object?.start_link_object?.inactive_tab_redirect?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.inactive_tab_redirect?.includes("sorc_id") ? "" : __sorc_id}&admt=inact_rd&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}`
 
 	            // inactive_tab_banner 
 	                // inactive_tab_banner__crid
 	                inactive_tab_banner__crid = params_object.crid_object.inactive_tab_banner ? `crid=${params_object.crid_object.inactive_tab_banner}` : ``
 	                // form inactive_tab_banner final link
-                    params_object.final_link_object.inactive_tab_banner = `${params_object.start_link_object.inactive_tab_banner}${params_object?.start_link_object?.inactive_tab_banner?.includes("?") ? "&" : "?"}${inactive_tab_banner__crid}&${__aid_sorc}&${params_object?.start_link_object?.inactive_tab_banner?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.inactive_tab_banner?.includes("sorc_id") ? "" : __sorc_id}&admt=inact_b&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
+                    params_object.final_link_object.inactive_tab_banner = `${params_object.start_link_object.inactive_tab_banner}${params_object?.start_link_object?.inactive_tab_banner?.includes("?") ? "&" : "?"}${inactive_tab_banner__crid}&${__aid_sorc}&${params_object?.start_link_object?.inactive_tab_banner?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.inactive_tab_banner?.includes("sorc_id") ? "" : __sorc_id}&admt=inact_b&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}`
 
 	            // back_button 
 	                // back_button__crid
 	                back_button__crid = params_object.crid_object.back_button ? `crid=${params_object.crid_object.back_button}` : ``
 	                // form back_button final link
-                    params_object.final_link_object.back_button = `${params_object.start_link_object.back_button}${params_object?.start_link_object?.back_button?.includes("?") ? "&" : "?"}${back_button__crid}&${__aid_sorc}&${params_object?.start_link_object?.back_button?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.back_button?.includes("sorc_id") ? "" : __sorc_id}&admt=bb&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
+                    params_object.final_link_object.back_button = `${params_object.start_link_object.back_button}${params_object?.start_link_object?.back_button?.includes("?") ? "&" : "?"}${back_button__crid}&${__aid_sorc}&${params_object?.start_link_object?.back_button?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.back_button?.includes("sorc_id") ? "" : __sorc_id}&admt=bb&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}`
 
 	            // second_offer 
 	                // form second_offer final link
-                    params_object.final_link_object.second_offer = `${params_object.start_link_object.second_offer}${params_object?.start_link_object?.second_offer?.includes("?") ? "&" : "?"}${__aid_sorc}&${params_object?.start_link_object?.second_offer?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.second_offer?.includes("sorc_id") ? "" : __sorc_id}&admt=2nd&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
+                    params_object.final_link_object.second_offer = `${params_object.start_link_object.second_offer}${params_object?.start_link_object?.second_offer?.includes("?") ? "&" : "?"}${__aid_sorc}&${params_object?.start_link_object?.second_offer?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.second_offer?.includes("sorc_id") ? "" : __sorc_id}&admt=2nd&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}`
 
 	            // web push redirect 
 	                // imes_to_push__crid
 	                imes_to_push__crid = params_object.crid_object.imes_to_push ? `crid=${params_object.crid_object.imes_to_push}` : ``
 	                // form imes_to_push final link
-                    params_object.final_link_object.imes_to_push = `${params_object.start_link_object.imes_to_push}${params_object?.start_link_object?.imes_to_push?.includes("?") ? "&" : "?"}admt_c_t=${admt_conf.key}&${imes_to_push__crid}&${__aid_sorc}&${params_object?.start_link_object?.imes_to_push?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.imes_to_push?.includes("sorc_id") ? "" : __sorc_id}&admt=imwp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
+                    params_object.final_link_object.imes_to_push = `${params_object.start_link_object.imes_to_push}${params_object?.start_link_object?.imes_to_push?.includes("?") ? "&" : "?"}admt_c_t=${admt_conf.key}&${imes_to_push__crid}&${__aid_sorc}&${params_object?.start_link_object?.imes_to_push?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.imes_to_push?.includes("sorc_id") ? "" : __sorc_id}&admt=imwp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}`
 	                // imes_to_push__crid
 	                imes_to_push_page__crid = getURLParameter(window.location.href, 'crid') ? `crid=${getURLParameter(window.location.href, 'crid')}` : ``
 	                // form imes_to_push_page final link
-                    params_object.final_link_object.imes_to_push_page = `${params_object.start_link_object.imes_to_push_page}${params_object?.start_link_object?.imes_to_push_page?.includes("?") ? "&" : "?"}admt_c_t=${admt_conf.key}&${imes_to_push_page__crid}&${__aid_sorc}&${params_object?.start_link_object?.imes_to_push_page?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.imes_to_push_page?.includes("sorc_id") ? "" : __sorc_id}&admt=imwp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}`
+                    params_object.final_link_object.imes_to_push_page = `${params_object.start_link_object.imes_to_push_page}${params_object?.start_link_object?.imes_to_push_page?.includes("?") ? "&" : "?"}admt_c_t=${admt_conf.key}&${imes_to_push_page__crid}&${__aid_sorc}&${params_object?.start_link_object?.imes_to_push_page?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.imes_to_push_page?.includes("sorc_id") ? "" : __sorc_id}&admt=imwp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}`
 
 	            AssignLinkValueToLink(params_object.final_link_object)
 	        },0)
@@ -430,7 +434,7 @@ admt_start = () => {
 		$(document).ready(function(){
 
 			// comment on prod
-			admt_array.filter(item => item.type == "in_page_push")[0].type_inpp = 1
+			// admt_array.filter(item => item.type == "in_page_push")[0].type_inpp = 1
 
 			var in_page_push_array = []
 
@@ -622,7 +626,7 @@ admt_start = () => {
 		$(document).ready(function(){
 
 			// comment on prod
-			admt_array.filter(item => item.type == "exit_popup")[0].type_expp = 1
+			// admt_array.filter(item => item.type == "exit_popup")[0].type_expp = 1
 
 			var comebacker_array = []
 
