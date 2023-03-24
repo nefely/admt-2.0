@@ -178,7 +178,7 @@ admt_start = () => {
 	            __n = params_object.n ? `n=${params_object.n}` : `n=`
 	            __fn = params_object.fn ? `fn=${params_object.fn}` : `fn=`
 	            __ps = params_object.ps ? `ps=${params_object.ps}` : `ps=`
-	            __of = params_object.of ? `ps=${params_object.of}` : `of=`
+	            __of = params_object.of ? `of=${params_object.of}` : `of=`
 
 	            __ep1 = params_object.ep1 ? `ep1=${params_object.ep1}` : `ep1=`
 	            __ep2 = params_object.ep2 ? `ep2=${params_object.ep2}` : `ep2=`
