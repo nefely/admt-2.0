@@ -67,9 +67,11 @@ get_admt = () => {
 			admt_start()
 	    });
 	    // test
-	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="admt_styles.css?v=${Date.now()}">`)
+	    document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="admt_styles.css?v=${Date.now()}">`)
 	    // prod
-	    document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/admt_styles.css?v=${Date.now()}">`);
+	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/admt_styles.css?v=${Date.now()}">`);
+	    // demo
+	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/demo_admt_styles.css?v=${Date.now()}">`);
 	})
 }
 
@@ -445,7 +447,7 @@ admt_start = () => {
 		$(document).ready(function(){
 
 			// comment on prod
-			// admt_array.filter(item => item.type == "in_page_push")[0].type_inpp = 1
+			admt_array.filter(item => item.type == "in_page_push")[0].type_inpp = 1
 
 			var in_page_push_array = []
 
@@ -637,7 +639,7 @@ admt_start = () => {
 		$(document).ready(function(){
 
 			// comment on prod
-			// admt_array.filter(item => item.type == "exit_popup")[0].type_expp = 1
+			admt_array.filter(item => item.type == "exit_popup")[0].type_expp = 1
 
 			var comebacker_array = []
 

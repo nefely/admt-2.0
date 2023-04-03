@@ -549,6 +549,7 @@
 	#comebacker[data-theme="1"] .comebacker-inner-1-right p {
 		margin-bottom: 10px !important;
 		padding: 8px 12px !important;
+		max-width: calc(100% - 20px) !important;
 	}
 	#comebacker[data-theme="1"] .comebacker-inner-1-right p,
 	#comebacker[data-theme="1"] .comebacker-inner-2-row a {
