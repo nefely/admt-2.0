@@ -498,6 +498,7 @@
 	padding: 0 15px !important;
 	text-align: center !important;
 	font-size: 32px !important;
+	line-height: 1.2 !important;
 }
 #comebacker[data-theme="1"] .comebacker-inner-1-right p {
 	text-align: left !important;
@@ -544,7 +545,7 @@
 
 	#comebacker[data-theme="1"] .comebacker-inner-1-right h4 {
 		margin: 10px 0 !important;
-		font-size: 24px !important;
+		font-size: 21px !important;
 	}
 	#comebacker[data-theme="1"] .comebacker-inner-1-right p {
 		margin-bottom: 10px !important;
@@ -553,7 +554,7 @@
 	}
 	#comebacker[data-theme="1"] .comebacker-inner-1-right p,
 	#comebacker[data-theme="1"] .comebacker-inner-2-row a {
-		font-size: 20px !important;
+		font-size: 18px !important;
 	}
 	#comebacker[data-theme="1"] .comebacker-inner-2-row {
 		margin-top: 10px !important;
@@ -701,7 +702,7 @@
 	text-align: center !important;
 	color: #fff !important;
 	text-decoration: none !important;
-	padding: 16px 64px !important;
+	padding: 16px 32px !important;
 	border-radius: 32px !important;
 	background: rgb(246,130,97) !important;
 	background: linear-gradient(270deg, rgba(246,130,97,1) 0%, rgba(245,76,100,1) 100%) !important;
@@ -750,6 +751,8 @@
 	height: 80px !important;
 	position: relative !important;
 	overflow: hidden !important;
+    object-fit: cover !important;
+    object-position: center !important;
 }
 #onesignal-slidedown-container #onesignal-slidedown-dialog button {
 	height: auto !important;
