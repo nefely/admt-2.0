@@ -1,7 +1,305 @@
 https://deltafunc.atlassian.net/wiki/spaces/Trickster/pages/583434380/ADMT.+Dev+Description - документашка
 
+
+I функції 
+
 1 get_admt() - запит на сервер , отримання  списка адмт , активних і не активних + мова , перезає data отриману з відповіді в обєкт window.admt_array запускає admt_start
 
 2 admt_start() - запускає власне скріпти генерації блоків , прокудування параметрів в лінки і тд 
 
 3 check_jquery() провіряє чи є jquery чи воно працює через $ чи jQuery , при потребі підключає jquery і запускає get_admt() 
+
+
+II основні обєкти 
+
+1 наші налаштування
+admt_conf = {
+    "key": "01GSZBDXX1QYVYF5FDWKPKXD7Y",
+    "subid": "{subid}",
+    "landing_id": "{landing_id}",
+    "campaign_id": "{campaign_id}",
+    "stream_id": "{stream_id}",
+    "aid": "qweqweqwe",
+    "vertical": "adult",
+    "sorc_id": "trxr"
+}
+
+2 відповідь сервера
+admt_array = [
+    {
+        "type": "inactive_tab",
+        "active": false,
+        "url": "https://flirtfile.world/66vNRRJW"
+    },
+    {
+        "type": "second_offer",
+        "active": true,
+        "url": "https://cumfinder.info/DBsFrRVy"
+    },
+    {
+        "type": "back_button",
+        "active": true,
+        "url": "https://adultsfile.live/RxzwCz"
+    },
+    {
+        "type": "in_page_push",
+        "active": false,
+        "url": "https://getherfast.info/qrtZcBP6",
+        "data": []
+    },
+    {
+        "type": "inactive_banner",
+        "active": true,
+        "url": "https://flirtfile.world/66vNRRJW",
+        "data": [
+            {
+                "id": 7,
+                "vertical": "ad",
+                "img_1": "https://cdn.adasty.com/c/01GRAEYF7GJMN453GXD3VQME6M.jpg",
+                "img_2": "https://cdn.adasty.com/c/01GRAEYFB0D93MY0YC8E616Z0Q.jpg",
+                "img_3": "https://cdn.adasty.com/c/01GRAH4YCN51AF495KFBDE21Q4.jpg",
+                "img_4": null,
+                "text_1": "Irene",
+                "text_2": "23",
+                "text_3": "You have (1) unread message from ",
+                "text_4": "New message (1)",
+                "text_5": "Hi there, doll 😚 do you like my ass like mine? 🤪",
+                "text_6": "Reply Now",
+                "text_7": null,
+                "text_8": null
+            },
+            {
+                "id": 5,
+                "vertical": "ad",
+                "img_1": "https://cdn.adasty.com/c/01GRAES1CRGVWBZVHFA75NN4J1.jpg",
+                "img_2": "https://cdn.adasty.com/c/01GRAES1HFP7H1661EK813SRVW.jpg",
+                "img_3": "https://cdn.adasty.com/c/01GRAH4097NR9HHFHFF48JX7CF.jpg",
+                "img_4": null,
+                "text_1": "Kate",
+                "text_2": "22",
+                "text_3": "You have (1) unread message from ",
+                "text_4": "New message (1)",
+                "text_5": "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉",
+                "text_6": "Reply",
+                "text_7": null,
+                "text_8": null
+            },
+            {
+                "id": 9,
+                "vertical": "ad",
+                "img_1": "https://cdn.adasty.com/c/01GRAF0TNAMMNQH3QT36S7CZK0.jpg",
+                "img_2": "https://cdn.adasty.com/c/01GRAF0TTXJYMBGTSEZ5H9SEG2.jpg",
+                "img_3": "https://cdn.adasty.com/c/01GRAH5VV7NMMN0WBTW4WKA2RH.jpg",
+                "img_4": null,
+                "text_1": "Melania",
+                "text_2": "22",
+                "text_3": "You have (1) unread message from ",
+                "text_4": "New message (1)",
+                "text_5": "Hey sweetie. Hope you're as bored as I am 😙 How about we chat? Next, maybe I'll take some intimate pics for you 😏",
+                "text_6": "Reply Now",
+                "text_7": null,
+                "text_8": null
+            },
+            {
+                "id": 6,
+                "vertical": "ad",
+                "img_1": "https://cdn.adasty.com/c/01GRAEX7WVQR2ZR4S0BSTMJTKK.jpg",
+                "img_2": "https://cdn.adasty.com/c/01GRAEX829686H50YZ9726BMW2.jpg",
+                "img_3": "https://cdn.adasty.com/c/01GRAH4DW8A012211WPNP2A45R.jpg",
+                "img_4": null,
+                "text_1": "Sophia",
+                "text_2": "24",
+                "text_3": "You have (1) unread message from ",
+                "text_4": "New message (1)",
+                "text_5": "Honey, would you like to entertain me? It's really boring now 😜 and I want romance so bad ...",
+                "text_6": "Reply Now",
+                "text_7": null,
+                "text_8": null
+            },
+            {
+                "id": 8,
+                "vertical": "ad",
+                "img_1": "https://cdn.adasty.com/c/01GRAEZS2DED2EWPVNQ60M8SK3.jpg",
+                "img_2": "https://cdn.adasty.com/c/01GRAEZS7ZGTXYRB5WETN956HH.jpg",
+                "img_3": "https://cdn.adasty.com/c/01GRAH5DE6616E6830S57B7SPS.jpg",
+                "img_4": null,
+                "text_1": "Victoria",
+                "text_2": "23",
+                "text_3": "You have (1) unread message from ",
+                "text_4": "New message (1)",
+                "text_5": "Hello hello hello 😉 how do you like my body?",
+                "text_6": "Reply Now",
+                "text_7": null,
+                "text_8": null
+            }
+        ]
+    },
+    {
+        "type": "exit_popup",
+        "active": false,
+        "url": "https://intimateadventure.live/SnZ8Jf1h",
+        "data": [
+            {
+                "id": 7,
+                "vertical": "ad",
+                "img_1": "https://cdn.adasty.com/c/01GRAEYF7GJMN453GXD3VQME6M.jpg",
+                "img_2": "https://cdn.adasty.com/c/01GRAEYFB0D93MY0YC8E616Z0Q.jpg",
+                "img_3": "https://cdn.adasty.com/c/01GRAH4YCN51AF495KFBDE21Q4.jpg",
+                "img_4": null,
+                "text_1": "Irene",
+                "text_2": "23",
+                "text_3": "You have (1) unread message from ",
+                "text_4": "New message (1)",
+                "text_5": "Hi there, doll 😚 do you like my ass like mine? 🤪",
+                "text_6": "Reply Now",
+                "text_7": null,
+                "text_8": null
+            },
+            {
+                "id": 5,
+                "vertical": "ad",
+                "img_1": "https://cdn.adasty.com/c/01GRAES1CRGVWBZVHFA75NN4J1.jpg",
+                "img_2": "https://cdn.adasty.com/c/01GRAES1HFP7H1661EK813SRVW.jpg",
+                "img_3": "https://cdn.adasty.com/c/01GRAH4097NR9HHFHFF48JX7CF.jpg",
+                "img_4": null,
+                "text_1": "Kate",
+                "text_2": "22",
+                "text_3": "You have (1) unread message from ",
+                "text_4": "New message (1)",
+                "text_5": "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉",
+                "text_6": "Reply",
+                "text_7": null,
+                "text_8": null
+            },
+            {
+                "id": 9,
+                "vertical": "ad",
+                "img_1": "https://cdn.adasty.com/c/01GRAF0TNAMMNQH3QT36S7CZK0.jpg",
+                "img_2": "https://cdn.adasty.com/c/01GRAF0TTXJYMBGTSEZ5H9SEG2.jpg",
+                "img_3": "https://cdn.adasty.com/c/01GRAH5VV7NMMN0WBTW4WKA2RH.jpg",
+                "img_4": null,
+                "text_1": "Melania",
+                "text_2": "22",
+                "text_3": "You have (1) unread message from ",
+                "text_4": "New message (1)",
+                "text_5": "Hey sweetie. Hope you're as bored as I am 😙 How about we chat? Next, maybe I'll take some intimate pics for you 😏",
+                "text_6": "Reply Now",
+                "text_7": null,
+                "text_8": null
+            },
+            {
+                "id": 6,
+                "vertical": "ad",
+                "img_1": "https://cdn.adasty.com/c/01GRAEX7WVQR2ZR4S0BSTMJTKK.jpg",
+                "img_2": "https://cdn.adasty.com/c/01GRAEX829686H50YZ9726BMW2.jpg",
+                "img_3": "https://cdn.adasty.com/c/01GRAH4DW8A012211WPNP2A45R.jpg",
+                "img_4": null,
+                "text_1": "Sophia",
+                "text_2": "24",
+                "text_3": "You have (1) unread message from ",
+                "text_4": "New message (1)",
+                "text_5": "Honey, would you like to entertain me? It's really boring now 😜 and I want romance so bad ...",
+                "text_6": "Reply Now",
+                "text_7": null,
+                "text_8": null
+            },
+            {
+                "id": 8,
+                "vertical": "ad",
+                "img_1": "https://cdn.adasty.com/c/01GRAEZS2DED2EWPVNQ60M8SK3.jpg",
+                "img_2": "https://cdn.adasty.com/c/01GRAEZS7ZGTXYRB5WETN956HH.jpg",
+                "img_3": "https://cdn.adasty.com/c/01GRAH5DE6616E6830S57B7SPS.jpg",
+                "img_4": null,
+                "text_1": "Victoria",
+                "text_2": "23",
+                "text_3": "You have (1) unread message from ",
+                "text_4": "New message (1)",
+                "text_5": "Hello hello hello 😉 how do you like my body?",
+                "text_6": "Reply Now",
+                "text_7": null,
+                "text_8": null
+            }
+        ]
+    },
+    {
+        "type": "web_push",
+        "active": false,
+        "app_id": "88eb2195-8050-4301-8817-2a96c10301ac",
+        "safari_id": "web.onesignal.auto.40e188d7-5f7a-4af3-8ac5-05427adc97a7",
+        "data": [
+            {
+                "id": 10,
+                "vertical": "ad",
+                "img_1": "https://cdn.adasty.com/c/01GRAM9FPZTSH2FTNXHMCHX3S4.jpg",
+                "img_2": null,
+                "img_3": null,
+                "img_4": null,
+                "text_1": "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉",
+                "text_2": "Ignore",
+                "text_3": "Reply",
+                "text_4": null,
+                "text_5": null,
+                "text_6": null,
+                "text_7": null,
+                "text_8": null
+            }
+        ]
+    }
+]
+
+3сформовані лінки , по параметрам отриманим з admt_array
+params_object = {
+    "start_link_object": {
+        "in_page_push": "https://getherfast.info/qrtZcBP6",
+        "comebacker": "https://intimateadventure.live/SnZ8Jf1h",
+        "inactive_tab_redirect": "https://flirtfile.world/66vNRRJW",
+        "inactive_tab_banner": "https://flirtfile.world/66vNRRJW",
+        "back_button": "https://adultsfile.live/RxzwCz",
+        "second_offer": "https://cumfinder.info/DBsFrRVy"
+    },
+    "final_link_object": {
+        "in_page_push": "https://getherfast.info/qrtZcBP6?&aid_sorc=qweqweqwe&vertical=adult&sorc_id=trxr&admt=inpp&sorc_land_id={landing_id}_{campaign_id}_{stream_id}&ps_ckid={subid}&ckid_sorc={subid}&a=unkwn&sx=unkwn&intst=unkwn&em=unkwn&n=unkwn&ps=unkwn&frq=&flw=&fn=unkwn&ph=unkwn&ep1=unkwn&ep2=unkwn&ep3=unkwn&of=unkwn&bd=unkwn",
+        "comebacker": "https://intimateadventure.live/SnZ8Jf1h?&aid_sorc=qweqweqwe&vertical=adult&sorc_id=trxr&admt=expp&sorc_land_id={landing_id}_{campaign_id}_{stream_id}&ps_ckid={subid}&ckid_sorc={subid}&a=unkwn&sx=unkwn&intst=unkwn&em=unkwn&n=unkwn&ps=unkwn&frq=&flw=&fn=unkwn&ph=unkwn&ep1=unkwn&ep2=unkwn&ep3=unkwn&of=unkwn&bd=unkwn",
+        "inactive_tab_redirect": "https://flirtfile.world/66vNRRJW?&aid_sorc=qweqweqwe&vertical=adult&sorc_id=trxr&admt=inact_rd&sorc_land_id={landing_id}_{campaign_id}_{stream_id}&ps_ckid={subid}&ckid_sorc={subid}&a=unkwn&sx=unkwn&intst=unkwn&em=unkwn&n=unkwn&ps=unkwn&frq=&flw=&fn=unkwn&ph=unkwn&ep1=unkwn&ep2=unkwn&ep3=unkwn&of=unkwn&bd=unkwn",
+        "inactive_tab_banner": "https://flirtfile.world/66vNRRJW?crid=6&aid_sorc=qweqweqwe&vertical=adult&sorc_id=trxr&admt=inact_b&sorc_land_id={landing_id}_{campaign_id}_{stream_id}&ps_ckid={subid}&ckid_sorc={subid}&a=unkwn&sx=unkwn&intst=unkwn&em=unkwn&n=unkwn&ps=unkwn&frq=&flw=&fn=unkwn&ph=unkwn&ep1=unkwn&ep2=unkwn&ep3=unkwn&of=unkwn&bd=unkwn",
+        "back_button": "https://adultsfile.live/RxzwCz?crid=44444&aid_sorc=qweqweqwe&vertical=adult&sorc_id=trxr&admt=bb&sorc_land_id={landing_id}_{campaign_id}_{stream_id}&ps_ckid={subid}&ckid_sorc={subid}&a=unkwn&sx=unkwn&intst=unkwn&em=unkwn&n=unkwn&ps=unkwn&frq=&flw=&fn=unkwn&ph=unkwn&ep1=unkwn&ep2=unkwn&ep3=unkwn&of=unkwn&bd=unkwn",
+        "second_offer": "https://cumfinder.info/DBsFrRVy?aid_sorc=qweqweqwe&vertical=adult&sorc_id=trxr&admt=2nd&sorc_land_id={landing_id}_{campaign_id}_{stream_id}&ps_ckid={subid}&ckid_sorc={subid}&a=unkwn&sx=unkwn&intst=unkwn&em=unkwn&n=unkwn&ps=unkwn&frq=&flw=&fn=unkwn&ph=unkwn&ep1=unkwn&ep2=unkwn&ep3=unkwn&of=unkwn&bd=unkwn",
+        "imes_to_push": "undefined?admt_c_t=01GSZBDXX1QYVYF5FDWKPKXD7Y&&aid_sorc=qweqweqwe&vertical=adult&sorc_id=trxr&admt=imwp&sorc_land_id={landing_id}_{campaign_id}_{stream_id}&ps_ckid={subid}&ckid_sorc={subid}&a=unkwn&sx=unkwn&intst=unkwn&em=unkwn&n=unkwn&ps=unkwn&frq=&flw=&fn=unkwn&ph=unkwn&ep1=unkwn&ep2=unkwn&ep3=unkwn&of=unkwn&bd=unkwn",
+        "imes_to_push_page": "undefined?admt_c_t=01GSZBDXX1QYVYF5FDWKPKXD7Y&&aid_sorc=qweqweqwe&vertical=adult&sorc_id=trxr&admt=imwp&sorc_land_id={landing_id}_{campaign_id}_{stream_id}&ps_ckid={subid}&ckid_sorc={subid}&a=unkwn&sx=unkwn&intst=unkwn&em=unkwn&n=unkwn&ps=unkwn&frq=&flw=&fn=unkwn&ph=unkwn&ep1=unkwn&ep2=unkwn&ep3=unkwn&of=unkwn&bd=unkwn"
+    },
+    "crid_object": {
+        "back_button": "44444",
+        "inactive_tab_banner": 6
+    },
+    "web_push_notification_setting": {},
+    "subid": "{subid}",
+    "ckid_sorc": "{subid}",
+    "sorc_land_id": "{landing_id}",
+    "a": "unkwn",
+    "sx": "unkwn",
+    "intst": "unkwn",
+    "em": "unkwn",
+    "ph": "unkwn",
+    "n": "unkwn",
+    "fn": "unkwn",
+    "ps": "unkwn",
+    "of": "unkwn",
+    "bd": "unkwn",
+    "ep1": "unkwn",
+    "ep2": "unkwn",
+    "ep3": "unkwn",
+    "frq": 0,
+    "flw": "",
+    "vertical": "adult",
+    "source": "trxr",
+    "aid": "qweqweqwe"
+}
+
+
+III Що тут відбувається ?
+
+1 визначаються (звідки беруться чи з налаштувань чи з лінки ленда , який пріорітетніший з них ) і прокидуються параметри в params_object (особлива увага приділенна увага aid / vertical / sorc_id )
+2 formFinalLinkObject викликається вперше, і викликає AssignLinkValueToLink яка в ствою чергу розкидує сформовані лінки по адмт 
+3 params_object (object - observer) - дивиться за самим собою і при зміні обєкту params_object викликає функцію formFinalLinkObject
+4 іде розгалуження по адмт , провірка типу admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0] , типу чи є таке адмт з таким типом чи обєк не пустий 
+5 по кожнову адмт визначається підтим ( ми домовилися що будемо кастовмізувати візульні адмт ) формується html , і формується локальний обєкт (in_page_push_object_local чи інший для інших адмт) щоб зручніше було прокидувати в div / p etc 
