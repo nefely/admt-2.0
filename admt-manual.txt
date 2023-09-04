@@ -1,0 +1,7 @@
+https://deltafunc.atlassian.net/wiki/spaces/Trickster/pages/583434380/ADMT.+Dev+Description - документашка
+
+1 get_admt() - запит на сервер , отримання  списка адмт , активних і не активних + мова , перезає data отриману з відповіді в обєкт window.admt_array запускає admt_start
+
+2 admt_start() - запускає власне скріпти генерації блоків , прокудування параметрів в лінки і тд 
+
+3 check_jquery() провіряє чи є jquery чи воно працює через $ чи jQuery , при потребі підключає jquery і запускає get_admt() 
