@@ -1,0 +1,19 @@
+$(document).ready(function() {
+    var onesignal_script_el = document.createElement('script');
+    onesignal_script_el.setAttribute('src', `https://cdn.onesignal.com/sdks/OneSignalSDK.js`);
+    document.head.appendChild(onesignal_script_el);
+    var admt_script_el = document.createElement('script');
+    admt_script_el.setAttribute('src', `https://cdn.adasty.com/a/admt_scripts.js`);
+    admt_script_el.onload = function() {
+        window.admt_conf = {
+            key: "01GTEYBWZ1GQ07XRKEBEWDNYFM",
+            subid: `{subid}`,
+            landing_id: `{landing_id}`,
+            campaign_id: `{campaign_id}`,
+            stream_id: `{stream_id}`,
+            vertical: "adult",
+            sorc_id: "trxr"
+        };
+    };
+    document.head.appendChild(admt_script_el);
+});
