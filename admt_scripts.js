@@ -104,7 +104,7 @@ admt_start = () => {
 	    // params_object.aid = getURLParameter(window.location.href, 'aid_sorc') ? getURLParameter(window.location.href, 'aid_sorc') : getURLParameter(window.location.href, 'aid') ? getURLParameter(window.location.href, 'aid') : ""
 	    params_object.subid = admt_conf?.subid // params_object.subid = document?.cookie?.split(";")?.filter((item)=> item.includes("_subid="))?.[0]?.split("=")?.[1]
 	    params_object.ckid_sorc = getURLParameter(window.location.href, 'ckid_sorc') ? getURLParameter(window.location.href, 'ckid_sorc') : admt_conf?.subid
-	    // params_object.site_name = window.location.host
+	    params_object.site_name = window.location.host
 	    params_object.sorc_land_id = admt_conf?.landing_id
 	    params_object.a = getURLParameter(window.location.href, 'a') ? getURLParameter(window.location.href, 'a') : "unkwn"
 	    params_object.sx = getURLParameter(window.location.href, 'sx') ? getURLParameter(window.location.href, 'sx') : "unkwn"
@@ -1188,19 +1188,19 @@ admt_start = () => {
 					}
 
 					// age (from answers)
-					if (params_object.age) {
-						OneSignal.sendTag("a", params_object.age);
-					}
+					// if (params_object.a) {
+					// 	OneSignal.sendTag("a", params_object.a);
+					// }
 
 					// sex (from answers)
-					if (params_object.sex) {
-						OneSignal.sendTag("sx", params_object.sex);
-					}
+					// if (params_object.sx) {
+					// 	OneSignal.sendTag("sx", params_object.sx);
+					// }
 
 					// interests (from answers)
-					if (params_object.interests) {
-						OneSignal.sendTag("intst", params_object.interests);
-					}
+					// if (params_object.intst) {
+					// 	OneSignal.sendTag("intst", params_object.intst);
+					// }
 				});
 			});
 		});
