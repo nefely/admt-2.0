@@ -67,9 +67,9 @@ get_admt = () => {
 			admt_start()
 	    });
 	    // test
-	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="admt_styles.css?v=${Date.now()}">`)
+	    document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="admt_styles.css?v=${Date.now()}">`)
 	    // prod
-	    document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/admt_styles.css">`);
+	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/admt_styles.css">`);
 	    // demo
 	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/demo_admt_styles.css?v=${Date.now()}">`);
 	})
@@ -450,11 +450,11 @@ admt_start = () => {
 		$(document).ready(function(){
 
 			// comment on prod
-			// admt_array.filter(item => item.type == "in_page_push")[0].type_inpp = 1
+			// admt_array.filter(item => item.type == "in_page_push")[0].version = 1
 
 			var in_page_push_array = []
 
-			if (admt_array.filter(item => item.type == "in_page_push")[0].type_inpp == undefined) {
+			if (admt_array.filter(item => item.type == "in_page_push")[0].version == undefined || admt_array.filter(item => item.type == "in_page_push")[0].version == 0 || admt_array.filter(item => item.type == "in_page_push")[0].version == "") {
 				document.querySelector("body").insertAdjacentHTML("beforeend", 
 				`
 				<div id="in-page-push">
@@ -493,7 +493,7 @@ admt_start = () => {
 					in_page_push_array.push(in_page_push_object_local)
 				})
 			}
-			if (admt_array.filter(item => item.type == "in_page_push")[0].type_inpp == 1) {
+			if (admt_array.filter(item => item.type == "in_page_push")[0].version == 1) {
 				document.querySelector("body").insertAdjacentHTML("beforeend", 
 				`
 				<div id="in-page-push" data-theme="1">
@@ -577,7 +577,7 @@ admt_start = () => {
 
 				in_page_push_chousen_object = in_page_push_array[in_page_push_number_woman]
 
-				if (admt_array.filter(item => item.type == "in_page_push")[0].type_inpp == undefined) {
+				if (admt_array.filter(item => item.type == "in_page_push")[0].version == undefined || admt_array.filter(item => item.type == "in_page_push")[0].version == 0 || admt_array.filter(item => item.type == "in_page_push")[0].version == "") {
 					$("#in-page-push-img").attr("src" , in_page_push_chousen_object.img)
 					$("#in-page-push-name").text(in_page_push_chousen_object.name)
 					$("#in-page-push-age").text(in_page_push_chousen_object.age)
@@ -585,7 +585,7 @@ admt_start = () => {
 					$("#in-page-push-text").text(in_page_push_chousen_object.text)
 					$("#in-page-push-link").text(in_page_push_chousen_object.link)
 				}
-				if (admt_array.filter(item => item.type == "in_page_push")[0].type_inpp == 1) {
+				if (admt_array.filter(item => item.type == "in_page_push")[0].version == 1) {
 					$("#in-page-push-img").attr("src" , in_page_push_chousen_object.img)
 					$("#in-page-push-name").text(in_page_push_chousen_object.name)
 					$("#in-page-push-age").text(in_page_push_chousen_object.age)
@@ -642,11 +642,11 @@ admt_start = () => {
 		$(document).ready(function(){
 
 			// comment on prod
-			// admt_array.filter(item => item.type == "exit_popup")[0].type_expp = 1
+			// admt_array.filter(item => item.type == "exit_popup")[0].version = 1
 
 			var comebacker_array = []
 
-			if (admt_array.filter(item => item.type == "exit_popup")[0].type_expp == undefined) {
+			if (admt_array.filter(item => item.type == "exit_popup")[0].version == undefined || admt_array.filter(item => item.type == "exit_popup")[0].version == 0 || admt_array.filter(item => item.type == "exit_popup")[0].version == "") {
 			  	document.querySelector("body").insertAdjacentHTML("beforeend", 
 				`
 				<div id="comebacker" style="opacity: 0">
@@ -686,7 +686,7 @@ admt_start = () => {
 				})
 		  	}
 
-		  	if (admt_array.filter(item => item.type == "exit_popup")[0].type_expp == 1) {
+		  	if (admt_array.filter(item => item.type == "exit_popup")[0].version == 1) {
 			  	document.querySelector("body").insertAdjacentHTML("beforeend", 
 				`
 				<div id="comebacker" data-theme="1">
@@ -769,7 +769,7 @@ admt_start = () => {
 
 				comebacker_chousen_object = comebacker_array[comebacker_number_woman]
 
-				if (admt_array.filter(item => item.type == "exit_popup")[0].type_expp == undefined) {
+				if (admt_array.filter(item => item.type == "exit_popup")[0].version == undefined || admt_array.filter(item => item.type == "exit_popup")[0].version == 0 || admt_array.filter(item => item.type == "exit_popup")[0].version == "") {
 					$("#comebacker-name").text(comebacker_chousen_object.name)
 					$("#comebacker-title-text").text(comebacker_chousen_object.title)
 					$("#comebacker-text").text(comebacker_chousen_object.text)
@@ -782,7 +782,7 @@ admt_start = () => {
 				    }
 				}
 
-				if (admt_array.filter(item => item.type == "exit_popup")[0].type_expp == 1) {
+				if (admt_array.filter(item => item.type == "exit_popup")[0].version == 1) {
 					$("#comebacker-name").text(comebacker_chousen_object.name)
 					$("#comebacker-age").text(comebacker_chousen_object.age)
 					$("#comebacker-title-text").text(comebacker_chousen_object.title)
@@ -907,45 +907,104 @@ admt_start = () => {
 	// inactive tab banner
 	if ( admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0] ) {
 		$(document).ready(function(){
-		  	document.querySelector("body").insertAdjacentHTML("beforeend", 
-			`
-			<div id="inactive-tab-banner" style="opacity: 0">
-			    <div class="inactive-tab-banner-bg"></div>
-			    <div class="inactive-tab-banner-wrapper">   
-			      <button class="inactive-tab-banner-close">
-			        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"/>
-					</svg>
-			      </button>
-			      <div class="inactive-tab-banner-content" id="inactive-tab-banner-content">
-			        <p id="inactive-tab-banner-title">
-			        	<span id="inactive-tab-banner-title-text"></span>
-			        	<span id="inactive-tab-banner-name"></span>
-		        	</p>
-			        <h4 id="inactive-tab-banner-text"></h4>
-			        <div class="inactive-tab-banner-button">
-			          <a class="inactive-tab-banner-go" id="inactive-tab-banner-link"></a>
-			        </div>
-			      </div>
-			    </div>
-		  	</div>
-		  	`
-			);
+
+			// comment on prod
+			// admt_array.filter(item => item.type == "inactive_banner")[0].version = 1
 
 			var inactive_tab_banner_array = []
-			admt_array.filter(item => item.type == "inactive_banner")?.[0]?.data.map(item => {
-				let inactive_tab_banner_object_local = {
-					id: item.id,
-					banner_mob: item.img_1, 
-					banner_desk: item.img_2, 
-					name: item.text_1,
-					age: item.text_2,
-					title: item.text_3,
-					text: item.text_5,
-					link: item.text_6,
-				}
-				inactive_tab_banner_array.push(inactive_tab_banner_object_local)
-			})
+
+			if (admt_array.filter(item => item.type == "inactive_banner")[0].version == undefined || admt_array.filter(item => item.type == "inactive_banner")[0].version == 0 || admt_array.filter(item => item.type == "inactive_banner")[0].version == "") {
+			  	document.querySelector("body").insertAdjacentHTML("beforeend", 
+				`
+				<div id="inactive-tab-banner" style="opacity: 0">
+				    <div class="inactive-tab-banner-bg"></div>
+				    <div class="inactive-tab-banner-wrapper">   
+				      <button class="inactive-tab-banner-close">
+				        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"/>
+						</svg>
+				      </button>
+				      <div class="inactive-tab-banner-content" id="inactive-tab-banner-content">
+				        <p id="inactive-tab-banner-title">
+				        	<span id="inactive-tab-banner-title-text"></span>
+				        	<span id="inactive-tab-banner-name"></span>
+			        	</p>
+				        <h4 id="inactive-tab-banner-text"></h4>
+				        <div class="inactive-tab-banner-button">
+				          <a class="inactive-tab-banner-go" id="inactive-tab-banner-link"></a>
+				        </div>
+				      </div>
+				    </div>
+			  	</div>
+			  	`
+				);
+
+				admt_array.filter(item => item.type == "inactive_banner")?.[0]?.data.map(item => {
+					let inactive_tab_banner_object_local = {
+						id: item.id,
+						banner_mob: item.img_1, 
+						banner_desk: item.img_2, 
+						name: item.text_1,
+						age: item.text_2,
+						title: item.text_3,
+						text: item.text_5,
+						link: item.text_6,
+					}
+					inactive_tab_banner_array.push(inactive_tab_banner_object_local)
+				})
+			}
+
+			if (admt_array.filter(item => item.type == "inactive_banner")[0].version == 1) {
+			  	document.querySelector("body").insertAdjacentHTML("beforeend", 
+				`
+				<div id="inactive-tab-banner" data-theme="1">
+					<div class="inactive-tab-banner-bg"></div>
+					<div class="inactive-tab-banner-wrapper">    
+						<button class="inactive-tab-banner-close">
+						<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"></path>
+						</svg>
+						</button>
+						<div class="inactive-tab-banner-inner" id="inactive-tab-banner-inner">
+							<div class="inactive-tab-banner-inner-1-row">
+								<div class="inactive-tab-banner-inner-1-left">
+									<div class="inactive-tab-banner-inner-1-left-inner">
+										<div class="inactive-tab-banner-inner-1-info">
+											<span class="inactive-tab-banner-name" id="inactive-tab-banner-name"></span>, <span class="inactive-tab-banner-age" id="inactive-tab-banner-age"></span>
+										</div>
+										<div class="inactive-tab-banner-inner-1-image">
+											<img src="" alt="">
+										</div>
+									</div>
+								</div>
+								<div class="inactive-tab-banner-inner-1-right">
+									<h4 id="inactive-tab-banner-title-text"></h4>
+									<p id="inactive-tab-banner-text-1"></p>
+									<p id="inactive-tab-banner-text-2"></p>
+								</div>
+							</div>
+							<div class="inactive-tab-banner-inner-2-row">
+								<a class="inactive-tab-banner-go" id="inactive-tab-banner-link"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			  	`
+				);
+				admt_array.filter(item => item.type == "inactive_banner")?.[0]?.data.map(item => {
+					let inactive_tab_banner_object_local = {
+						id: item.id,
+						img: item.img_1, 
+						name: item.text_1,
+						age: item.text_2,
+						title: item.text_6,
+						text_1: item.text_7,
+						text_2: item.text_8,
+						link: item.text_5,
+					}
+					inactive_tab_banner_array.push(inactive_tab_banner_object_local)
+				})
+		  	}
 
 			var inactive_tab_banner_chousen_object = inactive_tab_banner_array[1]
 			var inactive_tab_banner_number_woman = 0
@@ -973,16 +1032,30 @@ admt_start = () => {
 
 				inactive_tab_banner_chousen_object = inactive_tab_banner_array[inactive_tab_banner_number_woman]
 
-				$("#inactive-tab-banner-name").text(inactive_tab_banner_chousen_object.name)
-				$("#inactive-tab-banner-title-text").text(inactive_tab_banner_chousen_object.title)
-				$("#inactive-tab-banner-text").text(inactive_tab_banner_chousen_object.text)
-				$("#inactive-tab-banner-link").text(inactive_tab_banner_chousen_object.link)
 
-				if (!window.matchMedia("(max-width: 991px)").matches) {
-					$("#inactive-tab-banner-content").css("background-image" , `url(${inactive_tab_banner_chousen_object.banner_desk})`)
-			    } else {
-					$("#inactive-tab-banner-content").css("background-image" , `url(${inactive_tab_banner_chousen_object.banner_mob})`)
-			    }
+				if (admt_array.filter(item => item.type == "inactive_banner")[0].version == undefined || admt_array.filter(item => item.type == "inactive_banner")[0].version == 0 || admt_array.filter(item => item.type == "inactive_banner")[0].version == "") {
+					$("#inactive-tab-banner-name").text(inactive_tab_banner_chousen_object.name)
+					$("#inactive-tab-banner-title-text").text(inactive_tab_banner_chousen_object.title)
+					$("#inactive-tab-banner-text").text(inactive_tab_banner_chousen_object.text)
+					$("#inactive-tab-banner-link").text(inactive_tab_banner_chousen_object.link)
+
+					if (!window.matchMedia("(max-width: 991px)").matches) {
+						$("#inactive-tab-banner-content").css("background-image" , `url(${inactive_tab_banner_chousen_object.banner_desk})`)
+				    } else {
+						$("#inactive-tab-banner-content").css("background-image" , `url(${inactive_tab_banner_chousen_object.banner_mob})`)
+				    }
+				}
+
+				if (admt_array.filter(item => item.type == "inactive_banner")[0].version == 1) {
+					$("#inactive-tab-banner-name").text(inactive_tab_banner_chousen_object.name)
+					$("#inactive-tab-banner-age").text(inactive_tab_banner_chousen_object.age)
+					$("#inactive-tab-banner-title-text").text(inactive_tab_banner_chousen_object.title)
+					$("#inactive-tab-banner-text-1").text(inactive_tab_banner_chousen_object.text_1)
+					$("#inactive-tab-banner-text-2").text(inactive_tab_banner_chousen_object.text_2)
+					$("#inactive-tab-banner-link").text(inactive_tab_banner_chousen_object.link)
+					$(".inactive-tab-banner-inner").css("background-image" , `url(${inactive_tab_banner_chousen_object.img})`)
+					$(".inactive-tab-banner-inner-1-image img").attr("src" , `${inactive_tab_banner_chousen_object.img}`)
+				}
 				 
 				params_object.crid_object.inactive_tab_banner = inactive_tab_banner_chousen_object.id
 
@@ -1148,7 +1221,7 @@ admt_start = () => {
 
 				OneSignal.init(initConfig);
 
-				OneSignal.getUserId().then(() => {
+				OneSignal.getUserId().then(() => {	
 					// aid_sorc (aid param from link)
 					if (params_object.aid) {
 						OneSignal.sendTag("aid_sorc", params_object.aid);
@@ -1188,19 +1261,22 @@ admt_start = () => {
 					}
 
 					// age (from answers)
-					// if (params_object.a) {
-					// 	OneSignal.sendTag("a", params_object.a);
-					// }
+					if (params_object.a) {
+						console.log(params_object.a)
+						OneSignal.sendTag("a", params_object.a);
+					}
 
 					// sex (from answers)
-					// if (params_object.sx) {
-					// 	OneSignal.sendTag("sx", params_object.sx);
-					// }
+					if (params_object.sx) {
+						console.log(params_object.sx)
+						OneSignal.sendTag("sx", params_object.sx);
+					}
 
 					// interests (from answers)
-					// if (params_object.intst) {
-					// 	OneSignal.sendTag("intst", params_object.intst);
-					// }
+					if (params_object.intst) {
+						console.log(params_object.intst)
+						OneSignal.sendTag("intst", params_object.intst);
+					}
 				});
 			});
 		});
