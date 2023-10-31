@@ -679,7 +679,7 @@ admt_start = () => {
 		$(document).ready(function(){
 
 			// comment on prod
-			admt_array.filter(item => item.type == "in_page_push")[0].version = 1
+			// admt_array.filter(item => item.type == "in_page_push")[0].version = 1
 
 			var in_page_push_array = []
 
@@ -871,7 +871,7 @@ admt_start = () => {
 		$(document).ready(function(){
 
 			// comment on prod
-			admt_array.filter(item => item.type == "exit_popup")[0].version = 1
+			// admt_array.filter(item => item.type == "exit_popup")[0].version = 1
 
 			var comebacker_array = []
 
@@ -1138,7 +1138,7 @@ admt_start = () => {
 		$(document).ready(function(){
 
 			// comment on prod
-			admt_array.filter(item => item.type == "inactive_banner")[0].version = 1
+			// admt_array.filter(item => item.type == "inactive_banner")[0].version = 1
 
 			var inactive_tab_banner_array = []
 
