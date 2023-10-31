@@ -15,7 +15,236 @@ get_admt = () => {
 		admt_lang = ['en','es','it','fr','de','ru'].includes(admt_lang) ? admt_lang : "en"
 
 	    $.post( "https://trl.adasty.com/api/init", { key: admt_conf.key, domain: window.location.host , lang: admt_lang } , function(data) {
+			
+			// uncomment on prod
 			window.admt_array = data
+
+			// comment on prod
+			// window.admt_array = [
+			//     {
+			//         "type": "inactive_tab",
+			//         "active": false,
+			//         "url": "imwp-offer.html?monetization=inactive-tab&vertical=test-vertical-1&sorc_id=test-sorc-id-1"
+			//     },
+			//     {
+			//         "type": "second_offer",
+			//         "active": false,
+			//         "url": "imwp-offer.html?monetization=second-offer&vertical=test-vertical-2&sorc_id=test-sorc-id-2&aid_sorc=00000001111111111111"
+			//     },
+			//     {
+			//         "type": "back_button",
+			//         "active": false,
+			//         "url": "imwp-offer.html?monetization=back-button&vertical=test-vertical-3&sorc_id=test-sorc-id-3"
+			//     },
+			//     {
+			//         "type": "in_page_push",
+			//         "active": true,
+			//         "url": "imwp-offer.html?monetization=in-page-push&vertical=test-vertical-4&sorc_id=test-sorc-id-4",
+			//         "data": [
+			//             {
+			//                 "id": 18,
+			//                 "vertical": "adult",
+			//                 "img_1": "https://cdn.adasty.com/c/01GVRK8VA8BY33WHAFGXJA2KZH.gif",
+			//                 "img_2": null,
+			//                 "img_3": null,
+			//                 "img_4": null,
+			//                 "text_1": "text1",
+			//                 "text_2": "text2",
+			//                 "text_3": "text3",
+			//                 "text_4": "text4",
+			//                 "text_5": "text5",
+			//                 "text_6": "text6",
+			//                 "text_7": "text7",
+			//                 "text_8": "text8"
+			//             },
+			//             {
+			//                 "id": 13,
+			//                 "vertical": "adult",
+			//                 "img_1": "https://cdn.adasty.com/c/01GS89ZB1F9A8M9B3490GFXZM3.png",
+			//                 "img_2": "https://cdn.adasty.com/c/01GS89ZB5PFNJ1MEKT26V719XR.png",
+			//                 "img_3": "https://cdn.adasty.com/c/01GS89ZB7566MEMYGH53H1GYGM.png",
+			//                 "img_4": null,
+			//                 "text_1": "Katya",
+			//                 "text_2": "25",
+			//                 "text_3": "You have (1) unread message from ",
+			//                 "text_4": "New message (1)",
+			//                 "text_5": "I urgently need hot crazy sex.  My excitement is out of control😈🔥What about you?🔞",
+			//                 "text_6": "Reply Now",
+			//                 "text_7": null,
+			//                 "text_8": null
+			//             },
+			//             {
+			//                 "id": 12,
+			//                 "vertical": "adult",
+			//                 "img_1": "https://cdn.adasty.com/c/01GS89CYGF90K9QD5K7JJC7NF3.png",
+			//                 "img_2": "https://cdn.adasty.com/c/01GS89CYN1NNJ8142PS3YEXNJW.png",
+			//                 "img_3": "https://cdn.adasty.com/c/01GS89CYPDRZNYWBKTZ4PQMGG3.png",
+			//                 "img_4": null,
+			//                 "text_1": "Olly",
+			//                 "text_2": "23",
+			//                 "text_3": "You have (1) unread message from ",
+			//                 "text_4": "New message (1)",
+			//                 "text_5": "Honey, I'm alone at home and very excited😈 I'm already going down with my fingers to my wet..",
+			//                 "text_6": "Reply Now",
+			//                 "text_7": null,
+			//                 "text_8": null
+			//             },
+			//             {
+			//                 "id": 11,
+			//                 "vertical": "adult",
+			//                 "img_1": "https://cdn.adasty.com/c/01GS89APVK0CJGRP0KWJ66JX58.png",
+			//                 "img_2": "https://cdn.adasty.com/c/01GS89APZQ7YBY301XYXK30JW9.png",
+			//                 "img_3": "https://cdn.adasty.com/c/01GS89AQ112BR0K6ZNAC4W7359.png",
+			//                 "img_4": null,
+			//                 "text_1": "Sabina",
+			//                 "text_2": "24",
+			//                 "text_3": "You have (1) unread message from ",
+			//                 "text_4": "New message (1)",
+			//                 "text_5": "Right now I want to prepare something hot and sweet just for you😇🔞I'm already spreading my legs…",
+			//                 "text_6": "Reply Now",
+			//                 "text_7": null,
+			//                 "text_8": null
+			//             }
+			//         ],
+			//         "version": 1
+			//     },
+			//     {
+			//         "type": "inactive_banner",
+			//         "active": true,
+			//         "url": "imwp-offer.html?monetization=inactive-banner&vertical=test-vertical-5&sorc_id=test-sorc-id-5",
+			//         "data": [
+			//             {
+			//                 "id": 16,
+			//                 "vertical": "adult",
+			//                 "img_1": "https://cdn.adasty.com/c/01GTVCMRS14EANZCYTV6GTZPJ9.jpg",
+			//                 "img_2": null,
+			//                 "img_3": null,
+			//                 "img_4": null,
+			//                 "text_1": "Sophia",
+			//                 "text_2": "24",
+			//                 "text_3": "Новое сообщение (2)",
+			//                 "text_4": "Хочу с тобой пообщаться.  Давай продолжим в лс?",
+			//                 "text_5": "Ответить",
+			//                 "text_6": "Подожди!",
+			//                 "text_7": "Я хочу чтоб ты это увидел!",
+			//                 "text_8": "Давай попробуем вместе 💕"
+			//             },
+			//             {
+			//                 "id": 9,
+			//                 "vertical": "ad",
+			//                 "img_1": "https://cdn.adasty.com/c/01GRAF0TNAMMNQH3QT36S7CZK0.jpg",
+			//                 "img_2": "https://cdn.adasty.com/c/01GRAF0TTXJYMBGTSEZ5H9SEG2.jpg",
+			//                 "img_3": "https://cdn.adasty.com/c/01GRAH5VV7NMMN0WBTW4WKA2RH.jpg",
+			//                 "img_4": null,
+			//                 "text_1": "Melania",
+			//                 "text_2": "22",
+			//                 "text_3": "You have (1) unread message from ",
+			//                 "text_4": "New message (1)",
+			//                 "text_5": "Hey sweetie. Hope you're as bored as I am 😙 How about we chat? Next, maybe I'll take some intimate pics for you 😏",
+			//                 "text_6": "Reply Now",
+			//                 "text_7": null,
+			//                 "text_8": null
+			//             },
+			//             {
+			//                 "id": 6,
+			//                 "vertical": "ad",
+			//                 "img_1": "https://cdn.adasty.com/c/01GRAEX7WVQR2ZR4S0BSTMJTKK.jpg",
+			//                 "img_2": "https://cdn.adasty.com/c/01GRAEX829686H50YZ9726BMW2.jpg",
+			//                 "img_3": "https://cdn.adasty.com/c/01GRAH4DW8A012211WPNP2A45R.jpg",
+			//                 "img_4": null,
+			//                 "text_1": "Sophia",
+			//                 "text_2": "24",
+			//                 "text_3": "You have (1) unread message from ",
+			//                 "text_4": "New message (1)",
+			//                 "text_5": "Honey, would you like to entertain me? It's really boring now 😜 and I want romance so bad ...",
+			//                 "text_6": "Reply Now",
+			//                 "text_7": null,
+			//                 "text_8": null
+			//             }
+			//         ],
+			//         "version": 1
+			//     },
+			//     {
+			//         "type": "exit_popup",
+			//         "active": true,
+			//         "url": "imwp-offer.html?monetization=exit-popup&vertical=test-vertical-6&sorc_id=test-sorc-id-6",
+			//         "data": [
+			//             {
+			//                 "id": 15,
+			//                 "vertical": "adult",
+			//                 "img_1": "https://cdn.adasty.com/c/01GTVCEE0QSXF0RJBJA8FQJBAY.jpg",
+			//                 "img_2": null,
+			//                 "img_3": null,
+			//                 "img_4": null,
+			//                 "text_1": "Kate",
+			//                 "text_2": "22",
+			//                 "text_3": "Новое сообщение (2)",
+			//                 "text_4": "Хочу с тобой пообщаться.  Давай продолжим в лс?",
+			//                 "text_5": "Ответить",
+			//                 "text_6": "Подожди!",
+			//                 "text_7": "Я хочу чтоб ты это увидел!",
+			//                 "text_8": "Давай попробуем вместе 💕"
+			//             },
+			//             {
+			//                 "id": 7,
+			//                 "vertical": "ad",
+			//                 "img_1": "https://cdn.adasty.com/c/01GRAEYF7GJMN453GXD3VQME6M.jpg",
+			//                 "img_2": "https://cdn.adasty.com/c/01GRAEYFB0D93MY0YC8E616Z0Q.jpg",
+			//                 "img_3": "https://cdn.adasty.com/c/01GRAH4YCN51AF495KFBDE21Q4.jpg",
+			//                 "img_4": null,
+			//                 "text_1": "Irene",
+			//                 "text_2": "23",
+			//                 "text_3": "You have (1) unread message from ",
+			//                 "text_4": "New message (1)",
+			//                 "text_5": "Hi there, doll 😚 do you like my ass like mine? 🤪",
+			//                 "text_6": "Reply Now",
+			//                 "text_7": null,
+			//                 "text_8": null
+			//             },
+			//             {
+			//                 "id": 5,
+			//                 "vertical": "ad",
+			//                 "img_1": "https://cdn.adasty.com/c/01GRAES1CRGVWBZVHFA75NN4J1.jpg",
+			//                 "img_2": "https://cdn.adasty.com/c/01GRAES1HFP7H1661EK813SRVW.jpg",
+			//                 "img_3": "https://cdn.adasty.com/c/01GRAH4097NR9HHFHFF48JX7CF.jpg",
+			//                 "img_4": null,
+			//                 "text_1": "Kate",
+			//                 "text_2": "22",
+			//                 "text_3": "You have (1) unread message from ",
+			//                 "text_4": "New message (1)",
+			//                 "text_5": "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉",
+			//                 "text_6": "Reply",
+			//                 "text_7": null,
+			//                 "text_8": null
+			//             }
+			//         ],
+			//         "version": 1
+			//     },
+			//     {
+			//         "type": "web_push",
+			//         "active": false,
+			//         "app_id": "88eb2195-8050-4301-8817-2a96c10301ac",
+			//         "safari_id": "web.onesignal.auto.40e188d7-5f7a-4af3-8ac5-05427adc97a7",
+			//         "data": [
+			//             {
+			//                 "id": 14,
+			//                 "vertical": "adult",
+			//                 "img_1": "https://cdn.adasty.com/c/01GS8B5NEJZ365TEMM3C1NW7J9.png",
+			//                 "img_2": null,
+			//                 "img_3": null,
+			//                 "img_4": null,
+			//                 "text_1": "You'll Get Amazing Free Photos🔥. Click On The “Allow” Button",
+			//                 "text_2": "Deny",
+			//                 "text_3": "Allow",
+			//                 "text_4": null,
+			//                 "text_5": null,
+			//                 "text_6": null,
+			//                 "text_7": null,
+			//                 "text_8": null
+			//             }
+			//         ]
+			//     }
+			// ]
 
 			// just for test
 	        // admt_array.push({
@@ -298,10 +527,10 @@ admt_start = () => {
 
 	// 		var imes_to_push_array_of_showed_object = []
 
-	// 		var imes_to_push_first_itaretion = true
+	// 		var imes_to_push_first_iteration = true
 	// 		imes_to_push_get_random_object = () => {
 	// 			do {
-	// 				if (imes_to_push_first_itaretion && getURLParameter(window.location.href, 'imwp_id') && imes_to_push_array.filter((item) => item.id == getURLParameter(window.location.href, 'imwp_id'))[0]) {
+	// 				if (imes_to_push_first_iteration && getURLParameter(window.location.href, 'imwp_id') && imes_to_push_array.filter((item) => item.id == getURLParameter(window.location.href, 'imwp_id'))[0]) {
 	// 					imes_to_push_array.map((item, index) => { 
 	// 						if (item.id == getURLParameter(window.location.href, 'imwp_id')) {
 	// 							imes_to_push_number_woman = index
@@ -310,7 +539,7 @@ admt_start = () => {
 	// 				} else {
 	// 					imes_to_push_number_woman = Math.floor(Math.random() * imes_to_push_array.length);
 	// 				}
-	// 				imes_to_push_first_itaretion = false
+	// 				imes_to_push_first_iteration = false
 	// 			} while (imes_to_push_array_of_showed_object.includes(imes_to_push_number_woman))
 
 	// 			imes_to_push_array[imes_to_push_number_woman]
@@ -450,7 +679,7 @@ admt_start = () => {
 		$(document).ready(function(){
 
 			// comment on prod
-			// admt_array.filter(item => item.type == "in_page_push")[0].version = 1
+			admt_array.filter(item => item.type == "in_page_push")[0].version = 1
 
 			var in_page_push_array = []
 
@@ -551,7 +780,7 @@ admt_start = () => {
 			var in_page_push_number_woman = 0
 			var in_page_push_array_of_showed_object = []
 
-			var in_page_push_first_itaretion = true
+			var in_page_push_first_iteration = true
 			in_page_push_get_random_object = () => {
 				do {
 					in_page_push_number_woman = Math.floor(Math.random() * in_page_push_array.length);
@@ -559,7 +788,7 @@ admt_start = () => {
 
 				do {
 					// if has inpp_id params in link and if this inpp_id is in array
-					if (in_page_push_first_itaretion && getURLParameter(window.location.href, 'inpp_id') && in_page_push_array.filter((item) => item.id == getURLParameter(window.location.href, 'inpp_id'))[0]) {
+					if (in_page_push_first_iteration && getURLParameter(window.location.href, 'inpp_id') && in_page_push_array.filter((item) => item.id == getURLParameter(window.location.href, 'inpp_id'))[0]) {
 						in_page_push_array.map((item, index) => { 
 							if (item.id == getURLParameter(window.location.href, 'inpp_id')) {
 								in_page_push_number_woman = index
@@ -568,7 +797,7 @@ admt_start = () => {
 					} else {
 						in_page_push_number_woman = Math.floor(Math.random() * in_page_push_array.length);
 					}
-					in_page_push_first_itaretion = false
+					in_page_push_first_iteration = false
 				} while (in_page_push_array_of_showed_object.includes(in_page_push_number_woman))
 
 				in_page_push_array[in_page_push_number_woman]
@@ -642,7 +871,7 @@ admt_start = () => {
 		$(document).ready(function(){
 
 			// comment on prod
-			// admt_array.filter(item => item.type == "exit_popup")[0].version = 1
+			admt_array.filter(item => item.type == "exit_popup")[0].version = 1
 
 			var comebacker_array = []
 
@@ -729,10 +958,10 @@ admt_start = () => {
 						img: item.img_1, 
 						name: item.text_1,
 						age: item.text_2,
-						title: item.text_6,
-						text_1: item.text_7,
-						text_2: item.text_8,
-						link: item.text_5,
+						title: item.text_3,
+						text_1: item.text_4,
+						text_2: item.text_5,
+						link: item.text_6,
 					}
 					comebacker_array.push(comebacker_object_local)
 				})
@@ -747,11 +976,11 @@ admt_start = () => {
 			var comebacker_number_woman = 0
 			var comebacker_array_of_showed_object = []
 
-			var comebacker_first_itaretion = true
+			var comebacker_first_iteration = true
 			comebacker_get_random_object = () => {
 				do {
 					// if has expp_id params in link and if this expp_id is in array
-					if (comebacker_first_itaretion && getURLParameter(window.location.href, 'expp_id') && comebacker_array.filter((item) => item.id == getURLParameter(window.location.href, 'expp_id'))[0]) {
+					if (comebacker_first_iteration && getURLParameter(window.location.href, 'expp_id') && comebacker_array.filter((item) => item.id == getURLParameter(window.location.href, 'expp_id'))[0]) {
 						comebacker_array.map((item, index) => { 
 							if (item.id == getURLParameter(window.location.href, 'expp_id')) {
 								comebacker_number_woman = index
@@ -760,7 +989,7 @@ admt_start = () => {
 					} else {
 						comebacker_number_woman = Math.floor(Math.random() * comebacker_array.length);
 					}
-					comebacker_first_itaretion = false
+					comebacker_first_iteration = false
 				} while (comebacker_array_of_showed_object.includes(comebacker_number_woman))
 
 				comebacker_array[comebacker_number_woman]
@@ -909,7 +1138,7 @@ admt_start = () => {
 		$(document).ready(function(){
 
 			// comment on prod
-			// admt_array.filter(item => item.type == "inactive_banner")[0].version = 1
+			admt_array.filter(item => item.type == "inactive_banner")[0].version = 1
 
 			var inactive_tab_banner_array = []
 
@@ -997,10 +1226,10 @@ admt_start = () => {
 						img: item.img_1, 
 						name: item.text_1,
 						age: item.text_2,
-						title: item.text_6,
-						text_1: item.text_7,
-						text_2: item.text_8,
-						link: item.text_5,
+						title: item.text_3,
+						text_1: item.text_4,
+						text_2: item.text_5,
+						link: item.text_6,
 					}
 					inactive_tab_banner_array.push(inactive_tab_banner_object_local)
 				})
@@ -1010,11 +1239,11 @@ admt_start = () => {
 			var inactive_tab_banner_number_woman = 0
 			var inactive_tab_banner_array_of_showed_object = []
 
-			var inactive_tab_banner_first_itaretion = true
+			var inactive_tab_banner_first_iteration = true
 			inactive_tab_banner_get_random_object = () => {
 				do {
 					// if has inact_b_id params in link and if this inact_b_id is in array
-					if (inactive_tab_banner_first_itaretion && getURLParameter(window.location.href, 'inact_b_id') && inactive_tab_banner_array.filter((item) => item.id == getURLParameter(window.location.href, 'inact_b_id'))[0]) {
+					if (inactive_tab_banner_first_iteration && getURLParameter(window.location.href, 'inact_b_id') && inactive_tab_banner_array.filter((item) => item.id == getURLParameter(window.location.href, 'inact_b_id'))[0]) {
 						inactive_tab_banner_array.map((item, index) => { 
 							if (item.id == getURLParameter(window.location.href, 'inact_b_id')) {
 								inactive_tab_banner_number_woman = index
@@ -1023,7 +1252,7 @@ admt_start = () => {
 					} else {
 						inactive_tab_banner_number_woman = Math.floor(Math.random() * inactive_tab_banner_array.length);
 					}
-					inactive_tab_banner_first_itaretion = false
+					inactive_tab_banner_first_iteration = false
 				} while (inactive_tab_banner_array_of_showed_object.includes(inactive_tab_banner_number_woman))
 
 				inactive_tab_banner_array[inactive_tab_banner_number_woman]
