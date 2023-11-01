@@ -1046,3 +1046,269 @@
 #imwp-page .mwp-page-title {
 	margin: 16px 0 !important;
 }
+
+
+/*in-page-chat*/
+#in-page-chat.hidden {
+	display: none !important;	
+}
+#in-page-chat ,
+#in-page-chat * {
+  margin: 0 !important;
+  padding: 0 !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  text-shadow: initial !important;
+  font-family: sans-serif !important;
+  text-transform: initial !important; 
+  text-decoration: none !important;
+  background: transparent !important;
+  z-index: 1000000 !important;
+  line-height: 1.4 !important;
+  color: rgb(51, 51, 51) !important;
+  font-size: 14px !important;
+  font-family: sans-serif !important;
+  text-align: left !important;
+  letter-spacing: 0 !important;
+  font-weight: 400 !important;
+}
+#in-page-chat {
+  position: fixed !important;
+  z-index: 1000000 !important;
+  bottom: 25px !important;
+  right: 25px !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: flex-end !important;
+  flex-wrap: wrap !important;
+  flex-direction: column !important;
+}
+#in-page-chat .in-page-chat-circle {
+  cursor: pointer !important;
+  width: 60px !important;
+  height: 60px !important;
+  background: #151515 !important;
+  border-radius: 1000px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.25) !important;
+  background: linear-gradient(270deg, rgba(246,130,97,1) 0%, rgba(245,76,100,1) 100%) !important;
+  position: relative !important;
+}
+#in-page-chat .in-page-chat-circle .in-page-chat-circle-dot {
+  position: absolute !important;
+  top: -5px !important;
+  right: -5px !important;
+  width: 25px !important;
+  min-width: 25px !important;
+  max-width: 25px !important;
+  height: 25px !important;
+  min-height: 25px !important;
+  max-height: 25px !important;
+  border-radius: 1000px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: #151515 !important;
+  color: #fff !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  z-index: 1000000 !important;
+}
+#in-page-chat svg {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+#in-page-chat .in-page-chat-circle > svg:nth-child(1) {
+  display: block !important;
+  width: 25px !important;
+  min-width: 25px !important;
+  max-width: 25px !important;
+  height: 25px !important;
+  min-height: 25px !important;
+  max-height: 25px !important;
+}
+#in-page-chat .in-page-chat-circle > svg:nth-child(2) {
+  display: none !important;
+  width: 20px !important;
+  min-width: 20px !important;
+  max-width: 20px !important;
+  height: 20px !important;
+  min-height: 20px !important;
+  max-height: 20px !important;
+}
+#in-page-chat.active .in-page-chat-circle > svg:nth-child(1) {
+  display: none !important;
+}
+#in-page-chat.active .in-page-chat-circle > svg:nth-child(2) {
+  display: block !important;
+}
+#in-page-chat .in-page-chat-box {
+  background: #fff !important;
+  width: 350px !important;
+  margin-bottom: 15px !important;
+  border-radius: 16px !important;
+  color: #111 !important;
+  box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.25) !important;
+  overflow: hidden !important;
+  display: none; 
+}
+
+#in-page-chat .in-page-chat-row-top {
+  padding: 16px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+}
+#in-page-chat .in-page-chat-ava {
+  width: 60px !important;
+  min-width: 60px !important;
+  max-width: 60px !important;
+  height: 60px !important;
+  min-height: 60px !important;
+  max-height: 60px !important;
+  margin-right: 12px !important;
+}
+#in-page-chat .in-page-chat-ava img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 1000px !important;
+  object-position: center !important;
+  object-fit: cover !important;
+}
+#in-page-chat .in-page-chat-box-column-right {
+  max-height: 450px !important;
+  overflow-y: auto !important;
+}
+#in-page-chat .in-page-chat-box-column-right::-webkit-scrollbar {
+  display: none !important;
+}
+#in-page-chat .in-page-chat-box-column-right {
+  -ms-overflow-style: none !important; 
+  scrollbar-width: none !important;
+}
+#in-page-chat .in-page-chat-message {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  margin-bottom: 16px !important;
+}
+#in-page-chat .in-page-chat-message-inner {
+  width: 100% !important;
+  background: #eee !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+#in-page-chat .in-page-chat-message-name {
+  background: rgb(246,130,97) !important;
+  background: linear-gradient(270deg, rgba(246,130,97,1) 0%, rgba(245,76,100,1) 100%) !important;
+  color: #fff !important; 
+  padding: 6px 12px !important;
+  margin: 0 !important;
+  font: inherit !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+}
+#in-page-chat .in-page-chat-message-text {
+  padding: 6px 12px !important;
+  margin: 0 !important;
+}
+#in-page-chat .in-page-chat-message-date {
+  margin-top: 6px !important;
+}
+#in-page-chat .in-page-chat-message-date * {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 10px !important;
+  color: #666 !important;
+}
+#in-page-chat .in-page-chat-row-bottom {
+  padding: 12px 16px !important;
+  border-top: 1px solid #eee !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+}
+#in-page-chat .in-page-chat-emoji svg {
+  width: 25px !important;
+  min-width: 25px !important;
+  max-width: 25px !important;
+  height: 25px !important;
+  min-height: 25px !important;
+  max-height: 25px !important;
+  margin-right: 12px !important;
+}
+#in-page-chat .in-page-chat-input {
+  border-top-left-radius: 8px !important;
+  border-bottom-left-radius: 8px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  height: 35px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 6px 12px !important;
+  border: 1px solid #eee !important;
+  background: #eee !important;
+  flex-grow: 1 !important;
+}
+#in-page-chat .in-page-chat-button {
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-top-right-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  color: #fff !important;
+  height: 35px !important;
+  padding: 6px 16px !important;
+  background: rgb(246,130,97) !important;
+  background: linear-gradient(270deg, rgba(246,130,97,1) 0%, rgba(245,76,100,1) 100%) !important;
+}
+
+@media screen and (max-width: 991px) {
+  #in-page-chat {
+    bottom: 20px !important;
+    right: 20px !important;
+  }
+  #in-page-chat .in-page-chat-circle {
+    width: 45px !important;
+    height: 45px !important;
+  }
+  #in-page-chat .in-page-chat-circle > svg:nth-child(1) {
+    width: 20px !important;
+    min-width: 20px !important;
+    max-width: 20px !important;
+    height: 20px !important;
+    min-height: 20px !important;
+    max-height: 20px !important;
+  }
+  #in-page-chat .in-page-chat-circle > svg:nth-child(2) {
+    width: 15px !important;
+    min-width: 15px !important;
+    max-width: 15px !important;
+    height: 15px !important;
+    min-height: 15px !important;
+    max-height: 15px !important;
+  }
+  #in-page-chat .in-page-chat-circle .in-page-chat-circle-dot {
+    width: 20px !important;
+    min-width: 20px !important;
+    max-width: 20px !important;
+    height: 20px !important;
+    min-height: 20px !important;
+    max-height: 20px !important;
+    font-size: 10px !important;
+  }
+  #in-page-chat .in-page-chat-box {
+      width: calc(100% - 20px) !important;
+      max-width: 500px !important;
+  }
+  #in-page-chat .in-page-chat-message-text {
+    font-size: 12px !important;
+  }
+}
