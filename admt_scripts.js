@@ -729,8 +729,14 @@ admt_start = () => {
 
 			// comment on prod
 			// admt_array.filter(item => item.type == "in_page_push")[0].version = 1
-
 			var in_page_push_array = []
+
+			// comment on prod
+			// admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0].delay_time = 2500
+			// admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0].display_limit = 3
+
+			let delay_time = admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0]?.delay_time
+			let display_limit = admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0]?.display_limit
 
 			if (admt_array.filter(item => item.type == "in_page_push")[0].version == undefined || admt_array.filter(item => item.type == "in_page_push")[0].version == 0 || admt_array.filter(item => item.type == "in_page_push")[0].version == "") {
 				document.querySelector("body").insertAdjacentHTML("beforeend", 
@@ -878,7 +884,7 @@ admt_start = () => {
 			in_page_push_show_popup = () => {
 				setTimeout(()=>{
 					$("#in-page-push").addClass("active")
-				},7000);
+				}, (delay_time ? delay_time : 7000));
 			}
 			in_page_push_hide_popup = () => {
 				$("#in-page-push").removeClass("active")
@@ -889,7 +895,7 @@ admt_start = () => {
 
 			$('.in-page-push-close').click(function(){
 				in_page_push_hide_popup()
-				if (in_page_push_array_of_showed_object.length < in_page_push_array.length) {
+				if (in_page_push_array_of_showed_object.length < ( in_page_push_array.length >= display_limit ? display_limit : in_page_push_array.length)  ) {
 					setTimeout(() => {
 						in_page_push_get_random_object()
 						in_page_push_show_popup()
@@ -923,6 +929,11 @@ admt_start = () => {
 			// admt_array.filter(item => item.type == "exit_popup")[0].version = 1
 
 			var comebacker_array = []
+
+			// comment on prod
+			// admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0].display_limit = 2
+
+			let display_limit = admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0]?.display_limit
 
 			if (admt_array.filter(item => item.type == "exit_popup")[0].version == undefined || admt_array.filter(item => item.type == "exit_popup")[0].version == 0 || admt_array.filter(item => item.type == "exit_popup")[0].version == "") {
 			  	document.querySelector("body").insertAdjacentHTML("beforeend", 
@@ -1100,8 +1111,10 @@ admt_start = () => {
 				comebacker_array.map((item , index) => {comebacker_array_of_showed_object[index] = null})
 			})
 
+
+
 			$("html").mouseout(function(){
-				if (comebacker_array_of_showed_object.length < comebacker_array.length) {
+				if (comebacker_array_of_showed_object.length < ( comebacker_array.length >= display_limit ? display_limit : comebacker_array.length)  ) {
 					if (comebacker_mouse_location.x >= comebacker_window_location.x_end || comebacker_mouse_location.x <= comebacker_window_location.x_start || comebacker_mouse_location.y >= comebacker_window_location.y_end || comebacker_mouse_location.y <= comebacker_window_location.y_start) {
 						if (!$("#comebacker").hasClass("active")) {
 							comebacker_get_random_object()
@@ -1188,6 +1201,11 @@ admt_start = () => {
 
 			// comment on prod
 			// admt_array.filter(item => item.type == "inactive_banner")[0].version = 1
+
+			// comment on prod
+			// admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0].display_limit = 2
+
+			let display_limit = admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0]?.display_limit
 
 			var inactive_tab_banner_array = []
 
@@ -1364,7 +1382,8 @@ admt_start = () => {
 			})
 
 			document.addEventListener("visibilitychange", () => {
-				if (inactive_tab_banner_array_of_showed_object.length < inactive_tab_banner_array.length) {
+
+				if (inactive_tab_banner_array_of_showed_object.length < ( inactive_tab_banner_array.length >= display_limit ? display_limit : inactive_tab_banner_array.length)  ) {
 					if (document.visibilityState === "hidden") {
 						if (!$("#inactive-tab-banner").hasClass("active")) {
 							inactive_tab_banner_get_random_object()
@@ -1567,6 +1586,11 @@ admt_start = () => {
 			// comment on prod
 			// admt_array.filter(item => item.type == "in_page_chat")[0].version = 1
 
+			// comment on prod
+			// admt_array.filter(item => item.type == "in_page_chat" && item.active == true)[0].delay_time = 2500
+
+			let delay_time = admt_array.filter(item => item.type == "in_page_chat" && item.active == true)[0]?.delay_time
+
 			var in_page_chat_array = []
 
 			if (admt_array.filter(item => item.type == "in_page_chat")[0].version == undefined || admt_array.filter(item => item.type == "in_page_chat")[0].version == 0 || admt_array.filter(item => item.type == "in_page_chat")[0].version == "") {
@@ -1698,7 +1722,7 @@ admt_start = () => {
 			in_page_chat_show_popup = () => {
 				setTimeout(()=>{
 					$("#in-page-chat").removeClass("hidden")
-				},5000);
+				}, (delay_time ? delay_time : 7000));
 			}
 
 			in_page_chat_get_random_object()
