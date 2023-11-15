@@ -80,7 +80,8 @@
 #in-page-push .in-page-push-image-block h4 {
 	font-size: calc(1em - 2px) !important;
 	font-weight: 600 !important;
-	text-align: center;
+	text-align: center !important; 
+	color: inherit !important;
 }
 #in-page-push .in-page-push-image-block #in-page-push-age {
 	color: #999 !important;
