@@ -20,45 +20,44 @@ get_admt = () => {
 			window.admt_array = data
 
 			// comment on prod
-
-			window.admt_array.push({
-				"type": "in_page_chat",
-				"active": true,
-				"url": "imwp-offer.html?monetization=in-page-chat&vertical=test-vertical-8&sorc_id=test-sorc-id-8",
-				"version": "0",
-				"data": [{
-	                "id": 1218,
-	                "vertical": "adult",
-	                "img_1": "https://cdn.adasty.com/c/01HE2PJDJQHHQTHXFKF4V01B28.jpg",
-	                "img_2": null,
-	                "img_3": null,
-	                "img_4": null,
-	                "text_1": "Solomia",
-	                "text_2": "Lorem ipsum, dudiandae aspernatur voluptas molestiae tempore consequuntur laudantium nulla velit aliquam.",
-	                "text_3": "Lorem ipsum, dolor sit amet consusto optio, ad obcaecati repudiandae aspernatur voluptas molestiae tempore consequuntur laudantium nulla velit aliquam.",
-	                "text_4": "Reply...",
-	                "text_5": "Send",
-	                "text_6": "",
-	                "text_7": "",
-	                "text_8": ""
-	            },
-	            {
-	                "id": 1219,
-	                "vertical": "adult",
-	                "img_1": "https://cdn.adasty.com/c/01GRAH4DW8A012211WPNP2A45R.jpg",
-	                "img_2": null,
-	                "img_3": null,
-	                "img_4": null,
-	                "text_1": "Anna",
-	                "text_2": "Lorem ipsum, dolor sit amet ae aspernatur voluptas molestiae tempore consequuntur laudantium nulla velit aliquam.",
-	                "text_3": "Lorem ipsum, dolor sit molestiae tempore consequuntur laudantium nulla velit aliquam.",
-	                "text_4": "text me...",
-	                "text_5": "Send",
-	                "text_6": "",
-	                "text_7": "",
-	                "text_8": ""
-	            }],
-			})
+			// window.admt_array.push({
+			// 	"type": "in_page_chat",
+			// 	"active": true,
+			// 	"url": "imwp-offer.html?monetization=in-page-chat&vertical=test-vertical-8&sorc_id=test-sorc-id-8",
+			// 	"version": "0",
+			// 	"data": [{
+	  //               "id": 1218,
+	  //               "vertical": "adult",
+	  //               "img_1": "https://cdn.adasty.com/c/01HE2PJDJQHHQTHXFKF4V01B28.jpg",
+	  //               "img_2": null,
+	  //               "img_3": null,
+	  //               "img_4": null,
+	  //               "text_1": "Solomia",
+	  //               "text_2": "Lorem ipsum, dudiandae aspernatur voluptas molestiae tempore consequuntur laudantium nulla velit aliquam.",
+	  //               "text_3": "Lorem ipsum, dolor sit amet consusto optio, ad obcaecati repudiandae aspernatur voluptas molestiae tempore consequuntur laudantium nulla velit aliquam.",
+	  //               "text_4": "Reply...",
+	  //               "text_5": "Send",
+	  //               "text_6": "",
+	  //               "text_7": "",
+	  //               "text_8": ""
+	  //           },
+	  //           {
+	  //               "id": 1219,
+	  //               "vertical": "adult",
+	  //               "img_1": "https://cdn.adasty.com/c/01GRAH4DW8A012211WPNP2A45R.jpg",
+	  //               "img_2": null,
+	  //               "img_3": null,
+	  //               "img_4": null,
+	  //               "text_1": "Anna",
+	  //               "text_2": "Lorem ipsum, dolor sit amet ae aspernatur voluptas molestiae tempore consequuntur laudantium nulla velit aliquam.",
+	  //               "text_3": "Lorem ipsum, dolor sit molestiae tempore consequuntur laudantium nulla velit aliquam.",
+	  //               "text_4": "text me...",
+	  //               "text_5": "Send",
+	  //               "text_6": "",
+	  //               "text_7": "",
+	  //               "text_8": ""
+	  //           }],
+			// })
 
 
 			// window.admt_array = [
@@ -729,6 +728,7 @@ admt_start = () => {
 
 			// comment on prod
 			// admt_array.filter(item => item.type == "in_page_push")[0].version = 1
+			
 			var in_page_push_array = []
 
 			// comment on prod
