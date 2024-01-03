@@ -1418,6 +1418,9 @@ admt_start = () => {
 						password: params_object?.ps ,
 						sex: params_object?.sx ,
 						phone: params_object?.ph ,
+						click_id: admt_conf?.subid ,
+						vertical: admt_conf?.vertical ,
+						source:`${admt_conf?.sorc_id}_${admt_conf?.landing_id}` ,
 					}
 					for (let key in api_send_data) {
 					    if (api_send_data[key] === "" || api_send_data[key] === undefined || api_send_data[key] == 'unkwn' || api_send_data[key] == null) {
