@@ -736,7 +736,7 @@ admt_start = () => {
 			// admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0].display_limit = 3
 
 			let delay_time = admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0]?.delay_time
-			let display_limit = admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0]?.display_limit
+			let display_limit = admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0]?.display_limit ? admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0]?.display_limit : admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0].data.length
 
 			if (admt_array.filter(item => item.type == "in_page_push")[0].version == undefined || admt_array.filter(item => item.type == "in_page_push")[0].version == 0 || admt_array.filter(item => item.type == "in_page_push")[0].version == "") {
 				document.querySelector("body").insertAdjacentHTML("beforeend", 
@@ -933,7 +933,7 @@ admt_start = () => {
 			// comment on prod
 			// admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0].display_limit = 2
 
-			let display_limit = admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0]?.display_limit
+			let display_limit = admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0]?.display_limit ? admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0]?.display_limit : admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0].data.length
 
 			if (admt_array.filter(item => item.type == "exit_popup")[0].version == undefined || admt_array.filter(item => item.type == "exit_popup")[0].version == 0 || admt_array.filter(item => item.type == "exit_popup")[0].version == "") {
 			  	document.querySelector("body").insertAdjacentHTML("beforeend", 
@@ -1205,7 +1205,7 @@ admt_start = () => {
 			// comment on prod
 			// admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0].display_limit = 2
 
-			let display_limit = admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0]?.display_limit
+			let display_limit = admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0]?.display_limit ? admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0]?.display_limit : admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0].data.length
 
 			var inactive_tab_banner_array = []
 
