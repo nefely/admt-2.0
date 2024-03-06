@@ -1149,6 +1149,8 @@
 #in-page-chat .in-page-chat-box {
   background: #fff !important;
   width: 350px !important;
+  max-width: 350px !important;
+  min-width: 350px !important;
   margin-bottom: 15px !important;
   border-radius: 16px !important;
   color: #111 !important;
