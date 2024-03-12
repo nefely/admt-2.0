@@ -431,6 +431,7 @@ $("#in-page-chat .in-page-chat-circle").click(function(){
     stream_id: `{stream_id}`,
     aid: "qweqweqwe",
     // collect_disabled: true,
+    collect_via: "all", /*bd*/ /*"all"*/ /*"api"*/
     vertical: "adult",
     sorc_id: "trxr",
   }
@@ -441,7 +442,7 @@ var admt_script_el = document.createElement('script');
 // test min
 // admt_script_el.setAttribute('src',`obfuscated.js?v=${Date.now()}`);
 // test
-admt_script_el.setAttribute('src',`admt_scripts.js`);
+admt_script_el.setAttribute('src',`admt_scripts.js?v=${Date.now()}`);
 // prod
 // admt_script_el.setAttribute('src',`https://cdn.adasty.com/a/admt_scripts.js?v=${Date.now()}`);
 // demo

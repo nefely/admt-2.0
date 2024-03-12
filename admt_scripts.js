@@ -336,9 +336,9 @@ get_admt = () => {
 			admt_start()
 	    });
 	    // test
-	    document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="admt_styles.css?v=${Date.now()}">`)
+	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="admt_styles.css?v=${Date.now()}">`)
 	    // prod
-	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/admt_styles.css">`);
+	    document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/admt_styles.css">`);
 	    // demo
 	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/demo_admt_styles.css?v=${Date.now()}">`);
 	})
@@ -381,6 +381,9 @@ admt_start = () => {
 	    params_object.em = getURLParameter(window.location.href, 'em') ? getURLParameter(window.location.href, 'em') : "unkwn"
 	    params_object.ph = getURLParameter(window.location.href, 'ph') ? getURLParameter(window.location.href, 'ph') : "unkwn"
 	    params_object.n = getURLParameter(window.location.href, 'n') ? getURLParameter(window.location.href, 'n') : "unkwn"
+	    params_object.nk = getURLParameter(window.location.href, 'nk') ? getURLParameter(window.location.href, 'nk') : "unkwn"
+	    params_object.fy = getURLParameter(window.location.href, 'fy') ? getURLParameter(window.location.href, 'fy') : "unkwn"
+	    params_object.psx = getURLParameter(window.location.href, 'psx') ? getURLParameter(window.location.href, 'psx') : "unkwn"
 	    params_object.fn = getURLParameter(window.location.href, 'fn') ? getURLParameter(window.location.href, 'fn') : "unkwn"
 	    params_object.ps = getURLParameter(window.location.href, 'ps') ? getURLParameter(window.location.href, 'ps') : "unkwn"
 	    params_object.of = getURLParameter(window.location.href, 'of') ? getURLParameter(window.location.href, 'of') : "unkwn"
@@ -450,6 +453,9 @@ admt_start = () => {
 	            __em = params_object.em ? `em=${params_object.em}` : `em=`
 	            __ph = params_object.ph ? `ph=${params_object.ph}` : `ph=`
 	            __n = params_object.n ? `n=${params_object.n}` : `n=`
+	            __nk = params_object.nk ? `nk=${params_object.nk}` : `nk=`
+	            __fy = params_object.fy ? `fy=${params_object.fy}` : `fy=`
+	            __psx = params_object.psx ? `psx=${params_object.psx}` : `psx=`
 	            __fn = params_object.fn ? `fn=${params_object.fn}` : `fn=`
 	            __ps = params_object.ps ? `ps=${params_object.ps}` : `ps=`
 	            __of = params_object.of ? `of=${params_object.of}` : `of=`
@@ -466,51 +472,51 @@ admt_start = () => {
 	                // in_page_push__crid
 	                in_page_push__crid = params_object.crid_object.in_page_push ? `crid=${params_object.crid_object.in_page_push}` : ``
 	                // form in page push final link
-                    params_object.final_link_object.in_page_push = `${params_object.start_link_object.in_page_push}${params_object?.start_link_object?.in_page_push?.includes("?") ? "&" : "?"}${in_page_push__crid}&${params_object?.start_link_object?.in_page_push?.includes("aid_sorc") ? "" : __aid_sorc}&${params_object?.start_link_object?.in_page_push?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.in_page_push?.includes("sorc_id") ? "" : __sorc_id}&admt=inpp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}&${__ep1}&${__ep2}&${__ep3}&${__of}&${__bd}`
+                    params_object.final_link_object.in_page_push = `${params_object.start_link_object.in_page_push}${params_object?.start_link_object?.in_page_push?.includes("?") ? "&" : "?"}${in_page_push__crid}&${params_object?.start_link_object?.in_page_push?.includes("aid_sorc") ? "" : __aid_sorc}&${params_object?.start_link_object?.in_page_push?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.in_page_push?.includes("sorc_id") ? "" : __sorc_id}&admt=inpp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__nk}&${__fy}&${__psx}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}&${__ep1}&${__ep2}&${__ep3}&${__of}&${__bd}`
 
 	            // comebacker 
 	                // comebacker__crid
 	                comebacker__crid = params_object.crid_object.comebacker ? `crid=${params_object.crid_object.comebacker}` : ``
 	                // form comebacker final link
-                    params_object.final_link_object.comebacker = `${params_object.start_link_object.comebacker}${params_object?.start_link_object?.comebacker?.includes("?") ? "&" : "?"}${comebacker__crid}&${params_object?.start_link_object?.comebacker?.includes("aid_sorc") ? "" : __aid_sorc}&${params_object?.start_link_object?.comebacker?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.comebacker?.includes("sorc_id") ? "" : __sorc_id}&admt=expp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}&${__ep1}&${__ep2}&${__ep3}&${__of}&${__bd}`
+                    params_object.final_link_object.comebacker = `${params_object.start_link_object.comebacker}${params_object?.start_link_object?.comebacker?.includes("?") ? "&" : "?"}${comebacker__crid}&${params_object?.start_link_object?.comebacker?.includes("aid_sorc") ? "" : __aid_sorc}&${params_object?.start_link_object?.comebacker?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.comebacker?.includes("sorc_id") ? "" : __sorc_id}&admt=expp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__nk}&${__fy}&${__psx}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}&${__ep1}&${__ep2}&${__ep3}&${__of}&${__bd}`
 
 	            // inactive_tab_redirect 
 	                // inactive_tab_redirect__crid
 	                inactive_tab_redirect__crid = params_object.crid_object.inactive_tab_redirect ? `crid=${params_object.crid_object.inactive_tab_redirect}` : ``
 	                // form inactive_tab_redirect final link
-                    params_object.final_link_object.inactive_tab_redirect = `${params_object.start_link_object.inactive_tab_redirect}${params_object?.start_link_object?.inactive_tab_redirect?.includes("?") ? "&" : "?"}${inactive_tab_redirect__crid}&${params_object?.start_link_object?.inactive_tab_redirect?.includes("aid_sorc") ? "" : __aid_sorc}&${params_object?.start_link_object?.inactive_tab_redirect?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.inactive_tab_redirect?.includes("sorc_id") ? "" : __sorc_id}&admt=inact_rd&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}&${__ep1}&${__ep2}&${__ep3}&${__of}&${__bd}`
+                    params_object.final_link_object.inactive_tab_redirect = `${params_object.start_link_object.inactive_tab_redirect}${params_object?.start_link_object?.inactive_tab_redirect?.includes("?") ? "&" : "?"}${inactive_tab_redirect__crid}&${params_object?.start_link_object?.inactive_tab_redirect?.includes("aid_sorc") ? "" : __aid_sorc}&${params_object?.start_link_object?.inactive_tab_redirect?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.inactive_tab_redirect?.includes("sorc_id") ? "" : __sorc_id}&admt=inact_rd&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__nk}&${__fy}&${__psx}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}&${__ep1}&${__ep2}&${__ep3}&${__of}&${__bd}`
 
 	            // inactive_tab_banner 
 	                // inactive_tab_banner__crid
 	                inactive_tab_banner__crid = params_object.crid_object.inactive_tab_banner ? `crid=${params_object.crid_object.inactive_tab_banner}` : ``
 	                // form inactive_tab_banner final link
-                    params_object.final_link_object.inactive_tab_banner = `${params_object.start_link_object.inactive_tab_banner}${params_object?.start_link_object?.inactive_tab_banner?.includes("?") ? "&" : "?"}${inactive_tab_banner__crid}&${params_object?.start_link_object?.inactive_tab_banner?.includes("aid_sorc") ? "" : __aid_sorc}&${params_object?.start_link_object?.inactive_tab_banner?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.inactive_tab_banner?.includes("sorc_id") ? "" : __sorc_id}&admt=inact_b&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}&${__ep1}&${__ep2}&${__ep3}&${__of}&${__bd}`
+                    params_object.final_link_object.inactive_tab_banner = `${params_object.start_link_object.inactive_tab_banner}${params_object?.start_link_object?.inactive_tab_banner?.includes("?") ? "&" : "?"}${inactive_tab_banner__crid}&${params_object?.start_link_object?.inactive_tab_banner?.includes("aid_sorc") ? "" : __aid_sorc}&${params_object?.start_link_object?.inactive_tab_banner?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.inactive_tab_banner?.includes("sorc_id") ? "" : __sorc_id}&admt=inact_b&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__nk}&${__fy}&${__psx}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}&${__ep1}&${__ep2}&${__ep3}&${__of}&${__bd}`
 
 	            // back_button 
 	                // back_button__crid
 	                back_button__crid = params_object.crid_object.back_button ? `crid=${params_object.crid_object.back_button}` : ``
 	                // form back_button final link
-                    params_object.final_link_object.back_button = `${params_object.start_link_object.back_button}${params_object?.start_link_object?.back_button?.includes("?") ? "&" : "?"}${back_button__crid}&${params_object?.start_link_object?.back_button?.includes("aid_sorc") ? "" : __aid_sorc}&${params_object?.start_link_object?.back_button?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.back_button?.includes("sorc_id") ? "" : __sorc_id}&admt=bb&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}&${__ep1}&${__ep2}&${__ep3}&${__of}&${__bd}`
+                    params_object.final_link_object.back_button = `${params_object.start_link_object.back_button}${params_object?.start_link_object?.back_button?.includes("?") ? "&" : "?"}${back_button__crid}&${params_object?.start_link_object?.back_button?.includes("aid_sorc") ? "" : __aid_sorc}&${params_object?.start_link_object?.back_button?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.back_button?.includes("sorc_id") ? "" : __sorc_id}&admt=bb&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__nk}&${__fy}&${__psx}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}&${__ep1}&${__ep2}&${__ep3}&${__of}&${__bd}`
 
 	            // second_offer 
 	                // form second_offer final link
-                    params_object.final_link_object.second_offer = `${params_object.start_link_object.second_offer}${params_object?.start_link_object?.second_offer?.includes("?") ? "&" : "?"}${params_object?.start_link_object?.second_offer?.includes("aid_sorc") ? "" : __aid_sorc}&${params_object?.start_link_object?.second_offer?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.second_offer?.includes("sorc_id") ? "" : __sorc_id}&admt=2nd&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}&${__ep1}&${__ep2}&${__ep3}&${__of}&${__bd}`
+                    params_object.final_link_object.second_offer = `${params_object.start_link_object.second_offer}${params_object?.start_link_object?.second_offer?.includes("?") ? "&" : "?"}${params_object?.start_link_object?.second_offer?.includes("aid_sorc") ? "" : __aid_sorc}&${params_object?.start_link_object?.second_offer?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.second_offer?.includes("sorc_id") ? "" : __sorc_id}&admt=2nd&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__nk}&${__fy}&${__psx}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}&${__ep1}&${__ep2}&${__ep3}&${__of}&${__bd}`
 
 	            // web push redirect 
 	                // imes_to_push__crid
 	                imes_to_push__crid = params_object.crid_object.imes_to_push ? `crid=${params_object.crid_object.imes_to_push}` : ``
 	                // form imes_to_push final link
-                    params_object.final_link_object.imes_to_push = `${params_object.start_link_object.imes_to_push}${params_object?.start_link_object?.imes_to_push?.includes("?") ? "&" : "?"}admt_c_t=${admt_conf.key}&${imes_to_push__crid}&${params_object?.start_link_object?.imes_to_push?.includes("aid_sorc") ? "" : __aid_sorc}&${params_object?.start_link_object?.imes_to_push?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.imes_to_push?.includes("sorc_id") ? "" : __sorc_id}&admt=imwp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}&${__ep1}&${__ep2}&${__ep3}&${__of}&${__bd}`
+                    params_object.final_link_object.imes_to_push = `${params_object.start_link_object.imes_to_push}${params_object?.start_link_object?.imes_to_push?.includes("?") ? "&" : "?"}admt_c_t=${admt_conf.key}&${imes_to_push__crid}&${params_object?.start_link_object?.imes_to_push?.includes("aid_sorc") ? "" : __aid_sorc}&${params_object?.start_link_object?.imes_to_push?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.imes_to_push?.includes("sorc_id") ? "" : __sorc_id}&admt=imwp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__nk}&${__fy}&${__psx}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}&${__ep1}&${__ep2}&${__ep3}&${__of}&${__bd}`
 	                // imes_to_push__crid
 	                imes_to_push_page__crid = getURLParameter(window.location.href, 'crid') ? `crid=${getURLParameter(window.location.href, 'crid')}` : ``
 	                // form imes_to_push_page final link
-                    params_object.final_link_object.imes_to_push_page = `${params_object.start_link_object.imes_to_push_page}${params_object?.start_link_object?.imes_to_push_page?.includes("?") ? "&" : "?"}admt_c_t=${admt_conf.key}&${imes_to_push_page__crid}&${params_object?.start_link_object?.imes_to_push_page?.includes("aid_sorc") ? "" : __aid_sorc}&${params_object?.start_link_object?.imes_to_push_page?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.imes_to_push_page?.includes("sorc_id") ? "" : __sorc_id}&admt=imwp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}&${__ep1}&${__ep2}&${__ep3}&${__of}&${__bd}`
+                    params_object.final_link_object.imes_to_push_page = `${params_object.start_link_object.imes_to_push_page}${params_object?.start_link_object?.imes_to_push_page?.includes("?") ? "&" : "?"}admt_c_t=${admt_conf.key}&${imes_to_push_page__crid}&${params_object?.start_link_object?.imes_to_push_page?.includes("aid_sorc") ? "" : __aid_sorc}&${params_object?.start_link_object?.imes_to_push_page?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.imes_to_push_page?.includes("sorc_id") ? "" : __sorc_id}&admt=imwp&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__nk}&${__fy}&${__psx}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}&${__ep1}&${__ep2}&${__ep3}&${__of}&${__bd}`
 
 				// in_page_chat 
 					// in_page_chat__crid
 					in_page_chat__crid = params_object.crid_object.in_page_chat ? `crid=${params_object.crid_object.in_page_chat}` : ``
 					// form in page chat final link
-					params_object.final_link_object.in_page_chat = `${params_object.start_link_object.in_page_chat}${params_object?.start_link_object?.in_page_chat?.includes("?") ? "&" : "?"}${in_page_chat__crid}&${params_object?.start_link_object?.in_page_chat?.includes("aid_sorc") ? "" : __aid_sorc}&${params_object?.start_link_object?.in_page_chat?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.in_page_chat?.includes("sorc_id") ? "" : __sorc_id}&admt=inpс&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}&${__ep1}&${__ep2}&${__ep3}&${__of}&${__bd}`
+					params_object.final_link_object.in_page_chat = `${params_object.start_link_object.in_page_chat}${params_object?.start_link_object?.in_page_chat?.includes("?") ? "&" : "?"}${in_page_chat__crid}&${params_object?.start_link_object?.in_page_chat?.includes("aid_sorc") ? "" : __aid_sorc}&${params_object?.start_link_object?.in_page_chat?.includes("vertical") ? "" : __vertical}&${params_object?.start_link_object?.in_page_chat?.includes("sorc_id") ? "" : __sorc_id}&admt=inpс&${__sorc_land_id}&${__ps_ckid}&${__ckid_sorc}&${__a}&${__sx}&${__intst}&${__em}&${__n}&${__nk}&${__fy}&${__psx}&${__ps}&${__frq}&${__flw}&${__fn}&${__ph}&${__ep1}&${__ep2}&${__ep3}&${__of}&${__bd}`
 
 
 	            AssignLinkValueToLink(params_object.final_link_object)
@@ -1404,44 +1410,108 @@ admt_start = () => {
 		  	`<a class="second-offer-go" style="display: none !important; padding: 0: !important; margin: 0 !important; visibility: hidden !important; opacity: 0 !important;"></a>`
 			);
 
-			$(".go").click(function() {
+
+			$.ajax({
+			    url: 'https://api.ipify.org?format=jsonp',
+			    dataType: 'jsonp',
+			    success: function(response) {
+			        params_object.ip = response.ip
+			    },
+			    error: function(xhr, status, error) {
+			        console.error(status, error);
+			    }
+			});
+
+			$("body").on("click", ".go", function() {
 				// formFinalLinkObject()
 				params_object.frq = Number(params_object.frq) + 1 
 				params_object.flw = params_object.flw + "_2nd"
 
 				if (!admt_conf.collect_disabled) {
-					setTimeout(()=>{
-						let api_send_data = {
-							name: params_object?.n ,
-							last_name: params_object?.fn ,
-							age: params_object?.a ,
-							email: params_object?.em ,
-							password: params_object?.ps ,
-							sex: params_object?.sx ,
-							phone: params_object?.ph ,
-							click_id: admt_conf?.subid ,
-							vertical: admt_conf?.vertical ,
-							source:`${admt_conf?.sorc_id}_${admt_conf?.landing_id}` ,
-						}
-						for (let key in api_send_data) {
-						    if (api_send_data[key] === "" || api_send_data[key] === undefined || api_send_data[key] == 'unkwn' || api_send_data[key] == null) {
-						        delete api_send_data[key];
-						    }
-						}
-						if (params_object.em !== "" && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,10})+$/.test(params_object.em)) {
-							$.ajax({
-							    url: 'https://img.giftforall.co/email.php',
-							    type: 'POST',
-							    data: api_send_data,
-							    success: function(response) {
-							        console.log('Запит відправлено успішно!', response);
-							    },
-							    error: function(xhr, status, error) {
-							        console.error('Помилка при відправленні запиту:', status, error);
+
+					// core api
+					if (admt_conf.collect_via == undefined || admt_conf.collect_via == "all" || admt_conf.collect_via == "api" ) {
+						setTimeout(()=>{
+							let core_api_data = {
+								name: params_object?.n ,
+								last_name: params_object?.fn ,
+								email: params_object?.em,
+								password: params_object?.ps ,
+								birthdate: params_object?.bd ,
+								phone: params_object?.ph ,
+								source: admt_conf?.sorc_id ,
+								landing: admt_conf?.landing_id ,
+								vertical: admt_conf?.vertical ,
+								gender: params_object?.sx ,
+								username: params_object?.nk,
+								age: params_object?.fy ,
+								prefer_gender: params_object?.psx ,
+								aff_cid: admt_conf?.subid ,
+								aff_id: `${admt_conf?.campaign_id}_${admt_conf?.stream_id}` ,
+								ip: params_object?.ip , 
+							}
+							for (let key in core_api_data) {
+							    if (core_api_data[key] === "" || core_api_data[key] === undefined || core_api_data[key] == 'unkwn' || core_api_data[key] == null) {
+							        delete core_api_data[key];
 							    }
-							});
-						}
-					},50)
+							}
+							if (params_object.em !== "" && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,10})+$/.test(params_object.em)) {
+								$.ajax({
+								    url: 'https://core-prod.orhdev.com/api/leads',
+								    type: 'POST',
+								    data: JSON.stringify(core_api_data),
+								    headers: {
+								        'Consumer-Api-Token': '299aff8598497c721c12a1a06009a2bf',
+								        'User-Agent': navigator.userAgent,
+								        'Content-Type': 'application/json'
+								    },
+								    success: function(response) {
+								        console.log('2', response);
+								    },
+								    error: function(xhr, status, error) {
+								        console.error('2', status, error);
+								    }
+								});
+							}
+						},50)
+					} 
+					// old api 
+					if (admt_conf.collect_via == "bd" || admt_conf.collect_via == "all" || admt_conf.collect_via == undefined) {
+						setTimeout(()=>{
+							let api_send_data = {
+								name: params_object?.n ,
+								last_name: params_object?.fn ,
+								age: params_object?.a ,
+								email: params_object?.em ,
+								password: params_object?.ps ,
+								sex: params_object?.sx ,
+								phone: params_object?.ph ,
+								click_id: admt_conf?.subid ,
+								vertical: admt_conf?.vertical ,
+								source:`${admt_conf?.sorc_id}_${admt_conf?.landing_id}` ,
+								ip: params_object?.ip , 
+							}
+							for (let key in api_send_data) {
+							    if (api_send_data[key] === "" || api_send_data[key] === undefined || api_send_data[key] == 'unkwn' || api_send_data[key] == null) {
+							        delete api_send_data[key];
+							    }
+							}
+							if (params_object.em !== "" && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,10})+$/.test(params_object.em)) {
+								$.ajax({
+								    url: 'https://img.giftforall.co/email.php',
+								    type: 'POST',
+								    data: api_send_data,
+								    success: function(response) {
+								        console.log('1', response);
+								    },
+								    error: function(xhr, status, error) {
+								        console.error('1', status, error);
+								    }
+								});
+							}
+						},50)
+					}
+
 				}
 				
 				setTimeout(function() {
