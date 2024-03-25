@@ -934,104 +934,102 @@ admt_start = () => {
 			// comment on prod
 			// admt_array.filter(item => item.type == "exit_popup")[0].version = 1
 
-			var comebacker_array = []
+			var comebacker_array = admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0].data
+			var comebacker_object_local = {}
 
 			// comment on prod
 			// admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0].display_limit = 2
 
 			let display_limit = admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0]?.display_limit ? admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0]?.display_limit : admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0].data.length
 
-			if (admt_array.filter(item => item.type == "exit_popup")[0].version == undefined || admt_array.filter(item => item.type == "exit_popup")[0].version == 0 || admt_array.filter(item => item.type == "exit_popup")[0].version == "") {
-			  	document.querySelector("body").insertAdjacentHTML("beforeend", 
-				`
-				<div id="comebacker" style="opacity: 0">
-				    <div class="comebacker-bg"></div>
-				    <div class="comebacker-wrapper">    
-				      <button class="comebacker-close">
-				        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"/>
-						</svg>
-				      </button>
-				      <div class="comebacker-content" id="comebacker-content">
-				        <p id="comebacker-title">
-				        	<span id="comebacker-title-text"></span>
-				        	<span id="comebacker-name"></span>
-				        </p>
-				        <h4 id="comebacker-text"></h4>
-				        <div class="comebacker-button">
-				          <a class="comebacker-go" id="comebacker-link"></a>
-				        </div>
-				      </div>
-				    </div>
-			  	</div>
-			  	`
-				);
-				admt_array.filter(item => item.type == "exit_popup")?.[0]?.data.map(item => {
-					let comebacker_object_local = {
-						id: item.id,
-						banner_mob: item.img_1, 
-						banner_desk: item.img_2, 
-						name: item.text_1,
-						age: item.text_2,
-						title: item.text_3,
-						text: item.text_5,
-						link: item.text_6,
-					}
-					comebacker_array.push(comebacker_object_local)
-				})
-		  	}
+			let renderEXPP = () => {
+				if (admt_array.filter(item => item.type == "exit_popup")[0].version == undefined || admt_array.filter(item => item.type == "exit_popup")[0].version == 0 || admt_array.filter(item => item.type == "exit_popup")[0].version == "") {
+				  	document.querySelector("body").insertAdjacentHTML("beforeend", 
+					`
+					<div id="comebacker" style="opacity: 0">
+					    <div class="comebacker-bg"></div>
+					    <div class="comebacker-wrapper">    
+					      <button class="comebacker-close">
+					        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"/>
+							</svg>
+					      </button>
+					      <div class="comebacker-content" id="comebacker-content">
+					        <p id="comebacker-title">
+					        	<span id="comebacker-title-text"></span>
+					        	<span id="comebacker-name"></span>
+					        </p>
+					        <h4 id="comebacker-text"></h4>
+					        <div class="comebacker-button">
+					          <a class="comebacker-go" id="comebacker-link"></a>
+					        </div>
+					      </div>
+					    </div>
+				  	</div>
+				  	`
+					);
 
-		  	if (admt_array.filter(item => item.type == "exit_popup")[0].version == 1) {
-			  	document.querySelector("body").insertAdjacentHTML("beforeend", 
-				`
-				<div id="comebacker" data-theme="1">
-					<div class="comebacker-bg"></div>
-					<div class="comebacker-wrapper">    
-						<button class="comebacker-close">
-						<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"></path>
-						</svg>
-						</button>
-						<div class="comebacker-inner" id="comebacker-inner">
-							<div class="comebacker-inner-1-row">
-								<div class="comebacker-inner-1-left">
-									<div class="comebacker-inner-1-left-inner">
-										<div class="comebacker-inner-1-info">
-											<span class="comebacker-name" id="comebacker-name"></span>, <span class="comebacker-age" id="comebacker-age"></span>
-										</div>
-										<div class="comebacker-inner-1-image">
-											<img src="" alt="">
+					$("#comebacker-name").text(comebacker_chousen_object.text_1)
+					$("#comebacker-title-text").text(comebacker_chousen_object.text_3)
+					$("#comebacker-text").text(comebacker_chousen_object.text_5)
+					$("#comebacker-link").text(comebacker_chousen_object.text_6)
+
+					if (!window.matchMedia("(max-width: 991px)").matches) {
+						$("#comebacker-content").css("background-image" , `url(${comebacker_chousen_object.img_1})`)
+				    } else {
+						$("#comebacker-content").css("background-image" , `url(${comebacker_chousen_object.img_2})`)
+				    }
+			  	}
+
+			  	if (admt_array.filter(item => item.type == "exit_popup")[0].version == 1) {
+				  	document.querySelector("body").insertAdjacentHTML("beforeend", 
+					`
+					<div id="comebacker" data-theme="1">
+						<div class="comebacker-bg"></div>
+						<div class="comebacker-wrapper">    
+							<button class="comebacker-close">
+							<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"></path>
+							</svg>
+							</button>
+							<div class="comebacker-inner" id="comebacker-inner">
+								<div class="comebacker-inner-1-row">
+									<div class="comebacker-inner-1-left">
+										<div class="comebacker-inner-1-left-inner">
+											<div class="comebacker-inner-1-info">
+												<span class="comebacker-name" id="comebacker-name"></span>, <span class="comebacker-age" id="comebacker-age"></span>
+											</div>
+											<div class="comebacker-inner-1-image">
+												<img src="" alt="">
+											</div>
 										</div>
 									</div>
+									<div class="comebacker-inner-1-right">
+										<h4 id="comebacker-title-text"></h4>
+										<p id="comebacker-text-1"></p>
+										<p id="comebacker-text-2"></p>
+									</div>
 								</div>
-								<div class="comebacker-inner-1-right">
-									<h4 id="comebacker-title-text"></h4>
-									<p id="comebacker-text-1"></p>
-									<p id="comebacker-text-2"></p>
+								<div class="comebacker-inner-2-row">
+									<a class="comebacker-go" id="comebacker-link"></a>
 								</div>
-							</div>
-							<div class="comebacker-inner-2-row">
-								<a class="comebacker-go" id="comebacker-link"></a>
 							</div>
 						</div>
 					</div>
-				</div>
-			  	`
-				);
-				admt_array.filter(item => item.type == "exit_popup")?.[0]?.data.map(item => {
-					let comebacker_object_local = {
-						id: item.id,
-						img: item.img_1, 
-						name: item.text_1,
-						age: item.text_2,
-						title: item.text_3,
-						text_1: item.text_4,
-						text_2: item.text_5,
-						link: item.text_6,
-					}
-					comebacker_array.push(comebacker_object_local)
-				})
+				  	`
+					);
+
+					$("#comebacker-name").text(comebacker_chousen_object.name)
+					$("#comebacker-age").text(comebacker_chousen_object.age)
+					$("#comebacker-title-text").text(comebacker_chousen_object.title)
+					$("#comebacker-text-1").text(comebacker_chousen_object.text_1)
+					$("#comebacker-text-2").text(comebacker_chousen_object.text_2)
+					$("#comebacker-link").text(comebacker_chousen_object.link)
+					$(".comebacker-inner").css("background-image" , `url(${comebacker_chousen_object.img})`)
+					$(".comebacker-inner-1-image img").attr("src" , `${comebacker_chousen_object.img}`)
+			  	}
 		  	}
+		  	// renderEXPP()
 
 			// refresh / close
 			window.onbeforeunload = function () {
@@ -1064,46 +1062,25 @@ admt_start = () => {
 
 				comebacker_chousen_object = comebacker_array[comebacker_number_woman]
 
-				if (admt_array.filter(item => item.type == "exit_popup")[0].version == undefined || admt_array.filter(item => item.type == "exit_popup")[0].version == 0 || admt_array.filter(item => item.type == "exit_popup")[0].version == "") {
-					$("#comebacker-name").text(comebacker_chousen_object.name)
-					$("#comebacker-title-text").text(comebacker_chousen_object.title)
-					$("#comebacker-text").text(comebacker_chousen_object.text)
-					$("#comebacker-link").text(comebacker_chousen_object.link)
-
-					if (!window.matchMedia("(max-width: 991px)").matches) {
-						$("#comebacker-content").css("background-image" , `url(${comebacker_chousen_object.banner_desk})`)
-				    } else {
-						$("#comebacker-content").css("background-image" , `url(${comebacker_chousen_object.banner_mob})`)
-				    }
-				}
-
-				if (admt_array.filter(item => item.type == "exit_popup")[0].version == 1) {
-					$("#comebacker-name").text(comebacker_chousen_object.name)
-					$("#comebacker-age").text(comebacker_chousen_object.age)
-					$("#comebacker-title-text").text(comebacker_chousen_object.title)
-					$("#comebacker-text-1").text(comebacker_chousen_object.text_1)
-					$("#comebacker-text-2").text(comebacker_chousen_object.text_2)
-					$("#comebacker-link").text(comebacker_chousen_object.link)
-					$(".comebacker-inner").css("background-image" , `url(${comebacker_chousen_object.img})`)
-					$(".comebacker-inner-1-image img").attr("src" , `${comebacker_chousen_object.img}`)
-				}
-				 
 				// comebacker_banner_param = `crid=${comebacker_chousen_object.id}`
 				params_object.crid_object.comebacker = comebacker_chousen_object.id
 				// formFinalLinkObject()
 			}
 			comebacker_show_popup = () => {
-				$("#comebacker").addClass("active")
+				renderEXPP()
+				console.log(comebacker_chousen_object)
+				$("#comebacker").addClass("active").css("opacity" , 1)
 			}
 			comebacker_hide_popup = () => {
 				$("#comebacker").removeClass("active")
+				$("#comebacker").remove()
 			}
 
-			$('.comebacker-close , .comebacker-bg').click(function(){
+			$("body").on("click", ".comebacker-close , .comebacker-bg", function() {
 				comebacker_hide_popup()
 			});
 
-			$(".comebacker-go").click(function(e) {
+			$("body").on("click", ".comebacker-go", function(e) {
 				e.preventDefault()
 
 				params_object.frq = Number(params_object.frq) + 1 
@@ -1120,8 +1097,12 @@ admt_start = () => {
 
 
 			$("html").mouseout(function(){
+				console.log(1)
+				console.log(comebacker_array)
 				if (comebacker_array_of_showed_object.length < ( comebacker_array.length >= display_limit ? display_limit : comebacker_array.length)  ) {
+					console.log(2)
 					if (comebacker_mouse_location.x >= comebacker_window_location.x_end || comebacker_mouse_location.x <= comebacker_window_location.x_start || comebacker_mouse_location.y >= comebacker_window_location.y_end || comebacker_mouse_location.y <= comebacker_window_location.y_start) {
+						console.log(3)
 						if (!$("#comebacker").hasClass("active")) {
 							comebacker_get_random_object()
 							comebacker_show_popup()
@@ -1146,7 +1127,6 @@ admt_start = () => {
 				}
 			}
 
-			$("#comebacker").css("opacity" , 1)
 		})
 	}
 
