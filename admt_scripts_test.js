@@ -943,7 +943,17 @@ admt_start = () => {
 			let display_limit = admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0]?.display_limit ? admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0]?.display_limit : admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0].data.length
 
 			let renderEXPP = () => {
-				if (admt_array.filter(item => item.type == "exit_popup")[0].version == undefined || admt_array.filter(item => item.type == "exit_popup")[0].version == 0 || admt_array.filter(item => item.type == "exit_popup")[0].version == "") {
+                // comment on prod
+                console.log(comebacker_chousen_object)
+                comebacker_chousen_object.version = Math.floor(Math.random() * 2);
+                //
+
+                // uncommnet on prod
+				// if (admt_array.filter(item => item.type == "exit_popup")[0].version == undefined || admt_array.filter(item => item.type == "exit_popup")[0].version == 0 || admt_array.filter(item => item.type == "exit_popup")[0].version == "") {
+                //
+                // comment on prod
+                if (comebacker_chousen_object.version == undefined || comebacker_chousen_object.version == 0 || comebacker_chousen_object.version == "") { 
+                //
 				  	document.querySelector("body").insertAdjacentHTML("beforeend", 
 					`
 					<div id="comebacker" style="opacity: 0">
@@ -981,7 +991,13 @@ admt_start = () => {
 				    }
 			  	}
 
-			  	if (admt_array.filter(item => item.type == "exit_popup")[0].version == 1) {
+                // uncommnet on prod
+			  	// if (admt_array.filter(item => item.type == "exit_popup")[0].version == 1) {
+                //
+                // comment on prod
+                if (comebacker_chousen_object.version == 1) {
+                //
+
 				  	document.querySelector("body").insertAdjacentHTML("beforeend", 
 					`
 					<div id="comebacker" data-theme="1">
@@ -1019,14 +1035,14 @@ admt_start = () => {
 				  	`
 					);
 
-					$("#comebacker-name").text(comebacker_chousen_object.name)
-					$("#comebacker-age").text(comebacker_chousen_object.age)
-					$("#comebacker-title-text").text(comebacker_chousen_object.title)
-					$("#comebacker-text-1").text(comebacker_chousen_object.text_1)
-					$("#comebacker-text-2").text(comebacker_chousen_object.text_2)
-					$("#comebacker-link").text(comebacker_chousen_object.link)
-					$(".comebacker-inner").css("background-image" , `url(${comebacker_chousen_object.img})`)
-					$(".comebacker-inner-1-image img").attr("src" , `${comebacker_chousen_object.img}`)
+					$("#comebacker-name").text(comebacker_chousen_object.text_1)
+					$("#comebacker-age").text(comebacker_chousen_object.text_2)
+					$("#comebacker-title-text").text(comebacker_chousen_object.text_3)
+					$("#comebacker-text-1").text(comebacker_chousen_object.text_4)
+					$("#comebacker-text-2").text(comebacker_chousen_object.text_5)
+					$("#comebacker-link").text(comebacker_chousen_object.text_6)
+					$(".comebacker-inner").css("background-image" , `url(${comebacker_chousen_object.img_1})`)
+					$(".comebacker-inner-1-image img").attr("src" , `${comebacker_chousen_object.img_1}`)
 			  	}
 		  	}
 
@@ -1130,6 +1146,8 @@ admt_start = () => {
 	if ( admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0] ) {
 		$(document).ready(function(){
 
+			var inactive_tab_banner_array = admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0].data
+
 			// comment on prod
 			// admt_array.filter(item => item.type == "inactive_banner")[0].version = 1
 
@@ -1138,100 +1156,100 @@ admt_start = () => {
 
 			let display_limit = admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0]?.display_limit ? admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0]?.display_limit : admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0].data.length
 
-			var inactive_tab_banner_array = []
+			// var inactive_tab_banner_array = []
 
-			if (admt_array.filter(item => item.type == "inactive_banner")[0].version == undefined || admt_array.filter(item => item.type == "inactive_banner")[0].version == 0 || admt_array.filter(item => item.type == "inactive_banner")[0].version == "") {
-			  	document.querySelector("body").insertAdjacentHTML("beforeend", 
-				`
-				<div id="inactive-tab-banner" style="opacity: 0">
-				    <div class="inactive-tab-banner-bg"></div>
-				    <div class="inactive-tab-banner-wrapper">   
-				      <button class="inactive-tab-banner-close">
-				        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"/>
-						</svg>
-				      </button>
-				      <div class="inactive-tab-banner-content" id="inactive-tab-banner-content">
-				        <p id="inactive-tab-banner-title">
-				        	<span id="inactive-tab-banner-title-text"></span>
-				        	<span id="inactive-tab-banner-name"></span>
-			        	</p>
-				        <h4 id="inactive-tab-banner-text"></h4>
-				        <div class="inactive-tab-banner-button">
-				          <a class="inactive-tab-banner-go" id="inactive-tab-banner-link"></a>
-				        </div>
-				      </div>
-				    </div>
-			  	</div>
-			  	`
-				);
+            let renderINACT_B = () => {
+                if (admt_array.filter(item => item.type == "inactive_banner")[0].version == undefined || admt_array.filter(item => item.type == "inactive_banner")[0].version == 0 || admt_array.filter(item => item.type == "inactive_banner")[0].version == "") {
+                    document.querySelector("body").insertAdjacentHTML("beforeend", 
+                        `
+                        <div id="inactive-tab-banner" style="opacity: 0">
+                            <div class="inactive-tab-banner-bg"></div>
+                            <div class="inactive-tab-banner-wrapper">   
+                                <button class="inactive-tab-banner-close">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"/>
+                                    </svg>
+                                </button>
+                                <div class="inactive-tab-banner-content" id="inactive-tab-banner-content">
+                                    <p id="inactive-tab-banner-title">
+                                        <span id="inactive-tab-banner-title-text"></span>
+                                        <span id="inactive-tab-banner-name"></span>
+                                    </p>
+                                    <h4 id="inactive-tab-banner-text"></h4>
+                                    <div class="inactive-tab-banner-button">
+                                        <a class="inactive-tab-banner-go" id="inactive-tab-banner-link"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        `
+                    );
 
-				admt_array.filter(item => item.type == "inactive_banner")?.[0]?.data.map(item => {
-					let inactive_tab_banner_object_local = {
-						id: item.id,
-						banner_mob: item.img_1, 
-						banner_desk: item.img_2, 
-						name: item.text_1,
-						age: item.text_2,
-						title: item.text_3,
-						text: item.text_5,
-						link: item.text_6,
-					}
-					inactive_tab_banner_array.push(inactive_tab_banner_object_local)
-				})
-			}
+                    $("#inactive-tab-banner-name").text(inactive_tab_banner_chousen_object.text_1)
+					$("#inactive-tab-banner-title-text").text(inactive_tab_banner_chousen_object.text_3)
+					$("#inactive-tab-banner-text").text(inactive_tab_banner_chousen_object.text_5)
+					$("#inactive-tab-banner-link").text(inactive_tab_banner_chousen_object.text_6)
 
-			if (admt_array.filter(item => item.type == "inactive_banner")[0].version == 1) {
-			  	document.querySelector("body").insertAdjacentHTML("beforeend", 
-				`
-				<div id="inactive-tab-banner" data-theme="1">
-					<div class="inactive-tab-banner-bg"></div>
-					<div class="inactive-tab-banner-wrapper">    
-						<button class="inactive-tab-banner-close">
-						<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"></path>
-						</svg>
-						</button>
-						<div class="inactive-tab-banner-inner" id="inactive-tab-banner-inner">
-							<div class="inactive-tab-banner-inner-1-row">
-								<div class="inactive-tab-banner-inner-1-left">
-									<div class="inactive-tab-banner-inner-1-left-inner">
-										<div class="inactive-tab-banner-inner-1-info">
-											<span class="inactive-tab-banner-name" id="inactive-tab-banner-name"></span>, <span class="inactive-tab-banner-age" id="inactive-tab-banner-age"></span>
-										</div>
-										<div class="inactive-tab-banner-inner-1-image">
-											<img src="" alt="">
-										</div>
-									</div>
-								</div>
-								<div class="inactive-tab-banner-inner-1-right">
-									<h4 id="inactive-tab-banner-title-text"></h4>
-									<p id="inactive-tab-banner-text-1"></p>
-									<p id="inactive-tab-banner-text-2"></p>
-								</div>
-							</div>
-							<div class="inactive-tab-banner-inner-2-row">
-								<a class="inactive-tab-banner-go" id="inactive-tab-banner-link"></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			  	`
-				);
-				admt_array.filter(item => item.type == "inactive_banner")?.[0]?.data.map(item => {
-					let inactive_tab_banner_object_local = {
-						id: item.id,
-						img: item.img_1, 
-						name: item.text_1,
-						age: item.text_2,
-						title: item.text_3,
-						text_1: item.text_4,
-						text_2: item.text_5,
-						link: item.text_6,
-					}
-					inactive_tab_banner_array.push(inactive_tab_banner_object_local)
-				})
-		  	}
+					if (!window.matchMedia("(max-width: 991px)").matches) {
+						$("#inactive-tab-banner-content").css("background-image" , `url(${inactive_tab_banner_chousen_object.img_1})`)
+				    } else {
+						$("#inactive-tab-banner-content").css("background-image" , `url(${inactive_tab_banner_chousen_object.img_2})`)
+				    }
+                }
+
+                if (admt_array.filter(item => item.type == "inactive_banner")[0].version == 1) {
+                    document.querySelector("body").insertAdjacentHTML("beforeend", 
+                        `
+                        <div id="inactive-tab-banner" data-theme="1">
+                            <div class="inactive-tab-banner-bg"></div>
+                            <div class="inactive-tab-banner-wrapper">    
+                                <button class="inactive-tab-banner-close">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"></path>
+                                </svg>
+                                </button>
+                                <div class="inactive-tab-banner-inner" id="inactive-tab-banner-inner">
+                                    <div class="inactive-tab-banner-inner-1-row">
+                                        <div class="inactive-tab-banner-inner-1-left">
+                                            <div class="inactive-tab-banner-inner-1-left-inner">
+                                                <div class="inactive-tab-banner-inner-1-info">
+                                                    <span class="inactive-tab-banner-name" id="inactive-tab-banner-name"></span>, <span class="inactive-tab-banner-age" id="inactive-tab-banner-age"></span>
+                                                </div>
+                                                <div class="inactive-tab-banner-inner-1-image">
+                                                    <img src="" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inactive-tab-banner-inner-1-right">
+                                            <h4 id="inactive-tab-banner-title-text"></h4>
+                                            <p id="inactive-tab-banner-text-1"></p>
+                                            <p id="inactive-tab-banner-text-2"></p>
+                                        </div>
+                                    </div>
+                                    <div class="inactive-tab-banner-inner-2-row">
+                                        <a class="inactive-tab-banner-go" id="inactive-tab-banner-link"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        `
+                    );
+
+                    $("#inactive-tab-banner-name").text(inactive_tab_banner_chousen_object.name)
+					$("#inactive-tab-banner-age").text(inactive_tab_banner_chousen_object.age)
+					$("#inactive-tab-banner-title-text").text(inactive_tab_banner_chousen_object.title)
+					$("#inactive-tab-banner-text-1").text(inactive_tab_banner_chousen_object.text_1)
+					$("#inactive-tab-banner-text-2").text(inactive_tab_banner_chousen_object.text_2)
+					$("#inactive-tab-banner-link").text(inactive_tab_banner_chousen_object.link)
+					$(".inactive-tab-banner-inner").css("background-image" , `url(${inactive_tab_banner_chousen_object.img})`)
+					$(".inactive-tab-banner-inner-1-image img").attr("src" , `${inactive_tab_banner_chousen_object.img}`)
+                }
+            }
+            renderINACT_B()
+
+			
+
+			
 
 			var inactive_tab_banner_chousen_object = inactive_tab_banner_array[1]
 			var inactive_tab_banner_number_woman = 0
@@ -1259,31 +1277,6 @@ admt_start = () => {
 
 				inactive_tab_banner_chousen_object = inactive_tab_banner_array[inactive_tab_banner_number_woman]
 
-
-				if (admt_array.filter(item => item.type == "inactive_banner")[0].version == undefined || admt_array.filter(item => item.type == "inactive_banner")[0].version == 0 || admt_array.filter(item => item.type == "inactive_banner")[0].version == "") {
-					$("#inactive-tab-banner-name").text(inactive_tab_banner_chousen_object.name)
-					$("#inactive-tab-banner-title-text").text(inactive_tab_banner_chousen_object.title)
-					$("#inactive-tab-banner-text").text(inactive_tab_banner_chousen_object.text)
-					$("#inactive-tab-banner-link").text(inactive_tab_banner_chousen_object.link)
-
-					if (!window.matchMedia("(max-width: 991px)").matches) {
-						$("#inactive-tab-banner-content").css("background-image" , `url(${inactive_tab_banner_chousen_object.banner_desk})`)
-				    } else {
-						$("#inactive-tab-banner-content").css("background-image" , `url(${inactive_tab_banner_chousen_object.banner_mob})`)
-				    }
-				}
-
-				if (admt_array.filter(item => item.type == "inactive_banner")[0].version == 1) {
-					$("#inactive-tab-banner-name").text(inactive_tab_banner_chousen_object.name)
-					$("#inactive-tab-banner-age").text(inactive_tab_banner_chousen_object.age)
-					$("#inactive-tab-banner-title-text").text(inactive_tab_banner_chousen_object.title)
-					$("#inactive-tab-banner-text-1").text(inactive_tab_banner_chousen_object.text_1)
-					$("#inactive-tab-banner-text-2").text(inactive_tab_banner_chousen_object.text_2)
-					$("#inactive-tab-banner-link").text(inactive_tab_banner_chousen_object.link)
-					$(".inactive-tab-banner-inner").css("background-image" , `url(${inactive_tab_banner_chousen_object.img})`)
-					$(".inactive-tab-banner-inner-1-image img").attr("src" , `${inactive_tab_banner_chousen_object.img}`)
-				}
-				 
 				params_object.crid_object.inactive_tab_banner = inactive_tab_banner_chousen_object.id
 
 			}
