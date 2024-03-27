@@ -1159,7 +1159,19 @@ admt_start = () => {
 			// var inactive_tab_banner_array = []
 
             let renderINACT_B = () => {
-                if (admt_array.filter(item => item.type == "inactive_banner")[0].version == undefined || admt_array.filter(item => item.type == "inactive_banner")[0].version == 0 || admt_array.filter(item => item.type == "inactive_banner")[0].version == "") {
+
+                // comment on prod
+                console.log(inactive_tab_banner_chousen_object)
+                inactive_tab_banner_chousen_object.version = Math.floor(Math.random() * 2);
+                //
+
+                // uncomment on prod
+                // if (admt_array.filter(item => item.type == "inactive_banner")[0].version == undefined || admt_array.filter(item => item.type == "inactive_banner")[0].version == 0 || admt_array.filter(item => item.type == "inactive_banner")[0].version == "") {
+                //
+                // comment on prod
+                if (inactive_tab_banner_chousen_object.version == undefined || inactive_tab_banner_chousen_object.version == 0 || inactive_tab_banner_chousen_object.version == "") { 
+                //
+                    console.log(0)
                     document.querySelector("body").insertAdjacentHTML("beforeend", 
                         `
                         <div id="inactive-tab-banner" style="opacity: 0">
@@ -1197,7 +1209,13 @@ admt_start = () => {
 				    }
                 }
 
-                if (admt_array.filter(item => item.type == "inactive_banner")[0].version == 1) {
+                // uncomment on prod
+                // if (admt_array.filter(item => item.type == "inactive_banner")[0].version == 1) {
+                //
+                // comment on prod
+                if (inactive_tab_banner_chousen_object.version == 1) {
+                    console.log(1)
+                //
                     document.querySelector("body").insertAdjacentHTML("beforeend", 
                         `
                         <div id="inactive-tab-banner" data-theme="1">
@@ -1235,21 +1253,17 @@ admt_start = () => {
                         `
                     );
 
-                    $("#inactive-tab-banner-name").text(inactive_tab_banner_chousen_object.name)
-					$("#inactive-tab-banner-age").text(inactive_tab_banner_chousen_object.age)
-					$("#inactive-tab-banner-title-text").text(inactive_tab_banner_chousen_object.title)
-					$("#inactive-tab-banner-text-1").text(inactive_tab_banner_chousen_object.text_1)
-					$("#inactive-tab-banner-text-2").text(inactive_tab_banner_chousen_object.text_2)
-					$("#inactive-tab-banner-link").text(inactive_tab_banner_chousen_object.link)
-					$(".inactive-tab-banner-inner").css("background-image" , `url(${inactive_tab_banner_chousen_object.img})`)
-					$(".inactive-tab-banner-inner-1-image img").attr("src" , `${inactive_tab_banner_chousen_object.img}`)
+                    $("#inactive-tab-banner-name").text(inactive_tab_banner_chousen_object.text_1)
+					$("#inactive-tab-banner-age").text(inactive_tab_banner_chousen_object.text_2)
+					$("#inactive-tab-banner-title-text").text(inactive_tab_banner_chousen_object.text_3)
+					$("#inactive-tab-banner-text-1").text(inactive_tab_banner_chousen_object.text_4)
+					$("#inactive-tab-banner-text-2").text(inactive_tab_banner_chousen_object.text_5)
+					$("#inactive-tab-banner-link").text(inactive_tab_banner_chousen_object.text_6)
+					$(".inactive-tab-banner-inner").css("background-image" , `url(${inactive_tab_banner_chousen_object.img_1})`)
+					$(".inactive-tab-banner-inner-1-image img").attr("src" , `${inactive_tab_banner_chousen_object.img_1}`)
                 }
             }
-            renderINACT_B()
-
-			
-
-			
+            // renderINACT_B()
 
 			var inactive_tab_banner_chousen_object = inactive_tab_banner_array[1]
 			var inactive_tab_banner_number_woman = 0
@@ -1280,18 +1294,22 @@ admt_start = () => {
 				params_object.crid_object.inactive_tab_banner = inactive_tab_banner_chousen_object.id
 
 			}
-			inactive_tab_banner_show_popup = () => {
-				$("#inactive-tab-banner").addClass("active")
+			window.inactive_tab_banner_show_popup = () => {
+                renderINACT_B()
+                setTimeout(()=>{
+				    $("#inactive-tab-banner").addClass("active").css("opacity" , 1)
+                },100)
 			}
 			inactive_tab_banner_hide_popup = () => {
-				$("#inactive-tab-banner").removeClass("active")
+                $("#inactive-tab-banner").removeClass("active")
+                $("#inactive-tab-banner").remove()
 			}
 
-			$('.inactive-tab-banner-close , .inactive-tab-banner-bg').click(function(){
+            $("body").on("click", ".inactive-tab-banner-close , .inactive-tab-banner-bg", function() {
 				inactive_tab_banner_hide_popup()
 			});
 
-			$(".inactive-tab-banner-go").click(function(e) {
+            $("body").on("click", ".inactive-tab-banner-go", function(e) {
 				e.preventDefault()
 
 				params_object.frq = Number(params_object.frq) + 1 
@@ -1317,7 +1335,6 @@ admt_start = () => {
 				}
 			})
 
-			$("#inactive-tab-banner").css("opacity" , 1)
 		});
 	}
 
