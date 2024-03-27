@@ -935,7 +935,7 @@ admt_start = () => {
 			// admt_array.filter(item => item.type == "exit_popup")[0].version = 1
 
 			var comebacker_array = admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0].data
-			var comebacker_object_local = {}
+			// var comebacker_object_local = {}
 
 			// comment on prod
 			// admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0].display_limit = 2
@@ -1029,7 +1029,6 @@ admt_start = () => {
 					$(".comebacker-inner-1-image img").attr("src" , `${comebacker_chousen_object.img}`)
 			  	}
 		  	}
-		  	// renderEXPP()
 
 			// refresh / close
 			window.onbeforeunload = function () {
@@ -1068,12 +1067,13 @@ admt_start = () => {
 			}
 			comebacker_show_popup = () => {
 				renderEXPP()
-				console.log(comebacker_chousen_object)
-				$("#comebacker").addClass("active").css("opacity" , 1)
+                setTimeout(()=>{
+				    $("#comebacker").addClass("active").css("opacity" , 1)
+                },100)
 			}
 			comebacker_hide_popup = () => {
 				$("#comebacker").removeClass("active")
-				$("#comebacker").remove()
+                $("#comebacker").remove()
 			}
 
 			$("body").on("click", ".comebacker-close , .comebacker-bg", function() {
@@ -1097,12 +1097,8 @@ admt_start = () => {
 
 
 			$("html").mouseout(function(){
-				console.log(1)
-				console.log(comebacker_array)
 				if (comebacker_array_of_showed_object.length < ( comebacker_array.length >= display_limit ? display_limit : comebacker_array.length)  ) {
-					console.log(2)
 					if (comebacker_mouse_location.x >= comebacker_window_location.x_end || comebacker_mouse_location.x <= comebacker_window_location.x_start || comebacker_mouse_location.y >= comebacker_window_location.y_end || comebacker_mouse_location.y <= comebacker_window_location.y_start) {
-						console.log(3)
 						if (!$("#comebacker").hasClass("active")) {
 							comebacker_get_random_object()
 							comebacker_show_popup()
@@ -1130,58 +1126,7 @@ admt_start = () => {
 		})
 	}
 
-	// inactive tab redirect
-	if ( admt_array.filter(item => item.type == "inactive_tab" && item.active == true)[0] ) {
-		$(document).ready(function(){
-			document.querySelector("body").insertAdjacentHTML("beforeend", 
-		    `<a class="inactive-tab-redirect-go" style="display: none !important; padding: 0: !important; margin: 0 !important; visibility: hidden !important; opacity: 0 !important;"></a>`
-			);
-
-			var inactive_tab_redirect_array = [
-				{
-					id: "11111",
-				},
-				{
-					id: "22222",
-				},
-				{
-					id: "33333",
-				},
-				{
-					id: "44444",
-				},
-				{
-					id: "55555",
-				},
-			]
-
-			if ( getURLParameter(window.location.href, 'inact_rd_id') && inactive_tab_redirect_array.filter((item) => item.id == getURLParameter(window.location.href, 'inact_rd_id'))?.[0]?.id ){
-				inactive_tab_redirect_param = getURLParameter(window.location.href, 'inact_rd_id')
-			} else {
-				var inactive_tab_redirect_number = Math.floor(Math.random() * inactive_tab_redirect_array.length)
-				inactive_tab_redirect_param = inactive_tab_redirect_array[inactive_tab_redirect_number].id
-			}
-
-			params_object.crid_object.inactive_tab_redirect = inactive_tab_redirect_param
-
-			var visibilitychangeCount = 0
-			document.addEventListener("visibilitychange", () => {
-				if (document.visibilityState === "hidden") {
-					visibilitychangeCount++
-					if (visibilitychangeCount == 2) {
-						params_object.frq = Number(params_object.frq) + 1 
-						params_object.flw = params_object.flw + "_inact_rd"
-						
-						setTimeout(()=> {
-							window.location.href = $(".inactive-tab-redirect-go").attr("href")
-						},1500) 
-					}
-				}
-			})
-		});
-	}
-
-	// inactive tab banner
+    // inactive tab banner
 	if ( admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0] ) {
 		$(document).ready(function(){
 
@@ -1383,6 +1328,57 @@ admt_start = () => {
 		});
 	}
 
+	// inactive tab redirect
+	if ( admt_array.filter(item => item.type == "inactive_tab" && item.active == true)[0] ) {
+		$(document).ready(function(){
+			document.querySelector("body").insertAdjacentHTML("beforeend", 
+		    `<a class="inactive-tab-redirect-go" style="display: none !important; padding: 0: !important; margin: 0 !important; visibility: hidden !important; opacity: 0 !important;"></a>`
+			);
+
+			var inactive_tab_redirect_array = [
+				{
+					id: "11111",
+				},
+				{
+					id: "22222",
+				},
+				{
+					id: "33333",
+				},
+				{
+					id: "44444",
+				},
+				{
+					id: "55555",
+				},
+			]
+
+			if ( getURLParameter(window.location.href, 'inact_rd_id') && inactive_tab_redirect_array.filter((item) => item.id == getURLParameter(window.location.href, 'inact_rd_id'))?.[0]?.id ){
+				inactive_tab_redirect_param = getURLParameter(window.location.href, 'inact_rd_id')
+			} else {
+				var inactive_tab_redirect_number = Math.floor(Math.random() * inactive_tab_redirect_array.length)
+				inactive_tab_redirect_param = inactive_tab_redirect_array[inactive_tab_redirect_number].id
+			}
+
+			params_object.crid_object.inactive_tab_redirect = inactive_tab_redirect_param
+
+			var visibilitychangeCount = 0
+			document.addEventListener("visibilitychange", () => {
+				if (document.visibilityState === "hidden") {
+					visibilitychangeCount++
+					if (visibilitychangeCount == 2) {
+						params_object.frq = Number(params_object.frq) + 1 
+						params_object.flw = params_object.flw + "_inact_rd"
+						
+						setTimeout(()=> {
+							window.location.href = $(".inactive-tab-redirect-go").attr("href")
+						},1500) 
+					}
+				}
+			})
+		});
+	}
+
 	// second offer
 	if ( admt_array.filter(item => item.type == "second_offer" && item.active == true)[0] ) {
 		$(document).ready(function(){
@@ -1491,7 +1487,7 @@ admt_start = () => {
 							}
 						},50)
 					}
-
+					
 				}
 				
 				setTimeout(function() {
