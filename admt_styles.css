@@ -124,7 +124,7 @@
 /*type 1*/
 #in-page-push[data-theme="1"] {
 	width: 445px !important;
-	right: -445px !important;
+	right: -465px !important;
 	bottom: 15px !important;
 }
 #in-page-push.active {

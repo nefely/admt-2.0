@@ -336,9 +336,9 @@ get_admt = () => {
 			admt_start()
 	    });
 	    // test
-	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="admt_styles.css?v=${Date.now()}">`)
+	    document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="admt_styles.css?v=${Date.now()}">`)
 	    // prod
-	    document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/admt_styles.css">`);
+	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/admt_styles.css">`);
 	    // demo
 	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/demo_admt_styles.css?v=${Date.now()}">`);
 	})
@@ -735,7 +735,8 @@ admt_start = () => {
 			// comment on prod
 			// admt_array.filter(item => item.type == "in_page_push")[0].version = 1
 			
-			var in_page_push_array = []
+			var in_page_push_array = admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0].data
+			// var in_page_push_array = []
 
 			// comment on prod
 			// admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0].delay_time = 2500
@@ -744,98 +745,106 @@ admt_start = () => {
 			let delay_time = admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0]?.delay_time
 			let display_limit = admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0]?.display_limit ? admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0]?.display_limit : admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0].data.length
 
-			if (admt_array.filter(item => item.type == "in_page_push")[0].version == undefined || admt_array.filter(item => item.type == "in_page_push")[0].version == 0 || admt_array.filter(item => item.type == "in_page_push")[0].version == "") {
-				document.querySelector("body").insertAdjacentHTML("beforeend", 
-				`
-				<div id="in-page-push">
-					<button class="in-page-push-close">
-						<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"/>
-						</svg>
-					</button>
-					<div class="in-page-push-image-block">
-						<img src="in-page-push-content/1.jpg" alt="" id="in-page-push-img">
-						<h4>
-							<span id="in-page-push-name"></span> , <span id="in-page-push-age"></span>
-						</h4>
-					</div>
-					<div class="in-page-push-text">
-						<h4 id="in-page-push-title"></h4>
-						<p id="in-page-push-text"></p>
-						<div class="in-page-push-button">
-							<a class="in-page-push-go" id="in-page-push-link"></a>
-						</div>
-					</div>
-				</div>
-				`
-				);
+            let renderINPP = () => {
 
-				admt_array.filter(item => item.type == "in_page_push")?.[0]?.data.map(item => {
-					let in_page_push_object_local = {
-						id: item.id,
-						img: item.img_3, 
-						name: item.text_1,
-						age: item.text_2,
-						title: item.text_4,
-						text: item.text_5,
-						link: item.text_6,
-					}
-					in_page_push_array.push(in_page_push_object_local)
-				})
-			}
-			if (admt_array.filter(item => item.type == "in_page_push")[0].version == 1) {
-				document.querySelector("body").insertAdjacentHTML("beforeend", 
-				`
-				<div id="in-page-push" data-theme="1">
-					<button class="in-page-push-close">
-						<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"></path>
-						</svg>
-					</button>
-					<div class="in-page-push-image-block">
-						<img src="" alt="" id="in-page-push-img">
-						<h4>
-							<span id="in-page-push-name"></span> , <span id="in-page-push-age"></span>
-						</h4>
-					</div>
-					<div class="in-page-push-text">
-						<div class="in-page-push-text-title">
-							<svg xmlns="http://www.w3.org/2000/svg" width="23" height="18" viewBox="0 0 23 18" fill="none">
-							<path d="M17.2326 3.4375H1.95486C1.42751 3.4375 1 3.86501 1 4.39236V15.8507C1 16.378 1.42751 16.8056 1.95486 16.8056H17.2326C17.76 16.8056 18.1875 16.378 18.1875 15.8507V4.39236C18.1875 3.86501 17.76 3.4375 17.2326 3.4375Z" stroke="#202020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M17.2326 3.91492L9.59372 11.0764L1.95483 3.91492" stroke="#202020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-							<circle cx="18.875" cy="4.125" r="3.125" fill="#00E232" stroke="white" stroke-width="2"/>
-							</svg>
-							<h4 id="in-page-push-title"></h4>
-						</div>
-						<p id="in-page-push-text"></p>
-						<div class="in-page-push-button">
-							<a class="in-page-push-go" id="in-page-push-link" href="">
-								<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-								<path d="M3.89868 3.7868H11.0895" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"/>
-								<path d="M3.89868 6.66315H6.77502" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"/>
-								<path d="M1.02222 2.34857V13.705C1.02222 14.0253 1.40949 14.1857 1.63599 13.9592L4.40703 11.1882C4.54188 11.0534 4.72479 10.9776 4.91549 10.9776H12.5276C13.3219 10.9776 13.9657 10.3337 13.9657 9.53942V2.34857C13.9657 1.55429 13.3219 0.9104 12.5276 0.9104H2.46039C1.66611 0.9104 1.02222 1.55429 1.02222 2.34857Z" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-								<span class="in-page-push-link-text"></span>
-							</a>
-						</div>
-					</div>
-				</div>
-				`
-				);
+                // comment on prod
+                console.log(in_page_push_chousen_object)
+                in_page_push_chousen_object.version = Math.floor(Math.random() * 2);
+                //
 
-				admt_array.filter(item => item.type == "in_page_push")?.[0]?.data.map(item => {
-					let in_page_push_object_local = {
-						id: item.id,
-						img: item.img_1, 
-						name: item.text_1,
-						age: item.text_2,
-						title: item.text_3,
-						text: item.text_4,
-						link: item.text_5,
-					}
-					in_page_push_array.push(in_page_push_object_local)
-				})
-			}
+                // uncommnet on prod
+                // if (admt_array.filter(item => item.type == "in_page_push")[0].version == undefined || admt_array.filter(item => item.type == "in_page_push")[0].version == 0 || admt_array.filter(item => item.type == "in_page_push")[0].version == "") {
+                //
+                // comment on prod
+                if (in_page_push_chousen_object.version == undefined || in_page_push_chousen_object.version == 0 || in_page_push_chousen_object.version == "") { 
+                //
+                    document.querySelector("body").insertAdjacentHTML("beforeend", 
+                    `
+                    <div id="in-page-push">
+                        <button class="in-page-push-close">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"/>
+                            </svg>
+                        </button>
+                        <div class="in-page-push-image-block">
+                            <img src="in-page-push-content/1.jpg" alt="" id="in-page-push-img">
+                            <h4>
+                                <span id="in-page-push-name"></span> , <span id="in-page-push-age"></span>
+                            </h4>
+                        </div>
+                        <div class="in-page-push-text">
+                            <h4 id="in-page-push-title"></h4>
+                            <p id="in-page-push-text"></p>
+                            <div class="in-page-push-button">
+                                <a class="in-page-push-go" id="in-page-push-link"></a>
+                            </div>
+                        </div>
+                    </div>
+                    `
+                    );
+    
+                    $("#in-page-push-img").attr("src" , in_page_push_chousen_object.img_3)
+					$("#in-page-push-name").text(in_page_push_chousen_object.text_1)
+					$("#in-page-push-age").text(in_page_push_chousen_object.text_2)
+					$("#in-page-push-title").text(in_page_push_chousen_object.text_4)
+					$("#in-page-push-text").text(in_page_push_chousen_object.text_5)
+					$("#in-page-push-link").text(in_page_push_chousen_object.text_6)
+                }
+                // uncommnet on prod
+                // if (admt_array.filter(item => item.type == "in_page_push")[0].version == 1) {
+                //
+                // comment on prod
+                if (in_page_push_chousen_object.version == 1) {
+                //
+
+                    document.querySelector("body").insertAdjacentHTML("beforeend", 
+                    `
+                    <div id="in-page-push" data-theme="1">
+                        <button class="in-page-push-close">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"></path>
+                            </svg>
+                        </button>
+                        <div class="in-page-push-image-block">
+                            <img src="" alt="" id="in-page-push-img">
+                            <h4>
+                                <span id="in-page-push-name"></span> , <span id="in-page-push-age"></span>
+                            </h4>
+                        </div>
+                        <div class="in-page-push-text">
+                            <div class="in-page-push-text-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="18" viewBox="0 0 23 18" fill="none">
+                                <path d="M17.2326 3.4375H1.95486C1.42751 3.4375 1 3.86501 1 4.39236V15.8507C1 16.378 1.42751 16.8056 1.95486 16.8056H17.2326C17.76 16.8056 18.1875 16.378 18.1875 15.8507V4.39236C18.1875 3.86501 17.76 3.4375 17.2326 3.4375Z" stroke="#202020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M17.2326 3.91492L9.59372 11.0764L1.95483 3.91492" stroke="#202020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="18.875" cy="4.125" r="3.125" fill="#00E232" stroke="white" stroke-width="2"/>
+                                </svg>
+                                <h4 id="in-page-push-title"></h4>
+                            </div>
+                            <p id="in-page-push-text"></p>
+                            <div class="in-page-push-button">
+                                <a class="in-page-push-go" id="in-page-push-link" href="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                                    <path d="M3.89868 3.7868H11.0895" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M3.89868 6.66315H6.77502" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M1.02222 2.34857V13.705C1.02222 14.0253 1.40949 14.1857 1.63599 13.9592L4.40703 11.1882C4.54188 11.0534 4.72479 10.9776 4.91549 10.9776H12.5276C13.3219 10.9776 13.9657 10.3337 13.9657 9.53942V2.34857C13.9657 1.55429 13.3219 0.9104 12.5276 0.9104H2.46039C1.66611 0.9104 1.02222 1.55429 1.02222 2.34857Z" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="in-page-push-link-text"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    `
+                    );
+    
+                    $("#in-page-push-img").attr("src" , in_page_push_chousen_object.img_1)
+					$("#in-page-push-name").text(in_page_push_chousen_object.text_1)
+					$("#in-page-push-age").text(in_page_push_chousen_object.text_2)
+					$("#in-page-push-title").text(in_page_push_chousen_object.text_3)
+					$("#in-page-push-text").text(in_page_push_chousen_object.text_4)
+					$(".in-page-push-link-text").text(in_page_push_chousen_object.text_5)
+                }
+            }
+            // renderINPP
 
 			var in_page_push_chousen_object = in_page_push_array[1]
 			var in_page_push_number_woman = 0
@@ -867,39 +876,26 @@ admt_start = () => {
 
 				in_page_push_chousen_object = in_page_push_array[in_page_push_number_woman]
 
-				if (admt_array.filter(item => item.type == "in_page_push")[0].version == undefined || admt_array.filter(item => item.type == "in_page_push")[0].version == 0 || admt_array.filter(item => item.type == "in_page_push")[0].version == "") {
-					$("#in-page-push-img").attr("src" , in_page_push_chousen_object.img)
-					$("#in-page-push-name").text(in_page_push_chousen_object.name)
-					$("#in-page-push-age").text(in_page_push_chousen_object.age)
-					$("#in-page-push-title").text(in_page_push_chousen_object.title)
-					$("#in-page-push-text").text(in_page_push_chousen_object.text)
-					$("#in-page-push-link").text(in_page_push_chousen_object.link)
-				}
-				if (admt_array.filter(item => item.type == "in_page_push")[0].version == 1) {
-					$("#in-page-push-img").attr("src" , in_page_push_chousen_object.img)
-					$("#in-page-push-name").text(in_page_push_chousen_object.name)
-					$("#in-page-push-age").text(in_page_push_chousen_object.age)
-					$("#in-page-push-title").text(in_page_push_chousen_object.title)
-					$("#in-page-push-text").text(in_page_push_chousen_object.text)
-					$(".in-page-push-link-text").text(in_page_push_chousen_object.link)
-				}
-				 
 				params_object.crid_object.in_page_push = in_page_push_chousen_object.id
 
 			}
 			in_page_push_show_popup = () => {
+                renderINPP()
 				setTimeout(()=>{
-					$("#in-page-push").addClass("active")
+					$("#in-page-push").addClass("active").css("opacity" , 1)
 				}, (delay_time ? delay_time : 7000));
 			}
 			in_page_push_hide_popup = () => {
 				$("#in-page-push").removeClass("active")
+                setTimeout(()=>{
+                    $("#in-page-push").remove()
+                },500)
 			}
 
 			in_page_push_get_random_object()
 			in_page_push_show_popup()
 
-			$('.in-page-push-close').click(function(){
+            $("body").on("click", ".in-page-push-close", function() {
 				in_page_push_hide_popup()
 				if (in_page_push_array_of_showed_object.length < ( in_page_push_array.length >= display_limit ? display_limit : in_page_push_array.length)  ) {
 					setTimeout(() => {
@@ -909,7 +905,7 @@ admt_start = () => {
 				}
 			});
 
-			$(".in-page-push-go").click(function(e){
+            $("body").on("click", ".in-page-push-go", function(e) {
 				e.preventDefault()
 
 				params_object.frq = Number(params_object.frq) + 1 
@@ -922,8 +918,6 @@ admt_start = () => {
 				in_page_push_hide_popup()
 				in_page_push_array.map((item , index) => {in_page_push_array_of_showed_object[index] = null})
 			})
-
-			$("#in-page-push").css("opacity" , 1)
 		})
 	}
 	
@@ -1146,10 +1140,11 @@ admt_start = () => {
 	if ( admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0] ) {
 		$(document).ready(function(){
 
-			var inactive_tab_banner_array = admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0].data
-
 			// comment on prod
 			// admt_array.filter(item => item.type == "inactive_banner")[0].version = 1
+
+			var inactive_tab_banner_array = admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0].data
+			// var inactive_tab_banner_object_local = {}
 
 			// comment on prod
 			// admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0].display_limit = 2
@@ -1263,7 +1258,6 @@ admt_start = () => {
 					$(".inactive-tab-banner-inner-1-image img").attr("src" , `${inactive_tab_banner_chousen_object.img_1}`)
                 }
             }
-            // renderINACT_B()
 
 			var inactive_tab_banner_chousen_object = inactive_tab_banner_array[1]
 			var inactive_tab_banner_number_woman = 0
