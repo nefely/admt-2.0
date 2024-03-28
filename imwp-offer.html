@@ -6,6 +6,26 @@
 	<title>ADMT IMWP OFFER</title>
 </head>
 <body>
-<h1>ADMT IMWP OFFER</h1>
+<h1>OFFER OF ADMT</h1>
+<h2 class="admt_type"></h2>
+<script src="jquery-3.6.4.min.js"></script>
+<script>
+$(document).ready(function(){
+window.getURLParameter = (sUrl, sParam) => {
+    let sPageURL = decodeURI(sUrl.substring(sUrl.indexOf('?') + 1));
+    let sURLVariables = sPageURL.split('&');
+    for (let i = 0; i < sURLVariables.length; i++) {
+        let sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) {
+            return sParameterName[1];
+        }
+    }
+}
+
+let admt_type = getURLParameter( window.location.href , "monetization")
+$(".admt_type").text(admt_type)
+
+})
+</script>
 </body>
 </html>

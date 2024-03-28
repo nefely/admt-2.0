@@ -1151,7 +1151,7 @@
   width: 350px !important;
   max-width: 350px !important;
   min-width: 350px !important;
-  margin-bottom: 15px !important;
+  margin-bottom: 10px !important;
   border-radius: 16px !important;
   color: #111 !important;
   box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.25) !important;
@@ -1275,8 +1275,8 @@
 
 @media screen and (max-width: 991px) {
   #in-page-chat {
-    bottom: 20px !important;
-    right: 20px !important;
+    bottom: 15px !important;
+    right: 15px !important;
   }
   #in-page-chat .in-page-chat-circle {
     width: 45px !important;
@@ -1308,8 +1308,9 @@
     font-size: 10px !important;
   }
   #in-page-chat .in-page-chat-box {
-      width: calc(100% - 20px) !important;
-      max-width: 500px !important;
+      width: calc(100% - 15px) !important;
+      max-width: 400px !important;
+      min-width: 250px !important;
   }
   #in-page-chat .in-page-chat-message-text {
     font-size: 12px !important;

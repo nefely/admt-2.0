@@ -894,7 +894,7 @@ admt_start = () => {
 
 			in_page_push_get_random_object()
 			in_page_push_show_popup()
-
+            
             $("body").on("click", ".in-page-push-close", function() {
 				in_page_push_hide_popup()
 				if (in_page_push_array_of_showed_object.length < ( in_page_push_array.length >= display_limit ? display_limit : in_page_push_array.length)  ) {
@@ -1166,7 +1166,6 @@ admt_start = () => {
                 // comment on prod
                 if (inactive_tab_banner_chousen_object.version == undefined || inactive_tab_banner_chousen_object.version == 0 || inactive_tab_banner_chousen_object.version == "") { 
                 //
-                    console.log(0)
                     document.querySelector("body").insertAdjacentHTML("beforeend", 
                         `
                         <div id="inactive-tab-banner" style="opacity: 0">
@@ -1209,7 +1208,6 @@ admt_start = () => {
                 //
                 // comment on prod
                 if (inactive_tab_banner_chousen_object.version == 1) {
-                    console.log(1)
                 //
                     document.querySelector("body").insertAdjacentHTML("beforeend", 
                         `
