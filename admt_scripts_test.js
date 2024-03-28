@@ -1671,83 +1671,99 @@ admt_start = () => {
 			// comment on prod
 			// admt_array.filter(item => item.type == "in_page_chat")[0].version = 1
 
+            var in_page_chat_array = admt_array.filter(item => item.type == "in_page_chat" && item.active == true)[0].data
+
 			// comment on prod
 			// admt_array.filter(item => item.type == "in_page_chat" && item.active == true)[0].delay_time = 2500
 
 			let delay_time = admt_array.filter(item => item.type == "in_page_chat" && item.active == true)[0]?.delay_time
 
-			var in_page_chat_array = []
 
-			if (admt_array.filter(item => item.type == "in_page_chat")[0].version == undefined || admt_array.filter(item => item.type == "in_page_chat")[0].version == 0 || admt_array.filter(item => item.type == "in_page_chat")[0].version == "") {
-				document.querySelector("body").insertAdjacentHTML("beforeend", 
-				`
-				<div id="in-page-chat" class="hidden">
-				  <div class="in-page-chat-box">
-				    <div class="in-page-chat-row in-page-chat-row-top">
-				      <div class="in-page-chat-box-column in-page-chat-box-column-left">
-				        <div class="in-page-chat-ava">
-				          <img src="" alt="" id="in-page-chat-img">
-				        </div>
-				      </div>
-				      <div class="in-page-chat-box-column in-page-chat-box-column-right">
-				        <div class="in-page-chat-message">
-				          <div class="in-page-chat-message-inner">
-				            <p class="in-page-chat-message-name"></p>
-				            <p class="in-page-chat-message-text" id="in-page-chat-text-1"></p>
-				          </div>
-				          <div class="in-page-chat-message-date">
-				            <p></p>
-				          </div>
-				        </div>
-				        <div class="in-page-chat-message">
-				          <div class="in-page-chat-message-inner">
-				            <p class="in-page-chat-message-name"></p>
-				            <p class="in-page-chat-message-text" id="in-page-chat-text-2"></p>
-				          </div>
-				          <div class="in-page-chat-message-date">
-				            <p></p>
-				          </div>
-				        </div>
-				      </div>
-				    </div>
-				    <a class="in-page-chat-row in-page-chat-row-bottom in-page-chat-go" href="">
-				      <div class="in-page-chat-emoji">
-				        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-				          <path fill="rgba(246,130,97,1)" fill-rule="evenodd" d="M255,160 L256,160 C256,162.209139 254.209139,164 252,164 C249.790861,164 248,162.209139 248,160 L249,160 C249,161.656854 250.343146,163 252,163 C253.656854,163 255,161.656854 255,160 Z M252,168 C256.970563,168 261,163.970563 261,159 C261,154.029437 256.970563,150 252,150 C247.029437,150 243,154.029437 243,159 C243,163.970563 247.029437,168 252,168 Z M252,167 C256.418278,167 260,163.418278 260,159 C260,154.581722 256.418278,151 252,151 C247.581722,151 244,154.581722 244,159 C244,163.418278 247.581722,167 252,167 Z M249,158 C249.552285,158 250,157.552285 250,157 C250,156.447715 249.552285,156 249,156 C248.447715,156 248,156.447715 248,157 C248,157.552285 248.447715,158 249,158 Z M255,158 C255.552285,158 256,157.552285 256,157 C256,156.447715 255.552285,156 255,156 C254.447715,156 254,156.447715 254,157 C254,157.552285 254.447715,158 255,158 Z" transform="translate(-243 -150)"/>
-				        </svg>
-				      </div>
-				      <div class="in-page-chat-input" id="in-page-chat-input"></div>
-				      <div class="in-page-chat-button" id="in-page-chat-button"></div>
-				    </a>
-				  </div>
+            let renderINPC = () => {
 
-				  <div class="in-page-chat-circle">
-				    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-				      <path d="M3.89868 3.7868H11.0895" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"></path>
-				      <path d="M3.89868 6.66315H6.77502" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"></path>
-				      <path d="M1.02222 2.34857V13.705C1.02222 14.0253 1.40949 14.1857 1.63599 13.9592L4.40703 11.1882C4.54188 11.0534 4.72479 10.9776 4.91549 10.9776H12.5276C13.3219 10.9776 13.9657 10.3337 13.9657 9.53942V2.34857C13.9657 1.55429 13.3219 0.9104 12.5276 0.9104H2.46039C1.66611 0.9104 1.02222 1.55429 1.02222 2.34857Z" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"></path>
-				    </svg>
-				    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-				      <path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"></path>
-				    </svg>
-				    <div class="in-page-chat-circle-dot">2</div>
-				  </div>
-				</div>
-				`
-				);
-				admt_array.filter(item => item.type == "in_page_chat")?.[0]?.data.map(item => {
-					let in_page_chat_object_local = {
-						id: item.id,
-						img: item.img_1, 
-						name: item.text_1,
-						text_1: item.text_2,
-						text_2: item.text_3,
-						input: item.text_4,
-						button: item.text_5,
-					}
-					in_page_chat_array.push(in_page_chat_object_local)
-				})
-			}
+                // comment on prod
+                console.log(in_page_chat_chousen_object)
+                in_page_chat_chousen_object.version = 0
+                // in_page_chat_chousen_object.version = Math.floor(Math.random() * 2);
+                //
+
+                // uncommnet on prod
+                // if (admt_array.filter(item => item.type == "in_page_chat")[0].version == undefined || admt_array.filter(item => item.type == "in_page_chat")[0].version == 0 || admt_array.filter(item => item.type == "in_page_chat")[0].version == "") {
+                //
+                // comment on prod
+                if (in_page_chat_chousen_object.version == undefined || in_page_chat_chousen_object.version == 0 || in_page_chat_chousen_object.version == "") {
+                //
+                    document.querySelector("body").insertAdjacentHTML("beforeend", 
+                    `
+                    <div id="in-page-chat" class="hidden">
+                      <div class="in-page-chat-box">
+                        <div class="in-page-chat-row in-page-chat-row-top">
+                          <div class="in-page-chat-box-column in-page-chat-box-column-left">
+                            <div class="in-page-chat-ava">
+                              <img src="" alt="" id="in-page-chat-img">
+                            </div>
+                          </div>
+                          <div class="in-page-chat-box-column in-page-chat-box-column-right">
+                            <div class="in-page-chat-message">
+                              <div class="in-page-chat-message-inner">
+                                <p class="in-page-chat-message-name"></p>
+                                <p class="in-page-chat-message-text" id="in-page-chat-text-1"></p>
+                              </div>
+                              <div class="in-page-chat-message-date">
+                                <p></p>
+                              </div>
+                            </div>
+                            <div class="in-page-chat-message">
+                              <div class="in-page-chat-message-inner">
+                                <p class="in-page-chat-message-name"></p>
+                                <p class="in-page-chat-message-text" id="in-page-chat-text-2"></p>
+                              </div>
+                              <div class="in-page-chat-message-date">
+                                <p></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <a class="in-page-chat-row in-page-chat-row-bottom in-page-chat-go" href="">
+                          <div class="in-page-chat-emoji">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                              <path fill="rgba(246,130,97,1)" fill-rule="evenodd" d="M255,160 L256,160 C256,162.209139 254.209139,164 252,164 C249.790861,164 248,162.209139 248,160 L249,160 C249,161.656854 250.343146,163 252,163 C253.656854,163 255,161.656854 255,160 Z M252,168 C256.970563,168 261,163.970563 261,159 C261,154.029437 256.970563,150 252,150 C247.029437,150 243,154.029437 243,159 C243,163.970563 247.029437,168 252,168 Z M252,167 C256.418278,167 260,163.418278 260,159 C260,154.581722 256.418278,151 252,151 C247.581722,151 244,154.581722 244,159 C244,163.418278 247.581722,167 252,167 Z M249,158 C249.552285,158 250,157.552285 250,157 C250,156.447715 249.552285,156 249,156 C248.447715,156 248,156.447715 248,157 C248,157.552285 248.447715,158 249,158 Z M255,158 C255.552285,158 256,157.552285 256,157 C256,156.447715 255.552285,156 255,156 C254.447715,156 254,156.447715 254,157 C254,157.552285 254.447715,158 255,158 Z" transform="translate(-243 -150)"/>
+                            </svg>
+                          </div>
+                          <div class="in-page-chat-input" id="in-page-chat-input"></div>
+                          <div class="in-page-chat-button" id="in-page-chat-button"></div>
+                        </a>
+                      </div>
+    
+                      <div class="in-page-chat-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                          <path d="M3.89868 3.7868H11.0895" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M3.89868 6.66315H6.77502" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M1.02222 2.34857V13.705C1.02222 14.0253 1.40949 14.1857 1.63599 13.9592L4.40703 11.1882C4.54188 11.0534 4.72479 10.9776 4.91549 10.9776H12.5276C13.3219 10.9776 13.9657 10.3337 13.9657 9.53942V2.34857C13.9657 1.55429 13.3219 0.9104 12.5276 0.9104H2.46039C1.66611 0.9104 1.02222 1.55429 1.02222 2.34857Z" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"></path>
+                        </svg>
+                        <div class="in-page-chat-circle-dot">2</div>
+                      </div>
+                    </div>
+                    `
+                    );
+                    let currentDate = new Date();
+                    let hours = currentDate.getHours();
+                    let minutes = currentDate.getMinutes();
+                    if (hours < 10) {hours = "0" + hours;}
+                    if (minutes < 10) { minutes = "0" + minutes;}
+				    let currentTime = hours + ":" + minutes;
+                    $("#in-page-chat-img").attr("src" , in_page_chat_chousen_object.img_1)
+					$("#in-page-chat .in-page-chat-message-name").text(in_page_chat_chousen_object.text_1)
+					$("#in-page-chat-text-1").text(in_page_chat_chousen_object.text_2)
+					$("#in-page-chat-text-2").text(in_page_chat_chousen_object.text_3)
+					$("#in-page-chat-input").text(in_page_chat_chousen_object.text_4)
+					$("#in-page-chat-button").text(in_page_chat_chousen_object.text_5)
+					$("#in-page-chat .in-page-chat-message-date p").text(currentTime)
+                }
+            }
 
 			var in_page_chat_chousen_object = in_page_chat_array[1]
 			var in_page_chat_number_woman = 0
@@ -1778,33 +1794,12 @@ admt_start = () => {
 				in_page_chat_array_of_showed_object.push(in_page_chat_number_woman)
 
 				in_page_chat_chousen_object = in_page_chat_array[in_page_chat_number_woman]
-
-
-				let currentDate = new Date();
-				let hours = currentDate.getHours();
-				let minutes = currentDate.getMinutes();
-				if (hours < 10) {
-					hours = "0" + hours;
-				}
-				if (minutes < 10) {
-					minutes = "0" + minutes;
-				}
-				let currentTime = hours + ":" + minutes;
-
-				if (admt_array.filter(item => item.type == "in_page_chat")[0].version == undefined || admt_array.filter(item => item.type == "in_page_chat")[0].version == 0 || admt_array.filter(item => item.type == "in_page_chat")[0].version == "") {
-					$("#in-page-chat-img").attr("src" , in_page_chat_chousen_object.img)
-					$("#in-page-chat .in-page-chat-message-name").text(in_page_chat_chousen_object.name)
-					$("#in-page-chat-text-1").text(in_page_chat_chousen_object.text_1)
-					$("#in-page-chat-text-2").text(in_page_chat_chousen_object.text_2)
-					$("#in-page-chat-input").text(in_page_chat_chousen_object.input)
-					$("#in-page-chat-button").text(in_page_chat_chousen_object.button)
-					$("#in-page-chat .in-page-chat-message-date p").text(currentTime)
-				}
 				 
 				params_object.crid_object.in_page_chat = in_page_chat_chousen_object.id
 
 			}
 			in_page_chat_show_popup = () => {
+                renderINPC()
 				setTimeout(()=>{
 					$("#in-page-chat").removeClass("hidden")
 				}, (delay_time ? delay_time : 7000));
@@ -1813,7 +1808,7 @@ admt_start = () => {
 			in_page_chat_get_random_object()
 			in_page_chat_show_popup()
 
-			$("#in-page-chat .in-page-chat-circle").click(function(){
+            $("body").on("click", "#in-page-chat .in-page-chat-circle", function() {
 			  $(this).closest('#in-page-chat').toggleClass("active")
 			  if ($(this).closest('#in-page-chat').hasClass("active")) {
 			    $(".in-page-chat-box").fadeIn(100)
@@ -1822,7 +1817,7 @@ admt_start = () => {
 			  }
 			})
 
-			$(".in-page-chat-go").click(function(e){
+            $("body").on("click", ".in-page-chat-go", function(e) {
 				e.preventDefault()
 
 				params_object.frq = Number(params_object.frq) + 1 
