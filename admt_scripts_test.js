@@ -1082,12 +1082,14 @@ admt_start = () => {
                 },100)
 			}
 			comebacker_hide_popup = () => {
-				$("#comebacker").removeClass("active")
-                $("#comebacker").remove()
+				setTimeout(()=>{
+                    $("#comebacker").removeClass("active")
+                    $("#comebacker").remove()
+                },100)
 			}
 
 			$("body").on("click", ".comebacker-close , .comebacker-bg", function() {
-				comebacker_hide_popup()
+                comebacker_hide_popup()
 			});
 
 			$("body").on("click", ".comebacker-go", function(e) {
@@ -1293,8 +1295,10 @@ admt_start = () => {
                 },100)
 			}
 			inactive_tab_banner_hide_popup = () => {
-                $("#inactive-tab-banner").removeClass("active")
-                $("#inactive-tab-banner").remove()
+                setTimeout(()=>{
+                    $("#inactive-tab-banner").removeClass("active")
+                    $("#inactive-tab-banner").remove()
+                },100)
 			}
 
             $("body").on("click", ".inactive-tab-banner-close , .inactive-tab-banner-bg", function() {
