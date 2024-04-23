@@ -753,10 +753,10 @@ admt_start = () => {
                 //
 
                 // uncommnet on prod
-                // if (admt_array.filter(item => item.type == "in_page_push")[0].version == undefined || admt_array.filter(item => item.type == "in_page_push")[0].version == 0 || admt_array.filter(item => item.type == "in_page_push")[0].version == "") {
+                // if (admt_array.filter(item => item.type == "in_page_push")[0].version == undefined || admt_array.filter(item => item.type == "in_page_push")[0].version == 0 || admt_array.filter(item => item.type == "in_page_push")[0].version == "" || admt_array.filter(item => item.type == "in_page_push")[0].version == null) {
                 //
                 // comment on prod
-                if (in_page_push_chousen_object.version == undefined || in_page_push_chousen_object.version == 0 || in_page_push_chousen_object.version == "") { 
+                if (in_page_push_chousen_object.version == undefined || in_page_push_chousen_object.version == 0 || in_page_push_chousen_object.version == "" || in_page_push_chousen_object.version == null) { 
                 //
                     document.querySelector("body").insertAdjacentHTML("beforeend", 
                     `
@@ -943,10 +943,10 @@ admt_start = () => {
                 //
 
                 // uncommnet on prod
-				// if (admt_array.filter(item => item.type == "exit_popup")[0].version == undefined || admt_array.filter(item => item.type == "exit_popup")[0].version == 0 || admt_array.filter(item => item.type == "exit_popup")[0].version == "") {
+				// if (admt_array.filter(item => item.type == "exit_popup")[0].version == undefined || admt_array.filter(item => item.type == "exit_popup")[0].version == 0 || admt_array.filter(item => item.type == "exit_popup")[0].version == "" || admt_array.filter(item => item.type == "exit_popup")[0].version == null) {
                 //
                 // comment on prod
-                if (comebacker_chousen_object.version == undefined || comebacker_chousen_object.version == 0 || comebacker_chousen_object.version == "") { 
+                if (comebacker_chousen_object.version == undefined || comebacker_chousen_object.version == 0 || comebacker_chousen_object.version == "" || comebacker_chousen_object.version == null) { 
                 //
 				  	document.querySelector("body").insertAdjacentHTML("beforeend", 
 					`
@@ -1163,10 +1163,10 @@ admt_start = () => {
                 //
 
                 // uncomment on prod
-                // if (admt_array.filter(item => item.type == "inactive_banner")[0].version == undefined || admt_array.filter(item => item.type == "inactive_banner")[0].version == 0 || admt_array.filter(item => item.type == "inactive_banner")[0].version == "") {
+                // if (admt_array.filter(item => item.type == "inactive_banner")[0].version == undefined || admt_array.filter(item => item.type == "inactive_banner")[0].version == 0 || admt_array.filter(item => item.type == "inactive_banner")[0].version == "" || admt_array.filter(item => item.type == "inactive_banner")[0].version == null) {
                 //
                 // comment on prod
-                if (inactive_tab_banner_chousen_object.version == undefined || inactive_tab_banner_chousen_object.version == 0 || inactive_tab_banner_chousen_object.version == "") { 
+                if (inactive_tab_banner_chousen_object.version == undefined || inactive_tab_banner_chousen_object.version == 0 || inactive_tab_banner_chousen_object.version == "" || inactive_tab_banner_chousen_object.version == null) { 
                 //
                     document.querySelector("body").insertAdjacentHTML("beforeend", 
                         `
@@ -1690,10 +1690,10 @@ admt_start = () => {
                 //
 
                 // uncommnet on prod
-                // if (admt_array.filter(item => item.type == "in_page_chat")[0].version == undefined || admt_array.filter(item => item.type == "in_page_chat")[0].version == 0 || admt_array.filter(item => item.type == "in_page_chat")[0].version == "") {
+                // if (admt_array.filter(item => item.type == "in_page_chat")[0].version == undefined || admt_array.filter(item => item.type == "in_page_chat")[0].version == 0 || admt_array.filter(item => item.type == "in_page_chat")[0].version == "" || admt_array.filter(item => item.type == "in_page_chat")[0].version == null) {
                 //
                 // comment on prod
-                if (in_page_chat_chousen_object.version == undefined || in_page_chat_chousen_object.version == 0 || in_page_chat_chousen_object.version == "") {
+                if (in_page_chat_chousen_object.version == undefined || in_page_chat_chousen_object.version == 0 || in_page_chat_chousen_object.version == "" || in_page_chat_chousen_object.version == null) {
                 //
                     document.querySelector("body").insertAdjacentHTML("beforeend", 
                     `
