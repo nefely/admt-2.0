@@ -19,761 +19,272 @@ get_admt = () => {
 			// uncomment on prod
 			window.admt_array = data
 
-            // window.admt_array = [
-            //     {
-            //         "type": "inactive_tab",
-            //         "active": false,
-            //         "url": "imwp-offer.html?monetization=inactive-tab&vertical=test-vertical-1&sorc_id=test-sorc-id-1"
-            //     },
-            //     {
-            //         "type": "second_offer",
-            //         "active": true,
-            //         "url": "imwp-offer.html?monetization=second-offer&vertical=test-vertical-2&sorc_id=test-sorc-id-2&aid_sorc=2"
-            //     },
-            //     {
-            //         "type": "back_button",
-            //         "active": true,
-            //         "url": "imwp-offer.html?monetization=back-button&vertical=test-vertical-3&sorc_id=test-sorc-id-3"
-            //     },
-            //     {
-            //         "type": "in_page_push",
-            //         "active": true,
-            //         "url": "imwp-offer.html?monetization=in-page-push&vertical=test-vertical-4&sorc_id=test-sorc-id-4",
-            //         "version": "0",
-            //         "delay_time": 10000,
-            //         "display_limit": 5,
-            //         "data": [
-            //             {
-            //                 "id": 7,
-            //                 "vertical": "ad",
-            //                 "img_1": "https://cdn.adasty.com/c/01GRAEYF7GJMN453GXD3VQME6M.jpg",
-            //                 "img_2": "https://cdn.adasty.com/c/01HR72Z670F8RCPQG3KNR4B865.jpg",
-            //                 "img_3": "https://cdn.adasty.com/c/01GRAH4YCN51AF495KFBDE21Q4.jpg",
-            //                 "img_4": null,
-            //                 "text_1": "Irene",
-            //                 "text_2": "23",
-            //                 "text_3": "You have (1) unread message from ",
-            //                 "text_4": "New message (1)",
-            //                 "text_5": "Hi there, doll 😚 do you like my ass like mine? 🤪",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  null,
-            //             },
-            //             {
-            //                 "id": 5,
-            //                 "vertical": "ad",
-            //                 "img_1": "https://cdn.adasty.com/c/01GRAES1CRGVWBZVHFA75NN4J1.jpg",
-            //                 "img_2": "https://cdn.adasty.com/c/01GRAES1HFP7H1661EK813SRVW.jpg",
-            //                 "img_3": "https://cdn.adasty.com/c/01GRAH4097NR9HHFHFF48JX7CF.jpg",
-            //                 "img_4": null,
-            //                 "text_1": "Kate",
-            //                 "text_2": "22",
-            //                 "text_3": "You have (1) unread message from ",
-            //                 "text_4": "New message (1)",
-            //                 "text_5": "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉",
-            //                 "text_6": "Reply",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  null,
-            //             },
-            //             {
-            //                 "id": 9,
-            //                 "vertical": "ad",
-            //                 "img_1": "https://cdn.adasty.com/c/01GRAF0TNAMMNQH3QT36S7CZK0.jpg",
-            //                 "img_2": "https://cdn.adasty.com/c/01GRAF0TTXJYMBGTSEZ5H9SEG2.jpg",
-            //                 "img_3": "https://cdn.adasty.com/c/01GRAH5VV7NMMN0WBTW4WKA2RH.jpg",
-            //                 "img_4": null,
-            //                 "text_1": "Melania",
-            //                 "text_2": "22",
-            //                 "text_3": "You have (1) unread message from ",
-            //                 "text_4": "New message (1)",
-            //                 "text_5": "Hey sweetie. Hope you're as bored as I am 😙 How about we chat? Next, maybe I'll take some intimate pics for you 😏",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  null,
-            //             },
-            //             {
-            //                 "id": 6,
-            //                 "vertical": "ad",
-            //                 "img_1": "https://cdn.adasty.com/c/01GRAEX7WVQR2ZR4S0BSTMJTKK.jpg",
-            //                 "img_2": "https://cdn.adasty.com/c/01GRAEX829686H50YZ9726BMW2.jpg",
-            //                 "img_3": "https://cdn.adasty.com/c/01GRAH4DW8A012211WPNP2A45R.jpg",
-            //                 "img_4": null,
-            //                 "text_1": "Sophia",
-            //                 "text_2": "24",
-            //                 "text_3": "You have (1) unread message from ",
-            //                 "text_4": "New message (1)",
-            //                 "text_5": "Honey, would you like to entertain me? It's really boring now 😜 and I want romance so bad ...",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  null,
-            //             },
-            //             {
-            //                 "id": 8,
-            //                 "vertical": "ad",
-            //                 "img_1": "https://cdn.adasty.com/c/01GRAEZS2DED2EWPVNQ60M8SK3.jpg",
-            //                 "img_2": "https://cdn.adasty.com/c/01GRAEZS7ZGTXYRB5WETN956HH.jpg",
-            //                 "img_3": "https://cdn.adasty.com/c/01GRAH5DE6616E6830S57B7SPS.jpg",
-            //                 "img_4": null,
-            //                 "text_1": "Victoria",
-            //                 "text_2": "23",
-            //                 "text_3": "You have (1) unread message from ",
-            //                 "text_4": "New message (1)",
-            //                 "text_5": "Hello hello hello 😉 how do you like my body?",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  null,
-            //             },
-            //             {
-            //                 "id": 37,
-            //                 "vertical": "adult",
-            //                 "img_1": "https://cdn.adasty.com/c/01HE2Q4C3X0RKV8J4NMNJYFKY2.jpg",
-            //                 "img_2": null,
-            //                 "img_3": null,
-            //                 "img_4": null,
-            //                 "text_1": "Irene",
-            //                 "text_2": "23",
-            //                 "text_3": "New message (1)",
-            //                 "text_4": "Hi there, doll 😚 do you like my ass like mine? 🤪",
-            //                 "text_5": "Reply Now",
-            //                 "text_6": null,
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  1,
-            //             },
-            //             {
-            //                 "id": 35,
-            //                 "vertical": "adult",
-            //                 "img_1": "https://cdn.adasty.com/c/01HE2PJDJQHHQTHXFKF4V01B28.jpg",
-            //                 "img_2": null,
-            //                 "img_3": null,
-            //                 "img_4": null,
-            //                 "text_1": "Kate",
-            //                 "text_2": "22",
-            //                 "text_3": "New message (1)",
-            //                 "text_4": "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉",
-            //                 "text_5": "Reply",
-            //                 "text_6": null,
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  1,
-            //             },
-            //             {
-            //                 "id": 39,
-            //                 "vertical": "adult",
-            //                 "img_1": "https://cdn.adasty.com/c/01HE2QT2HJVEZJRXY0F0RDRV0K.jpg",
-            //                 "img_2": null,
-            //                 "img_3": null,
-            //                 "img_4": null,
-            //                 "text_1": "Melania",
-            //                 "text_2": "22",
-            //                 "text_3": "New message (1)",
-            //                 "text_4": "Hey sweetie. Hope you're as bored as I am 😙 How about we chat? Next, maybe I'll take some intimate pics for you 😏",
-            //                 "text_5": "Reply Now",
-            //                 "text_6": null,
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  1,
-            //             },
-            //             {
-            //                 "id": 36,
-            //                 "vertical": "adult",
-            //                 "img_1": "https://cdn.adasty.com/c/01HE2PWP9A0ANN4JWFFNDJQSQ6.jpg",
-            //                 "img_2": null,
-            //                 "img_3": null,
-            //                 "img_4": null,
-            //                 "text_1": "Sophia",
-            //                 "text_2": "24",
-            //                 "text_3": "New message (1)",
-            //                 "text_4": "Honey, would you like to entertain me? It's really boring now 😜 and I want romance so bad ...",
-            //                 "text_5": "Reply Now",
-            //                 "text_6": null,
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  1,
-            //             },
-            //             {
-            //                 "id": 38,
-            //                 "vertical": "adult",
-            //                 "img_1": "https://cdn.adasty.com/c/01HE2QMG8PJBQ84EE369JEBX4D.jpg",
-            //                 "img_2": null,
-            //                 "img_3": null,
-            //                 "img_4": null,
-            //                 "text_1": "Victoria",
-            //                 "text_2": "23",
-            //                 "text_3": "New message (1)",
-            //                 "text_4": "Hello hello hello 😉 how do you like my body?",
-            //                 "text_5": "Reply Now",
-            //                 "text_6": null,
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  1,
-            //             }
-            //         ]
-            //     },
-            //     {
-            //         "type": "in_page_chat",
-            //         "active": true,
-            //         "url": "imwp-offer.html?monetization=in-page-chat&vertical=test-vertical-7&sorc_id=test-sorc-id-7",
-            //         "version": "0",
-            //         "delay_time": 100,
-            //         "data": [
-            //             {
-            //                 "id": 50,
-            //                 "vertical": "adult",
-            //                 "img_1": "https://cdn.adasty.com/c/01HT2A1MN5VT99H60KAPFVDEJ7.jpg",
-            //                 "img_2": null,
-            //                 "img_3": null,
-            //                 "img_4": null,
-            //                 "text_1": "Melania",
-            //                 "text_2": "Hei there, sweetie pie! Wanna play a game with me? Let's chase rainbows, catch fireflies, and dance in the moonlight.",
-            //                 "text_3": "With your laughter as music and your smile as sunshine, every moment is an adventure with you. So grab my hand and let's make memories that sparkle like stars in the sky. Are you in?\"",
-            //                 "text_4": "Text here",
-            //                 "text_5": "Send",
-            //                 "text_6": null,
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  0,
-            //             },
-            //             {
-            //                 "id": 51,
-            //                 "vertical": "adult",
-            //                 "img_1": "https://cdn.adasty.com/c/01HT29X29SHA5XZ7A7WW3BD1XJ.jpg",
-            //                 "img_2": null,
-            //                 "img_3": null,
-            //                 "img_4": null,
-            //                 "text_1": "Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Odit voluptatibus dolorem numquam, harum doloremque corporis modi voluptas itaque rerum voluptatem, nulla? Repudiandae consequatur beatae reiciendis ullam, aliquam necessitatibus hic rerum.",
-            //                 "text_2": "Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Odit voluptatibus dolorem numquam, harum doloremque corporis modi voluptas itaque rerum voluptatem, nulla? Repudiandae consequatur beatae reiciendis ullam, aliquam necessitatibus hic rerum.",
-            //                 "text_3": "Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Odit voluptatibus dolorem numquam, harum doloremque corporis modi voluptas itaque rerum voluptatem, nulla? Repudiandae consequatur beatae reiciendis ullam, aliquam necessitatibus hic rerum.",
-            //                 "text_4": "Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Odit voluptatibus dolorem numquam, harum doloremque corporis modi voluptas itaque rerum voluptatem, nulla? Repudiandae consequatur beatae reiciendis ullam, aliquam necessitatibus hic rerum.",
-            //                 "text_5": "Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Odit voluptatibus dolorem numquam, harum doloremque corporis modi voluptas itaque rerum voluptatem, nulla? Repudiandae consequatur beatae reiciendis ullam, aliquam necessitatibus hic rerum.",
-            //                 "text_6": "Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Odit voluptatibus dolorem numquam, harum doloremque corporis modi voluptas itaque rerum voluptatem, nulla? Repudiandae consequatur beatae reiciendis ullam, aliquam necessitatibus hic rerum.",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  0,
-            //             }
-            //         ]
-            //     },
-            //     {
-            //         "type": "inactive_banner",
-            //         "active": true,
-            //         "url": "imwp-offer.html?monetization=inactive-banner&vertical=test-vertical-5&sorc_id=test-sorc-id-5",
-            //         "version": null,
-            //         "display_limit": 0,
-            //         "data": [
-            //             {
-            //                 "id": 7,
-            //                 "vertical": "ad",
-            //                 "img_1": "https://cdn.adasty.com/c/01GRAEYF7GJMN453GXD3VQME6M.jpg",
-            //                 "img_2": "https://cdn.adasty.com/c/01HR72Z670F8RCPQG3KNR4B865.jpg",
-            //                 "img_3": "https://cdn.adasty.com/c/01GRAH4YCN51AF495KFBDE21Q4.jpg",
-            //                 "img_4": null,
-            //                 "text_1": "Irene",
-            //                 "text_2": "23",
-            //                 "text_3": "You have (1) unread message from ",
-            //                 "text_4": "New message (1)",
-            //                 "text_5": "Hi there, doll 😚 do you like my ass like mine? 🤪",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  null,
-            //             },
-            //             {
-            //                 "id": 5,
-            //                 "vertical": "ad",
-            //                 "img_1": "https://cdn.adasty.com/c/01GRAES1CRGVWBZVHFA75NN4J1.jpg",
-            //                 "img_2": "https://cdn.adasty.com/c/01GRAES1HFP7H1661EK813SRVW.jpg",
-            //                 "img_3": "https://cdn.adasty.com/c/01GRAH4097NR9HHFHFF48JX7CF.jpg",
-            //                 "img_4": null,
-            //                 "text_1": "Kate",
-            //                 "text_2": "22",
-            //                 "text_3": "You have (1) unread message from ",
-            //                 "text_4": "New message (1)",
-            //                 "text_5": "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉",
-            //                 "text_6": "Reply",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  null,
-            //             },
-            //             {
-            //                 "id": 9,
-            //                 "vertical": "ad",
-            //                 "img_1": "https://cdn.adasty.com/c/01GRAF0TNAMMNQH3QT36S7CZK0.jpg",
-            //                 "img_2": "https://cdn.adasty.com/c/01GRAF0TTXJYMBGTSEZ5H9SEG2.jpg",
-            //                 "img_3": "https://cdn.adasty.com/c/01GRAH5VV7NMMN0WBTW4WKA2RH.jpg",
-            //                 "img_4": null,
-            //                 "text_1": "Melania",
-            //                 "text_2": "22",
-            //                 "text_3": "You have (1) unread message from ",
-            //                 "text_4": "New message (1)",
-            //                 "text_5": "Hey sweetie. Hope you're as bored as I am 😙 How about we chat? Next, maybe I'll take some intimate pics for you 😏",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  null,
-            //             },
-            //             {
-            //                 "id": 6,
-            //                 "vertical": "ad",
-            //                 "img_1": "https://cdn.adasty.com/c/01GRAEX7WVQR2ZR4S0BSTMJTKK.jpg",
-            //                 "img_2": "https://cdn.adasty.com/c/01GRAEX829686H50YZ9726BMW2.jpg",
-            //                 "img_3": "https://cdn.adasty.com/c/01GRAH4DW8A012211WPNP2A45R.jpg",
-            //                 "img_4": null,
-            //                 "text_1": "Sophia",
-            //                 "text_2": "24",
-            //                 "text_3": "You have (1) unread message from ",
-            //                 "text_4": "New message (1)",
-            //                 "text_5": "Honey, would you like to entertain me? It's really boring now 😜 and I want romance so bad ...",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  null,
-            //             },
-            //             {
-            //                 "id": 8,
-            //                 "vertical": "ad",
-            //                 "img_1": "https://cdn.adasty.com/c/01GRAEZS2DED2EWPVNQ60M8SK3.jpg",
-            //                 "img_2": "https://cdn.adasty.com/c/01GRAEZS7ZGTXYRB5WETN956HH.jpg",
-            //                 "img_3": "https://cdn.adasty.com/c/01GRAH5DE6616E6830S57B7SPS.jpg",
-            //                 "img_4": null,
-            //                 "text_1": "Victoria",
-            //                 "text_2": "23",
-            //                 "text_3": "You have (1) unread message from ",
-            //                 "text_4": "New message (1)",
-            //                 "text_5": "Hello hello hello 😉 how do you like my body?",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  null,
-            //             },
-            //             {
-            //                 "id": 41,
-            //                 "vertical": "adult",
-            //                 "img_1": "https://cdn.adasty.com/c/01HE2T3KCGVJY8S6PD3Q1YHNDA.jpg",
-            //                 "img_2": null,
-            //                 "img_3": null,
-            //                 "img_4": null,
-            //                 "text_1": "Irene",
-            //                 "text_2": "23",
-            //                 "text_3": "Wait!",
-            //                 "text_4": "I want you to see this!",
-            //                 "text_5": "Can we continue this in private? 💕",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  null,
-            //             },
-            //             {
-            //                 "id": 40,
-            //                 "vertical": "adult",
-            //                 "img_1": "https://cdn.adasty.com/c/01HE2RX4MPZGCVNYC7JB1E859K.jpg",
-            //                 "img_2": null,
-            //                 "img_3": null,
-            //                 "img_4": null,
-            //                 "text_1": "Kate",
-            //                 "text_2": "22",
-            //                 "text_3": "Wait!",
-            //                 "text_4": "I want you to see this!",
-            //                 "text_5": "Can we continue this in private? 💕",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  1,
-            //             },
-            //             {
-            //                 "id": 44,
-            //                 "vertical": "adult",
-            //                 "img_1": "https://cdn.adasty.com/c/01HE2VFE5RKH90W2SK41D5M2MB.jpg",
-            //                 "img_2": null,
-            //                 "img_3": null,
-            //                 "img_4": null,
-            //                 "text_1": "Melania",
-            //                 "text_2": "22",
-            //                 "text_3": "Wait!",
-            //                 "text_4": "I want you to see this!",
-            //                 "text_5": "Can we continue this in private? 💕",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  1,
-            //             },
-            //             {
-            //                 "id": 43,
-            //                 "vertical": "adult",
-            //                 "img_1": "https://cdn.adasty.com/c/01HE2V8TW08RTFDY8M7FGR67WG.jpg",
-            //                 "img_2": null,
-            //                 "img_3": null,
-            //                 "img_4": null,
-            //                 "text_1": "Sophia",
-            //                 "text_2": "24",
-            //                 "text_3": "Wait!",
-            //                 "text_4": "I want you to see this!",
-            //                 "text_5": "Can we continue this in private? 💕",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  1,
-            //             },
-            //             {
-            //                 "id": 42,
-            //                 "vertical": "adult",
-            //                 "img_1": "https://cdn.adasty.com/c/01HE2V2A9SZQYCZ3B4X4ZWJWW9.jpg",
-            //                 "img_2": null,
-            //                 "img_3": null,
-            //                 "img_4": null,
-            //                 "text_1": "Victoria",
-            //                 "text_2": "23",
-            //                 "text_3": "Wait!",
-            //                 "text_4": "I want you to see this!",
-            //                 "text_5": "Can we continue this in private? 💕",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  1,
-            //             }
-            //         ]
-            //     },
-            //     {
-            //         "type": "exit_popup",
-            //         "active": true,
-            //         "url": "imwp-offer.html?monetization=exit-popup&vertical=test-vertical-6&sorc_id=test-sorc-id-6",
-            //         "version": "0",
-            //         "display_limit": 10,
-            //         "data": [
-            //             {
-            //                 "id": 7,
-            //                 "vertical": "ad",
-            //                 "img_1": "https://cdn.adasty.com/c/01GRAEYF7GJMN453GXD3VQME6M.jpg",
-            //                 "img_2": "https://cdn.adasty.com/c/01HR72Z670F8RCPQG3KNR4B865.jpg",
-            //                 "img_3": "https://cdn.adasty.com/c/01GRAH4YCN51AF495KFBDE21Q4.jpg",
-            //                 "img_4": null,
-            //                 "text_1": "Irene",
-            //                 "text_2": "23",
-            //                 "text_3": "You have (1) unread message from ",
-            //                 "text_4": "New message (1)",
-            //                 "text_5": "Hi there, doll 😚 do you like my ass like mine? 🤪",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  null,
-            //             },
-            //             {
-            //                 "id": 5,
-            //                 "vertical": "ad",
-            //                 "img_1": "https://cdn.adasty.com/c/01GRAES1CRGVWBZVHFA75NN4J1.jpg",
-            //                 "img_2": "https://cdn.adasty.com/c/01GRAES1HFP7H1661EK813SRVW.jpg",
-            //                 "img_3": "https://cdn.adasty.com/c/01GRAH4097NR9HHFHFF48JX7CF.jpg",
-            //                 "img_4": null,
-            //                 "text_1": "Kate",
-            //                 "text_2": "22",
-            //                 "text_3": "You have (1) unread message from ",
-            //                 "text_4": "New message (1)",
-            //                 "text_5": "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉",
-            //                 "text_6": "Reply",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  null,
-            //             },
-            //             {
-            //                 "id": 9,
-            //                 "vertical": "ad",
-            //                 "img_1": "https://cdn.adasty.com/c/01GRAF0TNAMMNQH3QT36S7CZK0.jpg",
-            //                 "img_2": "https://cdn.adasty.com/c/01GRAF0TTXJYMBGTSEZ5H9SEG2.jpg",
-            //                 "img_3": "https://cdn.adasty.com/c/01GRAH5VV7NMMN0WBTW4WKA2RH.jpg",
-            //                 "img_4": null,
-            //                 "text_1": "Melania",
-            //                 "text_2": "22",
-            //                 "text_3": "You have (1) unread message from ",
-            //                 "text_4": "New message (1)",
-            //                 "text_5": "Hey sweetie. Hope you're as bored as I am 😙 How about we chat? Next, maybe I'll take some intimate pics for you 😏",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  null,
-            //             },
-            //             {
-            //                 "id": 6,
-            //                 "vertical": "ad",
-            //                 "img_1": "https://cdn.adasty.com/c/01GRAEX7WVQR2ZR4S0BSTMJTKK.jpg",
-            //                 "img_2": "https://cdn.adasty.com/c/01GRAEX829686H50YZ9726BMW2.jpg",
-            //                 "img_3": "https://cdn.adasty.com/c/01GRAH4DW8A012211WPNP2A45R.jpg",
-            //                 "img_4": null,
-            //                 "text_1": "Sophia",
-            //                 "text_2": "24",
-            //                 "text_3": "You have (1) unread message from ",
-            //                 "text_4": "New message (1)",
-            //                 "text_5": "Honey, would you like to entertain me? It's really boring now 😜 and I want romance so bad ...",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  null,
-            //             },
-            //             {
-            //                 "id": 8,
-            //                 "vertical": "ad",
-            //                 "img_1": "https://cdn.adasty.com/c/01GRAEZS2DED2EWPVNQ60M8SK3.jpg",
-            //                 "img_2": "https://cdn.adasty.com/c/01GRAEZS7ZGTXYRB5WETN956HH.jpg",
-            //                 "img_3": "https://cdn.adasty.com/c/01GRAH5DE6616E6830S57B7SPS.jpg",
-            //                 "img_4": null,
-            //                 "text_1": "Victoria",
-            //                 "text_2": "23",
-            //                 "text_3": "You have (1) unread message from ",
-            //                 "text_4": "New message (1)",
-            //                 "text_5": "Hello hello hello 😉 how do you like my body?",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  null,
-            //             },
-            //             {
-            //                 "id": 47,
-            //                 "vertical": "adult",
-            //                 "img_1": "https://cdn.adasty.com/c/01HR722DSD2W27RFNA0PVRR0J8.jpg",
-            //                 "img_2": "https://cdn.adasty.com/c/01HR722DY3D8CXV51P0KH1GVCT.jpg",
-            //                 "img_3": "https://cdn.adasty.com/c/01HR722DZGTYFTW0N12XWYYBNM.jpg",
-            //                 "img_4": "https://cdn.adasty.com/c/01HR722E0Q0F16Y1AZH7EERKV6.jpg",
-            //                 "text_1": "Irene",
-            //                 "text_2": "23",
-            //                 "text_3": "Wait!",
-            //                 "text_4": "I want you to see this!",
-            //                 "text_5": "Can we continue this in private? 💕",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  1,
-            //             },
-            //             {
-            //                 "id": 45,
-            //                 "vertical": "adult",
-            //                 "img_1": "https://cdn.adasty.com/c/01HE2VQT57RQZHGX7T5BZES56V.jpg",
-            //                 "img_2": null,
-            //                 "img_3": null,
-            //                 "img_4": null,
-            //                 "text_1": "Kate",
-            //                 "text_2": "22",
-            //                 "text_3": "Wait!",
-            //                 "text_4": "I want you to see this!",
-            //                 "text_5": "Can we continue this in private? 💕",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  1,
-            //             },
-            //             {
-            //                 "id": 46,
-            //                 "vertical": "adult",
-            //                 "img_1": "https://cdn.adasty.com/c/01HE2VX2JDJ7TRRXF95MG7B3DN.jpg",
-            //                 "img_2": null,
-            //                 "img_3": null,
-            //                 "img_4": null,
-            //                 "text_1": "Sophia",
-            //                 "text_2": "24",
-            //                 "text_3": "Wait!",
-            //                 "text_4": "I want you to see this!",
-            //                 "text_5": "Can we continue this in private? 💕",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  1,
-            //             },
-            //             {
-            //                 "id": 48,
-            //                 "vertical": "adult",
-            //                 "img_1": "https://cdn.adasty.com/c/01HE2WAHF2EERHMWX554RH3HNC.jpg",
-            //                 "img_2": null,
-            //                 "img_3": null,
-            //                 "img_4": null,
-            //                 "text_1": "Victoria ",
-            //                 "text_2": "23",
-            //                 "text_3": "Wait!",
-            //                 "text_4": "I want you to see this!",
-            //                 "text_5": "Can we continue this in private? 💕",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  1,
-            //             },
-            //             {
-            //                 "id": 49,
-            //                 "vertical": "adult",
-            //                 "img_1": "https://cdn.adasty.com/c/01HE2WEX3VBE1JBCVFRBH6CVEY.jpg",
-            //                 "img_2": null,
-            //                 "img_3": null,
-            //                 "img_4": null,
-            //                 "text_1": "Melania ",
-            //                 "text_2": "22",
-            //                 "text_3": "Wait!",
-            //                 "text_4": "I want you to see this!",
-            //                 "text_5": "Can we continue this in private? 💕",
-            //                 "text_6": "Reply Now",
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  1,
-            //             }
-            //         ]
-            //     },
-            //     {
-            //         "type": "web_push",
-            //         "active": false,
-            //         "app_id": "88eb2195-8050-4301-8817-2a96c10301ac",
-            //         "safari_id": "web.onesignal.auto.40e188d7-5f7a-4af3-8ac5-05427adc97a7",
-            //         "data": [
-            //             {
-            //                 "id": 10,
-            //                 "vertical": "ad",
-            //                 "img_1": "https://cdn.adasty.com/c/01GRAM9FPZTSH2FTNXHMCHX3S4.jpg",
-            //                 "img_2": null,
-            //                 "img_3": null,
-            //                 "img_4": null,
-            //                 "text_1": "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉",
-            //                 "text_2": "Ignore",
-            //                 "text_3": "Reply",
-            //                 "text_4": null,
-            //                 "text_5": null,
-            //                 "text_6": null,
-            //                 "text_7": null,
-            //                 "text_8": null,
-            //                 "text_9": null,
-            //                 "text_10": null,
-            //                 "text_11": null,
-            //                 "text_12": null, 
-            //                 "version":  null,
-            //             }
-            //         ]
-            //     }
-            // ]
+			// comment on prod
+			// window.admt_array.push({
+			// 	"type": "in_page_chat",
+			// 	"active": true,
+			// 	"url": "imwp-offer.html?monetization=in-page-chat&vertical=test-vertical-8&sorc_id=test-sorc-id-8",
+			// 	"version": "0",
+			// 	"data": [{
+	  //               "id": 1218,
+	  //               "vertical": "adult",
+	  //               "img_1": "https://cdn.adasty.com/c/01HE2PJDJQHHQTHXFKF4V01B28.jpg",
+	  //               "img_2": null,
+	  //               "img_3": null,
+	  //               "img_4": null,
+	  //               "text_1": "Solomia",
+	  //               "text_2": "Lorem ipsum, dudiandae aspernatur voluptas molestiae tempore consequuntur laudantium nulla velit aliquam.",
+	  //               "text_3": "Lorem ipsum, dolor sit amet consusto optio, ad obcaecati repudiandae aspernatur voluptas molestiae tempore consequuntur laudantium nulla velit aliquam.",
+	  //               "text_4": "Reply...",
+	  //               "text_5": "Send",
+	  //               "text_6": "",
+	  //               "text_7": "",
+	  //               "text_8": ""
+	  //           },
+	  //           {
+	  //               "id": 1219,
+	  //               "vertical": "adult",
+	  //               "img_1": "https://cdn.adasty.com/c/01GRAH4DW8A012211WPNP2A45R.jpg",
+	  //               "img_2": null,
+	  //               "img_3": null,
+	  //               "img_4": null,
+	  //               "text_1": "Anna",
+	  //               "text_2": "Lorem ipsum, dolor sit amet ae aspernatur voluptas molestiae tempore consequuntur laudantium nulla velit aliquam.",
+	  //               "text_3": "Lorem ipsum, dolor sit molestiae tempore consequuntur laudantium nulla velit aliquam.",
+	  //               "text_4": "text me...",
+	  //               "text_5": "Send",
+	  //               "text_6": "",
+	  //               "text_7": "",
+	  //               "text_8": ""
+	  //           }],
+			// })
+
+
+			// window.admt_array = [
+			//     {
+			//         "type": "inactive_tab",
+			//         "active": false,
+			//         "url": "imwp-offer.html?monetization=inactive-tab&vertical=test-vertical-1&sorc_id=test-sorc-id-1"
+			//     },
+			//     {
+			//         "type": "second_offer",
+			//         "active": false,
+			//         "url": "imwp-offer.html?monetization=second-offer&vertical=test-vertical-2&sorc_id=test-sorc-id-2&aid_sorc=00000001111111111111"
+			//     },
+			//     {
+			//         "type": "back_button",
+			//         "active": false,
+			//         "url": "imwp-offer.html?monetization=back-button&vertical=test-vertical-3&sorc_id=test-sorc-id-3"
+			//     },
+			//     {
+			//         "type": "in_page_push",
+			//         "active": true,
+			//         "url": "imwp-offer.html?monetization=in-page-push&vertical=test-vertical-4&sorc_id=test-sorc-id-4",
+			//         "data": [
+			//             {
+			//                 "id": 18,
+			//                 "vertical": "adult",
+			//                 "img_1": "https://cdn.adasty.com/c/01GVRK8VA8BY33WHAFGXJA2KZH.gif",
+			//                 "img_2": null,
+			//                 "img_3": null,
+			//                 "img_4": null,
+			//                 "text_1": "text1",
+			//                 "text_2": "text2",
+			//                 "text_3": "text3",
+			//                 "text_4": "text4",
+			//                 "text_5": "text5",
+			//                 "text_6": "text6",
+			//                 "text_7": "text7",
+			//                 "text_8": "text8"
+			//             },
+			//             {
+			//                 "id": 13,
+			//                 "vertical": "adult",
+			//                 "img_1": "https://cdn.adasty.com/c/01GS89ZB1F9A8M9B3490GFXZM3.png",
+			//                 "img_2": "https://cdn.adasty.com/c/01GS89ZB5PFNJ1MEKT26V719XR.png",
+			//                 "img_3": "https://cdn.adasty.com/c/01GS89ZB7566MEMYGH53H1GYGM.png",
+			//                 "img_4": null,
+			//                 "text_1": "Katya",
+			//                 "text_2": "25",
+			//                 "text_3": "You have (1) unread message from ",
+			//                 "text_4": "New message (1)",
+			//                 "text_5": "I urgently need hot crazy sex.  My excitement is out of control😈🔥What about you?🔞",
+			//                 "text_6": "Reply Now",
+			//                 "text_7": null,
+			//                 "text_8": null
+			//             },
+			//             {
+			//                 "id": 12,
+			//                 "vertical": "adult",
+			//                 "img_1": "https://cdn.adasty.com/c/01GS89CYGF90K9QD5K7JJC7NF3.png",
+			//                 "img_2": "https://cdn.adasty.com/c/01GS89CYN1NNJ8142PS3YEXNJW.png",
+			//                 "img_3": "https://cdn.adasty.com/c/01GS89CYPDRZNYWBKTZ4PQMGG3.png",
+			//                 "img_4": null,
+			//                 "text_1": "Olly",
+			//                 "text_2": "23",
+			//                 "text_3": "You have (1) unread message from ",
+			//                 "text_4": "New message (1)",
+			//                 "text_5": "Honey, I'm alone at home and very excited😈 I'm already going down with my fingers to my wet..",
+			//                 "text_6": "Reply Now",
+			//                 "text_7": null,
+			//                 "text_8": null
+			//             },
+			//             {
+			//                 "id": 11,
+			//                 "vertical": "adult",
+			//                 "img_1": "https://cdn.adasty.com/c/01GS89APVK0CJGRP0KWJ66JX58.png",
+			//                 "img_2": "https://cdn.adasty.com/c/01GS89APZQ7YBY301XYXK30JW9.png",
+			//                 "img_3": "https://cdn.adasty.com/c/01GS89AQ112BR0K6ZNAC4W7359.png",
+			//                 "img_4": null,
+			//                 "text_1": "Sabina",
+			//                 "text_2": "24",
+			//                 "text_3": "You have (1) unread message from ",
+			//                 "text_4": "New message (1)",
+			//                 "text_5": "Right now I want to prepare something hot and sweet just for you😇🔞I'm already spreading my legs…",
+			//                 "text_6": "Reply Now",
+			//                 "text_7": null,
+			//                 "text_8": null
+			//             }
+			//         ],
+			//         "version": 1
+			//     },
+			//     {
+			//         "type": "inactive_banner",
+			//         "active": true,
+			//         "url": "imwp-offer.html?monetization=inactive-banner&vertical=test-vertical-5&sorc_id=test-sorc-id-5",
+			//         "data": [
+			//             {
+			//                 "id": 16,
+			//                 "vertical": "adult",
+			//                 "img_1": "https://cdn.adasty.com/c/01GTVCMRS14EANZCYTV6GTZPJ9.jpg",
+			//                 "img_2": null,
+			//                 "img_3": null,
+			//                 "img_4": null,
+			//                 "text_1": "Sophia",
+			//                 "text_2": "24",
+			//                 "text_3": "Новое сообщение (2)",
+			//                 "text_4": "Хочу с тобой пообщаться.  Давай продолжим в лс?",
+			//                 "text_5": "Ответить",
+			//                 "text_6": "Подожди!",
+			//                 "text_7": "Я хочу чтоб ты это увидел!",
+			//                 "text_8": "Давай попробуем вместе 💕"
+			//             },
+			//             {
+			//                 "id": 9,
+			//                 "vertical": "ad",
+			//                 "img_1": "https://cdn.adasty.com/c/01GRAF0TNAMMNQH3QT36S7CZK0.jpg",
+			//                 "img_2": "https://cdn.adasty.com/c/01GRAF0TTXJYMBGTSEZ5H9SEG2.jpg",
+			//                 "img_3": "https://cdn.adasty.com/c/01GRAH5VV7NMMN0WBTW4WKA2RH.jpg",
+			//                 "img_4": null,
+			//                 "text_1": "Melania",
+			//                 "text_2": "22",
+			//                 "text_3": "You have (1) unread message from ",
+			//                 "text_4": "New message (1)",
+			//                 "text_5": "Hey sweetie. Hope you're as bored as I am 😙 How about we chat? Next, maybe I'll take some intimate pics for you 😏",
+			//                 "text_6": "Reply Now",
+			//                 "text_7": null,
+			//                 "text_8": null
+			//             },
+			//             {
+			//                 "id": 6,
+			//                 "vertical": "ad",
+			//                 "img_1": "https://cdn.adasty.com/c/01GRAEX7WVQR2ZR4S0BSTMJTKK.jpg",
+			//                 "img_2": "https://cdn.adasty.com/c/01GRAEX829686H50YZ9726BMW2.jpg",
+			//                 "img_3": "https://cdn.adasty.com/c/01GRAH4DW8A012211WPNP2A45R.jpg",
+			//                 "img_4": null,
+			//                 "text_1": "Sophia",
+			//                 "text_2": "24",
+			//                 "text_3": "You have (1) unread message from ",
+			//                 "text_4": "New message (1)",
+			//                 "text_5": "Honey, would you like to entertain me? It's really boring now 😜 and I want romance so bad ...",
+			//                 "text_6": "Reply Now",
+			//                 "text_7": null,
+			//                 "text_8": null
+			//             }
+			//         ],
+			//         "version": 1
+			//     },
+			//     {
+			//         "type": "exit_popup",
+			//         "active": true,
+			//         "url": "imwp-offer.html?monetization=exit-popup&vertical=test-vertical-6&sorc_id=test-sorc-id-6",
+			//         "data": [
+			//             {
+			//                 "id": 15,
+			//                 "vertical": "adult",
+			//                 "img_1": "https://cdn.adasty.com/c/01GTVCEE0QSXF0RJBJA8FQJBAY.jpg",
+			//                 "img_2": null,
+			//                 "img_3": null,
+			//                 "img_4": null,
+			//                 "text_1": "Kate",
+			//                 "text_2": "22",
+			//                 "text_3": "Новое сообщение (2)",
+			//                 "text_4": "Хочу с тобой пообщаться.  Давай продолжим в лс?",
+			//                 "text_5": "Ответить",
+			//                 "text_6": "Подожди!",
+			//                 "text_7": "Я хочу чтоб ты это увидел!",
+			//                 "text_8": "Давай попробуем вместе 💕"
+			//             },
+			//             {
+			//                 "id": 7,
+			//                 "vertical": "ad",
+			//                 "img_1": "https://cdn.adasty.com/c/01GRAEYF7GJMN453GXD3VQME6M.jpg",
+			//                 "img_2": "https://cdn.adasty.com/c/01GRAEYFB0D93MY0YC8E616Z0Q.jpg",
+			//                 "img_3": "https://cdn.adasty.com/c/01GRAH4YCN51AF495KFBDE21Q4.jpg",
+			//                 "img_4": null,
+			//                 "text_1": "Irene",
+			//                 "text_2": "23",
+			//                 "text_3": "You have (1) unread message from ",
+			//                 "text_4": "New message (1)",
+			//                 "text_5": "Hi there, doll 😚 do you like my ass like mine? 🤪",
+			//                 "text_6": "Reply Now",
+			//                 "text_7": null,
+			//                 "text_8": null
+			//             },
+			//             {
+			//                 "id": 5,
+			//                 "vertical": "ad",
+			//                 "img_1": "https://cdn.adasty.com/c/01GRAES1CRGVWBZVHFA75NN4J1.jpg",
+			//                 "img_2": "https://cdn.adasty.com/c/01GRAES1HFP7H1661EK813SRVW.jpg",
+			//                 "img_3": "https://cdn.adasty.com/c/01GRAH4097NR9HHFHFF48JX7CF.jpg",
+			//                 "img_4": null,
+			//                 "text_1": "Kate",
+			//                 "text_2": "22",
+			//                 "text_3": "You have (1) unread message from ",
+			//                 "text_4": "New message (1)",
+			//                 "text_5": "I want so much love and affection now 🍑 I hope you like shapely girls like me?)😉",
+			//                 "text_6": "Reply",
+			//                 "text_7": null,
+			//                 "text_8": null
+			//             }
+			//         ],
+			//         "version": 1
+			//     },
+			//     {
+			//         "type": "web_push",
+			//         "active": false,
+			//         "app_id": "88eb2195-8050-4301-8817-2a96c10301ac",
+			//         "safari_id": "web.onesignal.auto.40e188d7-5f7a-4af3-8ac5-05427adc97a7",
+			//         "data": [
+			//             {
+			//                 "id": 14,
+			//                 "vertical": "adult",
+			//                 "img_1": "https://cdn.adasty.com/c/01GS8B5NEJZ365TEMM3C1NW7J9.png",
+			//                 "img_2": null,
+			//                 "img_3": null,
+			//                 "img_4": null,
+			//                 "text_1": "You'll Get Amazing Free Photos🔥. Click On The “Allow” Button",
+			//                 "text_2": "Deny",
+			//                 "text_3": "Allow",
+			//                 "text_4": null,
+			//                 "text_5": null,
+			//                 "text_6": null,
+			//                 "text_7": null,
+			//                 "text_8": null
+			//             }
+			//         ]
+			//     }
+			// ]
 
 			// just for test
 	        // admt_array.push({
@@ -825,9 +336,9 @@ get_admt = () => {
 			admt_start()
 	    });
 	    // test
-	    document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="admt_styles.css?v=${Date.now()}">`)
+	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="admt_styles.css?v=${Date.now()}">`)
 	    // prod
-	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/admt_styles.css">`);
+	    document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/admt_styles.css">`);
 	    // demo
 	    // document.querySelector("body").insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="https://cdn.adasty.com/a/demo_admt_styles.css?v=${Date.now()}">`);
 	})
@@ -1224,8 +735,7 @@ admt_start = () => {
 			// comment on prod
 			// admt_array.filter(item => item.type == "in_page_push")[0].version = 1
 			
-			var in_page_push_array = admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0].data
-			// var in_page_push_array = []
+			var in_page_push_array = []
 
 			// comment on prod
 			// admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0].delay_time = 2500
@@ -1234,106 +744,98 @@ admt_start = () => {
 			let delay_time = admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0]?.delay_time
 			let display_limit = admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0]?.display_limit ? admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0]?.display_limit : admt_array.filter(item => item.type == "in_page_push" && item.active == true)[0].data.length
 
-            let renderINPP = () => {
+			if (admt_array.filter(item => item.type == "in_page_push")[0].version == undefined || admt_array.filter(item => item.type == "in_page_push")[0].version == 0 || admt_array.filter(item => item.type == "in_page_push")[0].version == "") {
+				document.querySelector("body").insertAdjacentHTML("beforeend", 
+				`
+				<div id="in-page-push">
+					<button class="in-page-push-close">
+						<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"/>
+						</svg>
+					</button>
+					<div class="in-page-push-image-block">
+						<img src="in-page-push-content/1.jpg" alt="" id="in-page-push-img">
+						<h4>
+							<span id="in-page-push-name"></span> , <span id="in-page-push-age"></span>
+						</h4>
+					</div>
+					<div class="in-page-push-text">
+						<h4 id="in-page-push-title"></h4>
+						<p id="in-page-push-text"></p>
+						<div class="in-page-push-button">
+							<a class="in-page-push-go" id="in-page-push-link"></a>
+						</div>
+					</div>
+				</div>
+				`
+				);
 
-                // comment on prod
-                // console.log(in_page_push_chousen_object)
-                // in_page_push_chousen_object.version = Math.floor(Math.random() * 2);
-                //
+				admt_array.filter(item => item.type == "in_page_push")?.[0]?.data.map(item => {
+					let in_page_push_object_local = {
+						id: item.id,
+						img: item.img_3, 
+						name: item.text_1,
+						age: item.text_2,
+						title: item.text_4,
+						text: item.text_5,
+						link: item.text_6,
+					}
+					in_page_push_array.push(in_page_push_object_local)
+				})
+			}
+			if (admt_array.filter(item => item.type == "in_page_push")[0].version == 1) {
+				document.querySelector("body").insertAdjacentHTML("beforeend", 
+				`
+				<div id="in-page-push" data-theme="1">
+					<button class="in-page-push-close">
+						<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"></path>
+						</svg>
+					</button>
+					<div class="in-page-push-image-block">
+						<img src="" alt="" id="in-page-push-img">
+						<h4>
+							<span id="in-page-push-name"></span> , <span id="in-page-push-age"></span>
+						</h4>
+					</div>
+					<div class="in-page-push-text">
+						<div class="in-page-push-text-title">
+							<svg xmlns="http://www.w3.org/2000/svg" width="23" height="18" viewBox="0 0 23 18" fill="none">
+							<path d="M17.2326 3.4375H1.95486C1.42751 3.4375 1 3.86501 1 4.39236V15.8507C1 16.378 1.42751 16.8056 1.95486 16.8056H17.2326C17.76 16.8056 18.1875 16.378 18.1875 15.8507V4.39236C18.1875 3.86501 17.76 3.4375 17.2326 3.4375Z" stroke="#202020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M17.2326 3.91492L9.59372 11.0764L1.95483 3.91492" stroke="#202020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<circle cx="18.875" cy="4.125" r="3.125" fill="#00E232" stroke="white" stroke-width="2"/>
+							</svg>
+							<h4 id="in-page-push-title"></h4>
+						</div>
+						<p id="in-page-push-text"></p>
+						<div class="in-page-push-button">
+							<a class="in-page-push-go" id="in-page-push-link" href="">
+								<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+								<path d="M3.89868 3.7868H11.0895" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M3.89868 6.66315H6.77502" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M1.02222 2.34857V13.705C1.02222 14.0253 1.40949 14.1857 1.63599 13.9592L4.40703 11.1882C4.54188 11.0534 4.72479 10.9776 4.91549 10.9776H12.5276C13.3219 10.9776 13.9657 10.3337 13.9657 9.53942V2.34857C13.9657 1.55429 13.3219 0.9104 12.5276 0.9104H2.46039C1.66611 0.9104 1.02222 1.55429 1.02222 2.34857Z" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<span class="in-page-push-link-text"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+				`
+				);
 
-                // uncommnet on prod
-                // if (admt_array.filter(item => item.type == "in_page_push")[0].version == undefined || admt_array.filter(item => item.type == "in_page_push")[0].version == 0 || admt_array.filter(item => item.type == "in_page_push")[0].version == "" || admt_array.filter(item => item.type == "in_page_push")[0].version == null) {
-                //
-                // comment on prod
-                if (in_page_push_chousen_object.version == undefined || in_page_push_chousen_object.version == 0 || in_page_push_chousen_object.version == "" || in_page_push_chousen_object.version == null) { 
-                //
-                    document.querySelector("body").insertAdjacentHTML("beforeend", 
-                    `
-                    <div id="in-page-push">
-                        <button class="in-page-push-close">
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"/>
-                            </svg>
-                        </button>
-                        <div class="in-page-push-image-block">
-                            <img src="in-page-push-content/1.jpg" alt="" id="in-page-push-img">
-                            <h4>
-                                <span id="in-page-push-name"></span> , <span id="in-page-push-age"></span>
-                            </h4>
-                        </div>
-                        <div class="in-page-push-text">
-                            <h4 id="in-page-push-title"></h4>
-                            <p id="in-page-push-text"></p>
-                            <div class="in-page-push-button">
-                                <a class="in-page-push-go" id="in-page-push-link"></a>
-                            </div>
-                        </div>
-                    </div>
-                    `
-                    );
-    
-                    $("#in-page-push-img").attr("src" , in_page_push_chousen_object.img_3)
-					$("#in-page-push-name").text(in_page_push_chousen_object.text_1)
-					$("#in-page-push-age").text(in_page_push_chousen_object.text_2)
-					$("#in-page-push-title").text(in_page_push_chousen_object.text_4)
-					$("#in-page-push-text").text(in_page_push_chousen_object.text_5)
-					$("#in-page-push-link").text(in_page_push_chousen_object.text_6)
-                }
-                // uncommnet on prod
-                // if (admt_array.filter(item => item.type == "in_page_push")[0].version == 1) {
-                //
-                // comment on prod
-                if (in_page_push_chousen_object.version == 1) {
-                //
-
-                    document.querySelector("body").insertAdjacentHTML("beforeend", 
-                    `
-                    <div id="in-page-push" data-theme="1">
-                        <button class="in-page-push-close">
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"></path>
-                            </svg>
-                        </button>
-                        <div class="in-page-push-image-block">
-                            <img src="" alt="" id="in-page-push-img">
-                            <h4>
-                                <span id="in-page-push-name"></span> , <span id="in-page-push-age"></span>
-                            </h4>
-                        </div>
-                        <div class="in-page-push-text">
-                            <div class="in-page-push-text-title">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="18" viewBox="0 0 23 18" fill="none">
-                                <path d="M17.2326 3.4375H1.95486C1.42751 3.4375 1 3.86501 1 4.39236V15.8507C1 16.378 1.42751 16.8056 1.95486 16.8056H17.2326C17.76 16.8056 18.1875 16.378 18.1875 15.8507V4.39236C18.1875 3.86501 17.76 3.4375 17.2326 3.4375Z" stroke="#202020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M17.2326 3.91492L9.59372 11.0764L1.95483 3.91492" stroke="#202020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <circle cx="18.875" cy="4.125" r="3.125" fill="#00E232" stroke="white" stroke-width="2"/>
-                                </svg>
-                                <h4 id="in-page-push-title"></h4>
-                            </div>
-                            <p id="in-page-push-text"></p>
-                            <div class="in-page-push-button">
-                                <a class="in-page-push-go" id="in-page-push-link" href="">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-                                    <path d="M3.89868 3.7868H11.0895" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M3.89868 6.66315H6.77502" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M1.02222 2.34857V13.705C1.02222 14.0253 1.40949 14.1857 1.63599 13.9592L4.40703 11.1882C4.54188 11.0534 4.72479 10.9776 4.91549 10.9776H12.5276C13.3219 10.9776 13.9657 10.3337 13.9657 9.53942V2.34857C13.9657 1.55429 13.3219 0.9104 12.5276 0.9104H2.46039C1.66611 0.9104 1.02222 1.55429 1.02222 2.34857Z" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    <span class="in-page-push-link-text"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    `
-                    );
-    
-                    $("#in-page-push-img").attr("src" , in_page_push_chousen_object.img_1)
-					$("#in-page-push-name").text(in_page_push_chousen_object.text_1)
-					$("#in-page-push-age").text(in_page_push_chousen_object.text_2)
-					$("#in-page-push-title").text(in_page_push_chousen_object.text_3)
-					$("#in-page-push-text").text(in_page_push_chousen_object.text_4)
-					$(".in-page-push-link-text").text(in_page_push_chousen_object.text_5)
-                }
-            }
-            // renderINPP
+				admt_array.filter(item => item.type == "in_page_push")?.[0]?.data.map(item => {
+					let in_page_push_object_local = {
+						id: item.id,
+						img: item.img_1, 
+						name: item.text_1,
+						age: item.text_2,
+						title: item.text_3,
+						text: item.text_4,
+						link: item.text_5,
+					}
+					in_page_push_array.push(in_page_push_object_local)
+				})
+			}
 
 			var in_page_push_chousen_object = in_page_push_array[1]
 			var in_page_push_number_woman = 0
@@ -1365,26 +867,39 @@ admt_start = () => {
 
 				in_page_push_chousen_object = in_page_push_array[in_page_push_number_woman]
 
+				if (admt_array.filter(item => item.type == "in_page_push")[0].version == undefined || admt_array.filter(item => item.type == "in_page_push")[0].version == 0 || admt_array.filter(item => item.type == "in_page_push")[0].version == "") {
+					$("#in-page-push-img").attr("src" , in_page_push_chousen_object.img)
+					$("#in-page-push-name").text(in_page_push_chousen_object.name)
+					$("#in-page-push-age").text(in_page_push_chousen_object.age)
+					$("#in-page-push-title").text(in_page_push_chousen_object.title)
+					$("#in-page-push-text").text(in_page_push_chousen_object.text)
+					$("#in-page-push-link").text(in_page_push_chousen_object.link)
+				}
+				if (admt_array.filter(item => item.type == "in_page_push")[0].version == 1) {
+					$("#in-page-push-img").attr("src" , in_page_push_chousen_object.img)
+					$("#in-page-push-name").text(in_page_push_chousen_object.name)
+					$("#in-page-push-age").text(in_page_push_chousen_object.age)
+					$("#in-page-push-title").text(in_page_push_chousen_object.title)
+					$("#in-page-push-text").text(in_page_push_chousen_object.text)
+					$(".in-page-push-link-text").text(in_page_push_chousen_object.link)
+				}
+				 
 				params_object.crid_object.in_page_push = in_page_push_chousen_object.id
 
 			}
 			in_page_push_show_popup = () => {
-                renderINPP()
 				setTimeout(()=>{
-					$("#in-page-push").addClass("active").css("opacity" , 1)
+					$("#in-page-push").addClass("active")
 				}, (delay_time ? delay_time : 7000));
 			}
 			in_page_push_hide_popup = () => {
 				$("#in-page-push").removeClass("active")
-                setTimeout(()=>{
-                    $("#in-page-push").remove()
-                },500)
 			}
 
 			in_page_push_get_random_object()
 			in_page_push_show_popup()
-            
-            $("body").on("click", ".in-page-push-close", function() {
+
+			$('.in-page-push-close').click(function(){
 				in_page_push_hide_popup()
 				if (in_page_push_array_of_showed_object.length < ( in_page_push_array.length >= display_limit ? display_limit : in_page_push_array.length)  ) {
 					setTimeout(() => {
@@ -1394,7 +909,7 @@ admt_start = () => {
 				}
 			});
 
-            $("body").on("click", ".in-page-push-go", function(e) {
+			$(".in-page-push-go").click(function(e){
 				e.preventDefault()
 
 				params_object.frq = Number(params_object.frq) + 1 
@@ -1407,6 +922,8 @@ admt_start = () => {
 				in_page_push_hide_popup()
 				in_page_push_array.map((item , index) => {in_page_push_array_of_showed_object[index] = null})
 			})
+
+			$("#in-page-push").css("opacity" , 1)
 		})
 	}
 	
@@ -1417,116 +934,103 @@ admt_start = () => {
 			// comment on prod
 			// admt_array.filter(item => item.type == "exit_popup")[0].version = 1
 
-			var comebacker_array = admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0].data
-			// var comebacker_object_local = {}
+			var comebacker_array = []
 
 			// comment on prod
 			// admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0].display_limit = 2
 
 			let display_limit = admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0]?.display_limit ? admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0]?.display_limit : admt_array.filter(item => item.type == "exit_popup" && item.active == true)[0].data.length
 
-			let renderEXPP = () => {
-                // comment on prod
-                // console.log(comebacker_chousen_object)
-                // comebacker_chousen_object.version = Math.floor(Math.random() * 2);
-                //
+			if (admt_array.filter(item => item.type == "exit_popup")[0].version == undefined || admt_array.filter(item => item.type == "exit_popup")[0].version == 0 || admt_array.filter(item => item.type == "exit_popup")[0].version == "") {
+			  	document.querySelector("body").insertAdjacentHTML("beforeend", 
+				`
+				<div id="comebacker" style="opacity: 0">
+				    <div class="comebacker-bg"></div>
+				    <div class="comebacker-wrapper">    
+				      <button class="comebacker-close">
+				        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"/>
+						</svg>
+				      </button>
+				      <div class="comebacker-content" id="comebacker-content">
+				        <p id="comebacker-title">
+				        	<span id="comebacker-title-text"></span>
+				        	<span id="comebacker-name"></span>
+				        </p>
+				        <h4 id="comebacker-text"></h4>
+				        <div class="comebacker-button">
+				          <a class="comebacker-go" id="comebacker-link"></a>
+				        </div>
+				      </div>
+				    </div>
+			  	</div>
+			  	`
+				);
+				admt_array.filter(item => item.type == "exit_popup")?.[0]?.data.map(item => {
+					let comebacker_object_local = {
+						id: item.id,
+						banner_mob: item.img_1, 
+						banner_desk: item.img_2, 
+						name: item.text_1,
+						age: item.text_2,
+						title: item.text_3,
+						text: item.text_5,
+						link: item.text_6,
+					}
+					comebacker_array.push(comebacker_object_local)
+				})
+		  	}
 
-                // uncommnet on prod
-				// if (admt_array.filter(item => item.type == "exit_popup")[0].version == undefined || admt_array.filter(item => item.type == "exit_popup")[0].version == 0 || admt_array.filter(item => item.type == "exit_popup")[0].version == "" || admt_array.filter(item => item.type == "exit_popup")[0].version == null) {
-                //
-                // comment on prod
-                if (comebacker_chousen_object.version == undefined || comebacker_chousen_object.version == 0 || comebacker_chousen_object.version == "" || comebacker_chousen_object.version == null) { 
-                //
-				  	document.querySelector("body").insertAdjacentHTML("beforeend", 
-					`
-					<div id="comebacker" style="opacity: 0">
-					    <div class="comebacker-bg"></div>
-					    <div class="comebacker-wrapper">    
-					      <button class="comebacker-close">
-					        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"/>
-							</svg>
-					      </button>
-					      <div class="comebacker-content" id="comebacker-content">
-					        <p id="comebacker-title">
-					        	<span id="comebacker-title-text"></span>
-					        	<span id="comebacker-name"></span>
-					        </p>
-					        <h4 id="comebacker-text"></h4>
-					        <div class="comebacker-button">
-					          <a class="comebacker-go" id="comebacker-link"></a>
-					        </div>
-					      </div>
-					    </div>
-				  	</div>
-				  	`
-					);
-
-					$("#comebacker-name").text(comebacker_chousen_object.text_1)
-					$("#comebacker-title-text").text(comebacker_chousen_object.text_3)
-					$("#comebacker-text").text(comebacker_chousen_object.text_5)
-					$("#comebacker-link").text(comebacker_chousen_object.text_6)
-
-					if (!window.matchMedia("(max-width: 991px)").matches) {
-						$("#comebacker-content").css("background-image" , `url(${comebacker_chousen_object.img_1})`)
-				    } else {
-						$("#comebacker-content").css("background-image" , `url(${comebacker_chousen_object.img_2})`)
-				    }
-			  	}
-
-                // uncommnet on prod
-			  	// if (admt_array.filter(item => item.type == "exit_popup")[0].version == 1) {
-                //
-                // comment on prod
-                if (comebacker_chousen_object.version == 1) {
-                //
-
-				  	document.querySelector("body").insertAdjacentHTML("beforeend", 
-					`
-					<div id="comebacker" data-theme="1">
-						<div class="comebacker-bg"></div>
-						<div class="comebacker-wrapper">    
-							<button class="comebacker-close">
-							<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"></path>
-							</svg>
-							</button>
-							<div class="comebacker-inner" id="comebacker-inner">
-								<div class="comebacker-inner-1-row">
-									<div class="comebacker-inner-1-left">
-										<div class="comebacker-inner-1-left-inner">
-											<div class="comebacker-inner-1-info">
-												<span class="comebacker-name" id="comebacker-name"></span>, <span class="comebacker-age" id="comebacker-age"></span>
-											</div>
-											<div class="comebacker-inner-1-image">
-												<img src="" alt="">
-											</div>
+		  	if (admt_array.filter(item => item.type == "exit_popup")[0].version == 1) {
+			  	document.querySelector("body").insertAdjacentHTML("beforeend", 
+				`
+				<div id="comebacker" data-theme="1">
+					<div class="comebacker-bg"></div>
+					<div class="comebacker-wrapper">    
+						<button class="comebacker-close">
+						<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"></path>
+						</svg>
+						</button>
+						<div class="comebacker-inner" id="comebacker-inner">
+							<div class="comebacker-inner-1-row">
+								<div class="comebacker-inner-1-left">
+									<div class="comebacker-inner-1-left-inner">
+										<div class="comebacker-inner-1-info">
+											<span class="comebacker-name" id="comebacker-name"></span>, <span class="comebacker-age" id="comebacker-age"></span>
+										</div>
+										<div class="comebacker-inner-1-image">
+											<img src="" alt="">
 										</div>
 									</div>
-									<div class="comebacker-inner-1-right">
-										<h4 id="comebacker-title-text"></h4>
-										<p id="comebacker-text-1"></p>
-										<p id="comebacker-text-2"></p>
-									</div>
 								</div>
-								<div class="comebacker-inner-2-row">
-									<a class="comebacker-go" id="comebacker-link"></a>
+								<div class="comebacker-inner-1-right">
+									<h4 id="comebacker-title-text"></h4>
+									<p id="comebacker-text-1"></p>
+									<p id="comebacker-text-2"></p>
 								</div>
+							</div>
+							<div class="comebacker-inner-2-row">
+								<a class="comebacker-go" id="comebacker-link"></a>
 							</div>
 						</div>
 					</div>
-				  	`
-					);
-
-					$("#comebacker-name").text(comebacker_chousen_object.text_1)
-					$("#comebacker-age").text(comebacker_chousen_object.text_2)
-					$("#comebacker-title-text").text(comebacker_chousen_object.text_3)
-					$("#comebacker-text-1").text(comebacker_chousen_object.text_4)
-					$("#comebacker-text-2").text(comebacker_chousen_object.text_5)
-					$("#comebacker-link").text(comebacker_chousen_object.text_6)
-					$(".comebacker-inner").css("background-image" , `url(${comebacker_chousen_object.img_1})`)
-					$(".comebacker-inner-1-image img").attr("src" , `${comebacker_chousen_object.img_1}`)
-			  	}
+				</div>
+			  	`
+				);
+				admt_array.filter(item => item.type == "exit_popup")?.[0]?.data.map(item => {
+					let comebacker_object_local = {
+						id: item.id,
+						img: item.img_1, 
+						name: item.text_1,
+						age: item.text_2,
+						title: item.text_3,
+						text_1: item.text_4,
+						text_2: item.text_5,
+						link: item.text_6,
+					}
+					comebacker_array.push(comebacker_object_local)
+				})
 		  	}
 
 			// refresh / close
@@ -1560,28 +1064,46 @@ admt_start = () => {
 
 				comebacker_chousen_object = comebacker_array[comebacker_number_woman]
 
+				if (admt_array.filter(item => item.type == "exit_popup")[0].version == undefined || admt_array.filter(item => item.type == "exit_popup")[0].version == 0 || admt_array.filter(item => item.type == "exit_popup")[0].version == "") {
+					$("#comebacker-name").text(comebacker_chousen_object.name)
+					$("#comebacker-title-text").text(comebacker_chousen_object.title)
+					$("#comebacker-text").text(comebacker_chousen_object.text)
+					$("#comebacker-link").text(comebacker_chousen_object.link)
+
+					if (!window.matchMedia("(max-width: 991px)").matches) {
+						$("#comebacker-content").css("background-image" , `url(${comebacker_chousen_object.banner_desk})`)
+				    } else {
+						$("#comebacker-content").css("background-image" , `url(${comebacker_chousen_object.banner_mob})`)
+				    }
+				}
+
+				if (admt_array.filter(item => item.type == "exit_popup")[0].version == 1) {
+					$("#comebacker-name").text(comebacker_chousen_object.name)
+					$("#comebacker-age").text(comebacker_chousen_object.age)
+					$("#comebacker-title-text").text(comebacker_chousen_object.title)
+					$("#comebacker-text-1").text(comebacker_chousen_object.text_1)
+					$("#comebacker-text-2").text(comebacker_chousen_object.text_2)
+					$("#comebacker-link").text(comebacker_chousen_object.link)
+					$(".comebacker-inner").css("background-image" , `url(${comebacker_chousen_object.img})`)
+					$(".comebacker-inner-1-image img").attr("src" , `${comebacker_chousen_object.img}`)
+				}
+				 
 				// comebacker_banner_param = `crid=${comebacker_chousen_object.id}`
 				params_object.crid_object.comebacker = comebacker_chousen_object.id
 				// formFinalLinkObject()
 			}
 			comebacker_show_popup = () => {
-				renderEXPP()
-                setTimeout(()=>{
-				    $("#comebacker").addClass("active").css("opacity" , 1)
-                },100)
+				$("#comebacker").addClass("active")
 			}
 			comebacker_hide_popup = () => {
-				setTimeout(()=>{
-                    $("#comebacker").removeClass("active")
-                    $("#comebacker").remove()
-                },100)
+				$("#comebacker").removeClass("active")
 			}
 
-			$("body").on("click", ".comebacker-close , .comebacker-bg", function() {
-                comebacker_hide_popup()
+			$('.comebacker-close , .comebacker-bg').click(function(){
+				comebacker_hide_popup()
 			});
 
-			$("body").on("click", ".comebacker-go", function(e) {
+			$(".comebacker-go").click(function(e) {
 				e.preventDefault()
 
 				params_object.frq = Number(params_object.frq) + 1 
@@ -1624,203 +1146,8 @@ admt_start = () => {
 				}
 			}
 
+			$("#comebacker").css("opacity" , 1)
 		})
-	}
-
-    // inactive tab banner
-	if ( admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0] ) {
-		$(document).ready(function(){
-
-			// comment on prod
-			// admt_array.filter(item => item.type == "inactive_banner")[0].version = 1
-
-			var inactive_tab_banner_array = admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0].data
-			// var inactive_tab_banner_object_local = {}
-
-			// comment on prod
-			// admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0].display_limit = 2
-
-			let display_limit = admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0]?.display_limit ? admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0]?.display_limit : admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0].data.length
-
-			// var inactive_tab_banner_array = []
-
-            let renderINACT_B = () => {
-
-                // comment on prod
-                // console.log(inactive_tab_banner_chousen_object)
-                // inactive_tab_banner_chousen_object.version = Math.floor(Math.random() * 2);
-                //
-
-                // uncomment on prod
-                // if (admt_array.filter(item => item.type == "inactive_banner")[0].version == undefined || admt_array.filter(item => item.type == "inactive_banner")[0].version == 0 || admt_array.filter(item => item.type == "inactive_banner")[0].version == "" || admt_array.filter(item => item.type == "inactive_banner")[0].version == null) {
-                //
-                // comment on prod
-                if (inactive_tab_banner_chousen_object.version == undefined || inactive_tab_banner_chousen_object.version == 0 || inactive_tab_banner_chousen_object.version == "" || inactive_tab_banner_chousen_object.version == null) { 
-                //
-                    document.querySelector("body").insertAdjacentHTML("beforeend", 
-                        `
-                        <div id="inactive-tab-banner" style="opacity: 0">
-                            <div class="inactive-tab-banner-bg"></div>
-                            <div class="inactive-tab-banner-wrapper">   
-                                <button class="inactive-tab-banner-close">
-                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"/>
-                                    </svg>
-                                </button>
-                                <div class="inactive-tab-banner-content" id="inactive-tab-banner-content">
-                                    <p id="inactive-tab-banner-title">
-                                        <span id="inactive-tab-banner-title-text"></span>
-                                        <span id="inactive-tab-banner-name"></span>
-                                    </p>
-                                    <h4 id="inactive-tab-banner-text"></h4>
-                                    <div class="inactive-tab-banner-button">
-                                        <a class="inactive-tab-banner-go" id="inactive-tab-banner-link"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        `
-                    );
-
-                    $("#inactive-tab-banner-name").text(inactive_tab_banner_chousen_object.text_1)
-					$("#inactive-tab-banner-title-text").text(inactive_tab_banner_chousen_object.text_3)
-					$("#inactive-tab-banner-text").text(inactive_tab_banner_chousen_object.text_5)
-					$("#inactive-tab-banner-link").text(inactive_tab_banner_chousen_object.text_6)
-
-					if (!window.matchMedia("(max-width: 991px)").matches) {
-						$("#inactive-tab-banner-content").css("background-image" , `url(${inactive_tab_banner_chousen_object.img_1})`)
-				    } else {
-						$("#inactive-tab-banner-content").css("background-image" , `url(${inactive_tab_banner_chousen_object.img_2})`)
-				    }
-                }
-
-                // uncomment on prod
-                // if (admt_array.filter(item => item.type == "inactive_banner")[0].version == 1) {
-                //
-                // comment on prod
-                if (inactive_tab_banner_chousen_object.version == 1) {
-                //
-                    document.querySelector("body").insertAdjacentHTML("beforeend", 
-                        `
-                        <div id="inactive-tab-banner" data-theme="1">
-                            <div class="inactive-tab-banner-bg"></div>
-                            <div class="inactive-tab-banner-wrapper">    
-                                <button class="inactive-tab-banner-close">
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"></path>
-                                </svg>
-                                </button>
-                                <div class="inactive-tab-banner-inner" id="inactive-tab-banner-inner">
-                                    <div class="inactive-tab-banner-inner-1-row">
-                                        <div class="inactive-tab-banner-inner-1-left">
-                                            <div class="inactive-tab-banner-inner-1-left-inner">
-                                                <div class="inactive-tab-banner-inner-1-info">
-                                                    <span class="inactive-tab-banner-name" id="inactive-tab-banner-name"></span>, <span class="inactive-tab-banner-age" id="inactive-tab-banner-age"></span>
-                                                </div>
-                                                <div class="inactive-tab-banner-inner-1-image">
-                                                    <img src="" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="inactive-tab-banner-inner-1-right">
-                                            <h4 id="inactive-tab-banner-title-text"></h4>
-                                            <p id="inactive-tab-banner-text-1"></p>
-                                            <p id="inactive-tab-banner-text-2"></p>
-                                        </div>
-                                    </div>
-                                    <div class="inactive-tab-banner-inner-2-row">
-                                        <a class="inactive-tab-banner-go" id="inactive-tab-banner-link"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        `
-                    );
-
-                    $("#inactive-tab-banner-name").text(inactive_tab_banner_chousen_object.text_1)
-					$("#inactive-tab-banner-age").text(inactive_tab_banner_chousen_object.text_2)
-					$("#inactive-tab-banner-title-text").text(inactive_tab_banner_chousen_object.text_3)
-					$("#inactive-tab-banner-text-1").text(inactive_tab_banner_chousen_object.text_4)
-					$("#inactive-tab-banner-text-2").text(inactive_tab_banner_chousen_object.text_5)
-					$("#inactive-tab-banner-link").text(inactive_tab_banner_chousen_object.text_6)
-					$(".inactive-tab-banner-inner").css("background-image" , `url(${inactive_tab_banner_chousen_object.img_1})`)
-					$(".inactive-tab-banner-inner-1-image img").attr("src" , `${inactive_tab_banner_chousen_object.img_1}`)
-                }
-            }
-
-			var inactive_tab_banner_chousen_object = inactive_tab_banner_array[1]
-			var inactive_tab_banner_number_woman = 0
-			var inactive_tab_banner_array_of_showed_object = []
-
-			var inactive_tab_banner_first_iteration = true
-			inactive_tab_banner_get_random_object = () => {
-				do {
-					// if has inact_b_id params in link and if this inact_b_id is in array
-					if (inactive_tab_banner_first_iteration && getURLParameter(window.location.href, 'inact_b_id') && inactive_tab_banner_array.filter((item) => item.id == getURLParameter(window.location.href, 'inact_b_id'))[0]) {
-						inactive_tab_banner_array.map((item, index) => { 
-							if (item.id == getURLParameter(window.location.href, 'inact_b_id')) {
-								inactive_tab_banner_number_woman = index
-							}
-						})
-					} else {
-						inactive_tab_banner_number_woman = Math.floor(Math.random() * inactive_tab_banner_array.length);
-					}
-					inactive_tab_banner_first_iteration = false
-				} while (inactive_tab_banner_array_of_showed_object.includes(inactive_tab_banner_number_woman))
-
-				inactive_tab_banner_array[inactive_tab_banner_number_woman]
-
-				inactive_tab_banner_array_of_showed_object.push(inactive_tab_banner_number_woman)
-
-				inactive_tab_banner_chousen_object = inactive_tab_banner_array[inactive_tab_banner_number_woman]
-
-				params_object.crid_object.inactive_tab_banner = inactive_tab_banner_chousen_object.id
-
-			}
-			window.inactive_tab_banner_show_popup = () => {
-                renderINACT_B()
-                setTimeout(()=>{
-				    $("#inactive-tab-banner").addClass("active").css("opacity" , 1)
-                },100)
-			}
-			inactive_tab_banner_hide_popup = () => {
-                setTimeout(()=>{
-                    $("#inactive-tab-banner").removeClass("active")
-                    $("#inactive-tab-banner").remove()
-                },100)
-			}
-
-            $("body").on("click", ".inactive-tab-banner-close , .inactive-tab-banner-bg", function() {
-				inactive_tab_banner_hide_popup()
-			});
-
-            $("body").on("click", ".inactive-tab-banner-go", function(e) {
-				e.preventDefault()
-
-				params_object.frq = Number(params_object.frq) + 1 
-				params_object.flw = params_object.flw + "_inact_b"
-
-				setTimeout(()=>{
-					window.open($(this).attr("href"), '_blank');
-				},100)
-					
-				inactive_tab_banner_hide_popup()
-				inactive_tab_banner_array.map((item , index) => {inactive_tab_banner_array_of_showed_object[index] = null})
-			})
-
-			document.addEventListener("visibilitychange", () => {
-
-				if (inactive_tab_banner_array_of_showed_object.length < ( inactive_tab_banner_array.length >= display_limit ? display_limit : inactive_tab_banner_array.length)  ) {
-					if (document.visibilityState === "hidden") {
-						if (!$("#inactive-tab-banner").hasClass("active")) {
-							inactive_tab_banner_get_random_object()
-							inactive_tab_banner_show_popup()
-						}
-					}
-				}
-			})
-
-		});
 	}
 
 	// inactive tab redirect
@@ -1871,6 +1198,208 @@ admt_start = () => {
 					}
 				}
 			})
+		});
+	}
+
+	// inactive tab banner
+	if ( admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0] ) {
+		$(document).ready(function(){
+
+			// comment on prod
+			// admt_array.filter(item => item.type == "inactive_banner")[0].version = 1
+
+			// comment on prod
+			// admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0].display_limit = 2
+
+			let display_limit = admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0]?.display_limit ? admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0]?.display_limit : admt_array.filter(item => item.type == "inactive_banner" && item.active == true)[0].data.length
+
+			var inactive_tab_banner_array = []
+
+			if (admt_array.filter(item => item.type == "inactive_banner")[0].version == undefined || admt_array.filter(item => item.type == "inactive_banner")[0].version == 0 || admt_array.filter(item => item.type == "inactive_banner")[0].version == "") {
+			  	document.querySelector("body").insertAdjacentHTML("beforeend", 
+				`
+				<div id="inactive-tab-banner" style="opacity: 0">
+				    <div class="inactive-tab-banner-bg"></div>
+				    <div class="inactive-tab-banner-wrapper">   
+				      <button class="inactive-tab-banner-close">
+				        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"/>
+						</svg>
+				      </button>
+				      <div class="inactive-tab-banner-content" id="inactive-tab-banner-content">
+				        <p id="inactive-tab-banner-title">
+				        	<span id="inactive-tab-banner-title-text"></span>
+				        	<span id="inactive-tab-banner-name"></span>
+			        	</p>
+				        <h4 id="inactive-tab-banner-text"></h4>
+				        <div class="inactive-tab-banner-button">
+				          <a class="inactive-tab-banner-go" id="inactive-tab-banner-link"></a>
+				        </div>
+				      </div>
+				    </div>
+			  	</div>
+			  	`
+				);
+
+				admt_array.filter(item => item.type == "inactive_banner")?.[0]?.data.map(item => {
+					let inactive_tab_banner_object_local = {
+						id: item.id,
+						banner_mob: item.img_1, 
+						banner_desk: item.img_2, 
+						name: item.text_1,
+						age: item.text_2,
+						title: item.text_3,
+						text: item.text_5,
+						link: item.text_6,
+					}
+					inactive_tab_banner_array.push(inactive_tab_banner_object_local)
+				})
+			}
+
+			if (admt_array.filter(item => item.type == "inactive_banner")[0].version == 1) {
+			  	document.querySelector("body").insertAdjacentHTML("beforeend", 
+				`
+				<div id="inactive-tab-banner" data-theme="1">
+					<div class="inactive-tab-banner-bg"></div>
+					<div class="inactive-tab-banner-wrapper">    
+						<button class="inactive-tab-banner-close">
+						<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"></path>
+						</svg>
+						</button>
+						<div class="inactive-tab-banner-inner" id="inactive-tab-banner-inner">
+							<div class="inactive-tab-banner-inner-1-row">
+								<div class="inactive-tab-banner-inner-1-left">
+									<div class="inactive-tab-banner-inner-1-left-inner">
+										<div class="inactive-tab-banner-inner-1-info">
+											<span class="inactive-tab-banner-name" id="inactive-tab-banner-name"></span>, <span class="inactive-tab-banner-age" id="inactive-tab-banner-age"></span>
+										</div>
+										<div class="inactive-tab-banner-inner-1-image">
+											<img src="" alt="">
+										</div>
+									</div>
+								</div>
+								<div class="inactive-tab-banner-inner-1-right">
+									<h4 id="inactive-tab-banner-title-text"></h4>
+									<p id="inactive-tab-banner-text-1"></p>
+									<p id="inactive-tab-banner-text-2"></p>
+								</div>
+							</div>
+							<div class="inactive-tab-banner-inner-2-row">
+								<a class="inactive-tab-banner-go" id="inactive-tab-banner-link"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			  	`
+				);
+				admt_array.filter(item => item.type == "inactive_banner")?.[0]?.data.map(item => {
+					let inactive_tab_banner_object_local = {
+						id: item.id,
+						img: item.img_1, 
+						name: item.text_1,
+						age: item.text_2,
+						title: item.text_3,
+						text_1: item.text_4,
+						text_2: item.text_5,
+						link: item.text_6,
+					}
+					inactive_tab_banner_array.push(inactive_tab_banner_object_local)
+				})
+		  	}
+
+			var inactive_tab_banner_chousen_object = inactive_tab_banner_array[1]
+			var inactive_tab_banner_number_woman = 0
+			var inactive_tab_banner_array_of_showed_object = []
+
+			var inactive_tab_banner_first_iteration = true
+			inactive_tab_banner_get_random_object = () => {
+				do {
+					// if has inact_b_id params in link and if this inact_b_id is in array
+					if (inactive_tab_banner_first_iteration && getURLParameter(window.location.href, 'inact_b_id') && inactive_tab_banner_array.filter((item) => item.id == getURLParameter(window.location.href, 'inact_b_id'))[0]) {
+						inactive_tab_banner_array.map((item, index) => { 
+							if (item.id == getURLParameter(window.location.href, 'inact_b_id')) {
+								inactive_tab_banner_number_woman = index
+							}
+						})
+					} else {
+						inactive_tab_banner_number_woman = Math.floor(Math.random() * inactive_tab_banner_array.length);
+					}
+					inactive_tab_banner_first_iteration = false
+				} while (inactive_tab_banner_array_of_showed_object.includes(inactive_tab_banner_number_woman))
+
+				inactive_tab_banner_array[inactive_tab_banner_number_woman]
+
+				inactive_tab_banner_array_of_showed_object.push(inactive_tab_banner_number_woman)
+
+				inactive_tab_banner_chousen_object = inactive_tab_banner_array[inactive_tab_banner_number_woman]
+
+
+				if (admt_array.filter(item => item.type == "inactive_banner")[0].version == undefined || admt_array.filter(item => item.type == "inactive_banner")[0].version == 0 || admt_array.filter(item => item.type == "inactive_banner")[0].version == "") {
+					$("#inactive-tab-banner-name").text(inactive_tab_banner_chousen_object.name)
+					$("#inactive-tab-banner-title-text").text(inactive_tab_banner_chousen_object.title)
+					$("#inactive-tab-banner-text").text(inactive_tab_banner_chousen_object.text)
+					$("#inactive-tab-banner-link").text(inactive_tab_banner_chousen_object.link)
+
+					if (!window.matchMedia("(max-width: 991px)").matches) {
+						$("#inactive-tab-banner-content").css("background-image" , `url(${inactive_tab_banner_chousen_object.banner_desk})`)
+				    } else {
+						$("#inactive-tab-banner-content").css("background-image" , `url(${inactive_tab_banner_chousen_object.banner_mob})`)
+				    }
+				}
+
+				if (admt_array.filter(item => item.type == "inactive_banner")[0].version == 1) {
+					$("#inactive-tab-banner-name").text(inactive_tab_banner_chousen_object.name)
+					$("#inactive-tab-banner-age").text(inactive_tab_banner_chousen_object.age)
+					$("#inactive-tab-banner-title-text").text(inactive_tab_banner_chousen_object.title)
+					$("#inactive-tab-banner-text-1").text(inactive_tab_banner_chousen_object.text_1)
+					$("#inactive-tab-banner-text-2").text(inactive_tab_banner_chousen_object.text_2)
+					$("#inactive-tab-banner-link").text(inactive_tab_banner_chousen_object.link)
+					$(".inactive-tab-banner-inner").css("background-image" , `url(${inactive_tab_banner_chousen_object.img})`)
+					$(".inactive-tab-banner-inner-1-image img").attr("src" , `${inactive_tab_banner_chousen_object.img}`)
+				}
+				 
+				params_object.crid_object.inactive_tab_banner = inactive_tab_banner_chousen_object.id
+
+			}
+			inactive_tab_banner_show_popup = () => {
+				$("#inactive-tab-banner").addClass("active")
+			}
+			inactive_tab_banner_hide_popup = () => {
+				$("#inactive-tab-banner").removeClass("active")
+			}
+
+			$('.inactive-tab-banner-close , .inactive-tab-banner-bg').click(function(){
+				inactive_tab_banner_hide_popup()
+			});
+
+			$(".inactive-tab-banner-go").click(function(e) {
+				e.preventDefault()
+
+				params_object.frq = Number(params_object.frq) + 1 
+				params_object.flw = params_object.flw + "_inact_b"
+
+				setTimeout(()=>{
+					window.open($(this).attr("href"), '_blank');
+				},100)
+					
+				inactive_tab_banner_hide_popup()
+				inactive_tab_banner_array.map((item , index) => {inactive_tab_banner_array_of_showed_object[index] = null})
+			})
+
+			document.addEventListener("visibilitychange", () => {
+
+				if (inactive_tab_banner_array_of_showed_object.length < ( inactive_tab_banner_array.length >= display_limit ? display_limit : inactive_tab_banner_array.length)  ) {
+					if (document.visibilityState === "hidden") {
+						if (!$("#inactive-tab-banner").hasClass("active")) {
+							inactive_tab_banner_get_random_object()
+							inactive_tab_banner_show_popup()
+						}
+					}
+				}
+			})
+
+			$("#inactive-tab-banner").css("opacity" , 1)
 		});
 	}
 
@@ -1982,7 +1511,7 @@ admt_start = () => {
 							}
 						},50)
 					}
-					
+
 				}
 				
 				setTimeout(function() {
@@ -2162,99 +1691,83 @@ admt_start = () => {
 			// comment on prod
 			// admt_array.filter(item => item.type == "in_page_chat")[0].version = 1
 
-            var in_page_chat_array = admt_array.filter(item => item.type == "in_page_chat" && item.active == true)[0].data
-
 			// comment on prod
 			// admt_array.filter(item => item.type == "in_page_chat" && item.active == true)[0].delay_time = 2500
 
 			let delay_time = admt_array.filter(item => item.type == "in_page_chat" && item.active == true)[0]?.delay_time
 
+			var in_page_chat_array = []
 
-            let renderINPC = () => {
+			if (admt_array.filter(item => item.type == "in_page_chat")[0].version == undefined || admt_array.filter(item => item.type == "in_page_chat")[0].version == 0 || admt_array.filter(item => item.type == "in_page_chat")[0].version == "") {
+				document.querySelector("body").insertAdjacentHTML("beforeend", 
+				`
+				<div id="in-page-chat" class="hidden">
+				  <div class="in-page-chat-box">
+				    <div class="in-page-chat-row in-page-chat-row-top">
+				      <div class="in-page-chat-box-column in-page-chat-box-column-left">
+				        <div class="in-page-chat-ava">
+				          <img src="" alt="" id="in-page-chat-img">
+				        </div>
+				      </div>
+				      <div class="in-page-chat-box-column in-page-chat-box-column-right">
+				        <div class="in-page-chat-message">
+				          <div class="in-page-chat-message-inner">
+				            <p class="in-page-chat-message-name"></p>
+				            <p class="in-page-chat-message-text" id="in-page-chat-text-1"></p>
+				          </div>
+				          <div class="in-page-chat-message-date">
+				            <p></p>
+				          </div>
+				        </div>
+				        <div class="in-page-chat-message">
+				          <div class="in-page-chat-message-inner">
+				            <p class="in-page-chat-message-name"></p>
+				            <p class="in-page-chat-message-text" id="in-page-chat-text-2"></p>
+				          </div>
+				          <div class="in-page-chat-message-date">
+				            <p></p>
+				          </div>
+				        </div>
+				      </div>
+				    </div>
+				    <a class="in-page-chat-row in-page-chat-row-bottom in-page-chat-go" href="">
+				      <div class="in-page-chat-emoji">
+				        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+				          <path fill="rgba(246,130,97,1)" fill-rule="evenodd" d="M255,160 L256,160 C256,162.209139 254.209139,164 252,164 C249.790861,164 248,162.209139 248,160 L249,160 C249,161.656854 250.343146,163 252,163 C253.656854,163 255,161.656854 255,160 Z M252,168 C256.970563,168 261,163.970563 261,159 C261,154.029437 256.970563,150 252,150 C247.029437,150 243,154.029437 243,159 C243,163.970563 247.029437,168 252,168 Z M252,167 C256.418278,167 260,163.418278 260,159 C260,154.581722 256.418278,151 252,151 C247.581722,151 244,154.581722 244,159 C244,163.418278 247.581722,167 252,167 Z M249,158 C249.552285,158 250,157.552285 250,157 C250,156.447715 249.552285,156 249,156 C248.447715,156 248,156.447715 248,157 C248,157.552285 248.447715,158 249,158 Z M255,158 C255.552285,158 256,157.552285 256,157 C256,156.447715 255.552285,156 255,156 C254.447715,156 254,156.447715 254,157 C254,157.552285 254.447715,158 255,158 Z" transform="translate(-243 -150)"/>
+				        </svg>
+				      </div>
+				      <div class="in-page-chat-input" id="in-page-chat-input"></div>
+				      <div class="in-page-chat-button" id="in-page-chat-button"></div>
+				    </a>
+				  </div>
 
-                // comment on prod
-                // console.log(in_page_chat_chousen_object)
-                // in_page_chat_chousen_object.version = 0
-                // in_page_chat_chousen_object.version = Math.floor(Math.random() * 2);
-                //
-
-                // uncommnet on prod
-                // if (admt_array.filter(item => item.type == "in_page_chat")[0].version == undefined || admt_array.filter(item => item.type == "in_page_chat")[0].version == 0 || admt_array.filter(item => item.type == "in_page_chat")[0].version == "" || admt_array.filter(item => item.type == "in_page_chat")[0].version == null) {
-                //
-                // comment on prod
-                if (in_page_chat_chousen_object.version == undefined || in_page_chat_chousen_object.version == 0 || in_page_chat_chousen_object.version == "" || in_page_chat_chousen_object.version == null) {
-                //
-                    document.querySelector("body").insertAdjacentHTML("beforeend", 
-                    `
-                    <div id="in-page-chat" class="hidden">
-                      <div class="in-page-chat-box">
-                        <div class="in-page-chat-row in-page-chat-row-top">
-                          <div class="in-page-chat-box-column in-page-chat-box-column-left">
-                            <div class="in-page-chat-ava">
-                              <img src="" alt="" id="in-page-chat-img">
-                            </div>
-                          </div>
-                          <div class="in-page-chat-box-column in-page-chat-box-column-right">
-                            <div class="in-page-chat-message">
-                              <div class="in-page-chat-message-inner">
-                                <p class="in-page-chat-message-name"></p>
-                                <p class="in-page-chat-message-text" id="in-page-chat-text-1"></p>
-                              </div>
-                              <div class="in-page-chat-message-date">
-                                <p></p>
-                              </div>
-                            </div>
-                            <div class="in-page-chat-message">
-                              <div class="in-page-chat-message-inner">
-                                <p class="in-page-chat-message-name"></p>
-                                <p class="in-page-chat-message-text" id="in-page-chat-text-2"></p>
-                              </div>
-                              <div class="in-page-chat-message-date">
-                                <p></p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <a class="in-page-chat-row in-page-chat-row-bottom in-page-chat-go" href="">
-                          <div class="in-page-chat-emoji">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-                              <path fill="rgba(246,130,97,1)" fill-rule="evenodd" d="M255,160 L256,160 C256,162.209139 254.209139,164 252,164 C249.790861,164 248,162.209139 248,160 L249,160 C249,161.656854 250.343146,163 252,163 C253.656854,163 255,161.656854 255,160 Z M252,168 C256.970563,168 261,163.970563 261,159 C261,154.029437 256.970563,150 252,150 C247.029437,150 243,154.029437 243,159 C243,163.970563 247.029437,168 252,168 Z M252,167 C256.418278,167 260,163.418278 260,159 C260,154.581722 256.418278,151 252,151 C247.581722,151 244,154.581722 244,159 C244,163.418278 247.581722,167 252,167 Z M249,158 C249.552285,158 250,157.552285 250,157 C250,156.447715 249.552285,156 249,156 C248.447715,156 248,156.447715 248,157 C248,157.552285 248.447715,158 249,158 Z M255,158 C255.552285,158 256,157.552285 256,157 C256,156.447715 255.552285,156 255,156 C254.447715,156 254,156.447715 254,157 C254,157.552285 254.447715,158 255,158 Z" transform="translate(-243 -150)"/>
-                            </svg>
-                          </div>
-                          <div class="in-page-chat-input" id="in-page-chat-input"></div>
-                          <div class="in-page-chat-button" id="in-page-chat-button"></div>
-                        </a>
-                      </div>
-    
-                      <div class="in-page-chat-circle">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-                          <path d="M3.89868 3.7868H11.0895" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"></path>
-                          <path d="M3.89868 6.66315H6.77502" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"></path>
-                          <path d="M1.02222 2.34857V13.705C1.02222 14.0253 1.40949 14.1857 1.63599 13.9592L4.40703 11.1882C4.54188 11.0534 4.72479 10.9776 4.91549 10.9776H12.5276C13.3219 10.9776 13.9657 10.3337 13.9657 9.53942V2.34857C13.9657 1.55429 13.3219 0.9104 12.5276 0.9104H2.46039C1.66611 0.9104 1.02222 1.55429 1.02222 2.34857Z" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"></path>
-                        </svg>
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"></path>
-                        </svg>
-                        <div class="in-page-chat-circle-dot">2</div>
-                      </div>
-                    </div>
-                    `
-                    );
-                    let currentDate = new Date();
-                    let hours = currentDate.getHours();
-                    let minutes = currentDate.getMinutes();
-                    if (hours < 10) {hours = "0" + hours;}
-                    if (minutes < 10) { minutes = "0" + minutes;}
-				    let currentTime = hours + ":" + minutes;
-                    $("#in-page-chat-img").attr("src" , in_page_chat_chousen_object.img_1)
-					$("#in-page-chat .in-page-chat-message-name").text(in_page_chat_chousen_object.text_1)
-					$("#in-page-chat-text-1").text(in_page_chat_chousen_object.text_2)
-					$("#in-page-chat-text-2").text(in_page_chat_chousen_object.text_3)
-					$("#in-page-chat-input").text(in_page_chat_chousen_object.text_4)
-					$("#in-page-chat-button").text(in_page_chat_chousen_object.text_5)
-					$("#in-page-chat .in-page-chat-message-date p").text(currentTime)
-                }
-            }
+				  <div class="in-page-chat-circle">
+				    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+				      <path d="M3.89868 3.7868H11.0895" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"></path>
+				      <path d="M3.89868 6.66315H6.77502" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"></path>
+				      <path d="M1.02222 2.34857V13.705C1.02222 14.0253 1.40949 14.1857 1.63599 13.9592L4.40703 11.1882C4.54188 11.0534 4.72479 10.9776 4.91549 10.9776H12.5276C13.3219 10.9776 13.9657 10.3337 13.9657 9.53942V2.34857C13.9657 1.55429 13.3219 0.9104 12.5276 0.9104H2.46039C1.66611 0.9104 1.02222 1.55429 1.02222 2.34857Z" stroke="white" stroke-width="1.65672" stroke-linecap="round" stroke-linejoin="round"></path>
+				    </svg>
+				    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+				      <path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#fff"></path>
+				    </svg>
+				    <div class="in-page-chat-circle-dot">2</div>
+				  </div>
+				</div>
+				`
+				);
+				admt_array.filter(item => item.type == "in_page_chat")?.[0]?.data.map(item => {
+					let in_page_chat_object_local = {
+						id: item.id,
+						img: item.img_1, 
+						name: item.text_1,
+						text_1: item.text_2,
+						text_2: item.text_3,
+						input: item.text_4,
+						button: item.text_5,
+					}
+					in_page_chat_array.push(in_page_chat_object_local)
+				})
+			}
 
 			var in_page_chat_chousen_object = in_page_chat_array[1]
 			var in_page_chat_number_woman = 0
@@ -2285,12 +1798,33 @@ admt_start = () => {
 				in_page_chat_array_of_showed_object.push(in_page_chat_number_woman)
 
 				in_page_chat_chousen_object = in_page_chat_array[in_page_chat_number_woman]
+
+
+				let currentDate = new Date();
+				let hours = currentDate.getHours();
+				let minutes = currentDate.getMinutes();
+				if (hours < 10) {
+					hours = "0" + hours;
+				}
+				if (minutes < 10) {
+					minutes = "0" + minutes;
+				}
+				let currentTime = hours + ":" + minutes;
+
+				if (admt_array.filter(item => item.type == "in_page_chat")[0].version == undefined || admt_array.filter(item => item.type == "in_page_chat")[0].version == 0 || admt_array.filter(item => item.type == "in_page_chat")[0].version == "") {
+					$("#in-page-chat-img").attr("src" , in_page_chat_chousen_object.img)
+					$("#in-page-chat .in-page-chat-message-name").text(in_page_chat_chousen_object.name)
+					$("#in-page-chat-text-1").text(in_page_chat_chousen_object.text_1)
+					$("#in-page-chat-text-2").text(in_page_chat_chousen_object.text_2)
+					$("#in-page-chat-input").text(in_page_chat_chousen_object.input)
+					$("#in-page-chat-button").text(in_page_chat_chousen_object.button)
+					$("#in-page-chat .in-page-chat-message-date p").text(currentTime)
+				}
 				 
 				params_object.crid_object.in_page_chat = in_page_chat_chousen_object.id
 
 			}
 			in_page_chat_show_popup = () => {
-                renderINPC()
 				setTimeout(()=>{
 					$("#in-page-chat").removeClass("hidden")
 				}, (delay_time ? delay_time : 7000));
@@ -2299,7 +1833,7 @@ admt_start = () => {
 			in_page_chat_get_random_object()
 			in_page_chat_show_popup()
 
-            $("body").on("click", "#in-page-chat .in-page-chat-circle", function() {
+			$("#in-page-chat .in-page-chat-circle").click(function(){
 			  $(this).closest('#in-page-chat').toggleClass("active")
 			  if ($(this).closest('#in-page-chat').hasClass("active")) {
 			    $(".in-page-chat-box").fadeIn(100)
@@ -2308,7 +1842,7 @@ admt_start = () => {
 			  }
 			})
 
-            $("body").on("click", ".in-page-chat-go", function(e) {
+			$(".in-page-chat-go").click(function(e){
 				e.preventDefault()
 
 				params_object.frq = Number(params_object.frq) + 1 

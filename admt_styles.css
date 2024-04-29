@@ -1075,7 +1075,7 @@
 }
 #in-page-chat {
   position: fixed !important;
-  z-index: 1000000 !important;
+  z-index: 999999 !important;
   bottom: 25px !important;
   right: 25px !important;
   display: flex !important;
