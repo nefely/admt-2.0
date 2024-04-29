@@ -762,7 +762,7 @@
 	top: -16px !important;
 	background: rgba(255, 255, 255, 0.75) !important;
 	backdrop-filter: blur(8px) !important;
-	-webkit-filter: blur(8px) !important;
+	--webkit-filter: blur(8px) !important;
 	z-index: 1 !important;
 }
 #inactive-tab-banner[data-theme="1"] .inactive-tab-banner-inner > * {
